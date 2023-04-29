@@ -9,6 +9,7 @@ public class TextBlocks {
         String s = """aaa"""; //does not compile
          */
         printPyramid();
+        countLines();
     }
 
     static void printTextBlock() {
@@ -26,17 +27,25 @@ public class TextBlocks {
      */
     }
 
-    static void printPyramid(){
+    static void printPyramid() {
         String pyramid = """
-                *
-               * *
-              * * *
-             * * * *
-            * * * * *
-                """;
+                    *
+                   * *
+                  * * *
+                 * * * *
+                * * * * *
+                    """;
         System.out.println(pyramid);
     }
 
+    //will print only 2 line as there is a backslash
+    static void countLines() {
+        var blocky = """ 
+                squirrel \s
+                pigeon \
+                termite""";
+        System.out.print(blocky);
+    }
 
 
 }

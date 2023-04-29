@@ -33,3 +33,23 @@ class WrongVar {
     }
 }
 ```
+
+### Variables scope
+- **Local variables**: In scope from declaration to the end of the block
+- **Method parameters**: In scope for the duration of the method
+- **Instance variables**: In scope from declaration until the object is eligible for garbage collection
+- **Class variables**: In scope from declaration until the program ends
+
+## Garbage Collection
+```java
+ System.gc();
+```
+
+## (apparent) conflict of class names
+```java
+import org.enricogiurin.ocp17.ch1.fruits.Apple;
+import org.enricogiurin.ocp17.ch1.phones.*;
+
+```
+In this case will be used class from the package _fruits_ as:  
+**importing by class name takes precedence over wildcards!**
