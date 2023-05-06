@@ -21,3 +21,17 @@ short s=5, t=6;
 short result = s * t;//fails!
 
 ```
+
+## Bitwise operator ~
+```java
+int x = 8;
+int y =~x; //-9
+```
+Alternatively, you can use the following formula to calculate the 2's complement of an integer x:
+
+-(x + 1)
+
+For example, to find the 2's complement of the integer 8, we can use this formula as follows:
+
+-(8 + 1) = -9
+

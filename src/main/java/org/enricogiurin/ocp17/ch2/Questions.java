@@ -2,7 +2,7 @@ package org.enricogiurin.ocp17.ch2;
 
 public class Questions {
     public static void main(String[] args) {
-        new Questions().increaseRank();
+        new Questions().overflow();
     }
 
     void rightType() {
@@ -39,6 +39,14 @@ public class Questions {
         //|  incompatible types: possible lossy conversion from int to short
         //short result = s1 * s2;
         //the operator * cast botho of the operands to int before proceed
+    }
+
+    void overflow(){
+
+        //max value for byte is +127...127+1 = -128
+        byte x = (byte)(Byte.MAX_VALUE+1);
+        System.out.println(x); //-128
+
     }
 
 
