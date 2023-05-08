@@ -35,13 +35,3 @@ public class SwitchDay {
     }
 }
 
-//chat gpt helped me to generate this enum :-)
- enum DayOfWeek {
-    SUNDAY,
-    MONDAY,
-    TUESDAY,
-    WEDNESDAY,
-    THURSDAY,
-    FRIDAY,
-    SATURDAY
-}
