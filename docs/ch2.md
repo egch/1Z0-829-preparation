@@ -35,3 +35,11 @@ For example, to find the 2's complement of the integer 8, we can use this formul
 
 -(8 + 1) = -9
 
+### Trick for binary
+0000  0   
+0001  1 
+
+but going back   
+0001   1   
+0000   0   
+1111  -1
