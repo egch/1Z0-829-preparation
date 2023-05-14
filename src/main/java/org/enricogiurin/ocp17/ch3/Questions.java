@@ -64,5 +64,22 @@ public class Questions {
         }
     }
 
+    void notInScope(Object fish){
+        if (!(fish instanceof String guppy))
+            System.out.print("Eat!");
+
+        //guppy is still in the scope here
+       // else if (!(fish instanceof String guppy)) {
+     //       throw new RuntimeException(); }
+        System.out.print("Swim!");
+
+    }
+
+
+
+
+
+
+
 
 }
