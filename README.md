@@ -7,5 +7,7 @@ https://education.oracle.com/java-se-17-developer/pexam_1Z0-829
 ## Chapters
 1. [Building Blocks](docs/ch1.md)
 2. [Operators](docs/ch2.md)
-2. [Making Decisions](docs/ch3.md)
-2. [Core APIs](docs/ch4.md)
+3. [Making Decisions](docs/ch3.md)
+4. [Core APIs](docs/ch4.md)
+5. [Methods](docs/ch5.md)
+6. [Class Design](docs/ch6.md)
