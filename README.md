@@ -11,3 +11,4 @@ https://education.oracle.com/java-se-17-developer/pexam_1Z0-829
 4. [Core APIs](docs/ch4.md)
 5. [Methods](docs/ch5.md)
 6. [Class Design](docs/ch6.md)
+7. [Beyond Classes](docs/ch7.md)
