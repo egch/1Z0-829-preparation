@@ -12,3 +12,4 @@ https://education.oracle.com/java-se-17-developer/pexam_1Z0-829
 5. [Methods](docs/ch5.md)
 6. [Class Design](docs/ch6.md)
 7. [Beyond Classes](docs/ch7.md)
+8. [Lambdas and Functional Interfaces](docs/ch8.md)
