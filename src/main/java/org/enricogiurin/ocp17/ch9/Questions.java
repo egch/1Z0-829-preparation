@@ -9,6 +9,7 @@ public class Questions {
     public static void main(String[] args) {
         new Questions().genericsWIthVar();
     }
+
     void genericsWithWildCard() {
         //with this the list is done of objects
         List<?> q = List.of("mouse", "parrot");

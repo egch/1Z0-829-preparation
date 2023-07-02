@@ -8,6 +8,7 @@ public class MethodsOfList {
     public static void main(String[] args) {
         new MethodsOfList().contains();
     }
+
     void contains() {
         List<Data> list = List.of(new Data("a"), new Data("b"), new Data("c"));
         boolean contains = list.contains(new Data("c"));

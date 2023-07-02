@@ -24,10 +24,11 @@ class Reptile {
 class Crocodile extends Reptile {
     protected int speed = 20;
 
-    public int getSpeed(){
+    public int getSpeed() {
         return speed;
     }
-    public int getSuperSpeed(){
+
+    public int getSuperSpeed() {
         return super.speed;
     }
 }

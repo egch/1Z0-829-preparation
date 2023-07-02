@@ -12,16 +12,17 @@ public class Money<T> {
         this.amount = amount;
     }
 
-    public BigDecimal getAmountInDollars() {
-        return amount;
-    }
-
     public static void main(String[] args) {
         //Money<Dollar> dollar = new Money<>()
 
     }
 
+    public BigDecimal getAmountInDollars() {
+        return amount;
+    }
+
 
 }
 
-class Dollar {}
+class Dollar {
+}

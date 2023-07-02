@@ -8,7 +8,10 @@ public class SameFile {
 sealed class Bird {
 
     //The permits clause is optional if the subclass is nested or declared in the same file.
-    public final class Flamingo extends Bird {}
+    public final class Flamingo extends Bird {
+    }
 }
+
 //The permits clause is optional if the subclass is nested or declared in the same file.
-final class Sparrow extends Bird {}
+final class Sparrow extends Bird {
+}

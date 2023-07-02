@@ -10,8 +10,9 @@ public class UseOfComparator {
     public static void main(String[] args) {
         new UseOfComparator().thenComparing();
     }
-    void thenComparing(){
-        Comparator<Person> comparator  = Comparator.comparing(Person::age).thenComparing(Person::weight);
+
+    void thenComparing() {
+        Comparator<Person> comparator = Comparator.comparing(Person::age).thenComparing(Person::weight);
         List<Person> people = buildPeople();
         people.sort(comparator);
         people.forEach(System.out::println);
@@ -39,7 +40,6 @@ public class UseOfComparator {
         return people;
     }
 }
-
 
 
 record Person(int age, int weight) {

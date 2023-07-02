@@ -6,7 +6,10 @@ import java.util.function.Consumer;
 public class UseOfVarInLambda {
 
     public void method() {
-        x((var x) -> {}, (var x, var y) -> false);
+        x((var x) -> {
+        }, (var x, var y) -> false);
     }
-    public void x(Consumer<String> x, BinaryOperator<Boolean> y) {}
+
+    public void x(Consumer<String> x, BinaryOperator<Boolean> y) {
+    }
 }

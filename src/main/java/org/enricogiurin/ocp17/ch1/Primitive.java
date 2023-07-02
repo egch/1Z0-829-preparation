@@ -20,7 +20,7 @@ public class Primitive {
         //float aFloat = 2.3;
 
         //valid as I use the suffix F
-        float aFloat =2.3F;
+        float aFloat = 2.3F;
 
 
 /*

@@ -4,7 +4,7 @@ public class RopeSwing {
     private static final String leftRope;
     private static final String rightRope;
     //Variable 'bench' might not have been initialized
- //   private static final String bench;
+    //   private static final String bench;
     private static final String name = "name";
 
     static {
@@ -21,6 +21,6 @@ public class RopeSwing {
     }
 
     public static void main(String[] args) {
-       // bench = "bench";
+        // bench = "bench";
     }
 }

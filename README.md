@@ -15,3 +15,4 @@ https://education.oracle.com/java-se-17-developer/pexam_1Z0-829
 8. [Lambdas and Functional Interfaces](docs/ch8.md)
 9. [Collections and Generics](docs/ch9.md)
 10. [Streams](docs/ch10.md)
+11. [Exceptions and Localization](docs/ch11.md)

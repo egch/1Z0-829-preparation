@@ -7,5 +7,6 @@ public class TypeErasure {
     //does not compile, as generics are replaced by the compiler with Object
 
     //public void handle(List<String> list) {}
-    public void handle(List<Integer> list) {}
+    public void handle(List<Integer> list) {
+    }
 }

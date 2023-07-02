@@ -1,7 +1,6 @@
 package org.enricogiurin.ocp17.ch1.usage;
 
 import org.enricogiurin.ocp17.ch1.fruits.Apple;
-import org.enricogiurin.ocp17.ch1.phones.*;
 
 public class MyZoo {
 

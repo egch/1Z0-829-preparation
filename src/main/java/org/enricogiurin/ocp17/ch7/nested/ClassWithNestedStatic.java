@@ -6,7 +6,7 @@ public class ClassWithNestedStatic {
     static class StaticNested {
         public int stampede() {
             //on-static field 'count' cannot be referenced from a static context
-           // return count;
+            // return count;
 
             return 0;
         }

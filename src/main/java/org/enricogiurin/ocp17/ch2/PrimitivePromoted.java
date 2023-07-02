@@ -6,6 +6,7 @@ public class PrimitivePromoted {
         //new PrimitivePromoted().multiPromotion();
         new PrimitivePromoted().multiPromotion_steps();
     }
+
     void example() {
         float x = 5;
         //wrong does not compile:   incompatible types: possible lossy conversion from double to float

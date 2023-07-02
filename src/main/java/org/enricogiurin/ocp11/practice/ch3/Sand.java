@@ -8,5 +8,6 @@ public class Sand {
     }
 
     //you can have a method with the same name as the class/constructor
-    public void Sand(){}
+    public void Sand() {
+    }
 }

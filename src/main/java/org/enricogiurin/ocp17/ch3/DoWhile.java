@@ -9,7 +9,7 @@ public class DoWhile {
         do {
             int x = 0;
             System.out.println("ciao");
-        //}while (x<=5)  x is out of scope here
-        }while (2<=5);
+            //}while (x<=5)  x is out of scope here
+        } while (2 <= 5);
     }
 }

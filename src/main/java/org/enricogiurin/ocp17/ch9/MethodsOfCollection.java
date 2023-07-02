@@ -1,7 +1,6 @@
 package org.enricogiurin.ocp17.ch9;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MethodsOfCollection {
@@ -9,14 +8,15 @@ public class MethodsOfCollection {
     public static void main(String[] args) {
         new MethodsOfCollection().remove();
     }
+
     void removeIf() {
         List<String> list = new ArrayList<>();
         list.add("aa");
         list.add("ab");
         list.add("bc");
-        System.out.println("size: "+list.size()); //3
-        list.removeIf(s->s.startsWith("a"));  //we remove aa, ab
-        System.out.println("size: "+list.size());  //1
+        System.out.println("size: " + list.size()); //3
+        list.removeIf(s -> s.startsWith("a"));  //we remove aa, ab
+        System.out.println("size: " + list.size());  //1
     }
 
     void replaceAll() {
@@ -25,7 +25,7 @@ public class MethodsOfCollection {
         list.add("ab");
         list.add("bc");
 
-        list.replaceAll(s -> s+"xxx");
+        list.replaceAll(s -> s + "xxx");
         list.forEach(System.out::println);
     }
 

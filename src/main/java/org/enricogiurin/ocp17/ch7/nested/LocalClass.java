@@ -7,8 +7,13 @@ public class LocalClass {
         this.length = length;
     }
 
-    public void calculate(int x){
-        int width  = 10;
+    public static void main(String[] args) {
+        LocalClass localClass = new LocalClass(10);
+        localClass.calculate(Integer.parseInt(args[0]));
+    }
+
+    public void calculate(int x) {
+        int width = 10;
         //I cannot re-assign it
         //Variable 'width' is accessed from within inner class, needs to be final or effectively final
         //width = 12;
@@ -22,10 +27,5 @@ public class LocalClass {
         var calculator = new Calculator();
         calculator.multiply();
 
-    }
-
-    public static void main(String[] args) {
-        LocalClass localClass = new LocalClass(10);
-        localClass.calculate(Integer.parseInt(args[0]));
     }
 }

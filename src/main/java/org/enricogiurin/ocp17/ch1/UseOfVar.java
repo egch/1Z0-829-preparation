@@ -1,6 +1,10 @@
 package org.enricogiurin.ocp17.ch1;
 
 public class UseOfVar {
+    public static void main(String[] args) {
+        new UseOfVar().whatType();
+    }
+
     //cannot use var as an instance variable
     //var x = 5;
     void localVar() {
@@ -25,17 +29,16 @@ public class UseOfVar {
 */
     }
 
-    void twoVariables() {
-        //does not compile:
-        // int x = 0, var y = 5;
-    }
-
     //does not compile: var can only be used as local variable
 /*    int varAsArgument(var x){
         return 0;
     }
 */
 
+    void twoVariables() {
+        //does not compile:
+        // int x = 0, var y = 5;
+    }
 
     void lawfulUseOfVar() {
         //not allowed, var cannot be initialized to null
@@ -62,14 +65,10 @@ public class UseOfVar {
 
     }
 
-    void whatType(){
-        var type = 2/3;
+    void whatType() {
+        var type = 2 / 3;
         //in this case is an int
         System.out.println(type);
-    }
-
-    public static void main(String[] args) {
-        new UseOfVar().whatType();
     }
 }
 

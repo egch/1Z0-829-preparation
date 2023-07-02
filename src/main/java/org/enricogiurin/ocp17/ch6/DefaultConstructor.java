@@ -1,7 +1,5 @@
 package org.enricogiurin.ocp17.ch6;
 
-import org.enricogiurin.ocp17.ch1.HelloWorld;
-
 public class DefaultConstructor {
     public static void main(String[] args) {
         //GrandChild nephew = new GrandChild();
@@ -35,7 +33,7 @@ class GrandChild extends Child {
     }
 
     public GrandChild(String name) {
-        System.out.println("I am the grandChild: "+name);
+        System.out.println("I am the grandChild: " + name);
     }
 
 }

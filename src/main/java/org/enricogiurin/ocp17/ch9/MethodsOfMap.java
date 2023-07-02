@@ -9,7 +9,8 @@ public class MethodsOfMap {
     public static void main(String[] args) {
         new MethodsOfMap().modifyMap();
     }
-    void createMap(){
+
+    void createMap() {
 
         Map<Integer, String> map2 = Map.ofEntries(
                 Map.entry(1, "value1"), Map.entry(2, "value2"));
@@ -21,9 +22,9 @@ public class MethodsOfMap {
         System.out.println(map.containsValue("roberto"));
         Set<Map.Entry<Integer, String>> entries = map.entrySet();
         entries.forEach(entry ->
-            System.out.println(entry.getKey() +": "+entry.getValue())
+                System.out.println(entry.getKey() + ": " + entry.getValue())
         );
-        map.forEach((k, v) -> System.out.println(k+"-"+v));
+        map.forEach((k, v) -> System.out.println(k + "-" + v));
     }
 
     void modifyMap() {

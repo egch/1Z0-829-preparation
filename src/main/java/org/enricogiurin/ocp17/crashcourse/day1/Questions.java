@@ -6,13 +6,13 @@ import java.io.IOException;
 
 public class Questions {
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         new Questions().textBlock();
     }
 
     //legal
-    void duStuff(){
-        for(var x=0;x<3;x++){
+    void duStuff() {
+        for (var x = 0; x < 3; x++) {
 
         }
     }
@@ -20,7 +20,7 @@ public class Questions {
 
     //check this - valid
     void tryWithReources() throws FileNotFoundException {
-        try(var x = new FileReader("")) {
+        try (var x = new FileReader("")) {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -29,9 +29,9 @@ public class Questions {
 
 
     //clarify this !!!
-    void typeTernary(){
-        var x = true?"99":99;
-        var y = false?"99":99;
+    void typeTernary() {
+        var x = true ? "99" : 99;
+        var y = false ? "99" : 99;
         System.out.println(x);
         System.out.println(x.getClass());
         System.out.println(y.getClass());
@@ -40,7 +40,7 @@ public class Questions {
 
     }
 
-    void sb(){
+    void sb() {
         final StringBuilder sb = new StringBuilder("hello ");
         sb.append("world");
         System.out.println(sb);

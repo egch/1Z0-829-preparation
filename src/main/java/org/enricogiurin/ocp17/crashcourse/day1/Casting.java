@@ -8,14 +8,15 @@ public class Casting {
 
         //do not reject cast to an interface (but a class)
         Parent p = new Child();
-        ((Runnable)p).run();
-       // ((Thread)p).run(); //fail
+        ((Runnable) p).run();
+        // ((Thread)p).run(); //fail
     }
 
 
 }
 
-class Parent {}
+class Parent {
+}
 
 class Child extends Parent {
 

@@ -17,16 +17,17 @@ public class OverrideAndOverLoadMethods {
 
 class Pet {
     String name;
-    CharSequence name(){
+
+    static CharSequence group() {
+        return Pet.class.getSimpleName();
+    }
+
+    CharSequence name() {
         return name;
     }
 
-    private void sayHello(){
+    private void sayHello() {
         System.out.println("Hello");
-    }
-
-    static CharSequence group(){
-        return Pet.class.getSimpleName();
     }
 
 
@@ -35,23 +36,23 @@ class Pet {
 class Dog extends Pet {
     String name;
 
-    //The sayHello() method in the Pet class is marked private,
-    // meaning it is not inherited and therefore is not overridden in the Dog class
-     String sayHello(){
-        return "Hello";
-    }
-
     //Static methods cannot be annotated with @Override
     //overridden and hidden methods can have covariant return types.
-   // @Override
-    static String group(){
+    // @Override
+    static String group() {
         return Dog.class.getSimpleName();
+    }
+
+    //The sayHello() method in the Pet class is marked private,
+    // meaning it is not inherited and therefore is not overridden in the Dog class
+    String sayHello() {
+        return "Hello";
     }
 
     //covariant of CharSequence -> String implements CharSequence
     //overridden and hidden methods can have covariant return types
     @Override
-    String name(){
+    String name() {
         return "name is: " + name;
     }
 }

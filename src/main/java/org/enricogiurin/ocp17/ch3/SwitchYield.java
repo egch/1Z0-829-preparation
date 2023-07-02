@@ -7,14 +7,14 @@ public class SwitchYield {
     }
 
     void exampleWithYield(int x) {
-       var result = switch (x){
-           case 1  ->  "x is 5";
-           default -> {
-               //yield is used instead of return
-               if(x>5) yield "greater than 5";
-               else yield "lower or equal than 5";
-           }
-       };
+        var result = switch (x) {
+            case 1 -> "x is 5";
+            default -> {
+                //yield is used instead of return
+                if (x > 5) yield "greater than 5";
+                else yield "lower or equal than 5";
+            }
+        };
         System.out.println(result);
     }
 

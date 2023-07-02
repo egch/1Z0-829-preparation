@@ -3,7 +3,7 @@ package org.enricogiurin.ocp11.practice.ch2;
 public class DefaultSwitch {
     public static void main(String... args) {
         var flavours = 30;
-        int eaten=0;
+        int eaten = 0;
         switch (flavours) {
             case 30:
                 eaten++;

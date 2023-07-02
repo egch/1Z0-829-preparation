@@ -6,10 +6,6 @@ public class StaticNullInstance {
         System.out.print("swing");
     }
 
-    public void climb() {
-        System.out.println("climb");
-    }
-
     public static void play() {
         swing();
     }
@@ -22,6 +18,10 @@ public class StaticNullInstance {
         //this method is legal as I am calling a static method, not an instance method
         //It does not throw a NullPointerException because play() is a static method
         rope2.play();
+    }
+
+    public void climb() {
+        System.out.println("climb");
     }
 
     //output: swing-swing

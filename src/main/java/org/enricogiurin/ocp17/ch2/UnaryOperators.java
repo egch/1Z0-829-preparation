@@ -6,7 +6,7 @@ public class UnaryOperators {
         new UnaryOperators().prePostIncrement();
     }
 
-    void bitwise(){
+    void bitwise() {
         int x = 7; //binary 0111
         int bwX = ~x; //1000
         System.out.println(bwX);  //-8
@@ -14,8 +14,8 @@ public class UnaryOperators {
         System.out.println(bwXAsAsAString); //11111111111111111111111111111000
     }
 
-    void prePostIncrement(){
-        int x = 7, y=10;
-        System.out.println("pre: "+ ++x + " - post: "+ y++);  //8 - 10
+    void prePostIncrement() {
+        int x = 7, y = 10;
+        System.out.println("pre: " + ++x + " - post: " + y++);  //8 - 10
     }
 }

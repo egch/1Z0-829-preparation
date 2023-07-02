@@ -10,10 +10,10 @@ public class Questions {
         new Questions().checkedExceptions();
     }
 
-    void notStatement(){
-        int a=2, b=0;
+    void notStatement() {
+        int a = 2, b = 0;
         //illegal - Not a statement
-       // a+b;
+        // a+b;
     }
 
 
@@ -27,26 +27,36 @@ public class Questions {
                 return false;
             }
         };
-        try{
+        try {
             stuff();
             stuff2();
 
-        }catch (SQLException | FileNotFoundException e){
+        } catch (SQLException | FileNotFoundException e) {
             throw e;
         }
 
     }
 
-    void stuff() throws SQLException {};
-    void stuff2() throws FileNotFoundException {};
+    void stuff() throws SQLException {
+    }
+
+    ;
+
+    void stuff2() throws FileNotFoundException {
+    }
+
+    ;
 
 
     //constructor Day
 
     enum Day {
         MONDAY(1), TUESDAY;
-        Day(){}
-        Day(int day){
+
+        Day() {
+        }
+
+        Day(int day) {
 
         }
     }

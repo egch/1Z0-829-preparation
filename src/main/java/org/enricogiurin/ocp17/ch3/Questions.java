@@ -60,26 +60,20 @@ public class Questions {
 
         for (int i = 0; i <= array.length - 1; ++i) {
 
-            System.out.println(i+": "+array[i]);
+            System.out.println(i + ": " + array[i]);
         }
     }
 
-    void notInScope(Object fish){
+    void notInScope(Object fish) {
         if (!(fish instanceof String guppy))
             System.out.print("Eat!");
 
         //guppy is still in the scope here
-       // else if (!(fish instanceof String guppy)) {
-     //       throw new RuntimeException(); }
+        // else if (!(fish instanceof String guppy)) {
+        //       throw new RuntimeException(); }
         System.out.print("Swim!");
 
     }
-
-
-
-
-
-
 
 
 }

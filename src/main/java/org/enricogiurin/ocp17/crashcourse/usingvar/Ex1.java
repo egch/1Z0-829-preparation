@@ -17,7 +17,7 @@ public class Ex1 {
 //    var x = null;
 //  }
 
-  public static void main(String[] args) throws Throwable {
+    public static void main(String[] args) throws Throwable {
 //    for (var x = 0; x < 3; x++)
 //      System.out.println(x);
 
@@ -32,15 +32,15 @@ public class Ex1 {
 // nope, can't change base type during autoboxing
 //    Long i = 2_000_000_000;
 
-    var x = true ? "99" : 99;
+        var x = true ? "99" : 99;
 
 //    Integer in = null; // also for String :)
 //    in.compareTo... and others
 
 //    int goto;
 //    var var = "var";
-    int var = 99;
-  }
+        int var = 99;
+    }
 
 //  void doStuff() {
 //    var x = new int[]{ 1, 2, 3 };

@@ -2,6 +2,16 @@ package org.enricogiurin.ocp17.ch5;
 
 public class Overloading {
 
+    public static void main(String[] args) {
+        Overloading t = new Overloading();
+        short s = 123;
+        t.print(s);
+        t.print(true);
+        t.print(6.789);
+
+        //int - Object - Object
+    }
+
     public void print(byte x) {
         System.out.print("byte-");
     }
@@ -16,15 +26,5 @@ public class Overloading {
 
     public void print(Object x) {
         System.out.print("Object-");
-    }
-
-    public static void main(String[] args) {
-        Overloading t = new Overloading();
-        short s = 123;
-        t.print(s);
-        t.print(true);
-        t.print(6.789);
-
-        //int - Object - Object
     }
 }

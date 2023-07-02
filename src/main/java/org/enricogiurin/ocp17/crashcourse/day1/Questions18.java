@@ -8,12 +8,12 @@ public class Questions18 {
         new Questions18().stringConcat();
     }
 
-    void orderOperators(){
-        int j=3, k=12, z=2;
-        System.out.println(j+  k/z - j);  //6
+    void orderOperators() {
+        int j = 3, k = 12, z = 2;
+        System.out.println(j + k / z - j);  //6
     }
 
-    void assignment(){
+    void assignment() {
 
         int x = 10;
 
@@ -21,12 +21,12 @@ public class Questions18 {
         //System.out.println("value is: "+ (x++ = 99));
 
         //this is fine
-        System.out.println("value is: "+ (x = 99));
+        System.out.println("value is: " + (x = 99));
 
-        int i=0, j=0;
+        int i = 0, j = 0;
 
         //not valid!!!!!
-      //  ++i = ++j;
+        //  ++i = ++j;
 
     }
 
@@ -42,34 +42,34 @@ public class Questions18 {
     }
 
 
-    void stringConcat(){
+    void stringConcat() {
         String s = "hello";
         String t = "hello";
         String q = "hell";
-        q +="o";
-        String z = "hell"+"o";
-        System.out.println(s==t);  //true
-        System.out.println(s==q);  //false
-        System.out.println(s==z);  //true
+        q += "o";
+        String z = "hell" + "o";
+        System.out.println(s == t);  //true
+        System.out.println(s == q);  //false
+        System.out.println(s == z);  //true
     }
 
 
     //StringBuilder does not override equals
-    void sbEquals(){
+    void sbEquals() {
         StringBuilder sb1 = new StringBuilder("hello");
         StringBuilder sb2 = new StringBuilder("hello");
         System.out.println(sb1.equals(sb2));  //false
 
     }
 
-    void listEquals(){
+    void listEquals() {
         List<String> list1 = List.of("enrico", "alberto");
         List<String> list2 = List.of("enrico", "alberto");
         System.out.println(list1.equals(list2));  //true
     }
 
-    void stringPool(){
-        String s1= "hello";
+    void stringPool() {
+        String s1 = "hello";
     }
 
 

@@ -28,9 +28,9 @@ public class StrangeSwitch {
         System.out.print(p);
     }
 
-    void afterDefault(){
-        int x =5;
-        switch (x){
+    void afterDefault() {
+        int x = 5;
+        switch (x) {
             case 0:
                 System.out.print(0);
             case 1:

@@ -6,19 +6,19 @@ public class Movie {
     private Movie() {
     }
 
+    public static void main(String[] args) {
+        Movie.Popcorn in = new Movie().new Popcorn();
+        in.startMovie();  //10
+    }
+
     protected class Popcorn {
+        public static int butter = 10;
+
         private Popcorn() {
         }
-
-        public static int butter = 10;
 
         public void startMovie() {
             System.out.println(butter);
         }
-    }
-
-    public static void main(String[] args) {
-        Movie.Popcorn in = new Movie().new Popcorn();
-        in.startMovie();  //10
     }
 }

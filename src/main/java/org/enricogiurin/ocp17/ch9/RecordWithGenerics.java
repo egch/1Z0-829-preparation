@@ -5,10 +5,6 @@ public record RecordWithGenerics<T>(T t) {
         this.t = t;
     }
 
-    private <T> void println(T message) {
-        System.out.print(t + "-" + message);
-    }
-
     public static void main(String[] args) {
         RecordWithGenerics<String> hello = new RecordWithGenerics<>("Hello");
         RecordWithGenerics<Integer> data = new RecordWithGenerics<>(12);
@@ -17,5 +13,9 @@ public record RecordWithGenerics<T>(T t) {
         RecordWithGenerics inferred = new RecordWithGenerics<>("ciccio");
         //ciccio pasticcio
         inferred.println("pasticcio");
+    }
+
+    private <T> void println(T message) {
+        System.out.print(t + "-" + message);
     }
 }

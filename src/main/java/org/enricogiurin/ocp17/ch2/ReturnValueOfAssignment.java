@@ -7,10 +7,10 @@ public class ReturnValueOfAssignment {
     }
 
 
-    void trickyCheck(){
-        boolean healthy=false;
+    void trickyCheck() {
+        boolean healthy = false;
         //in this case healthy is assigned to true so true is returned
-        if(healthy = true){
+        if (healthy = true) {
             System.out.println("I am healthy");
         }
     }

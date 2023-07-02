@@ -7,6 +7,6 @@ public record RecordConstructor(int size, String brand, LocalDate expires) {
 
     public RecordConstructor() {
         //For this reason, the first line must be a call to another constructor,
-        this(0,"", LocalDate.now());
+        this(0, "", LocalDate.now());
     }
 }

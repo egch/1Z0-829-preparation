@@ -9,11 +9,11 @@ public class Period {
         new Period().duration();
     }
 
-    void duration(){
+    void duration() {
         var now = Instant.now();
         var later = Instant.now();
         var duration = Duration.between(now, later);
 
-        System.out.println("elapsed time: "+duration.toNanos()+"ns");
+        System.out.println("elapsed time: " + duration.toNanos() + "ns");
     }
 }

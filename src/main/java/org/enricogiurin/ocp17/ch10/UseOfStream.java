@@ -8,10 +8,11 @@ public class UseOfStream {
     public static void main(String[] args) {
         new UseOfStream().reduceMultiply();
     }
+
     void infiniteRandom() {
         //infinite loop of random number
         Stream<Double> doubleStream = Stream.generate(Math::random);
-        doubleStream.takeWhile(aDouble -> aDouble> 0.1).forEach(System.out::println);
+        doubleStream.takeWhile(aDouble -> aDouble > 0.1).forEach(System.out::println);
     }
 
     void min() {

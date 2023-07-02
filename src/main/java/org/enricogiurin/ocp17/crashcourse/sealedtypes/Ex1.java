@@ -15,7 +15,8 @@ sealed class Truck implements Transporter permits BoxVan {
 }
 
 // lose control of children here
-non-sealed class BoxVan extends Truck {}
+non-sealed class BoxVan extends Truck {
+}
 
 final class Car implements Transporter {
 }
@@ -24,17 +25,18 @@ final class Car implements Transporter {
 // enums are not "final" but they control their child types
 // if any exist, they must be anonymous/nested types
 // records can implement interfaces, but cannot extend anything explicit
-record Bicycle() implements Transporter {}
+record Bicycle() implements Transporter {
+}
 
 public class Ex1 {
-  public static void main(String[] args) {
-    Transporter t = Math.random() > 0.5 ? new Truck() : new Car();
+    public static void main(String[] args) {
+        Transporter t = Math.random() > 0.5 ? new Truck() : new Car();
 
-    if (t instanceof Truck tr) {
-      // can the truck do this?
-    } else if (t instanceof Car c) {
-      // can the car do this?
+        if (t instanceof Truck tr) {
+            // can the truck do this?
+        } else if (t instanceof Car c) {
+            // can the car do this?
+        }
+
     }
-
-  }
 }

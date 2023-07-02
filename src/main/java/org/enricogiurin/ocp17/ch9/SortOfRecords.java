@@ -21,10 +21,10 @@ public class SortOfRecords {
     }
 
 
-    static record Person(String name, int age){
+    static record Person(String name, int age) {
         @Override
         public String toString() {
-            return "" + age ;
+            return "" + age;
         }
     }
 

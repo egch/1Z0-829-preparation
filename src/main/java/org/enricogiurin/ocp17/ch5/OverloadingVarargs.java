@@ -11,9 +11,11 @@ public class OverloadingVarargs {
         //Ambiguous method call. DO not compile
         //instance.moo(3);
     }
-    public void moo(int m, int... n){
+
+    public void moo(int m, int... n) {
         System.out.println("two args");
     }
+
     private void moo(int... x) {
         System.out.println("one arg");
 

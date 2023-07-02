@@ -23,12 +23,11 @@ public class UseOfFunction {
     void biFunction() {
         //Cannot mix 'var' and explicitly typed parameters in lambda expression
         //BiFunction<Integer, Integer, Integer> bf = (Integer x, var y)->5;
-        
-        
-        BiFunction<Integer, Integer, Integer> bf1 = (var x, var y)->5;
-        BiFunction<Integer, Integer, Integer> bf2 = (Integer x, Integer y)->5;
-        IntBinaryOperator intBinaryOperator = (int x, int y) -> 5;
 
+
+        BiFunction<Integer, Integer, Integer> bf1 = (var x, var y) -> 5;
+        BiFunction<Integer, Integer, Integer> bf2 = (Integer x, Integer y) -> 5;
+        IntBinaryOperator intBinaryOperator = (int x, int y) -> 5;
 
 
     }

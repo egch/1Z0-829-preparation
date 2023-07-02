@@ -13,11 +13,11 @@ public class TrickyVar {
 }
 
 class Var {
-    public void var(){
+    public void var() {
         var var = "var";
     }
 
-    public void Var(){
+    public void Var() {
         Var var = new Var();
     }
 }

@@ -7,16 +7,16 @@ public class PatternMatching {
     }
 
 
-    void pattern(Object object){
-        if(object instanceof String s){
-            System.out.println("length of string is "+s.length());
+    void pattern(Object object) {
+        if (object instanceof String s) {
+            System.out.println("length of string is " + s.length());
         }
     }
 
-    void accessingOutOfScope(Object object){
-        if(!(object instanceof String s) || s.equals("enrico")){
+    void accessingOutOfScope(Object object) {
+        if (!(object instanceof String s) || s.equals("enrico")) {
             System.out.println("bye bye");
-        }else{
+        } else {
             System.out.println(s);
         }
 

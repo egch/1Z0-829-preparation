@@ -9,9 +9,9 @@ public class SwitchDay {
     }
 
 
-    void workOrChillOut(DayOfWeek day){
+    void workOrChillOut(DayOfWeek day) {
         //with the new switch I can have multiple case in the same line
-        switch (day){
+        switch (day) {
             case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY:
                 System.out.println("You have to work!");
                 break;
@@ -21,8 +21,8 @@ public class SwitchDay {
         }
     }
 
-    void printItalianDay(DayOfWeek day){
-        var result = switch (day){
+    void printItalianDay(DayOfWeek day) {
+        var result = switch (day) {
             case MONDAY -> "lunedi";
             case TUESDAY -> "martedi";
             case WEDNESDAY -> "mercoledi";
@@ -31,7 +31,7 @@ public class SwitchDay {
             case SATURDAY -> "sabato";
             case SUNDAY -> "domenica";
         };
-        System.out.println("today is: "+result);
+        System.out.println("today is: " + result);
     }
 }
 

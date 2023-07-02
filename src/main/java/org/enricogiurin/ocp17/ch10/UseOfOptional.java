@@ -7,9 +7,10 @@ public class UseOfOptional {
     public static void main(String[] args) {
         new UseOfOptional().use();
     }
+
     void use() {
         Optional<Integer> optionalInteger = Optional.of(10);
-        if(optionalInteger.isPresent()){
+        if (optionalInteger.isPresent()) {
             System.out.println(optionalInteger.get());
         }
         //lambda usage

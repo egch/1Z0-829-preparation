@@ -13,5 +13,9 @@ public class OverrideAccessorMethod {
 
 record BeardedDragon(boolean fun, String name) {
     //we just override one of the 2 accessor methods
-    @Override public boolean fun() { return false; } }
+    @Override
+    public boolean fun() {
+        return false;
+    }
+}
 

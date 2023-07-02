@@ -6,11 +6,11 @@ public class ReThrowException {
         new ReThrowException().handleException();
     }
 
-    void handleException(){
+    void handleException() {
         try {
             throw new RuntimeException("error");
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             throw e;
         }
