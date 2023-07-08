@@ -10,10 +10,10 @@ public class UseOfResourceBundle {
 
     void zoo() {
         Locale it = new Locale(Locale.ITALIAN.getLanguage(), Locale.ITALY.getCountry());
-        ResourceBundle bundle = ResourceBundle.getBundle("ch17.Zoo", it);
+        ResourceBundle bundle = ResourceBundle.getBundle("ch11.Zoo", it);
         //Ciao, Lo zoo è aperto
         System.out.println(bundle.getString("hello") + ", " + bundle.getString("open"));
-        ResourceBundle defaultBundle = ResourceBundle.getBundle("ch17.Zoo");
+        ResourceBundle defaultBundle = ResourceBundle.getBundle("ch11.Zoo");
         //Hello, The Zoo is open
         System.out.println(defaultBundle.getString("hello") + ", " + defaultBundle.getString("open"));
     }
