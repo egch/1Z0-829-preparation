@@ -17,3 +17,4 @@ https://education.oracle.com/java-se-17-developer/pexam_1Z0-829
 10. [Streams](docs/ch10.md)
 11. [Exceptions and Localization](docs/ch11.md)
 12. [Modules](docs/ch12.md)
+13. [Concurrency](docs/ch13.md)
