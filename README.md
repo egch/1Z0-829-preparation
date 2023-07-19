@@ -16,3 +16,4 @@ https://education.oracle.com/java-se-17-developer/pexam_1Z0-829
 9. [Collections and Generics](docs/ch9.md)
 10. [Streams](docs/ch10.md)
 11. [Exceptions and Localization](docs/ch11.md)
+12. [Modules](docs/ch12.md)
