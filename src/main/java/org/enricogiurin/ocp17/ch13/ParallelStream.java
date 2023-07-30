@@ -7,7 +7,8 @@ public class ParallelStream {
     public static void main(String[] args) {
         //new ParallelStream().calculate();
         //new ParallelStream().calculateParallel();
-        new ParallelStream().calculateParallelOrdered();
+        //   new ParallelStream().calculateParallelOrdered();
+        new ParallelStream().forEachOrdered();
     }
 
     void calculate() {
@@ -46,14 +47,27 @@ public class ParallelStream {
                 .forEachOrdered(s-> System.out.print(s+" "));
         System.out.println();
         long time = System.currentTimeMillis() - start;
-        System.out.println("time taken: "+time+" seconds");
+        System.out.println("time taken: " + time + " seconds");
     }
-    int pow2(int value){
+
+    int pow2(int value) {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         return value * value;
+    }
+
+    //The forEachOrdered() method will process the elements in the order in which they are stored in the stream
+    void forEachOrdered() {
+        var data = List.of(2, 5, 1, 9, 8);
+        data.stream().parallel()
+                .mapToInt(s -> s)
+                //order cannot be determined
+                .peek(System.out::print)
+                //original ordered: 2,5,1,9,8
+                .forEachOrdered(System.out::print);
+
     }
 }
