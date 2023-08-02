@@ -7,8 +7,9 @@ import java.util.stream.Stream;
 
 public class MethodsOfPath {
     public static void main(String[] args) throws IOException {
-        new MethodsOfPath().report();
-        new MethodsOfPath().list();
+      // new MethodsOfPath().report();
+      // new MethodsOfPath().list();
+      new MethodsOfPath().pathElements();
     }
     void report() throws IOException {
         //relative path
@@ -28,13 +29,50 @@ public class MethodsOfPath {
         }
     }
 
-    void list() throws IOException {
-        Path tmp = Path.of("/tmp");
-        if(Files.isDirectory(tmp)) {
-            try(Stream<Path> stream = Files.list(tmp)) {
-                //some files present in the /tmp folder
-                stream.forEach(path -> System.out.println(path.getFileName()));
-            }
-        }
+  void list() throws IOException {
+    Path tmp = Path.of("/tmp");
+    if (Files.isDirectory(tmp)) {
+      try (Stream<Path> stream = Files.list(tmp)) {
+        //some files present in the /tmp folder
+        stream.forEach(path -> System.out.println(path.getFileName()));
+      }
     }
+  }
+
+  void nameCount() {
+    Path pom = Path.of("pom.xml");
+    //path are immutable so left assign it
+    pom = pom.toAbsolutePath();
+    if (Files.exists(pom)) {
+      System.out.println("path: " + pom);
+      System.out.println("size of names: " + pom.getNameCount());
+      for (int j = 0; j < pom.getNameCount(); j++) {
+        System.out.println(pom.getName(j));
+      }
+    }
+  }
+
+  void subPath() {
+    Path pom = Path.of("pom.xml").toAbsolutePath();
+    //  /Users/enrico/github/ocp17/1Z0-829-preparation/pom.xml
+    System.out.println("path: " + pom);
+    //6
+    System.out.println("size of names: " + pom.getNameCount());
+    //Users/enrico/github
+    System.out.println("sub-path[0,3]: " + pom.subpath(0, 3));
+
+    //github/ocp17/1Z0-829-preparation/pom.xml
+    System.out.println("sub-path[2,3]: " + pom.subpath(2, pom.getNameCount()));
+  }
+
+  void pathElements() {
+    Path pom = Path.of("pom.xml").toAbsolutePath();
+    System.out.println("path: " + pom);
+    //pom.xml
+    System.out.println("file name: " + pom.getFileName());
+    ///Users/enrico/github/ocp17/1Z0-829-preparation
+    System.out.println("folder name: " + pom.getParent());
+    // /
+    System.out.println("root name: " + pom.getRoot());
+  }
 }
