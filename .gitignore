@@ -10,3 +10,7 @@ buildNumber.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 /.idea/
+/zoo.tmp/
+/zoo.log
+/zoo.properties
+/zoo.script
