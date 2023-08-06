@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.ch14;
+package org.enricogiurin.ocp17.ch14.io;
 
 import java.io.BufferedReader;
 import java.io.File;

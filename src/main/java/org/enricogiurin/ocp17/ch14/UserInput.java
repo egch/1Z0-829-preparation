@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 public class UserInput {
 
   public static void main(String[] args) throws IOException {
-    new UserInput().mark();
+    new UserInput().console();
   }
 
   void readFromInput() throws IOException {
@@ -41,7 +41,30 @@ public class UserInput {
       System.out.println((char) inputStream.read());
       System.out.println((char) inputStream.read());
     }
+  }
+
+  void markLimit() throws IOException {
+    final String name = "ciao";
+    try (InputStream inputStream = new ByteArrayInputStream(name.getBytes())) {
+      if (inputStream.markSupported()) {
+        inputStream.mark(1);
+        System.out.println((char) inputStream.read());
+        System.out.println((char) inputStream.read());
+        System.out.println((char) inputStream.read());
+        System.out.println((char) inputStream.read());
+        System.out.println((char) inputStream.read());
+        System.out.println((char) inputStream.read());
+        System.out.println((char) inputStream.read());
+        System.out.println((char) inputStream.read());
+        System.out.println((char) inputStream.read());
+        System.out.println((char) inputStream.read());
+        inputStream.reset();
+      }
+      System.out.println((char) inputStream.read());
+      System.out.println((char) inputStream.read());
+    }
 
   }
+
 
 }

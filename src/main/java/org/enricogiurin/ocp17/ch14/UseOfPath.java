@@ -5,19 +5,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class FileAndPath {
+public class UseOfPath {
+
     public static void main(String[] args) {
         //new FileAndPath().file();
         //new FileAndPath().path();
-        new FileAndPath().pathsGet();
-    }
-    void file() {
-        File pom = new File("/Users/enrico/github/ocp17/1Z0-829-preparation/pom.xml");
-        File notExisting = new File("/notExistingFolder/notAFile");
-        //true
-        System.out.println(pom.exists());
-        //false
-        System.out.println(notExisting.exists());
+        new UseOfPath().pathsGet();
     }
 
     void path() {

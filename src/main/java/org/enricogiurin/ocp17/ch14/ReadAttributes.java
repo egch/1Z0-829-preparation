@@ -6,8 +6,8 @@ import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributeView;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
-import java.time.Duration;
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 
 public class ReadAttributes {
 
@@ -38,9 +38,14 @@ public class ReadAttributes {
     Path hw = Path.of("/tmp/helloworld.txt");
     BasicFileAttributeView view = Files.getFileAttributeView(hw,
         BasicFileAttributeView.class);
-    FileTime now = FileTime.from(Instant.now().minus(Duration.ofDays(1)));
+    BasicFileAttributes attributes = Files.readAttributes(hw, BasicFileAttributes.class);
+    System.out.println("lastModifiedTime: " + attributes.lastModifiedTime());
+    //now we change the get lastModified Time to now
+    FileTime now = FileTime.from(Instant.now().minus(1, ChronoUnit.DAYS));
     //change last modified time of a file
     view.setTimes(now, null, null);
+    attributes = Files.readAttributes(hw, BasicFileAttributes.class);
+    System.out.println("lastModifiedTime: " + attributes.lastModifiedTime());
   }
 
 }
