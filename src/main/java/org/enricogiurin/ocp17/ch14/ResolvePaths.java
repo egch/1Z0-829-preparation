@@ -1,23 +1,25 @@
 package org.enricogiurin.ocp17.ch14;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class ResolvePaths {
 
   public static void main(String[] args) throws IOException {
-    new ResolvePaths().toRealPathNotExisting();
+    new ResolvePaths().resolveFolderExisting();
   }
 
   void resolve() {
     Path path1 = Path.of("/folderA/folderB/file");  //absolute path
     Path path2 = Path.of("folderC"); //relative path
-    System.out.println("path: " + path1);
-    System.out.println("path: " + path2);
+    System.out.println("path1: " + path1);
+    System.out.println("path2: " + path2);
     ///folderA/folderB/file/folderC
-    System.out.println(path1.resolve(path2));
+    System.out.println("p1 resolve to p2: "+path1.resolve(path2));
     // /folderA/folderB/file  (
-    System.out.println(path2.resolve(path1));
+    System.out.println("p2 resolve to p1: "+path2.resolve(path1));
   }
 
   void relativize() {
@@ -52,6 +54,17 @@ public class ResolvePaths {
 
     //Exception in thread "main" java.nio.file.NoSuchFileException: cicciopasticcio.txt
     System.out.println(notAFile.toRealPath());
+  }
+
+  //we assume the link exist and also the corresponding target folder /tmp/a/b
+  //when executed the second time it throws an exception
+  //Exception in thread "main" java.nio.file.FileAlreadyExistsException: /tmp/link/joey
+  ///tmp/a/b/joey
+
+  void resolveFolderExisting() throws IOException {
+    var path = Paths.get("/tmp/link");
+    if(Files.isDirectory(path) && Files.isSymbolicLink(path))
+      Files.createDirectory(path.resolve("joey"));
   }
 
 }
