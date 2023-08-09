@@ -3,13 +3,14 @@ package org.enricogiurin.ocp17.ch14;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 public class MethodsOfPath {
     public static void main(String[] args) throws IOException {
       // new MethodsOfPath().report();
       // new MethodsOfPath().list();
-      new MethodsOfPath().pathElements();
+      new MethodsOfPath().subPath2();
     }
     void report() throws IOException {
         //relative path
@@ -63,6 +64,12 @@ public class MethodsOfPath {
 
     //github/ocp17/1Z0-829-preparation/pom.xml
     System.out.println("sub-path[2,3]: " + pom.subpath(2, pom.getNameCount()));
+  }
+
+  void subPath2() {
+    var p2 = Paths.get("/zoo/animals/bear/koala/food.txt");
+    //                       0     1      2    3     4
+    System.out.println(p2.subpath(1,3).getName(1));
   }
 
   void pathElements() {

@@ -6,11 +6,13 @@ import java.io.Console;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringReader;
 
 public class UserInput {
 
   public static void main(String[] args) throws IOException {
-    new UserInput().console();
+    new UserInput().markSkip();
   }
 
   void readFromInput() throws IOException {
@@ -66,5 +68,31 @@ public class UserInput {
 
   }
 
+
+  void markSkip() throws IOException {
+    var sb = new StringBuilder();
+    try (Reader reader = new StringReader("PEACOCKS")) {
+      sb.append((char) reader.read());  //P added
+      System.out.println("markSupported: "+reader.markSupported());
+
+      //since we are using StringReader the parameter passed
+      //(as long as greater than zero) has no effect
+      reader.mark(1);
+      for (int i = 0; i < 2; i++) {
+        sb.append((char) reader.read());
+        long skip = reader.skip(2);
+        //  (0) E added | AC skipped
+        //  (1) O added | CK skipped
+        System.out.println("skip: "+skip);
+      }
+      //reset to E
+      reader.reset();
+      reader.skip(0);
+      //E added
+      sb.append((char)reader.read());
+    }
+    //PEOE
+    System.out.println(sb);
+  }
 
 }

@@ -1,6 +1,7 @@
 package org.enricogiurin.ocp17.ch14.io;
 
 import java.io.File;
+import java.nio.file.Path;
 
 public class UseOfFile {
 
@@ -25,8 +26,14 @@ public class UseOfFile {
     //this method does not throw an exception but returns false
     boolean deleted = notExistingFile.delete();
     System.out.println("file deleted? " + deleted);
+  }
 
-
+  void fileCreation() {
+    //existing path: /weather/winter/snow.dat
+    File fileA = new File("/weather/winter/snow.dat");
+    File fileB = new File(new File("/weather/winter"), "snow.dat");
+    File fileC = Path.of("/weather/winer/snow.dat").toFile();
+    //fileA, B, C represent the same file
   }
 
 
