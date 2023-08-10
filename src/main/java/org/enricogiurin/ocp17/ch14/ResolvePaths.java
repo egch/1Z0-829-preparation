@@ -8,18 +8,31 @@ import java.nio.file.Paths;
 public class ResolvePaths {
 
   public static void main(String[] args) throws IOException {
-    new ResolvePaths().resolveFolderExisting();
+    new ResolvePaths().toRealPath();
   }
 
   void resolve() {
-    Path path1 = Path.of("/folderA/folderB/file");  //absolute path
-    Path path2 = Path.of("folderC"); //relative path
-    System.out.println("path1: " + path1);
-    System.out.println("path2: " + path2);
-    ///folderA/folderB/file/folderC
-    System.out.println("p1 resolve to p2: "+path1.resolve(path2));
-    // /folderA/folderB/file  (
-    System.out.println("p2 resolve to p1: "+path2.resolve(path1));
+    //absolute & relative
+    //p1 resolve to p2: /tmp/relative
+    //p2 resolve to p1: /tmp
+    resolve(Path.of("/tmp"), Path.of("relative"));
+
+    //absolute & absolute
+    //p1 resolve to p2: /tmp2
+    //p2 resolve to p1: /tmp1
+    resolve(Path.of("/tmp1"), Path.of("/tmp2"));
+
+    //absolute & absolute
+    //p1 resolve to p2: relative1/relative2
+    //p2 resolve to p1: relative2/relative1
+    resolve(Path.of("relative1"), Path.of("relative2"));
+  }
+
+  private void resolve(Path p1, Path p2) {
+    System.out.println("p1: "+p1);
+    System.out.println("p2: "+p2);
+    System.out.println("p1 resolve to p2: "+p1.resolve(p2));
+    System.out.println("p2 resolve to p1: "+p2.resolve(p1));
   }
 
   void relativize() {
