@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class UseOfArrays {
     public static void main(String[] args) {
-        new UseOfArrays().mismatch();
+        new UseOfArrays().compare();
     }
 
     void callProcess() {
@@ -37,5 +37,18 @@ public class UseOfArrays {
         String[] s2 = {"Camel", "Llama", "Peacock"};
         int position = Arrays.mismatch(s1, s2); //first element to differ is at position 1
         System.out.println(position);
+    }
+
+
+    void compare() {
+        int[] array1 = {1,3,5};
+        int[] array2 = {1,3,5};
+        int[] array3 = {1,5,5};
+        int result = Arrays.compare(array1, array2);
+        //0
+        System.out.println(result);
+        result = Arrays.compare(array1, array3);
+        //-1
+        System.out.println(result);
     }
 }

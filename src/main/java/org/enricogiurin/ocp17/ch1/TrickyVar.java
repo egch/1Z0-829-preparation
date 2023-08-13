@@ -6,7 +6,13 @@ public class TrickyVar {
     public static void main(String[] args) {
         Var var = new Var();
         var.var();
+    }
 
+
+    void forVar(){
+        for (var j = 0; j < 10; j++) {
+
+        }
     }
 
 
