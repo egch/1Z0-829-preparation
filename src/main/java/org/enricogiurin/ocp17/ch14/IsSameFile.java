@@ -8,7 +8,7 @@ import java.nio.file.Path;
 public class IsSameFile {
 
   public static void main(String[] args) throws IOException {
-    new IsSameFile().comparePaths();
+    new IsSameFile().mismatch();
 
   }
 

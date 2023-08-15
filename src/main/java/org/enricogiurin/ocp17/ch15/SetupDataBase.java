@@ -36,6 +36,7 @@ public class SetupDataBase {
     run(conn, "DROP TABLE habitat IF EXISTS");
     run(conn, "DROP TABLE games IF EXISTS");
     run(conn, "DROP TABLE counts IF EXISTS");
+    run(conn, "DROP TABLE people IF EXISTS");
   }
 
   private static void createTables(Connection conn) throws SQLException {
@@ -65,6 +66,12 @@ public class SetupDataBase {
         CREATE TABLE counts (
         id INTEGER PRIMARY KEY,
         num INTEGER)""");
+
+    run(conn, """
+        CREATE TABLE people (
+        id INTEGER PRIMARY KEY,
+        name VARCHAR(255),
+        state VARCHAR(255))""");
 
     run(conn, "INSERT INTO exhibits VALUES (1, 'African Elephant', 7.5)");
     run(conn, "INSERT INTO exhibits VALUES (2, 'Zebra', 1.2)");

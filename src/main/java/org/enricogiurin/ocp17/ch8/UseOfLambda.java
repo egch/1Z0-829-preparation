@@ -25,5 +25,7 @@ public class UseOfLambda {
             return start <= c && c <= end;
         };
     }
+
+
 }
 

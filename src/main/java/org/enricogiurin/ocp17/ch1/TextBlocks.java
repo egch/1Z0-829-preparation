@@ -40,11 +40,11 @@ public class TextBlocks {
 
     //will print only 2 line as there is a backslash
     static void countLines() {
-        var blocky = """ 
+        var block = """ 
                 squirrel \s
                 pigeon \
                 termite""";
-        System.out.print(blocky);
+        System.out.print(block);
     }
 
 

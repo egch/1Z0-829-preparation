@@ -28,6 +28,9 @@ public class SwitchYield {
       default -> {
           if (10 > score1) {
               yield "unknown";
+          }else{
+            yield "ciao";
+
           }
       }
       case score1 -> "great";

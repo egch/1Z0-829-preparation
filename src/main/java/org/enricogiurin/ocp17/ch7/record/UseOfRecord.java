@@ -12,6 +12,3 @@ public class UseOfRecord {
 record Person(String firstName, String lastName) {
 
 }
-
-
-
