@@ -6,7 +6,7 @@ import java.util.TreeSet;
 
 public class CollectionsOfGenerics {
 
-  void extendsType(){
+  void extendsType() {
 
     //on the right side I can use any exceptions child of RTE
     Set<? extends RuntimeException> set1 = new HashSet<RuntimeException>();

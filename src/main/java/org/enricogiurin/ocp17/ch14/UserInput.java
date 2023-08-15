@@ -73,7 +73,7 @@ public class UserInput {
     var sb = new StringBuilder();
     try (Reader reader = new StringReader("PEACOCKS")) {
       sb.append((char) reader.read());  //P added
-      System.out.println("markSupported: "+reader.markSupported());
+      System.out.println("markSupported: " + reader.markSupported());
 
       //since we are using StringReader the parameter passed
       //(as long as greater than zero) has no effect
@@ -83,13 +83,13 @@ public class UserInput {
         long skip = reader.skip(2);
         //  (0) E added | AC skipped
         //  (1) O added | CK skipped
-        System.out.println("skip: "+skip);
+        System.out.println("skip: " + skip);
       }
       //reset to E
       reader.reset();
       reader.skip(0);
       //E added
-      sb.append((char)reader.read());
+      sb.append((char) reader.read());
     }
     //PEOE
     System.out.println(sb);

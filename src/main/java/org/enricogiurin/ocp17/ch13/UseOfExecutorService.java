@@ -7,23 +7,23 @@ import java.util.concurrent.Future;
 
 public class UseOfExecutorService {
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
-        new UseOfExecutorService().submit();
-    }
+  public static void main(String[] args) throws ExecutionException, InterruptedException {
+    new UseOfExecutorService().submit();
+  }
 
-    void submit() throws ExecutionException, InterruptedException {
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-        Future<?> future;
-        try {
-            future = executorService.submit(() -> System.out.println("hello"));
-        } finally {
-            executorService.shutdown();
-        }
-        //get on a Future<?> returns null
-        Object nullObject = future.get();
-        //null
-        System.out.println(nullObject);
-
+  void submit() throws ExecutionException, InterruptedException {
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+    Future<?> future;
+    try {
+      future = executorService.submit(() -> System.out.println("hello"));
+    } finally {
+      executorService.shutdown();
     }
+    //get on a Future<?> returns null
+    Object nullObject = future.get();
+    //null
+    System.out.println(nullObject);
+
+  }
 
 }

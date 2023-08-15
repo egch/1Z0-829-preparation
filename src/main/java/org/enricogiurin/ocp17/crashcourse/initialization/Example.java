@@ -3,54 +3,57 @@ package org.enricogiurin.ocp17.crashcourse.initialization;
 import static java.lang.System.out;
 
 class Parent {
-    static int x = 99;
 
-    static {
-        out.print(", P-si: x is " + Parent.x);
-    }
+  static int x = 99;
 
-    int y = 100;
+  static {
+    out.print(", P-si: x is " + Parent.x);
+  }
 
-    {
-        y++;
-        out.print(", P-i: y is " + y);
-    }
+  int y = 100;
 
-    Parent(int x) {
-        y += x;
-        out.print(", P-c: y is " + y);
-    }
+  {
+    y++;
+    out.print(", P-i: y is " + y);
+  }
+
+  Parent(int x) {
+    y += x;
+    out.print(", P-c: y is " + y);
+  }
 }
 
 class Child extends Parent {
-    static int y = 300;
 
-    static {
-        out.print(", C-si: y is " + y);
-    }
+  static int y = 300;
 
-    int x = 200;
+  static {
+    out.print(", C-si: y is " + y);
+  }
 
-    {
-        out.print(", C-i x: is " + x);
-    }
+  int x = 200;
 
-    //  Child() { super(x); }
-    Child() {
-        super(100);
-    } // avoid the compilation failure!
+  {
+    out.print(", C-i x: is " + x);
+  }
 
-    Child(int x) {
-        this();
-    }
+  //  Child() { super(x); }
+  Child() {
+    super(100);
+  } // avoid the compilation failure!
+
+  Child(int x) {
+    this();
+  }
 }
 
 class InitOrder3 {
-    public static void main(String[] args) {
-        out.print("Hello!");
-        new Child(-1);
-        out.println(" Goodbye!");
-    }
+
+  public static void main(String[] args) {
+    out.print("Hello!");
+    new Child(-1);
+    out.println(" Goodbye!");
+  }
 }
 //What is the result?
 //A) Compilation fails
@@ -60,4 +63,5 @@ class InitOrder3 {
 //E) Hello!, P-si: x is 99, C-si: y is 300, P-i: y is 101, P-c: y is 100Goodbye!
 
 public class Example {
+
 }

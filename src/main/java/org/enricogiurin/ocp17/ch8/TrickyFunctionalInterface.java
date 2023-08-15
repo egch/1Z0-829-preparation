@@ -5,8 +5,10 @@ package org.enricogiurin.ocp17.ch8;
 //this is not a FI as toString is defined in Object class
 //@FunctionalInterface
 interface Soar {
-    String toString();
+
+  String toString();
 }
 
 public class TrickyFunctionalInterface {
+
 }

@@ -19,30 +19,30 @@ public class SerializationWithExtend {
   void serializeAndDeserialize() throws IOException, ClassNotFoundException {
     Eagle eagle = new Eagle();
     //name: Bridget
-    System.out.println("name: "+eagle.getName());
-    System.out.println("age: "+eagle.getAge());
+    System.out.println("name: " + eagle.getName());
+    System.out.println("age: " + eagle.getAge());
     serialize(eagle);
     System.out.println("Eagle serialized");
     Eagle deserializeEagle = deserialize();
     //name: Matt
-    System.out.println("name: "+deserializeEagle.getName());
+    System.out.println("name: " + deserializeEagle.getName());
 
     //age is not transient
-    System.out.println("age: "+deserializeEagle.getAge());
+    System.out.println("age: " + deserializeEagle.getAge());
 
   }
 
   private void serialize(Eagle eagle) throws IOException {
     Path dest = Path.of("/tmp", "Eagle.ser");
-    try(ObjectOutputStream oos = new ObjectOutputStream(Files.newOutputStream(dest))){
+    try (ObjectOutputStream oos = new ObjectOutputStream(Files.newOutputStream(dest))) {
       oos.writeObject(eagle);
     }
   }
 
   private Eagle deserialize() throws IOException, ClassNotFoundException {
     Path source = Path.of("/tmp", "Eagle.ser");
-    try(ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(source))){
-      return  (Eagle)ois.readObject();
+    try (ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(source))) {
+      return (Eagle) ois.readObject();
     }
   }
 }
@@ -50,23 +50,23 @@ public class SerializationWithExtend {
 class Bird {
 
   protected transient String name;
-  protected  int age;
+  protected int age;
 
-  public void setName(String name) {
-    this.name = name;
+  public Bird() {
+    this.name = "Matt";
+    this.age = 30;
   }
 
   public String getName() {
     return name;
   }
 
-  public int getAge() {
-    return age;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public Bird() {
-    this.name = "Matt";
-    this.age = 30;
+  public int getAge() {
+    return age;
   }
 }
 

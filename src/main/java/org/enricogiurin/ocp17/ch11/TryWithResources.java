@@ -7,85 +7,86 @@ import java.io.InputStreamReader;
 
 public class TryWithResources {
 
-    static final String PATH = "/files/sentences.txt";
+  static final String PATH = "/files/sentences.txt";
 
-    public static void main(String[] args) {
-        new TryWithResources().statement();
+  public static void main(String[] args) {
+    new TryWithResources().statement();
+  }
+
+  void readFile() {
+    try (InputStream inputStream = getClass().getResourceAsStream(PATH);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+      String line;
+      while ((line = reader.readLine()) != null) {
+        System.out.println(line);
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
     }
+  }
 
-    void readFile() {
-        try (InputStream inputStream = getClass().getResourceAsStream(PATH);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    //output:
+  //output:
 //    try
 //    1
 //    closing: 2
 //    closing: 1
 //    catch
 //    finally
-    void statement() {
-        try (MyFileClass mf1 = new MyFileClass(1);
-             MyFileClass mf2 = new MyFileClass(2)) {
+  void statement() {
+    try (MyFileClass mf1 = new MyFileClass(1);
+        MyFileClass mf2 = new MyFileClass(2)) {
 
-            System.out.println("try");
-            System.out.println(mf1.num);
-            throw new RuntimeException();
+      System.out.println("try");
+      System.out.println(mf1.num);
+      throw new RuntimeException();
 
-        } catch (Exception e) {
-            //mf1 is not in scope, only in the try block
-            // System.out.println(mf1.num);
-            System.out.println("catch");
-        } finally {
-            System.out.println("finally");
-        }
+    } catch (Exception e) {
+      //mf1 is not in scope, only in the try block
+      // System.out.println(mf1.num);
+      System.out.println("catch");
+    } finally {
+      System.out.println("finally");
     }
+  }
 
-    void effectiveFinal() {
-        //alternative way, but mf1 needs to be final or effective final
-        var mf1 = new MyFileClass(1);
-        try (mf1) {
+  void effectiveFinal() {
+    //alternative way, but mf1 needs to be final or effective final
+    var mf1 = new MyFileClass(1);
+    try (mf1) {
 
-        } catch (Exception e) {
-
-        }
-
-    }
-
-    void noteEfectiveFinal() {
-        //alternative way, but mf1 needs to be final or effective final
-        var mf1 = new MyFileClass(1);
-        //Variable used as a try-with-resources resource should be final or effectively final
-        try (mf1) {
-            //with this uncommented won't compile
-            //  mf1=null;
-
-        } catch (Exception e) {
-
-        }
+    } catch (Exception e) {
 
     }
 
-    private static class MyFileClass implements AutoCloseable {
-        final int num;
+  }
 
-        public MyFileClass(int num) {
-            this.num = num;
-        }
+  void noteEfectiveFinal() {
+    //alternative way, but mf1 needs to be final or effective final
+    var mf1 = new MyFileClass(1);
+    //Variable used as a try-with-resources resource should be final or effectively final
+    try (mf1) {
+      //with this uncommented won't compile
+      //  mf1=null;
 
-        @Override
-        public void close() throws Exception {
-            System.out.println("closing: " + num);
-        }
+    } catch (Exception e) {
+
     }
+
+  }
+
+  private static class MyFileClass implements AutoCloseable {
+
+    final int num;
+
+    public MyFileClass(int num) {
+      this.num = num;
+    }
+
+    @Override
+    public void close() throws Exception {
+      System.out.println("closing: " + num);
+    }
+  }
 
 
 }

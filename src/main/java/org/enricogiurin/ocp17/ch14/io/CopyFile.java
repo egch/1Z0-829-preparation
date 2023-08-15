@@ -26,7 +26,7 @@ public class CopyFile {
       char[] buffer = new char[10];
       while (reader.read(buffer) != -1) {
         //the buffer can contains previous read
-        System.out.println("buffer: "+new String(buffer));
+        System.out.println("buffer: " + new String(buffer));
         writer.write(buffer);
       }
     }

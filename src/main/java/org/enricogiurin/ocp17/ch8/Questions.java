@@ -5,13 +5,13 @@ import java.util.function.Predicate;
 
 public class Questions {
 
-    public void remove(List<Character> chars) {
-        char end = 'z';
-        Predicate<Character> predicate = c -> {
-            char start = 'a';
-            return start <= c && c <= end;
-        };
-        char c = 'x';
+  public void remove(List<Character> chars) {
+    char end = 'z';
+    Predicate<Character> predicate = c -> {
+      char start = 'a';
+      return start <= c && c <= end;
+    };
+    char c = 'x';
 // INSERT LINE HERE
-    }
+  }
 }

@@ -6,20 +6,20 @@ import java.util.concurrent.TimeUnit;
 
 public class UseOfScheduledExecutorService {
 
-    public static void main(String[] args) {
-        new UseOfScheduledExecutorService().schedule();
-    }
+  public static void main(String[] args) {
+    new UseOfScheduledExecutorService().schedule();
+  }
 
-    //done
-    //hello
-    void schedule() {
-        ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+  //done
+  //hello
+  void schedule() {
+    ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
 
-        try {
-            scheduledExecutorService.schedule(() -> System.out.println("hello"), 2L, TimeUnit.SECONDS);
-        } finally {
-            scheduledExecutorService.shutdown();
-        }
-        System.out.println("done");
+    try {
+      scheduledExecutorService.schedule(() -> System.out.println("hello"), 2L, TimeUnit.SECONDS);
+    } finally {
+      scheduledExecutorService.shutdown();
     }
+    System.out.println("done");
+  }
 }

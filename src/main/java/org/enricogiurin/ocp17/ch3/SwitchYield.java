@@ -11,11 +11,11 @@ public class SwitchYield {
       case 1 -> "x is 5";
       default -> {
         //yield is used instead of return
-          if (x > 5) {
-              yield "greater than 5";
-          } else {
-              yield "lower or equal than 5";
-          }
+        if (x > 5) {
+          yield "greater than 5";
+        } else {
+          yield "lower or equal than 5";
+        }
       }
     };
     System.out.println(result);
@@ -26,12 +26,12 @@ public class SwitchYield {
     char myScore = 7;
     var goal = switch (myScore) {
       default -> {
-          if (10 > score1) {
-              yield "unknown";
-          }else{
-            yield "ciao";
+        if (10 > score1) {
+          yield "unknown";
+        } else {
+          yield "ciao";
 
-          }
+        }
       }
       case score1 -> "great";
       case 2, 4, 6 -> "good";
@@ -44,7 +44,7 @@ public class SwitchYield {
 
   void switchComplex() {
     int parameter = 5;
-    int result = switch (parameter){
+    int result = switch (parameter) {
       case 0 -> 0;
       case 1 -> build();
       default -> 5;

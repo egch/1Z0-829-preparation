@@ -1,41 +1,42 @@
 package org.enricogiurin.ocp17.ch11;
 
 public class UseOfRuntimeException {
-    public static void main(String[] args) {
-        new UseOfRuntimeException().numberFormatException();
-    }
 
-    void arithmeticException() {
-        //Exception in thread "main" java.lang.ArithmeticException: / by zero
-        int result = 5 / 0;
-    }
+  public static void main(String[] args) {
+    new UseOfRuntimeException().numberFormatException();
+  }
 
-    void classCastException() {
-        String message = "ciao";
-        Object ref = message;
+  void arithmeticException() {
+    //Exception in thread "main" java.lang.ArithmeticException: / by zero
+    int result = 5 / 0;
+  }
 
-        //Exception in thread "main" java.lang.ClassCastException: class java.lang.String
-        // cannot be cast to class java.lang.Integer (java.lang.String and java.lang.Integer are in module java.base of loader 'bootstrap')
-        Integer number = (Integer) ref;
-    }
+  void classCastException() {
+    String message = "ciao";
+    Object ref = message;
 
-    void arrayIndexOutOfBoundsException() {
-        int[] array = {};
-        //Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
-        int first = array[0];
-    }
+    //Exception in thread "main" java.lang.ClassCastException: class java.lang.String
+    // cannot be cast to class java.lang.Integer (java.lang.String and java.lang.Integer are in module java.base of loader 'bootstrap')
+    Integer number = (Integer) ref;
+  }
 
-    void nullPointerException() {
-        String message = "ciao";
-        message = null;
-        //Exception in thread "main" java.lang.NullPointerException: Cannot invoke "String.length()" because "message" is null
-        int length = message.length();
-    }
+  void arrayIndexOutOfBoundsException() {
+    int[] array = {};
+    //Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+    int first = array[0];
+  }
 
-    void numberFormatException() {
-        //Exception in thread "main" java.lang.NumberFormatException: For input string: "abc"
-        int value = Integer.parseInt("abc");
-    }
+  void nullPointerException() {
+    String message = "ciao";
+    message = null;
+    //Exception in thread "main" java.lang.NullPointerException: Cannot invoke "String.length()" because "message" is null
+    int length = message.length();
+  }
+
+  void numberFormatException() {
+    //Exception in thread "main" java.lang.NumberFormatException: For input string: "abc"
+    int value = Integer.parseInt("abc");
+  }
 
 
 }

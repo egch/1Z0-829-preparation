@@ -10,7 +10,7 @@ public class TrickyLambda {
     //Autoboxing works for collections, not inferring predicates.
     //incompatible parameter types in lambda expression: expected Integer but found int
     //trickyLambda.build((int x)->x>5);
-    trickyLambda.build((Integer x)->x>5);  //this is valid
+    trickyLambda.build((Integer x) -> x > 5);  //this is valid
   }
 
   void build(Function<Integer, Boolean> function) {

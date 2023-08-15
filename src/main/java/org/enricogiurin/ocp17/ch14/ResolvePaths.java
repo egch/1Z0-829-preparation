@@ -29,10 +29,10 @@ public class ResolvePaths {
   }
 
   private void resolve(Path p1, Path p2) {
-    System.out.println("p1: "+p1);
-    System.out.println("p2: "+p2);
-    System.out.println("p1 resolve to p2: "+p1.resolve(p2));
-    System.out.println("p2 resolve to p1: "+p2.resolve(p1));
+    System.out.println("p1: " + p1);
+    System.out.println("p2: " + p2);
+    System.out.println("p1 resolve to p2: " + p1.resolve(p2));
+    System.out.println("p2 resolve to p1: " + p2.resolve(p1));
   }
 
   void relativize() {
@@ -76,8 +76,9 @@ public class ResolvePaths {
 
   void resolveFolderExisting() throws IOException {
     var path = Paths.get("/tmp/link");
-    if(Files.isDirectory(path) && Files.isSymbolicLink(path))
+    if (Files.isDirectory(path) && Files.isSymbolicLink(path)) {
       Files.createDirectory(path.resolve("joey"));
+    }
   }
 
 }

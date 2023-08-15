@@ -3,54 +3,58 @@ package org.enricogiurin.ocp17.crashcourse.init2;
 import static java.lang.System.out;
 
 class Parent {
-    static int x = 99;
 
-    static {
-        out.print(", P-si: x is " + Parent.x);
-    }
+  static int x = 99;
 
-    int y = 100;
+  static {
+    out.print(", P-si: x is " + Parent.x);
+  }
 
-    {
-        y++;
-        out.print(", P-i: y is " + y);
-    }
+  int y = 100;
 
-    Parent(int x) {
-        y += x;
-        out.print(", P-c: y is " + y);
-    }
+  {
+    y++;
+    out.print(", P-i: y is " + y);
+  }
+
+  Parent(int x) {
+    y += x;
+    out.print(", P-c: y is " + y);
+  }
 }
 
 class Child extends Parent {
-    static int y = 300;
 
-    static {
-        out.print(", C-si: y is " + y);
-    }
+  static int y = 300;
 
-    int x = 200;
+  static {
+    out.print(", C-si: y is " + y);
+  }
 
-    {
-        out.print(", C-i x: is " + x);
-    }
+  int x = 200;
 
-    Child() {
-        super(y);
-    }
+  {
+    out.print(", C-i x: is " + x);
+  }
 
-    Child(int x) {
-        this();
-    }
+  Child() {
+    super(y);
+  }
+
+  Child(int x) {
+    this();
+  }
 }
 
 class InitOrder3 {
-    public static void main(String[] args) {
-        out.print("Hello!");
-        new Child(-1);
-        out.println(" Goodbye!");
-    }
+
+  public static void main(String[] args) {
+    out.print("Hello!");
+    new Child(-1);
+    out.println(" Goodbye!");
+  }
 }
 
 public class Q {
+
 }

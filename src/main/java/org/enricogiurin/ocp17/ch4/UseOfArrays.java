@@ -3,52 +3,53 @@ package org.enricogiurin.ocp17.ch4;
 import java.util.Arrays;
 
 public class UseOfArrays {
-    public static void main(String[] args) {
-        new UseOfArrays().compare();
+
+  public static void main(String[] args) {
+    new UseOfArrays().compare();
+  }
+
+  void callProcess() {
+    //not compile
+    //process({0,1,2);
+    process(new int[]{1, 2, 3});
+  }
+
+  void process(int[] array) {
+    for (int element : array) {
+      System.out.println(element);
     }
+  }
 
-    void callProcess() {
-        //not compile
-        //process({0,1,2);
-        process(new int[]{1, 2, 3});
-    }
+  void sort() {
+    var arr = new String[]{"PIG", "pig", "123"};
+    //Numbers sort before letters and uppercase sorts before lowercase.
+    Arrays.sort(arr);  //"123", "PIG", "pig"
+    int position = Arrays.binarySearch(arr, "Pippa");
 
-    void process(int[] array) {
-        for (int element : array) {
-            System.out.println(element);
-        }
-    }
+    //result : -insertionPoint -1
+    //insertionPoint ideally would be 2 (after "PIG")
+    //-> result = -2 -1 = -3
+    System.out.println(position);  //-3
 
-    void sort() {
-        var arr = new String[]{"PIG", "pig", "123"};
-        //Numbers sort before letters and uppercase sorts before lowercase.
-        Arrays.sort(arr);  //"123", "PIG", "pig"
-        int position = Arrays.binarySearch(arr, "Pippa");
+  }
 
-        //result : -insertionPoint -1
-        //insertionPoint ideally would be 2 (after "PIG")
-        //-> result = -2 -1 = -3
-        System.out.println(position);  //-3
-
-    }
-
-    void mismatch() {
-        String[] s1 = {"Camel", "Peacock", "Llama"};
-        String[] s2 = {"Camel", "Llama", "Peacock"};
-        int position = Arrays.mismatch(s1, s2); //first element to differ is at position 1
-        System.out.println(position);
-    }
+  void mismatch() {
+    String[] s1 = {"Camel", "Peacock", "Llama"};
+    String[] s2 = {"Camel", "Llama", "Peacock"};
+    int position = Arrays.mismatch(s1, s2); //first element to differ is at position 1
+    System.out.println(position);
+  }
 
 
-    void compare() {
-        int[] array1 = {1,3,5};
-        int[] array2 = {1,3,5};
-        int[] array3 = {1,5,5};
-        int result = Arrays.compare(array1, array2);
-        //0
-        System.out.println(result);
-        result = Arrays.compare(array1, array3);
-        //-1
-        System.out.println(result);
-    }
+  void compare() {
+    int[] array1 = {1, 3, 5};
+    int[] array2 = {1, 3, 5};
+    int[] array3 = {1, 5, 5};
+    int result = Arrays.compare(array1, array2);
+    //0
+    System.out.println(result);
+    result = Arrays.compare(array1, array3);
+    //-1
+    System.out.println(result);
+  }
 }

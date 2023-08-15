@@ -7,28 +7,30 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 public class MethodsOfPath {
-    public static void main(String[] args) throws IOException {
-      // new MethodsOfPath().report();
-      // new MethodsOfPath().list();
-      new MethodsOfPath().subPath2();
-    }
-    void report() throws IOException {
-        //relative path
-        Path pom = Path.of("pom.xml");
-        System.out.println(pom.isAbsolute());
-        System.out.println(Files.isDirectory(pom));
-        ///Users/enrico/github/ocp17/1Z0-829-preparation/pom.xml
-        System.out.println(pom.toAbsolutePath());
-        System.out.println(pom.getParent());
 
-        //true
-        if(Files.isRegularFile(pom)){
-            //977
-            System.out.println(Files.size(pom));
-            //2023-04-19T21:15:14.783684507Z
-            System.out.println(Files.getLastModifiedTime(pom));
-        }
+  public static void main(String[] args) throws IOException {
+    // new MethodsOfPath().report();
+    // new MethodsOfPath().list();
+    new MethodsOfPath().subPath2();
+  }
+
+  void report() throws IOException {
+    //relative path
+    Path pom = Path.of("pom.xml");
+    System.out.println(pom.isAbsolute());
+    System.out.println(Files.isDirectory(pom));
+    ///Users/enrico/github/ocp17/1Z0-829-preparation/pom.xml
+    System.out.println(pom.toAbsolutePath());
+    System.out.println(pom.getParent());
+
+    //true
+    if (Files.isRegularFile(pom)) {
+      //977
+      System.out.println(Files.size(pom));
+      //2023-04-19T21:15:14.783684507Z
+      System.out.println(Files.getLastModifiedTime(pom));
     }
+  }
 
   void list() throws IOException {
     Path tmp = Path.of("/tmp");
@@ -69,7 +71,7 @@ public class MethodsOfPath {
   void subPath2() {
     var p2 = Paths.get("/zoo/animals/bear/koala/food.txt");
     //                       0     1      2    3     4
-    System.out.println(p2.subpath(1,3).getName(1));
+    System.out.println(p2.subpath(1, 3).getName(1));
   }
 
   void pathElements() {

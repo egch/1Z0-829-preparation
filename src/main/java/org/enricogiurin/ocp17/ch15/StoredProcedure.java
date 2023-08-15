@@ -4,7 +4,6 @@ import static org.enricogiurin.ocp17.ch15.SetupDataBase.URL;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Types;
 
@@ -25,7 +24,6 @@ public class StoredProcedure {
       System.out.println(cs.getInt("num"));
     }
   }
-
 
 
 }

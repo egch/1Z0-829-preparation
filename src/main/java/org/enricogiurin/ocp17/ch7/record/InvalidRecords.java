@@ -17,7 +17,8 @@ record Song(String lyrics) {
   //Cannot assign a value to final variable 'lyrics'
   Song {
     // this.lyrics = lyrics + "Hello World";
-  } }
+  }
+}
 
 
 record March() {

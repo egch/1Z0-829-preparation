@@ -1,24 +1,27 @@
 package org.enricogiurin.ocp17.crashcourse.unqualified;
 
 public class Identifiers {
-    public static void main(String[] args) {
+
+  public static void main(String[] args) {
 //    Thing.showIt();
-    }
+  }
 }
 
 class PThing {
-    static int x = 99;
+
+  static int x = 99;
 }
 
 class Thing extends PThing {
-    int x = 99;
+
+  int x = 99;
 //  static int x = 99;
 
-    void showIt() {
+  void showIt() {
 //    int x = 98;
 //    Thing t = new Thing();
-        System.out.println("x is " + x);
-    }
+    System.out.println("x is " + x);
+  }
 }
 
 /*
