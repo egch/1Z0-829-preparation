@@ -4,7 +4,7 @@ public class PrimitivePromoted {
 
   public static void main(String[] args) {
     //new PrimitivePromoted().multiPromotion();
-    new PrimitivePromoted().multiPromotion_steps();
+    new PrimitivePromoted().shortPromotion();
   }
 
   void example() {
@@ -23,6 +23,16 @@ public class PrimitivePromoted {
 
     Object obj = z;
     System.out.println(obj.getClass().getName()); //java.lang.Double
+  }
+
+  void shortPromotion() {
+    short x = 5;
+    short y = 6;
+    var z = x+y;
+    //z is an int
+    System.out.println(z);
+
+
   }
 
   void multiPromotion_steps() {

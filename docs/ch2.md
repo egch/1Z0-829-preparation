@@ -43,3 +43,27 @@ but going back
 0001   1   
 0000   0   
 1111  -1
+
+## Numeric Promotion Rules
+
+1. If two values have different data types, Java will automatically promote one of the values to the larger of the two data types.
+2. If one of the values is integral (intero IT) and the other is floating-point, Java will automatically promote the integral value to the floating-point value's data type.
+3. Smaller data types, namely, byte, short, and char, are first promoted to int any time they're used with a Java binary arithmetic operator with a variable (as opposed to a value), even if neither of the operands is int.
+4. After all promotion has occurred and the operands have the same data type, the resulting value will have the same data type as its promoted operands.
+
+## LHS vs RHS
+in the statement:  
+```java
+int x = 5;   
+```
+
+the terms "left-hand side" (LHS) and "right-hand side" (RHS) refer to specific parts of the assignment.
+
+Left-hand side (LHS): This refers to the variable that is being assigned a value. In your example, x is the LHS because it's the variable that will store the value.
+
+Right-hand side (RHS): This refers to the value that is being assigned to the variable. In your example, 5 is the RHS because it's the value that is assigned to the variable x.
+
+So, to summarize:
+
+LHS: x
+RHS: 5

@@ -18,6 +18,12 @@ public class Ternary {
     System.out.println("a: " + a + " - b: " + b);  //1,2
   }
 
+  void ternaryNoLeftAssigment() {
+    int x = 2>0?1:0;
+    //this does not compile as no left assignment
+    //2>0?1:0;
+  }
+
 
   void complexTernary() {
     int a1 = 2, a2 = 4, a3 = 2;
