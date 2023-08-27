@@ -20,6 +20,7 @@ public class TrickyVar {
 
 class Var {
 
+  // var is not a reserved word in Java
   public void var() {
     var var = "var";
   }
