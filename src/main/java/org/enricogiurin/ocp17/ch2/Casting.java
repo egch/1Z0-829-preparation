@@ -40,4 +40,11 @@ public class Casting {
    // short result = 5+hat;
   }
 
+  void castingBoolean() {
+    Object s = false;
+    boolean b = (boolean)s;
+    Boolean aBoolean = false;
+    boolean c = (boolean)aBoolean;
+  }
+
 }

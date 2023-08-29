@@ -10,6 +10,20 @@ long aLong = 2;
 aLong -=1.0;  //THIS works
 
 ```
+### Compound operators - tricky
+```java
+jshell> long x = 5L
+    x ==> 5
+
+    jshell> x = x +3.4
+    |  Error:
+    |  incompatible types: possible lossy conversion from double to long
+    |  x = x +3.4
+    |      ^----^
+
+    jshell> x -=3.4
+    $20 ==> 1
+```
 
 ## Arithmetic operators
 _+ - / *_
@@ -67,3 +81,12 @@ So, to summarize:
 
 LHS: x
 RHS: 5
+
+## Primitive assignment
+```java
+int x = 5;
+//allowed
+double d = x;
+//not allowed
+x = d;
+```

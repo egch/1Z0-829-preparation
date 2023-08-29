@@ -26,5 +26,21 @@ if(s instanceof Throwable){
         */
   }
 
+  void invalidInstanceof() {
+    Integer number = 5;
+    //invalid instanceof...number cannot be a string
+/*
+  if(number instanceof  String){
+      //
+    }
+*/
+
+    //but this is valid
+    Object n2 = 5;
+    if(n2 instanceof  String){
+      //
+    }
+  }
+
 }
 
