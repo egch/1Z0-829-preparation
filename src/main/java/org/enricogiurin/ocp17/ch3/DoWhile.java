@@ -7,6 +7,7 @@ public class DoWhile {
   }
 
   void scope() {
+
     do {
       int x = 0;
       System.out.println("ciao");

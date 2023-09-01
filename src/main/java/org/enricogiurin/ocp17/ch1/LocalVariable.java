@@ -21,4 +21,11 @@ public class LocalVariable {
     //int z=x+y;
 
   }
+
+  void localFinalVariables() {
+    //both x & y are final
+    final char x = 'a', y = 'b';
+    //not allowed
+    //y = 'z'
+  }
 }

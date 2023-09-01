@@ -6,7 +6,7 @@ public class SwitchDay {
     SwitchDay aSwitch = new SwitchDay();
     aSwitch.workOrChillOut(DayOfWeek.THURSDAY);
     aSwitch.workOrChillOut(DayOfWeek.SUNDAY);
-    aSwitch.printItalianDay(DayOfWeek.SATURDAY);
+
   }
 
 
@@ -22,17 +22,6 @@ public class SwitchDay {
     }
   }
 
-  void printItalianDay(DayOfWeek day) {
-    var result = switch (day) {
-      case MONDAY -> "lunedi";
-      case TUESDAY -> "martedi";
-      case WEDNESDAY -> "mercoledi";
-      case THURSDAY -> "giovedi";
-      case FRIDAY -> "venerdi";
-      case SATURDAY -> "sabato";
-      case SUNDAY -> "domenica";
-    };
-    System.out.println("today is: " + result);
-  }
+
 }
 

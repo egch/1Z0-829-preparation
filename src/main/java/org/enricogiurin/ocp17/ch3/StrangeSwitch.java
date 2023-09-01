@@ -12,7 +12,7 @@ public class StrangeSwitch {
     String viole = "viola";
     int p = -1;
     switch (instrument) {
-      case "bass":
+      case "bass": case "cane":
         break;
       case CELLO:
         p++;

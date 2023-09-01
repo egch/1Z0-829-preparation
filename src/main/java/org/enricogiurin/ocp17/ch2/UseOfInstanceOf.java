@@ -42,5 +42,22 @@ if(s instanceof Throwable){
     }
   }
 
+  void instanceOfScope() {
+    Object fish = "fish";
+
+    if (!(fish instanceof String guppy)) {
+      System.out.print("Eat!");
+    }
+      //Based on flow scoping, guppy is in scope after lines if the type is not a String.
+      // In this case, the next line declares a variable guppy that is a duplicate of the
+      // previously defined local variable defined on line 41.
+
+      //TODO - review this
+/*    else if (!(fish instanceof String guppy)) {
+        throw new RuntimeException();
+     }*/
+     System.out.print("Swim!");
+  }
+
 }
 

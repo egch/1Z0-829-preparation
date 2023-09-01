@@ -52,7 +52,6 @@ public class SwitchYield {
     };
   }
 
-
   int build() {
     return 4;
   }
