@@ -15,6 +15,9 @@ jshell> String s = "  01234   "
         jshell> var s3 = s.stripTrailing()
         s3 ==> "  01234"  //remove trailing spaces
 ```
+
+### CharSequence
+Both **String** and **StringBuilder** implement _CharSequence_.
 ### formatted
 ```java
 jshell> var name = "John"
