@@ -1,12 +1,12 @@
-package org.enricogiurin.ocp17.ch4;
+package org.enricogiurin.ocp17.ch4.time;
 
 import java.time.Duration;
 import java.time.Instant;
 
-public class Period {
+public class UseOfDuration {
 
   public static void main(String[] args) {
-    new Period().duration();
+    new UseOfDuration().duration();
   }
 
   void duration() {

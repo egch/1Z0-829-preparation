@@ -3,7 +3,7 @@ package org.enricogiurin.ocp17.ch4.string;
 public class MethodsOfString {
 
   public static void main(String[] args) {
-    new MethodsOfString().stripLeadingTrailing();
+    new MethodsOfString().trim();
   }
   void replace() {
     String name = "Enrico";
@@ -37,6 +37,12 @@ public class MethodsOfString {
     print(source.stripLeading());
     //# ciao#
     print(source.stripTrailing());
+  }
+
+  void trim() {
+    String source = " ciao \n";
+    String target = source.trim();
+    print(target);
   }
 
 

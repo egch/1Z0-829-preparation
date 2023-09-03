@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class UseOfArrays {
 
   public static void main(String[] args) {
-    new UseOfArrays().compare();
+    new UseOfArrays().useEquals();
   }
 
   void callProcess() {
@@ -20,24 +20,31 @@ public class UseOfArrays {
     }
   }
 
-  void sort() {
-    var arr = new String[]{"PIG", "pig", "123"};
-    //Numbers sort before letters and uppercase sorts before lowercase.
-    Arrays.sort(arr);  //"123", "PIG", "pig"
-    int position = Arrays.binarySearch(arr, "Pippa");
-
-    //result : -insertionPoint -1
-    //insertionPoint ideally would be 2 (after "PIG")
-    //-> result = -2 -1 = -3
-    System.out.println(position);  //-3
-
-  }
 
   void mismatch() {
     String[] s1 = {"Camel", "Peacock", "Llama"};
     String[] s2 = {"Camel", "Llama", "Peacock"};
+    String[] s3 = {"Camel", "Llama", "Peacock"};
     int position = Arrays.mismatch(s1, s2); //first element to differ is at position 1
+    //1
     System.out.println(position);
+    position = Arrays.mismatch(s2, s3); //they are identical then return -1
+    //-1
+    System.out.println(position);
+  }
+
+  void useEquals(){
+    int[] array1 = {1, 3, 5};
+    int[] array2 = {1, 3, 5};
+    int[] array3 = {1, 5, 5};
+    boolean equals = Arrays.equals(array1, array2);
+    //true
+    System.out.println(equals);
+    equals = Arrays.equals(array1, array3);
+
+    //false
+    System.out.println(equals);
+
   }
 
 
@@ -51,5 +58,24 @@ public class UseOfArrays {
     result = Arrays.compare(array1, array3);
     //-1
     System.out.println(result);
+  }
+
+  void arrayCreation() {
+    int[] array1 = new int[3];
+
+    int[] array2 = new int[]{1,2,3};
+    //anonymous array
+    int[] array3 = {1,2,3};
+    //strange but valid ways to create array
+    int array4[] = new int[3];
+    int []array5 = new int[3];
+    int array6 [] = new int[3];
+  }
+
+  void equalsOnArrays() {
+    int[] a1 = {1,2,3};
+    int[] a2 = {1,2,3};
+    //false
+    System.out.println(a1.equals(a2));
   }
 }
