@@ -12,6 +12,7 @@ public class UseOfDuration {
   void duration() {
     var now = Instant.now();
     var later = Instant.now();
+    System.out.println("instant: "+later); //2023-09-03T19:55:15.400194Z
     var duration = Duration.between(now, later);
 
     System.out.println("elapsed time: " + duration.toNanos() + "ns");

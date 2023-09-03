@@ -8,7 +8,7 @@ import java.util.Set;
 public class UseOfZonedDateTime {
 
   public static void main(String[] args) {
-    new UseOfZonedDateTime().invalidZoneId();
+    new UseOfZonedDateTime().zoneDateTime();
   }
   void zoneDateTime() {
     LocalDateTime now = LocalDateTime.now();
@@ -20,6 +20,8 @@ public class UseOfZonedDateTime {
 
     //calculating time in bucharest now
     ZoneId zoneBucharest = ZoneId.of("Europe/Bucharest");
+    ZonedDateTime zonedDateTimeInBucharest = ZonedDateTime.of(now, zoneBucharest);
+    System.out.println(zonedDateTimeInBucharest);
     ZonedDateTime bucharestZonedDateTime = ZonedDateTime.now(zoneBucharest);
 
     //2023-09-03T03:57:27.798509+03:00[Europe/Bucharest]

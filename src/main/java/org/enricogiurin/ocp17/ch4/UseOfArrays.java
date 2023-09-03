@@ -1,6 +1,7 @@
 package org.enricogiurin.ocp17.ch4;
 
 import java.util.Arrays;
+import java.util.Date;
 
 public class UseOfArrays {
 
@@ -70,6 +71,10 @@ public class UseOfArrays {
     int array4[] = new int[3];
     int []array5 = new int[3];
     int array6 [] = new int[3];
+
+    //strange array definition
+    java.util.Date[] dates[] = new java.util.Date[2][];
+    dates[0][0]=new Date();
   }
 
   void equalsOnArrays() {

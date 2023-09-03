@@ -30,6 +30,28 @@ jshell> var s = "%s is %d years old".formatted(name, age)
 s ==> "John is 30 years old"
 
 ```
+
+## String pool
+```java
+jshell> String s1 = "ab"
+s1 ==> "ab"
+
+jshell> String s2 = "a"+"b"
+s2 ==> "ab"
+
+jshell> s1==s2
+$18 ==> true
+
+jshell> String s3 = "a"
+s3 ==> "a"
+
+jshell> s3 +="b"
+$20 ==> "ab"
+
+jshell> s1==s3
+$21 ==> false
+
+```
 ## Arrays
 ```java
 jshell> int[] array = new int[]{1,2,3}
@@ -40,6 +62,13 @@ array ==> int[3] { 1, 2, 3 }
 
 
 ```
+### Arrays declaration
+```java
+java.util.Date[] dates[] = new java.util.Date[2][];
+
+```
+
+
 ### mismatch
 ```java
 
