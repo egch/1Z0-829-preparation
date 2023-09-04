@@ -29,3 +29,7 @@ Two varargs parameters are not allowed in the same method.
 //won't compile
 public void bass(String... values, int... nums) {}
 ```
+
+## Passing data among methods
+_Java is a “pass-by-value” language. This means that a copy of the variable is made and the method receives that copy. 
+Assignments made in the method do not affect the caller._

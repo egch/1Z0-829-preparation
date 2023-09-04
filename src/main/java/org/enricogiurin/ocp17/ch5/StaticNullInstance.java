@@ -2,6 +2,7 @@ package org.enricogiurin.ocp17.ch5;
 
 //StaticNullInstance
 public class StaticNullInstance {
+  static int staticField = 5;
 
   public static void swing() {
     System.out.print("swing");
@@ -19,6 +20,9 @@ public class StaticNullInstance {
     //this method is legal as I am calling a static method, not an instance method
     //It does not throw a NullPointerException because play() is a static method
     rope2.play();
+    //the same goes with the static field
+    //prints 5
+    System.out.println("\n"+rope2.staticField);
   }
 
   public void climb() {
