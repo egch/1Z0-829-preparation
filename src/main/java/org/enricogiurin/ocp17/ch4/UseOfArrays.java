@@ -62,8 +62,11 @@ public class UseOfArrays {
   }
 
   void arrayCreation() {
+
+    //here I specify the size
     int[] array1 = new int[3];
 
+    //here I specify the values
     int[] array2 = new int[]{1,2,3};
     //anonymous array
     int[] array3 = {1,2,3};

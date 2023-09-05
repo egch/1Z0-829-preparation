@@ -67,6 +67,13 @@ array ==> int[3] { 1, 2, 3 }
 java.util.Date[] dates[] = new java.util.Date[2][];
 
 ```
+```java
+int[] array = new int[3];  //here I specify the dimenstion
+int[] array2 = new int[]{1, 4}; //here I specify the values
+    
+// array creation with both dimension expression and initialization is illegal
+//int[] array3 = new int[2]{1,2}; //does not compile!
+```
 
 
 ### mismatch
