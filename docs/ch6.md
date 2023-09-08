@@ -37,3 +37,41 @@ There is no override/overload when the method in the parent class is marked priv
         System.out.println("hello");
     }
 ```
+
+## Overriding a method
+### Covariant return types
+
+Specifically, when talking about
+return types in methods, covariant types mean that a subclass can have a more specific (i.e., a
+subtype) return type compared to its parent class.
+
+```java
+public class Animal {
+   protected CharSequence getName() {
+      return "animal";
+   }
+   protected String getColor() {
+      return "white";
+   } }
+ 
+public class Pet extends Animal {
+   public String getName() {
+      return "I am a kitten";
+   }
+   public CharSequence getColor() { // DOES NOT COMPILE
+      return "red";
+   } }
+```
+### Override private methods
+```java
+public class Insect {
+   private String getSize() {
+      return "Undefined";
+   } }
+ 
+//this is not override, they are treated like two independent methods
+public class Fly extends Insect {
+   private int getSize() {
+      return 5;
+   } }
+```
