@@ -19,6 +19,8 @@ interface Run {
 // it must override the method with its own implementation.
 public class ClassInheritTwoDefaultMethods implements Walk, Run {
 
+
+  //We need this otherwise it won't build
   @Override
   public void go() {
     Run.super.go();
