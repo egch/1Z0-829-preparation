@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.ch7;
+package org.enricogiurin.ocp17.ch7.interfaces;
 
 public interface InterfaceWithPrivateMethods {
 

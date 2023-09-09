@@ -1,4 +1,22 @@
 # Beyond Classes
+## Interface
+```java
+public abstract interface Run { //abstract implicit modifiers
+  public abstract void run();  //public abstract implicit modifiers
+}
+```
+Concise form:
+```java
+public interface Run { 
+  public void run();  
+}
+```
+An interface cannot be marked as final
+```java
+public final interface Walk {}  //does not compile
+
+```
+
 ## Sealed
 ### Sealed interfaces
 A sealed interface restricts which subclasses may implement it.
