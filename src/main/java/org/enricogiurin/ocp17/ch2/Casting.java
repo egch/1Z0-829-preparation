@@ -47,4 +47,24 @@ public class Casting {
     boolean c = (boolean)aBoolean;
   }
 
+  void shortAndInt() {
+    int n = 5;
+    short s = 5;
+    useInt(n);
+    //cannot cast int to short
+    //useShort(n);  //does not compile
+
+    //casting a short into int
+    useInt(s);
+    useShort(s);
+  }
+
+
+
+  private void useShort(short s) {
+
+  }
+
+  private void useInt(int s){}
+
 }

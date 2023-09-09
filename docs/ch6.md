@@ -62,6 +62,14 @@ public class Pet extends Animal {
       return "red";
    } }
 ```
+
+### private final methods
+Declaring a method as both private and final is redundant and has no additional impact on the method's behavior.
+```java
+  private final void sayHello() {
+    System.out.println("hello");
+  }
+```
 ### Override private methods
 ```java
 public class Insect {
@@ -75,3 +83,33 @@ public class Fly extends Insect {
       return 5;
    } }
 ```
+## Abstract
+### abstract & final
+**abstract** and **final** together does not compile!
+```java
+public abstract final class Ciccio {  // DOES NOT COMPILE
+   public abstract final void eat();   // DOES NOT COMPILE
+}
+```
+### abstract & private
+A method cannot be marked as both abstract and private. 
+```java
+public abstract class Dog {
+   private abstract void baubau(); // DOES NOT COMPILE
+}
+```
+### abstract & static
+A method cannot be marked as both abstract and static.
+```java
+abstract class Dog {
+   abstract static void counter(); // DOES NOT COMPILE
+}
+```
+## static final
+```java
+  static final void ciao() {
+    System.out.println("ciao");
+  }
+
+```
+The static method ciao() is marked final so it cannot be hidden in the subclass.

@@ -9,6 +9,8 @@ class Parent {
     System.out.println("hello");
   }
 
+  //also static methods can be marked as final
+  //means it cannot be hidden in the child class
   static final void ciao() {
     System.out.println("ciao");
   }
