@@ -1,6 +1,8 @@
 package org.enricogiurin.ocp17.ch7.interfaces;
 
 public interface InterfaceWithPrivateMethods {
+  //interface variables are implicitly : public, static, final
+  int x = 5;
 
   void hello(String name);
 

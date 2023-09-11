@@ -1,6 +1,8 @@
 package org.enricogiurin.ocp17.ch7.record;
 
 public record RecordWithOverrideMethods(int first, int second) {
+
+
   //I can define static fields
   private static int size = 10;
   public static int weight = 50;

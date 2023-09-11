@@ -21,9 +21,18 @@ public interface Run {
 An interface cannot be marked as final
 
 ```java
-public final interface Walk {
+//does not compile
+public final interface Walk {}
 
-}  //does not compile
+```
+
+Interface variables are implicitly public, static, final.
+
+```java
+public interface Weight {
+  int max_weight = 5;
+  public static final int max_height = 50;  
+}  
 
 ```
 
@@ -38,6 +47,13 @@ to prevent errors.
 ### Sealed interfaces
 
 A sealed interface restricts which subclasses may implement it.
+```java
+public sealed interface SealedInterface permits SealedInterfaceImpl {}
+
+//other file
+public final class SealedInterfaceImpl implements SealedInterface {}
+
+```
 
 ### Sealed Classes
 

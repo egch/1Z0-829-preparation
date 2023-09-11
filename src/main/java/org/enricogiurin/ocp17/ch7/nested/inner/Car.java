@@ -18,7 +18,8 @@ public class Car {
     //intentionally it has the same name as the outer class
     private final String name;
 
-    public Engine(String name) {
+    //Remember that private constructors can be used by any methods within the outer class.
+    private Engine(String name) {
       this.name = name;
     }
 

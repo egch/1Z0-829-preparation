@@ -11,5 +11,14 @@ public class UseOfRecord {
 }
 
 record Person(String firstName, String lastName) {
+  static int cnt=0;
+
+  static void printHello() {
+    System.out.println("hello");
+  }
+
+  void printCustomHello() {
+    System.out.println("hello "+firstName+", "+lastName);
+  }
 
 }
