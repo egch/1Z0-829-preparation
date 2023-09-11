@@ -37,12 +37,24 @@ public interface Weight {
 ```
 
 ### Override
-
 _@Override_ annotation informs the compiler that the element is meant to override an element declared
-in a superclass. While **it is not required** to use this annotation when overriding a method, it helps
+in a superclass and/or interface. While **it is not required** to use this annotation when overriding a method, it helps
 to prevent errors.
 
+### Default Methods
+First, if a class or interface inherits two interfaces containing default methods with the same
+signature, it must override the method with its own implementation.
+
 ## Sealed
+### Same file
+The permits clause is optional if the subclass is nested or declared in the same file.
+```java
+//same file
+//no permits needed 
+sealed class HumanBeing {}
+
+sealed class Male extends HumanBeing {}
+```
 
 ### Sealed interfaces
 
@@ -59,7 +71,37 @@ public final class SealedInterfaceImpl implements SealedInterface {}
 
 The permits clause is optional if the subclass is nested or declared in the same file.
 
-## Default Methods
+## Final
+```java
+final class AFinal {
 
-First, if a class or interface inherits two interfaces containing default methods with the same
-signature, it must override the method with its own implementation. 
+  public static void main(String[] args) {
+    //I can't override a final class
+    //new AFinal() {}; //does not compile
+  }
+}
+```
+## Record
+### Compact Constructor
+```java
+public record Person(String firstName, String lastName) {
+
+  //this is a compact constructor
+  public Person {  //no parenthesis!!!
+    if (firstName.isEmpty() || lastName.isEmpty()) {
+      throw new IllegalArgumentException("invalid");
+    }
+  }
+}
+```
+### Overloaded constructor
+```java
+public record Person(String firstName, String lastName) {
+
+  //this is an overloaded constructor 
+  public Person() {  
+    //he first line must be a call to another constructor,
+    this("Enrico", "Giurin");
+  }
+}
+```
