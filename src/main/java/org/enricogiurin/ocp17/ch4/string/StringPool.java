@@ -12,11 +12,11 @@ public class StringPool {
     String s3 = new String("a");
 
     //true
-    System.out.println(s1==s2);
+    System.out.println(s1 == s2);
     //false
-    System.out.println(s1==s3);
+    System.out.println(s1 == s3);
     //true
-    System.out.println(s1==s3.intern());
+    System.out.println(s1 == s3.intern());
   }
 
 }

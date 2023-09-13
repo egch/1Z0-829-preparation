@@ -8,6 +8,7 @@ public class DefaultMethodsBuiltInFunctionalInterfaces {
   public static void main(String[] args) {
     new DefaultMethodsBuiltInFunctionalInterfaces().functionCompose();
   }
+
   void predicate() {
     Predicate<String> isLC = s -> s.equals(s.toLowerCase());
     Predicate<String> startWithB = s -> s.startsWith("b");
@@ -33,7 +34,7 @@ public class DefaultMethodsBuiltInFunctionalInterfaces {
     System.out.println(result.apply("23"));  //46
   }
 
-  void functionCompose(){
+  void functionCompose() {
     Function<Integer, Integer> after = a -> a + 4;
     Function<Integer, Integer> before = a -> a * 3;
     Function<Integer, Integer> compose = after.compose(before);

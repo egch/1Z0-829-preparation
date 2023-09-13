@@ -8,6 +8,7 @@ public class UseOfPeriod {
   public static void main(String[] args) {
     new UseOfPeriod().period();
   }
+
   void period() {
     LocalDateTime now = LocalDateTime.now();
     System.out.println(now);     //2023-09-03T03:07:43.919980

@@ -1,5 +1,29 @@
 package org.enricogiurin.ocp17.ch8;
 
+@FunctionalInterface
+interface Converter {
+
+  Long convert(Double value);
+}
+
+@FunctionalInterface
+interface Check {
+
+  boolean check(String s);
+}
+
+@FunctionalInterface
+interface Creator {
+
+  String create();
+}
+
+@FunctionalInterface
+interface StringCopier {
+
+  String create(String value);
+}
+
 public class MethodReference {
 
   public static void main(String[] args) {
@@ -43,30 +67,6 @@ public class MethodReference {
     System.out.println(createLambda.create("enrico"));
   }
 
-}
-
-@FunctionalInterface
-interface Converter {
-
-  Long convert(Double value);
-}
-
-@FunctionalInterface
-interface Check {
-
-  boolean check(String s);
-}
-
-@FunctionalInterface
-interface Creator {
-
-  String create();
-}
-
-@FunctionalInterface
-interface StringCopier {
-
-  String create(String value);
 }
 
 

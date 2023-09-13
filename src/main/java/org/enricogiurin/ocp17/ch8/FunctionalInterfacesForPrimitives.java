@@ -12,7 +12,7 @@ public class FunctionalInterfacesForPrimitives {
   }
 
   void booleanSupplier() {
-    BooleanSupplier bs = ()-> Math.random() >= 0.5;
+    BooleanSupplier bs = () -> Math.random() >= 0.5;
     for (int j = 0; j < 10; j++) {
       System.out.println(bs.getAsBoolean());
     }
@@ -24,7 +24,7 @@ public class FunctionalInterfacesForPrimitives {
   }
 
   void doublePredicate() {
-    DoublePredicate dp = d-> d % 2 == 0;
+    DoublePredicate dp = d -> d % 2 == 0;
     System.out.println(dp.test(5.2D)); //false
     System.out.println(dp.test(6.0D)); //true
   }

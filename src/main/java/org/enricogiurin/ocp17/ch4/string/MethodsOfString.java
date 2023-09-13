@@ -5,6 +5,7 @@ public class MethodsOfString {
   public static void main(String[] args) {
     new MethodsOfString().trim();
   }
+
   void replace() {
     String name = "Enrico";
     StringBuilder sb = new StringBuilder("coII");
@@ -33,7 +34,7 @@ public class MethodsOfString {
 
   void stripLeadingTrailing() {
     String source = " ciao ";
-   // #ciao #
+    // #ciao #
     print(source.stripLeading());
     //# ciao#
     print(source.stripTrailing());
@@ -47,7 +48,7 @@ public class MethodsOfString {
 
 
   private void print(String target) {
-    System.out.println("#"+target+"#");
+    System.out.println("#" + target + "#");
   }
 
 }

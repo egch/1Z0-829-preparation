@@ -12,6 +12,7 @@ public class BuiltInFunctionalInterfaces {
   public static void main(String[] args) {
     new BuiltInFunctionalInterfaces().unaryOperator();
   }
+
   void supplier() {
     Supplier<LocalDateTime> supplier = LocalDateTime::now;
     System.out.println(supplier.get());
@@ -25,7 +26,7 @@ public class BuiltInFunctionalInterfaces {
   }
 
   void function() {
-    Function<Double, String> functionLambda = d->String.valueOf(d);
+    Function<Double, String> functionLambda = d -> String.valueOf(d);
     Function<Double, String> functionMR = String::valueOf;
     System.out.println(functionLambda.apply(5.4D));
     System.out.println(functionMR.apply(0.4D));
@@ -39,7 +40,7 @@ public class BuiltInFunctionalInterfaces {
   }
 
   void unaryOperator() {
-    UnaryOperator<String> unaryOperatorLambda = s->s.toUpperCase();
+    UnaryOperator<String> unaryOperatorLambda = s -> s.toUpperCase();
     UnaryOperator<String> unaryOperatorMR = String::toUpperCase;
     System.out.println(unaryOperatorLambda.apply("aaaa"));
     System.out.println(unaryOperatorMR.apply("aaaa"));

@@ -1,6 +1,7 @@
 package org.enricogiurin.ocp17.ch7.interfaces;
 
 public interface InterfaceWithPrivateMethods {
+
   //interface variables are implicitly : public, static, final
   int x = 5;
 
@@ -20,14 +21,14 @@ public interface InterfaceWithPrivateMethods {
 
 class Concrete implements InterfaceWithPrivateMethods {
 
-  @Override
-  public void hello(String name) {
-
-  }
-
   public static void main(String[] args) {
     InterfaceWithPrivateMethods instance = new Concrete();
     instance.sayCiao();  //ciao
+
+  }
+
+  @Override
+  public void hello(String name) {
 
   }
 }

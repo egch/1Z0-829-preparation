@@ -5,6 +5,7 @@ public class UseOfMath {
   public static void main(String[] args) {
     new UseOfMath().random();
   }
+
   void minAndMax() {
     int a = 4, b = 5;
     //5

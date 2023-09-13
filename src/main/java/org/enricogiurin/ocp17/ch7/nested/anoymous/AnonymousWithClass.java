@@ -15,7 +15,7 @@ public class AnonymousWithClass {
       @Override
       void printMessage() {
         //name should be final or effective final
-        System.out.println("ciao "+name);
+        System.out.println("ciao " + name);
       }
     };
     ciao.printMessage();
@@ -23,6 +23,7 @@ public class AnonymousWithClass {
 }
 
 class Printer {
+
   void printMessage() {
     System.out.println("hello World");
   }

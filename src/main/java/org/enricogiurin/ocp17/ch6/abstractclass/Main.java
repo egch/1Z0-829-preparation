@@ -17,11 +17,13 @@ public class Main {
 }
 
 abstract class Parent {
+
   abstract void hello();
 
 }
 
 class Child extends Parent {
+
   @Override
   void hello() {
   }

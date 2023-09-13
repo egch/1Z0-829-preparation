@@ -1,9 +1,11 @@
 package org.enricogiurin.ocp17.ch6;
 
 public class ConstructorRules {
+
 }
 
 class Triangle {
+
   private final double base;
   private final double height;
 

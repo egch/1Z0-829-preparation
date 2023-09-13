@@ -25,7 +25,6 @@ public class CreateListWithConstructor {
     var list2 = new ArrayList<>();
 
 
-
   }
 
 }

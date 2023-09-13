@@ -24,7 +24,7 @@ public class MethodsOfList {
     //replace the 1st element of the list with Marc
     list.set(1, "Marc");  //["John", "Marc']
     boolean status = list.remove("John"); //["Marc"]
-    System.out.println(status?"removed":"not found");
+    System.out.println(status ? "removed" : "not found");
     //removed
     //Exception in thread "main" java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
     list.remove(1); //indexOfBoundException
@@ -46,9 +46,9 @@ public class MethodsOfList {
     String[] arrayOfString2 = list.toArray(new String[10]);
 
     //the size is the original size of the list
-    System.out.println("size is "+arrayOfString.length);  //size is 3
+    System.out.println("size is " + arrayOfString.length);  //size is 3
     //here we have 10 as passed in the argument
-    System.out.println("size is "+arrayOfString2.length);  //size is 10
+    System.out.println("size is " + arrayOfString2.length);  //size is 10
 
 
   }

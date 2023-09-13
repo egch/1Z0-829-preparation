@@ -22,10 +22,10 @@ public class PassingDataAmongMethods {
 
   void sum(int a) {
     //this has no effect -> passing by value
-    a +=5;
+    a += 5;
   }
 
-  void addEntry(Map<String, String> map){
+  void addEntry(Map<String, String> map) {
     map.put("Enrico", "Zurigo");
     //this has no effect -> but the content of map is changed before
     map = null;

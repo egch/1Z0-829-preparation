@@ -5,6 +5,7 @@ public class EmptyOrBlank {
   public static void main(String[] args) {
     new EmptyOrBlank().check();
   }
+
   void check() {
     String blankString = "  ";
     //false

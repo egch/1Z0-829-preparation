@@ -2,6 +2,7 @@ package org.enricogiurin.ocp17.ch5;
 
 //StaticNullInstance
 public class StaticNullInstance {
+
   static int staticField = 5;
 
   public static void swing() {
@@ -22,7 +23,7 @@ public class StaticNullInstance {
     rope2.play();
     //the same goes with the static field
     //prints 5
-    System.out.println("\n"+rope2.staticField);
+    System.out.println("\n" + rope2.staticField);
   }
 
   public void climb() {

@@ -5,6 +5,7 @@ public class CompoundAssignmentOperators {
   public static void main(String[] args) {
     new CompoundAssignmentOperators().trickyAssignment();
   }
+
   void trickyCompound() {
     long quantity = 10L;
     int cost = 5;
@@ -17,7 +18,7 @@ public class CompoundAssignmentOperators {
 
   void assignment() {
     long quantity;
-    long number  = (quantity=3L);
+    long number = (quantity = 3L);
     System.out.println(number);  //3
     System.out.println(quantity); //3
   }
@@ -25,7 +26,7 @@ public class CompoundAssignmentOperators {
   void trickyAssignment() {
     boolean a = false;
     //this condition is true as to a is assigned the value true;
-    if(a=true){
+    if (a = true) {
       System.out.println("tricky one");
     }
   }

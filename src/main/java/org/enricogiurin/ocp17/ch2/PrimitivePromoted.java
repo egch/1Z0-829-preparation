@@ -28,7 +28,7 @@ public class PrimitivePromoted {
   void shortPromotion() {
     short x = 5;
     short y = 6;
-    var z = x+y;
+    var z = x + y;
     //z is an int
     System.out.println(z);
 

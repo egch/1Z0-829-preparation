@@ -5,29 +5,30 @@ public class LogicalOperators {
   public static void main(String[] args) {
     new LogicalOperators().logical();
   }
-  void logical(){
+
+  void logical() {
     //both the condtions are evaluated, no matter if the first is false
-    if(evalFalse() & evalTrue()){
+    if (evalFalse() & evalTrue()) {
       System.out.println("true");
-    }else{
+    } else {
       System.out.println("false");
     }
 
     //both the conditions are evaluated, no matter if the first is true
-    if(evalTrue() | evalFalse()){
+    if (evalTrue() | evalFalse()) {
       System.out.println("true");
-    }else{
+    } else {
       System.out.println("false");
     }
 
   }
 
-  private boolean evalTrue(){
+  private boolean evalTrue() {
     System.out.println("evalTrue");
     return true;
   }
 
-  private boolean evalFalse(){
+  private boolean evalFalse() {
     System.out.println("evalFalse");
     return false;
   }

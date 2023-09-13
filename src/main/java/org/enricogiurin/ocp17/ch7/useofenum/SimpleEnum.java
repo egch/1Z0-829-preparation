@@ -1,9 +1,13 @@
 package org.enricogiurin.ocp17.ch7.useofenum;
 
+enum CardinalPoints {
+  NORTH, WEST, SOUTH, EAST;  //semicolon is optional for simple enum
+}
+
 public class SimpleEnum {
 
   public static void main(String[] args) {
-  //  new SimpleEnum().values();
+    //  new SimpleEnum().values();
     new SimpleEnum().switchEnum();
 
   }
@@ -15,19 +19,19 @@ public class SimpleEnum {
   EAST - 3
    */
   void values() {
-    for(CardinalPoints cp:CardinalPoints.values()){
-      System.out.println(cp.name()+" - "+cp.ordinal());
+    for (CardinalPoints cp : CardinalPoints.values()) {
+      System.out.println(cp.name() + " - " + cp.ordinal());
     }
   }
 
-  void switchEnum(){
+  void switchEnum() {
     CardinalPoints cp = CardinalPoints.NORTH;
-    switch (cp){
+    switch (cp) {
       case NORTH:
         System.out.println("north");
         break;
 
-        //does not compile-> refer without qualifier
+      //does not compile-> refer without qualifier
         /*
         case CardinalPoints.EAST:
         System.out.println("east");
@@ -45,11 +49,6 @@ public class SimpleEnum {
   }
 
 }
-
-enum CardinalPoints {
-  NORTH, WEST, SOUTH, EAST ;  //semicolon is optional for simple enum
-}
-
 
 //I cannot extend an enum!
 /*

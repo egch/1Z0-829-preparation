@@ -1,7 +1,6 @@
 package org.enricogiurin.ocp17.ch6;
 
 
-
 class Animal {
 
   // Static block in the Animal class

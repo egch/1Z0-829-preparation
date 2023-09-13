@@ -34,7 +34,7 @@ public class UseOfArrays {
     System.out.println(position);
   }
 
-  void useEquals(){
+  void useEquals() {
     int[] array1 = {1, 3, 5};
     int[] array2 = {1, 3, 5};
     int[] array3 = {1, 5, 5};
@@ -67,22 +67,22 @@ public class UseOfArrays {
     int[] array1 = new int[3];
 
     //here I specify the values
-    int[] array2 = new int[]{1,2,3};
+    int[] array2 = new int[]{1, 2, 3};
     //anonymous array
-    int[] array3 = {1,2,3};
+    int[] array3 = {1, 2, 3};
     //strange but valid ways to create array
     int array4[] = new int[3];
-    int []array5 = new int[3];
-    int array6 [] = new int[3];
+    int[] array5 = new int[3];
+    int array6[] = new int[3];
 
     //strange array definition
     java.util.Date[] dates[] = new java.util.Date[2][];
-    dates[0][0]=new Date();
+    dates[0][0] = new Date();
   }
 
   void equalsOnArrays() {
-    int[] a1 = {1,2,3};
-    int[] a2 = {1,2,3};
+    int[] a1 = {1, 2, 3};
+    int[] a2 = {1, 2, 3};
     //false
     System.out.println(a1.equals(a2));
   }

@@ -11,10 +11,13 @@ public class HidingVariables {
 }
 
 class Language {
+
   protected int a = 10;
 
 }
+
 class English extends Language {
-   public int a = 20;
+
+  public int a = 20;
 
 }

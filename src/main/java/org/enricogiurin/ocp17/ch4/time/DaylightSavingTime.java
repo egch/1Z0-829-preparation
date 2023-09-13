@@ -13,7 +13,7 @@ public class DaylightSavingTime {
 
   }
 
-  void daylight(){
+  void daylight() {
     ZoneId usEastern = ZoneId.of("US/Eastern");
     System.out.println(usEastern);
     LocalDate dayLight = LocalDate.of(2022, Month.MARCH, 13);
@@ -23,12 +23,12 @@ public class DaylightSavingTime {
     //now we increase time of one hour
     //at 2am the clock is changed one hour forward
     timeDayLight = timeDayLight.plusHours(1L);
-    zonedDateTime = ZonedDateTime.of(dayLight, timeDayLight, usEastern); //2022-03-13T03:30-04:00[US/Eastern]
+    zonedDateTime = ZonedDateTime.of(dayLight, timeDayLight,
+        usEastern); //2022-03-13T03:30-04:00[US/Eastern]
     //the GMT is changed
     System.out.println(zonedDateTime);
 
   }
-
 
 
 }

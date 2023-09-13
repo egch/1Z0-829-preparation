@@ -15,14 +15,15 @@ public class OverloadingBoxing {
   }
 
   void print(int x) {
-    System.out.println("primitive: "+x);
+    System.out.println("primitive: " + x);
   }
+
   void print(Integer x) {
-    System.out.println("Wrapper: "+x);
+    System.out.println("Wrapper: " + x);
   }
 
   void print(long x) {
-    System.out.println("long: "+x);
+    System.out.println("long: " + x);
   }
 
 

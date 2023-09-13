@@ -1,7 +1,6 @@
 package org.enricogiurin.ocp17.ch8;
 
 import java.util.List;
-import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 
 public class Questions {
@@ -9,9 +8,8 @@ public class Questions {
   public void remove(List<Character> chars) {
     char end = 'z';
 
-
     //but I cannot define it here
-   // char c = 'x';  //does not compile
+    // char c = 'x';  //does not compile
     Predicate<Character> predicate = c -> {
       char start = 'a';
       return start <= c && c <= end;
@@ -24,7 +22,7 @@ public class Questions {
   void scope() {
     //before I cannot
     //int x = 4;
-    if(true){
+    if (true) {
       int x = 5;
     }
 

@@ -10,10 +10,11 @@ public class UseOfZonedDateTime {
   public static void main(String[] args) {
     new UseOfZonedDateTime().zoneDateTime();
   }
+
   void zoneDateTime() {
     LocalDateTime now = LocalDateTime.now();
     ZoneId myZone = ZoneId.systemDefault();
-    System.out.println("Output of systemDefault(): " +myZone);
+    System.out.println("Output of systemDefault(): " + myZone);
     ZonedDateTime myZonedDateTime = ZonedDateTime.of(now, myZone);
     //2023-09-03T02:54:37.528950+02:00[Europe/Zurich]
     System.out.println(myZonedDateTime);

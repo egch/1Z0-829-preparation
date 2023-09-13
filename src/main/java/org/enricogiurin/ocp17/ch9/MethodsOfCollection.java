@@ -1,7 +1,6 @@
 package org.enricogiurin.ocp17.ch9;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -35,7 +34,7 @@ public class MethodsOfCollection {
     list.forEach(System.out::println);  //3
   }
 
-  void addRemove(){
+  void addRemove() {
     List<String> list = new ArrayList<>(List.of("a", "b", "c"));
     boolean status = list.add("d");
     System.out.println(status);
@@ -51,11 +50,11 @@ public class MethodsOfCollection {
 
   void clear() {
     List<String> list = new ArrayList<>(List.of("a", "b", "c"));
-    System.out.println("size is: "+list.size());  //3
-    System.out.println("is empty? "+list.isEmpty());  //false
+    System.out.println("size is: " + list.size());  //3
+    System.out.println("is empty? " + list.isEmpty());  //false
     list.clear();
-    System.out.println("size is: "+list.size());  //0
-    System.out.println("is empty? "+list.isEmpty()); //true
+    System.out.println("size is: " + list.size());  //0
+    System.out.println("is empty? " + list.isEmpty()); //true
   }
 
   void contains() {
@@ -69,16 +68,16 @@ public class MethodsOfCollection {
 
   void removeIf() {
     List<String> list = new ArrayList<>(List.of("ab", "bb", "cb"));
-    System.out.println("size is: "+list.size());  //3
+    System.out.println("size is: " + list.size());  //3
     //passing a lambda
     boolean status = list.removeIf(s -> s.startsWith("a"));
     System.out.println(status);
-    System.out.println("size is: "+list.size());  //3
+    System.out.println("size is: " + list.size());  //3
   }
 
   void iterator() {
     List<String> list = new ArrayList<>(List.of("ab", "bb", "cb"));
-    for(String s:list){
+    for (String s : list) {
       System.out.println(s);
     }
     //alternative approach
@@ -87,7 +86,7 @@ public class MethodsOfCollection {
 
     //old school iterator
     Iterator<String> iterator = list.iterator();
-    while (iterator.hasNext()){
+    while (iterator.hasNext()) {
       System.out.println(iterator.next());
     }
   }

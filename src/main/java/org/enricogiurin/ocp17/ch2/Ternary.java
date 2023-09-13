@@ -19,7 +19,7 @@ public class Ternary {
   }
 
   void ternaryNoLeftAssigment() {
-    int x = 2>0?1:0;
+    int x = 2 > 0 ? 1 : 0;
     //this does not compile as no left assignment
     //2>0?1:0;
   }

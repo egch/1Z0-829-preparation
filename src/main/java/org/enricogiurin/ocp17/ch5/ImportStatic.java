@@ -6,7 +6,7 @@ public class ImportStatic {
 
   public static void main(String[] args) {
     //does not compile as the Arrays class is not imported
-   // Arrays.asList("enrico");
+    // Arrays.asList("enrico");
     asList("enrico");
   }
 

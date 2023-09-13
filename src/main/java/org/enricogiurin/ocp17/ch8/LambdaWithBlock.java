@@ -13,7 +13,7 @@ public class LambdaWithBlock {
   void block() {
     Function<List<Integer>, Integer> maxArray = list -> {
       int max = Integer.MIN_VALUE;
-      for(int n:list){
+      for (int n : list) {
         max = Math.max(max, n);
       }
       return max;
@@ -26,16 +26,15 @@ public class LambdaWithBlock {
     int key = 4;
     //I cannot modify key as used within the lambda body
     //key = 5;
-    Function<Integer[], Integer> binarySearch =  array ->{
+    Function<Integer[], Integer> binarySearch = array -> {
       //key needs to be final or effective final
-        return Arrays.binarySearch(array, key);
+      return Arrays.binarySearch(array, key);
     };
     //arrays needs to be sorted!
-    Integer[] array = new Integer[]{3,4,5,7, 10};
+    Integer[] array = new Integer[]{3, 4, 5, 7, 10};
     Integer position = binarySearch.apply(array);
     System.out.println(position);
   }
-
 
 
 }

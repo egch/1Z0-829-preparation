@@ -1,10 +1,7 @@
 package org.enricogiurin.ocp17.ch7.interfaces;
 
-public class UseOfOverride {
-
-}
-
 interface Sport {
+
   void swim();
 
   void sleep();
@@ -21,6 +18,10 @@ interface Sport {
   }
 }
 
+public class UseOfOverride {
+
+}
+
 class MySPort implements Sport {
 
 
@@ -29,6 +30,7 @@ class MySPort implements Sport {
   public void swim() {
 
   }
+
   //@Override is NOT mandatory! It compiles even without
   //@Override
   public void sleep() {

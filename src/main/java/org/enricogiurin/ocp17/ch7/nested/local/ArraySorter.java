@@ -1,14 +1,27 @@
 package org.enricogiurin.ocp17.ch7.nested.local;
 
 import java.util.Arrays;
-import org.enricogiurin.ocp17.ch4.ArraysSort;
 
 //code concept from chat gpt, then slightly adapted
 public class ArraySorter {
+
   private int[] numbers;
 
   public ArraySorter(int[] numbers) {
     this.numbers = numbers;
+  }
+
+  public static void main(String[] args) {
+    int[] numbers = {5, 2, 9, 1, 5, 6};
+    ArraySorter sorter = new ArraySorter(numbers);
+
+    // Call the instance method to sort the array
+    sorter.sortArray();
+
+    // Print the sorted array
+    for (int num : numbers) {
+      System.out.print(num + " ");
+    }
   }
 
   public void sortArray() {
@@ -32,18 +45,5 @@ public class ArraySorter {
     size = 0;
 
 
-  }
-
-  public static void main(String[] args) {
-    int[] numbers = {5, 2, 9, 1, 5, 6};
-    ArraySorter sorter = new ArraySorter(numbers);
-
-    // Call the instance method to sort the array
-    sorter.sortArray();
-
-    // Print the sorted array
-    for (int num : numbers) {
-      System.out.print(num + " ");
-    }
   }
 }

@@ -5,9 +5,6 @@ public class Main {
 }
 
 class Parent {
-  final void hello() {
-    System.out.println("hello");
-  }
 
   //also static methods can be marked as final
   //means it cannot be hidden in the child class
@@ -15,10 +12,14 @@ class Parent {
     System.out.println("ciao");
   }
 
+  final void hello() {
+    System.out.println("hello");
+  }
+
 }
 
 
-class Child extends  Parent {
+class Child extends Parent {
 
   //does not compile as the parent method is final
 /*  final void hello() {

@@ -9,6 +9,7 @@ public class UseOfMap {
   public static void main(String[] args) {
     new UseOfMap().getOrDefault();
   }
+
   void createMap() {
     //this is an immutable map
     Map<String, Integer> age = Map.ofEntries(Map.entry("Enrico", 40),
@@ -44,15 +45,14 @@ public class UseOfMap {
   void replaceAll() {
     Map<String, Integer> scores = getScores();
     BiFunction<String, Integer, Integer> doubleIfGreater = (k, v) -> {
-      if(v>25){
-        return 2*v;
+      if (v > 25) {
+        return 2 * v;
       }
       return v;
     };
     scores.replaceAll(doubleIfGreater);
     System.out.println(scores); //{Marc=20, Oliver=18, Simon=58, John=60}
   }
-
 
 
   void getOrDefault() {
@@ -64,7 +64,7 @@ public class UseOfMap {
 
   }
 
-  private  Map<String, Integer> getScores() {
+  private Map<String, Integer> getScores() {
     Map<String, Integer> scores = new HashMap<>();
     scores.put("John", 30);
     scores.put("Marc", 20);
@@ -72,7 +72,6 @@ public class UseOfMap {
     scores.put("Simon", 29);
     return scores;
   }
-
 
 
 }

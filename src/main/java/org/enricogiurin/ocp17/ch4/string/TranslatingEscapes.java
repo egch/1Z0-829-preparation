@@ -5,6 +5,7 @@ public class TranslatingEscapes {
   public static void main(String[] args) {
     new TranslatingEscapes().translating();
   }
+
   void translating() {
     String source = "1\\t2";
     //1\t2

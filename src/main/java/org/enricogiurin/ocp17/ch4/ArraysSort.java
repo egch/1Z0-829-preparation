@@ -9,7 +9,7 @@ public class ArraysSort {
   }
 
   void sortAndSearch() {
-    int[] array = {2,6,3,1,9,8};
+    int[] array = {2, 6, 3, 1, 9, 8};
     Arrays.sort(array);
     //[1, 2, 3, 6, 8, 9]
     System.out.println(Arrays.toString(array));

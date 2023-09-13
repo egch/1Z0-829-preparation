@@ -5,6 +5,7 @@ public class StringIndent {
   public static void main(String[] args) {
     new StringIndent().stripIndent();
   }
+
   void indent() {
     var block = """
         Today is a wonderful day
@@ -23,12 +24,12 @@ public class StringIndent {
 
   void stripIndent() {
     String html = """
-                <html>
-                   <body>
-                       <p>Hello, world</p>
-                   </body>
-                </html>
-  """;
+                      <html>
+                         <body>
+                             <p>Hello, world</p>
+                         </body>
+                      </html>
+        """;
     System.out.println(html);
     System.out.println(html.stripIndent());
 

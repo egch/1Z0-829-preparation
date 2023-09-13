@@ -37,7 +37,7 @@ if(s instanceof Throwable){
 
     //but this is valid
     Object n2 = 5;
-    if(n2 instanceof  String){
+    if (n2 instanceof String) {
       //
     }
   }
@@ -48,15 +48,15 @@ if(s instanceof Throwable){
     if (!(fish instanceof String guppy)) {
       System.out.print("Eat!");
     }
-      //Based on flow scoping, guppy is in scope after lines if the type is not a String.
-      // In this case, the next line declares a variable guppy that is a duplicate of the
-      // previously defined local variable defined on line 41.
+    //Based on flow scoping, guppy is in scope after lines if the type is not a String.
+    // In this case, the next line declares a variable guppy that is a duplicate of the
+    // previously defined local variable defined on line 41.
 
-      //TODO - review this
+    //TODO - review this
 /*    else if (!(fish instanceof String guppy)) {
         throw new RuntimeException();
      }*/
-     System.out.print("Swim!");
+    System.out.print("Swim!");
   }
 
 }

@@ -37,7 +37,7 @@ public class PatternMatching {
     }
     */
     //strange behaviour for interface!
-    if(t instanceof List list) {
+    if (t instanceof List list) {
       System.out.println("that's weird");
     }
   }
@@ -50,7 +50,7 @@ public class PatternMatching {
     }*/
 
     //this is fine as it's a logical and
-    if(number instanceof Integer data && data.compareTo(5)>0){
+    if (number instanceof Integer data && data.compareTo(5) > 0) {
 
     }
 
@@ -59,7 +59,6 @@ public class PatternMatching {
 /*    if(number instanceof Integer data & data.compareTo(5)>0){
 
     }*/
-
 
   }
 }

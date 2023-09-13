@@ -4,7 +4,7 @@ public record CompactConstructorRecord(String firstName, String lastName, int ag
 
   //this is a compact constructor
   public CompactConstructorRecord {  //no parenthesis
-    if(firstName.isEmpty() || lastName.isEmpty()){
+    if (firstName.isEmpty() || lastName.isEmpty()) {
       throw new IllegalArgumentException("invalid");
     }
     //Cannot assign a value to final variable 'age'

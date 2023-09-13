@@ -1,10 +1,11 @@
 package org.enricogiurin.ocp17.ch5;
 
 public class InstanceVariables {
-  private int x;
+
   final int y;
-  public transient  int z;
-  protected volatile  String name;
+  public transient int z;
+  protected volatile String name;
+  private int x;
 
 
   public InstanceVariables(int x, int y) {

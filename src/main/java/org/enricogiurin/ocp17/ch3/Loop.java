@@ -12,7 +12,7 @@ public class Loop {
     }
   }
 
-  void forWithContinue(){
+  void forWithContinue() {
     for (int j = 0; j < 10; j++) {
       continue;
       //Unreachable statement
@@ -36,8 +36,8 @@ public class Loop {
   }
 
   void forMultipleVariables() {
-    for(long x=0, y=0; x<10 && y<10; x++, y++){
-      System.out.println("x: "+x+" - y: "+y);
+    for (long x = 0, y = 0; x < 10 && y < 10; x++, y++) {
+      System.out.println("x: " + x + " - y: " + y);
     }
 
     //You can declare multiple elements in a for loop, but the data type must be listed only once
@@ -48,20 +48,22 @@ public class Loop {
 
 
   void infiniteLoop() {
-    for (;;){
+    for (; ; ) {
       System.out.println("stop me pls!");
     }
   }
 
   void forLabels() {
-    outer: for (int j = 0; j < 10; j++) {
-      inner: for (int k = 0; k < 100; k++) {
+    outer:
+    for (int j = 0; j < 10; j++) {
+      inner:
+      for (int k = 0; k < 100; k++) {
         //System.out.println("j: "+j+" - k: "+k);
-        if(k+j==7){
+        if (k + j == 7) {
           System.out.println("break inner");
           break inner;
         }
-        if(k+j==10){
+        if (k + j == 10) {
           System.out.println("continue outer");
           continue outer;
         }

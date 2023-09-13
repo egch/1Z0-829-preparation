@@ -2,13 +2,13 @@ package org.enricogiurin.ocp17.ch5;
 
 public class LocalVariables {
 
-  void sum(){
+  void sum() {
     //local variables need to be initialized before being used
     final int a = 5;
     int b = 6;
     //Cannot assign a value to final variable 'a'
     //a+=6;
-    int result=0;
+    int result = 0;
     result = a + b;
   }
 

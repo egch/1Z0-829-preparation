@@ -5,13 +5,14 @@ public class UseOfStringBuilder {
   public static void main(String[] args) {
     new UseOfStringBuilder().reverse();
   }
+
   void notEfficient() {
     //This sequence of events continues, and after 26 iterations through the loop,
     // a total of 27 objects are instantiated,
     // most of which are immediately eligible for garbage collection.
     String target = "";
-    for(char c='a'; c<='z';c++){
-      target +=c;
+    for (char c = 'a'; c <= 'z'; c++) {
+      target += c;
     }
     //abcdefghijklmnopqrstuvwxyz
     System.out.println(target);
@@ -20,7 +21,7 @@ public class UseOfStringBuilder {
   void withStringBuilder() {
     //this doesn't create intermediate string(s)
     StringBuilder target = new StringBuilder();
-    for(char c='a'; c<='z';c++){
+    for (char c = 'a'; c <= 'z'; c++) {
       target.append(c);
     }
     //abcdefghijklmnopqrstuvwxyz
@@ -52,7 +53,7 @@ public class UseOfStringBuilder {
 
   void replace() {
     StringBuilder sb = new StringBuilder("Mario Silvestri");
-    sb.replace(0, sb.indexOf("o")+1, "Giorgio");
+    sb.replace(0, sb.indexOf("o") + 1, "Giorgio");
     //Giorgio Silvestri
     System.out.println(sb);
   }

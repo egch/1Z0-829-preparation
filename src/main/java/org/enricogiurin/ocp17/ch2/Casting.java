@@ -26,25 +26,25 @@ public class Casting {
     //this works
     int result = x + y;
     //this is ok as I cast to short
-    short shortResult = (short)(x+y);
+    short shortResult = (short) (x + y);
     //this is not ok as the RHS produces an int
-   // short wrong = (short)x + y;
+    // short wrong = (short)x + y;
   }
 
   void literal() {
     //this is ok as 4, 6 are literal
-    short x = 4+6;
+    short x = 4 + 6;
 
     short hat = 4;
     //this does not compile as only 5 is a literal
-   // short result = 5+hat;
+    // short result = 5+hat;
   }
 
   void castingBoolean() {
     Object s = false;
-    boolean b = (boolean)s;
+    boolean b = (boolean) s;
     Boolean aBoolean = false;
-    boolean c = (boolean)aBoolean;
+    boolean c = (boolean) aBoolean;
   }
 
   void shortAndInt() {
@@ -60,11 +60,11 @@ public class Casting {
   }
 
 
-
   private void useShort(short s) {
 
   }
 
-  private void useInt(int s){}
+  private void useInt(int s) {
+  }
 
 }
