@@ -7,7 +7,7 @@ import java.util.function.BiFunction;
 public class UseOfMap {
 
   public static void main(String[] args) {
-    new UseOfMap().getOrDefault();
+    new UseOfMap().insertNull();
   }
 
   void createMap() {
@@ -39,6 +39,24 @@ public class UseOfMap {
 
     scores.merge("New", 20, maxFunction);
     System.out.println(scores.get("New"));  //20
+  }
+
+  void mergeNull() {
+    BiFunction<Integer, Integer, Integer> nullFunction = (v1, v2) -> null;
+    Map<String, Integer> scores = getScores();
+    scores.merge("John", 30, nullFunction);  ////John deleted
+    scores.merge("Unknown", 30, nullFunction);  //Unknown added with default value (30)
+    boolean contains = scores.containsKey("John");
+    System.out.println(contains);  //false
+    Integer unknown = scores.get("Unknown");
+    System.out.println(unknown);  //30
+  }
+
+  void insertNull() {
+    Map<String, Integer> scores = getScores();
+    scores.put(null, 12);
+    Integer nullKey = scores.get(null);
+    System.out.println(nullKey); //12
 
   }
 
