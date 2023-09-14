@@ -20,7 +20,7 @@ public class UseOfComparable {
 
 record HumanBiometrics(int weight, int height) implements Comparable<HumanBiometrics> {
 
-    public double calculateBMI() {
+    private double calculateBMI() {
       // Calculate BMI using the formula: BMI = weight (kg) / (height^2) (m^2)
       return (double) weight / (height * height);
     }

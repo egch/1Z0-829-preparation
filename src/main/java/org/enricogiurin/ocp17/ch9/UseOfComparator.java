@@ -12,14 +12,18 @@ public class UseOfComparator {
   }
 
   void thenComparing() {
-    Comparator<Person> comparator = Comparator.comparing(Person::age).thenComparing(Person::weight);
+    Comparator<Person> comparator = Comparator.comparingInt(Person::age)
+        .thenComparing(Person::weight);
     List<Person> people = buildPeople();
     people.sort(comparator);
     people.forEach(System.out::println);
-/*        Person[age=30, weight=100]
-        Person[age=40, weight=90]
-        Person[age=40, weight=100]*/
+   //now we search...but we need to specify the comparator and we assume the collection
+    //is already sorted based on that order
+    int index = Collections.binarySearch(people, new Person(18, 80), comparator);
+    System.out.println(index);  //0
   }
+
+
 
   void sorting() {
     List<Person> people = buildPeople();
@@ -37,6 +41,7 @@ public class UseOfComparator {
     people.add(new Person(40, 90));
     people.add(new Person(40, 100));
     people.add(new Person(30, 100));
+    people.add(new Person(18, 80));
     return people;
   }
 }
