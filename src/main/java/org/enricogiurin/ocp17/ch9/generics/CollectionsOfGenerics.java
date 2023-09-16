@@ -50,6 +50,14 @@ public class CollectionsOfGenerics {
 
   }
 
+  void wildcard() {
+    //this means list of Object
+    //I cannot add element on this list
+    List<?> q = List.of("mouse", "parrot");
+    //I cannot add element on this list
+    List<?> list2 = new ArrayList<String>();
+  }
+
 
 
 }

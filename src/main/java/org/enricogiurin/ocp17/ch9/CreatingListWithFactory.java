@@ -6,7 +6,7 @@ import java.util.List;
 public class CreatingListWithFactory {
 
   public static void main(String[] args) {
-    new CreatingListWithFactory().create();
+    new CreatingListWithFactory().copyOf();
   }
 
   void create() {
@@ -19,6 +19,14 @@ public class CreatingListWithFactory {
     array[0] = "k";
     System.out.println(arrayList.get(0));  //"K"
     System.out.println(listOf.get(0));  //"a"
+  }
+
+  void copyOf() {
+    //sourceList is immutable
+    List<Integer> sourceList = List.of(1, 2, 3);
+    List<Integer> cloneList = List.copyOf(sourceList);
+    //cloneList is immutable
+    cloneList.add(2);  //exception at runtime
   }
 
 }

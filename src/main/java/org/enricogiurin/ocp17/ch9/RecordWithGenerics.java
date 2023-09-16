@@ -11,7 +11,7 @@ public record RecordWithGenerics<T>(T t) {
     RecordWithGenerics<Integer> data = new RecordWithGenerics<>(12);
 
     //warning - Raw use of parameterized class 'RecordWithGenerics'
-    RecordWithGenerics inferred = new RecordWithGenerics<>("ciccio");
+    RecordWithGenerics inferred = new RecordWithGenerics("ciccio");
     //ciccio pasticcio
     inferred.println("pasticcio");
   }

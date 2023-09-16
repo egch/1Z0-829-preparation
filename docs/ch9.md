@@ -1,4 +1,16 @@
 # Collections and Generics
+## Generics
+
+````java
+public class Money<T> {
+    private T currency;
+    public T createT() {
+        //Type parameter 'T' cannot be instantiated directly
+        // return new T();
+    }
+}
+
+````
 ## Bounding Generic Types
 ### Upper-Bounded wildcards
 
@@ -25,3 +37,10 @@ exceptions.add(new FileNotFoundException("error"));// yes we can add it
 //exceptions.add(new Exception("error"));
 ```
 We can only add element whose type is **IOException** or one of its children.
+## Collections
+### TreeSet
+````java
+Comparator<Integer> comparator = (n1,n2)->n1-n2;
+TreeSet<Integer> set1 = new TreeSet<>(comparator);
+TreeSet<Integer> set2 = new TreeSet<>(Set.of(1, 2, 3));
+````
