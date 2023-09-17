@@ -23,7 +23,7 @@ public class UseOfStream {
 
   void reduce() {
     Stream<String> stream = Stream.of("v", "i", "v", "a");
-    String result = stream.reduce("", (s, s2) -> s + s2);
+    String result = stream.reduce("", (s1, s2) -> s1 + s2);
     System.out.println(result);
   }
 
