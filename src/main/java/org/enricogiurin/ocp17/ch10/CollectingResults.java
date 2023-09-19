@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 public class CollectingResults {
 
   public static void main(String[] args) {
-    new CollectingResults().groupingBySet();
+    new CollectingResults().partitioningByCounting();
   }
 
   void averagingInt() {
@@ -51,6 +51,25 @@ public class CollectingResults {
     Map<Integer, Set<String>> map = fruitStream.collect(Collectors.groupingBy(String::length,
         Collectors.toSet()));
     System.out.println(map);  //{4=[Lime, Kiwi, Pear], 5=[Apple, Grape, Peach, Mango, Lemon], 6=[Orange, Banana]}
+  }
+
+  void partitioningBy() {
+    Stream<String> fruitStream = fruitStream();
+    Map<Boolean, List<String>> map = fruitStream.collect(
+        Collectors.partitioningBy(f -> f.length() < 5));
+    System.out.println(map);
+    //{false=[Orange, Apple, Banana, Grape, Peach, Mango, Lemon], true=[Kiwi, Pear, Lime]}
+
+  }
+
+  void partitioningByCounting() {
+    Stream<String> fruitStream = fruitStream();
+    Map<Boolean, Long> map = fruitStream.collect(
+        Collectors.partitioningBy(f -> f.length() < 5,
+            Collectors.counting()));
+    System.out.println(map);
+    //{false=7, true=3}
+
   }
 
   private Stream<String> fruitStream() {

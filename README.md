@@ -2,7 +2,7 @@
 Preparation for exam: Java SE 17 Developer  
 Exam Number: 1Z0-829
 
-https://education.oracle.com/java-se-17-developer/pexam_1Z0-829
+
 
 ## Chapters
 1. [Building Blocks](docs/ch1.md)
@@ -22,3 +22,9 @@ https://education.oracle.com/java-se-17-developer/pexam_1Z0-829
 15. [JDBC](docs/ch15.md)
 
 [Review](docs/ReviewFocusTopics.md)
+
+## Links
+* https://medium.com/wearewaes/all-you-need-to-know-on-how-to-become-an-ocp-java-se-17-developer-918d3ebd60d2
+* https://education.oracle.com/java-se-17-developer/pexam_1Z0-829
+* www.selikoff.net/ocp-17/
+* https://docs.oracle.com/en/java/javase/17/docs/api/
