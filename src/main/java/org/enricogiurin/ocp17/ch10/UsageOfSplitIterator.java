@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class UsageOfSplitIterator {
 
   public static void main(String[] args) {
-    new UsageOfSplitIterator().fruits();
+    new UsageOfSplitIterator().infiniteStream();
   }
 
   void use() {
@@ -46,5 +46,14 @@ public class UsageOfSplitIterator {
     status = spliterator.tryAdvance(System.out::println);  //no more elements
     System.out.println(status);   //false
 
+  }
+
+  void infiniteStream() {
+    var spliterator = Stream.generate(() -> "x")
+        .spliterator();
+
+    spliterator.tryAdvance(System.out::print); //x
+    var split = spliterator.trySplit();
+    split.tryAdvance(System.out::print); //x
   }
 }
