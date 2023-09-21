@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.ch11;
+package org.enricogiurin.ocp17.ch11.trywithresources;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -60,7 +60,7 @@ public class TryWithResources {
 
   }
 
-  void noteEfectiveFinal() {
+  void noteEffectiveFinal() {
     //alternative way, but mf1 needs to be final or effective final
     var mf1 = new MyFileClass(1);
     //Variable used as a try-with-resources resource should be final or effectively final
@@ -74,13 +74,7 @@ public class TryWithResources {
 
   }
 
-  private static class MyFileClass implements AutoCloseable {
-
-    final int num;
-
-    public MyFileClass(int num) {
-      this.num = num;
-    }
+  private static record MyFileClass(int num) implements AutoCloseable {
 
     @Override
     public void close() throws Exception {

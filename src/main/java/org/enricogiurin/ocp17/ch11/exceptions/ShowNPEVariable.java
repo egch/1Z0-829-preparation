@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.ch11;
+package org.enricogiurin.ocp17.ch11.exceptions;
 
 public class ShowNPEVariable {
 

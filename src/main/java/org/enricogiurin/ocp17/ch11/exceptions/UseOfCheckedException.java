@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.ch11;
+package org.enricogiurin.ocp17.ch11.exceptions;
 
 import java.io.File;
 import java.io.FileNotFoundException;
