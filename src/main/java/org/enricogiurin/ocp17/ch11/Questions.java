@@ -19,7 +19,7 @@ public class Questions {
   void uselessCatch() {
     try {
       System.out.println("ciao");
-    } catch (ArithmeticException e) {
+    } catch (Exception e) {
       System.out.println();
     }
   }
