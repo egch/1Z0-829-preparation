@@ -12,7 +12,6 @@ public class WhichExceptionCanCatch {
 
   void catchException() {
     try {
-      throwingClassCastException();
     }catch (Exception e) {}
   }
 
@@ -28,17 +27,18 @@ public class WhichExceptionCanCatch {
     }catch (RuntimeException e) {}
   }
 
-  void callMethod() {
-    throwingClassCastException();
-
-  }
-
   //Exception 'java.io.IOException' is never thrown in the corresponding try block
 /*  void catchCustomCheckedException() {
     try {
 
     }catch (IOException e) {}
   }*/
+
+  void callMethod() {
+    throwingClassCastException();
+  }
+
+
 
 
 
