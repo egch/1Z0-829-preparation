@@ -1,12 +1,13 @@
 package org.enricogiurin.ocp17.ch11;
 
+import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class LoadOfResourceBundle {
 
   public static void main(String[] args) {
-    new LoadOfResourceBundle().load();
+    new LoadOfResourceBundle().fruits();
   }
 
   void load() {
@@ -25,5 +26,31 @@ public class LoadOfResourceBundle {
     String age = b.getString("age");
     //name: Dolly - age: 0
     System.out.println(String.format("name: %s - age: %s", name, age));
+  }
+
+  void fruits() {
+    Locale.setDefault(new Locale("ch", "CH"));
+    Locale italy = new Locale(Locale.ITALIAN.getLanguage(), Locale.ITALY.getCountry());
+    ResourceBundle bundle = ResourceBundle.getBundle("ch11.Fruits", italy);
+    String value = bundle.getString("grapes"); //Uva Ialia (it_IT)
+    System.out.println(value);
+    value = bundle.getString("peach"); //pesca (it)
+    System.out.println(value);
+    value = bundle.getString("strawberry"); //strawberry ()
+    System.out.println(value);
+    //Can't find resource for bundle java.util.PropertyResourceBundle, key mango
+    //mango is (only) defined in it_CH but it won't be considered
+    try {
+      value = bundle.getString("mango");
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+    }
+
+
+    //reading message
+    value = bundle.getString("message");
+    System.out.println(MessageFormat.format(value, "Pere", "Kiwi"));
+
+
   }
 }

@@ -7,7 +7,7 @@ import java.util.Locale;
 public class Formatting {
 
   public static void main(String[] args) throws ParseException {
-    new Formatting().parse();
+    new Formatting().currency();
   }
 
 
@@ -53,5 +53,31 @@ public class Formatting {
     //80.5
     System.out.println(italy.parse(valueIT));
 
+  }
+
+  void currency() {
+    NumberFormat currencyInstance = NumberFormat.getCurrencyInstance(Locale.ITALY);
+    String price = currencyInstance.format(2D);
+    System.out.println(price);
+
+    currencyInstance = NumberFormat.getCurrencyInstance(Locale.US);
+    price = currencyInstance.format(2D);
+    System.out.println(price);
+
+    currencyInstance = NumberFormat.getCurrencyInstance(new Locale.Builder()
+        .setRegion("CH")
+        .build());
+    price = currencyInstance.format(2D);
+    System.out.println(price);
+  }
+
+  void percentage() {
+
+    double passingValue = 0.72D;
+    NumberFormat percentInstanceIT = NumberFormat.getPercentInstance(Locale.GERMANY);
+    System.out.println(percentInstanceIT.format(passingValue)); //72 %
+
+    NumberFormat percentInstanceUS = NumberFormat.getPercentInstance(Locale.US);
+    System.out.println(percentInstanceUS.format(passingValue)); //72%
   }
 }
