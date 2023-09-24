@@ -4,11 +4,13 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.util.Locale;
+import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
 
 public class UseOfDecimalFormat {
 
   public static void main(String[] args) {
-    new UseOfDecimalFormat().formatWithDefault();
+    new UseOfDecimalFormat().pattern();
   }
 
   void format() {
@@ -50,5 +52,16 @@ public class UseOfDecimalFormat {
     // Print the formatted money amount
     System.out.println("Formatted Money Amount: " + formattedMoneyAmount);
   }
+
+  void pattern() {
+    String pattern = "#,###,000.0#";
+    var message = DoubleStream.of(5.21, 8.49, 1234)
+        .mapToObj(v -> new DecimalFormat(pattern).format(v))
+        .collect(Collectors.joining("> <"));
+    //<005.21> <008.49> <1,234.0>
+    System.out.println("<"+message+">");
+  }
+
+
 
 }

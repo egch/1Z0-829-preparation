@@ -38,6 +38,12 @@ public class WhichExceptionCanCatch {
     throwingClassCastException();
   }
 
+  void catchMethodThrowingError() {
+    //I do not need to catch error
+    throw new Error("fire fire");
+
+  }
+
 
 
 
@@ -53,6 +59,7 @@ public class WhichExceptionCanCatch {
   void throwingClassCastException() throws ClassCastException {} ;
 
   void rollOut() throws ClassCastException {}
+  void throwsError() throws Error {}
 
   void throwingException() throws Exception {}
 
