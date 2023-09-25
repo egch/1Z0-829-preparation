@@ -1,11 +1,13 @@
 package org.enricogiurin.ocp17.ch12;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ServiceLoader;
 import java.util.stream.Collectors;
 
 import java.util.ServiceLoader.Provider;
+import java.util.stream.Stream;
 
 public class UseOfServiceLoader {
 
@@ -14,15 +16,16 @@ public class UseOfServiceLoader {
     //here it's using the iterator of ServiceLoader
     for (Dog current : ServiceLoader.load(Dog.class))
       all.add(current);
-
   }
 
   void equivalentLoad() {
-    List<Dog> all = ServiceLoader.load(Dog.class)
-        .stream()
+    ServiceLoader<Dog> serviceLoader = ServiceLoader.load(Dog.class);
+    Iterator<Dog> iterator = serviceLoader.iterator();
+    Stream<Provider<Dog>> stream = serviceLoader.stream();
+    List<Dog> all = stream
         // here it's using a Stream of Provider
         .map(Provider::get)
-        .collect(Collectors.toList());
+        .toList();
   }
 
   static class Dog {}
