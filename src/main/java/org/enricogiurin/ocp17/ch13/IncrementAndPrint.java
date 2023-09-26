@@ -17,7 +17,7 @@ public class IncrementAndPrint {
     //new UseOfAtomicClass().possibleDuplicateOrMissingValues();
     // new IncrementAndPrint().neitherDuplicateNorMissingValues();
     // new IncrementAndPrint().rightOrder();
-    new IncrementAndPrint().rightOrderWithLock();
+    new IncrementAndPrint().rightOrder();
   }
 
   //order is not kept but neither duplicate nor missing
