@@ -12,11 +12,12 @@ public class UseOfCyclicBarrier {
   }
 
   void fourPeopleHavingDinner() {
-    CyclicBarrier c1 = new CyclicBarrier(4, () -> System.out.println("-> food is ready!"));
-    CyclicBarrier c2 = new CyclicBarrier(4, () -> System.out.println("-> we have eaten the food"));
-    ExecutorService executorService = Executors.newFixedThreadPool(4);
+    final int numberOfParticipants = 10;
+    CyclicBarrier c1 = new CyclicBarrier(numberOfParticipants, () -> System.out.println("-> food is ready!"));
+    CyclicBarrier c2 = new CyclicBarrier(numberOfParticipants, () -> System.out.println("-> we have eaten the food"));
+    ExecutorService executorService = Executors.newFixedThreadPool(numberOfParticipants);
     try {
-      for (int j = 0; j < 4; j++) {
+      for (int j = 0; j < numberOfParticipants; j++) {
         executorService.submit(() -> dinner(c1, c2));
       }
     } finally {

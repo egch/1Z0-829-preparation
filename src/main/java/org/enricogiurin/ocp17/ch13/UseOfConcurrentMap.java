@@ -7,7 +7,7 @@ public class UseOfConcurrentMap {
 
   public static void main(String[] args) {
     //   new UseOfConcurrentMap().notConcurrentMap();
-    new UseOfConcurrentMap().concurrentMap();
+    new UseOfConcurrentMap().notConcurrentMap();
   }
 
   void notConcurrentMap() {

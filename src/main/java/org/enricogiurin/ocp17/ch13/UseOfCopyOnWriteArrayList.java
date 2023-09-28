@@ -8,13 +8,14 @@ public class UseOfCopyOnWriteArrayList {
 
   public static void main(String[] args) {
     //    new UseOfCopyOnWriteArrayList().addDuringIteration();
-    new UseOfCopyOnWriteArrayList().addDuringIterationNotConcurrent();
+    new UseOfCopyOnWriteArrayList().addDuringIteration();
   }
 
   void addDuringIteration() {
-    List<Integer> list = new CopyOnWriteArrayList<>(List.of(4, 3, 42));
+    List<Integer> list = new CopyOnWriteArrayList<>(List.of(1, 3, 5));
     //size is: 3
     System.out.println("size is: " + list.size());
+    //the iterator is not changed
     for (int value : list) {
       list.add(value + 2);
     }
