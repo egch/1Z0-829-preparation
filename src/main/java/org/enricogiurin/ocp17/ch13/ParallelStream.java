@@ -13,7 +13,7 @@ public class ParallelStream {
     new ParallelStream().printSize();
   }
 
-  void calculate() {
+  void calculateSequential() {
     long start = System.currentTimeMillis();
     List<Integer> list = List.of(1, 2, 3, 4, 5);
     list.stream()
