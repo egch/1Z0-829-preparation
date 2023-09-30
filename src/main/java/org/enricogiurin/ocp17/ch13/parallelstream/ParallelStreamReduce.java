@@ -1,13 +1,12 @@
-package org.enricogiurin.ocp17.ch13;
+package org.enricogiurin.ocp17.ch13.parallelstream;
 
-import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-public class Reduce {
+public class ParallelStreamReduce {
 
   public static void main(String[] args) {
-    new Reduce().factorial(10);
+    new ParallelStreamReduce().factorial(10);
   }
 
   void reduce() {

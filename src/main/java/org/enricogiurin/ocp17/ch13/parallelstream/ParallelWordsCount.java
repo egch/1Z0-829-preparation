@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.ch13;
+package org.enricogiurin.ocp17.ch13.parallelstream;
 
 import java.util.Arrays;
 import java.util.List;
