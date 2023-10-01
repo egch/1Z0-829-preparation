@@ -7,8 +7,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.enricogiurin.ocp17.crashcourse.casting.Ex;
 
 public class CollectionsOfGenerics {
 

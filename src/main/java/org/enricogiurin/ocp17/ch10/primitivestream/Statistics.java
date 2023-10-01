@@ -2,7 +2,6 @@ package org.enricogiurin.ocp17.ch10.primitivestream;
 
 import java.util.DoubleSummaryStatistics;
 import java.util.stream.DoubleStream;
-import java.util.stream.IntStream;
 
 public class Statistics {
 

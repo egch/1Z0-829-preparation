@@ -4,7 +4,6 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Currency;
 import java.util.Locale;
-import java.util.Locale.Builder;
 
 public class ParsingNumbers {
 

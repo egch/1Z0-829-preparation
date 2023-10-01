@@ -1,6 +1,5 @@
 package org.enricogiurin.ocp17.ch11.exceptions;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 

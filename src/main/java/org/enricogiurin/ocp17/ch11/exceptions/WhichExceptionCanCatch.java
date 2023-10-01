@@ -1,7 +1,5 @@
 package org.enricogiurin.ocp17.ch11.exceptions;
 
-import java.io.IOException;
-
 public class WhichExceptionCanCatch {
 
   void catchError() {
