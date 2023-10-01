@@ -9,7 +9,7 @@ public class UseOfAtomicWrapper {
     new UseOfAtomicWrapper().undeterminedResult();
   }
 
-  //one of possible result
+  //one of possible results
   //100 91
   void undeterminedResult() {
     var value1 = new AtomicLong(0);
@@ -19,7 +19,7 @@ public class UseOfAtomicWrapper {
     IntStream.iterate(1, i -> 1).limit(100).parallel()
         .forEach(i -> ++value2[0]);
 
-    //the first will be always 100 as it uses AtomicLong
+    //the first will always be 100 as it uses AtomicLong
     //the second is undetermined
     System.out.println(value1 + " " + value2[0]);
   }

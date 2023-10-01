@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.ch13;
+package org.enricogiurin.ocp17.ch13.lock;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
