@@ -1,33 +1,42 @@
 package org.enricogiurin.ocp17.ch14;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.stream.Stream;
 
 public class UseOfPath {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     //new FileAndPath().file();
     //new FileAndPath().path();
-    new UseOfPath().pathsGet();
+    UseOfPath useOfPath = new UseOfPath();
+    useOfPath.infoPath(Path.of("/tmp/a.txt"));
   }
 
-  void path() {
-    Path pom = Path.of("/Users/enrico/github/ocp17/1Z0-829-preparation/pom.xml");
-    Path notExisting = Path.of("/notExistingFolder/notAFile");
 
-    //true
-    System.out.println(Files.exists(pom));
-    //false
-    System.out.println(Files.exists(notExisting));
+
+  //same as org/enricogiurin/ocp17/ch14/io/MethodsOfFile.java
+  //but with Path
+  void infoPath(Path path) throws IOException {
+    if(Files.exists(path)){
+      System.out.println("absolute path: "+path.toAbsolutePath());
+      System.out.println("is Directory: "+Files.isDirectory(path));
+      System.out.println("parent path: "+path.getParent());
+      if(Files.isRegularFile(path)){
+        System.out.println("length: "+Files.size(path));
+        System.out.println("last modified: "+Files.getLastModifiedTime(path));
+      }else{
+        try(Stream<Path> stream = Files.list(path)) {
+          stream.forEach(System.out::println);
+        }
+      }
+    }
   }
 
-  void pathsGet() {
-    Path path = Paths.get("/tmp");
-    //true
-    System.out.println(Files.exists(path));
-  }
+
 
   void fileToPath() {
     File tmp = new File("/tmp");

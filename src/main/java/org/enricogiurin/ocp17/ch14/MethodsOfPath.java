@@ -11,7 +11,7 @@ public class MethodsOfPath {
   public static void main(String[] args) throws IOException {
     // new MethodsOfPath().report();
     // new MethodsOfPath().list();
-    new MethodsOfPath().subPath2();
+    new MethodsOfPath().subPath();
   }
 
   void report() throws IOException {
@@ -65,7 +65,14 @@ public class MethodsOfPath {
     System.out.println("sub-path[0,3]: " + pom.subpath(0, 3));
 
     //github/ocp17/1Z0-829-preparation/pom.xml
-    System.out.println("sub-path[2,3]: " + pom.subpath(2, pom.getNameCount()));
+    System.out.println("sub-path[2,3]: " + pom.subpath(2, 3));
+
+    try {
+      //it's start inclusive, end exclusive so there ain't sub-path from 2 to 1
+      pom.subpath(2,2);
+    }catch (IllegalArgumentException e){
+      System.err.println(e.getMessage());
+    }
   }
 
   void subPath2() {
