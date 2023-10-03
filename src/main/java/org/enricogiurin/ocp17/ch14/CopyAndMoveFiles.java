@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 public class CopyAndMoveFiles {
 
   public static void main(String[] args) throws IOException {
-    new CopyAndMoveFiles().deleteIfExist();
+    new CopyAndMoveFiles().copy_replace();
   }
 
   //if file already exist
@@ -41,6 +41,8 @@ public class CopyAndMoveFiles {
     copy(docs, target);
   }
 
+
+  //recursive function
   void copy(Path source, Path target) {
     try {
       Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
