@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 public class CopyAndMoveFiles {
 
   public static void main(String[] args) throws IOException {
-    new CopyAndMoveFiles().copy_replace();
+    new CopyAndMoveFiles().delete();
   }
 
   //if file already exist
@@ -48,7 +48,8 @@ public class CopyAndMoveFiles {
       Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
       if (Files.isDirectory(source)) {
         try (Stream<Path> stream = Files.list(source)) {
-          stream.forEach(path -> copy(path, target.resolve(path.getFileName())));
+          stream.forEach(
+              path -> copy(path, target.resolve(path.getFileName())));
         }
       }
 
@@ -70,11 +71,16 @@ public class CopyAndMoveFiles {
     System.out.println(move);
   }
 
+  //it throws a NoSuchFileException if the file or directory does not exist
+  void delete() throws IOException {
+    Path pippo = Path.of("/tmp/pippo.txt");
+    Files.delete(pippo);
+  }
+
   void deleteIfExist() throws IOException {
     Path pippo = Path.of("/tmp/pippo.txt");
     boolean deleted = Files.deleteIfExists(pippo);
     System.out.println(deleted);
-
   }
 
 

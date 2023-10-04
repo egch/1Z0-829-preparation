@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 public class CopyWithFiles {
 
   public static void main(String[] args) throws IOException {
-    new CopyWithFiles().bufferedWithFiles();
+    new CopyWithFiles().copyByPath();
   }
 
   void copyByPath() throws IOException {

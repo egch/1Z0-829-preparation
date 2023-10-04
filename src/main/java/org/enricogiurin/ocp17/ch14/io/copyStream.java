@@ -4,13 +4,26 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 
-public class CopyFile {
+public class copyStream {
 
   public static void main(String[] args) throws IOException {
-    new CopyFile().copyFileRightVersion();
+    new copyStream().copyFileRightVersion();
   }
+
+
+  //basic usage, no buffer
+  void copyStream(InputStream inputStream, OutputStream outputStream) throws IOException {
+    int b;
+    while ((b= inputStream.read())!=-1){
+      outputStream.write(b);
+    }
+  }
+
+
 
   //wrong way to copy file
   //It will only correctly copy files whose character count is a multiple of 10,
