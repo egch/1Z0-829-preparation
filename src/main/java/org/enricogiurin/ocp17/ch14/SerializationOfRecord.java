@@ -9,10 +9,13 @@ import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class UseOfSerialization {
+public class SerializationOfRecord {
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {
-    new UseOfSerialization().deSerializePerson();
+    SerializationOfRecord instance = new SerializationOfRecord();
+    instance.serializePerson();
+    instance.deSerializePerson();
+
   }
 
   void serializePerson() throws IOException {
@@ -47,5 +50,5 @@ public class UseOfSerialization {
 record Person(String firstName, String lastName) implements Serializable {
 
   @Serial
-  private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 2L;
 }

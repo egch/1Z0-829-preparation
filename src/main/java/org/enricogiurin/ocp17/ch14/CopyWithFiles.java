@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 public class CopyWithFiles {
 
   public static void main(String[] args) throws IOException {
-    new CopyWithFiles().copyByPath();
+    new CopyWithFiles().readLazy();
   }
 
   void copyByPath() throws IOException {
@@ -46,7 +46,8 @@ public class CopyWithFiles {
   void bufferedWithFiles() throws IOException {
     Path pom = Path.of("pom.xml");
     Path dest = Path.of("/tmp/" + System.currentTimeMillis() + "_pom.xml");
-    try (var reader = Files.newBufferedReader(pom); var writer = Files.newBufferedWriter(dest)) {
+    try (var reader = Files.newBufferedReader(pom);
+        var writer = Files.newBufferedWriter(dest)) {
       String line;
       while ((line = reader.readLine()) != null) {
         writer.write(line);
