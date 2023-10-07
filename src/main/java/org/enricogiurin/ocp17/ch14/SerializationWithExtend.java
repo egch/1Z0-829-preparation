@@ -14,7 +14,7 @@ public class SerializationWithExtend {
 
   }
 
-  //During deserialization, Java calls the constructor of the first non- serializable parent.
+  //During deserialization, Java calls the constructor of the first non-serializable parent.
   // In this case, the Bird constructor is called,
   void serializeAndDeserialize() throws IOException, ClassNotFoundException {
     Eagle eagle = new Eagle();
@@ -47,6 +47,8 @@ public class SerializationWithExtend {
   }
 }
 
+
+//Bird itself is not serializable
 class Bird {
 
   protected transient String name;
@@ -59,10 +61,6 @@ class Bird {
 
   public String getName() {
     return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
   }
 
   public int getAge() {
@@ -80,8 +78,5 @@ class Eagle extends Bird implements Serializable {
     this.name = "Bridget";
   }
 
-  public static void main(String[] args) {
-    var e = new Eagle();
-    e.name = "Adeline";
-  }
+
 }

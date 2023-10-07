@@ -12,7 +12,7 @@ import java.io.StringReader;
 public class UserInput {
 
   public static void main(String[] args) throws IOException {
-    new UserInput().markSkip();
+    new UserInput().console();
   }
 
   void readFromInput() throws IOException {
@@ -22,12 +22,17 @@ public class UserInput {
     System.out.println("your name is: " + input);
   }
 
+
   void console() {
     Console console = System.console();
     if (console != null) {
       System.out.print("Type your name: ");
       String input = console.readLine();
       System.out.println("your name is: " + input);
+      System.out.print("Type your pwd: ");
+      char[] pwd = console.readPassword();
+      //not really secure this code :-)
+      System.out.println("your pwd is: " + new String(pwd));
     }
   }
 

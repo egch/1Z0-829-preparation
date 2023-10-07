@@ -1,5 +1,7 @@
 package org.enricogiurin.ocp17.ch14;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -23,7 +25,9 @@ public class SerializationOfRecord {
     Person balint = new Person("Balint", "Domokos");
     Path dest = Path.of("/tmp/people.ser");
 
-    try (ObjectOutputStream oos = new ObjectOutputStream(Files.newOutputStream(dest))) {
+    try (ObjectOutputStream oos = new ObjectOutputStream(
+        new BufferedOutputStream(
+            Files.newOutputStream(dest)))) {
       oos.writeObject(enrico);
       oos.writeObject(balint);
     }
@@ -34,7 +38,9 @@ public class SerializationOfRecord {
     //Person[firstName=Enrico, lastName=Giurin]
     //Person[firstName=Balint, lastName=Domokos]
     Path dest = Path.of("/tmp/people.ser");
-    try (ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(dest))) {
+    try (ObjectInputStream ois = new ObjectInputStream(
+        new BufferedInputStream(
+            Files.newInputStream(dest)))) {
       while (true) {
         var obj = ois.readObject();
         if (obj instanceof Person p) {
