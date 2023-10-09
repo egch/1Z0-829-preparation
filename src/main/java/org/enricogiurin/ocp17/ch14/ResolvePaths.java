@@ -22,7 +22,7 @@ public class ResolvePaths {
     //p2 resolve to p1: /tmp1
     resolve(Path.of("/tmp1"), Path.of("/tmp2"));
 
-    //absolute & absolute
+    //relative & relative
     //p1 resolve to p2: relative1/relative2
     //p2 resolve to p1: relative2/relative1
     resolve(Path.of("relative1"), Path.of("relative2"));

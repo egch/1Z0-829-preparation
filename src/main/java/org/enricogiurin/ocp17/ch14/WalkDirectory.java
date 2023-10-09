@@ -5,12 +5,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.function.BiPredicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class WalkDirectory {
 
   public static void main(String[] args) throws IOException {
-    new WalkDirectory().findFileWithinADirectory();
+    new WalkDirectory().findSymbolicLink();
   }
 
   void getSize() throws IOException {
@@ -46,7 +47,20 @@ public class WalkDirectory {
 
     Files.find(dir, Integer.MAX_VALUE, matcher)
         .forEach(file -> System.out.println("File found: " + file.toAbsolutePath()));
+  }
 
+
+  //TODO - review this
+  void findSymbolicLink() throws IOException {
+    var f = Path.of("/tmp");
+    try (Stream<Path> stream = Files.find(f, 10, (p, a) -> a.isSymbolicLink())) { // y1
+      stream.map(s -> s.toString())
+          .peek(System.out::println)
+          .collect(Collectors.toList())
+          .stream()
+          //   .filter(s -> s.toString().endsWith(".txt")) // y2
+          .forEach(System.out::println);
+    }
   }
 
 
