@@ -3,6 +3,8 @@ package org.enricogiurin.ocp17.ch14;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.function.BiPredicate;
 import java.util.stream.Stream;
 
 public class WalkDirectory {
@@ -39,9 +41,10 @@ public class WalkDirectory {
   void findFileWithinADirectory() throws IOException {
     Path dir = Path.of(".");
     Path pathToSearch = Path.of("UseOfOptional.java");
+    BiPredicate<Path, BasicFileAttributes> matcher = (path, attr) -> attr.isRegularFile() &&
+        path.getFileName().toString().equals(pathToSearch.getFileName().toString());
 
-    Files.find(dir, Integer.MAX_VALUE, (path, attr) ->
-            path.getFileName().toString().equals(pathToSearch.getFileName().toString()))
+    Files.find(dir, Integer.MAX_VALUE, matcher)
         .forEach(file -> System.out.println("File found: " + file.toAbsolutePath()));
 
   }

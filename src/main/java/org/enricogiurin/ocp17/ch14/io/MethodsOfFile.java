@@ -5,7 +5,9 @@ import java.io.File;
 public class MethodsOfFile {
 
   public static void main(String[] args) {
-    new MethodsOfFile().infoFile(new File("/tmp"));
+    MethodsOfFile instance = new MethodsOfFile();
+    //instance.infoFile(new File("/tmp"));
+    instance.delete();
   }
 
   void methods() {
@@ -22,6 +24,12 @@ public class MethodsOfFile {
     File file = buildFile();
     boolean deleted = file.delete();
     System.out.println(deleted); //true
+
+    File notExisting = new File("notExistingFile");
+    //if the file does not exist, it does not throw an exception
+    boolean isDeleted = notExisting.delete();
+    System.out.println(isDeleted); //false
+
 
   }
 

@@ -7,7 +7,7 @@ import java.nio.file.Path;
 public class MethodsOfFiles {
 
   public static void main(String[] args) throws IOException {
-    new MethodsOfFiles().checkHidden();
+    new MethodsOfFiles().checkAccessibility();
   }
 
   void check() {
