@@ -13,10 +13,10 @@ import java.sql.SQLException;
  */
 public class SetupDataBase {
 
-  static final String URL = "jdbc:hsqldb:file:zoo";
+  static final String JDBC_URL = "jdbc:hsqldb:file:zoo";
 
-  public static void main(String[] args) throws Exception {
-    try (Connection conn = DriverManager.getConnection(URL)) {
+  public static void main(String[] args) throws SQLException {
+    try (Connection conn = DriverManager.getConnection(JDBC_URL)) {
 
       dropExisting(conn);
       createTables(conn);
@@ -60,7 +60,8 @@ public class SetupDataBase {
     run(conn, """
         CREATE TABLE games (
           id INTEGER PRIMARY KEY,
-          name VARCHAR(255))""");
+          name VARCHAR(255) NOT NULL,
+          description VARCHAR(255))""");
 
     run(conn, """
         CREATE TABLE counts (
@@ -127,12 +128,14 @@ public class SetupDataBase {
 
   private static void run(Connection conn, String sql) throws SQLException {
     try (PreparedStatement ps = conn.prepareStatement(sql)) {
-      ps.executeUpdate();
+      int updated = ps.executeUpdate();
+      System.out.println("updated "+updated+" records");
     }
   }
 
   private static void printCount(Connection conn, String sql) throws SQLException {
-    try (PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
+    try (PreparedStatement ps = conn.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery()) {
       rs.next();
       System.out.println(rs.getInt(1));
     }

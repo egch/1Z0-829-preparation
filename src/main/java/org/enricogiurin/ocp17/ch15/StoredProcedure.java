@@ -1,6 +1,6 @@
 package org.enricogiurin.ocp17.ch15;
 
-import static org.enricogiurin.ocp17.ch15.SetupDataBase.URL;
+import static org.enricogiurin.ocp17.ch15.SetupDataBase.JDBC_URL;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,7 +15,7 @@ public class StoredProcedure {
 
   void outParameter() throws SQLException {
     var sql = "{?= call magic_number(?) }";
-    try (Connection conn = DriverManager.getConnection(URL);
+    try (Connection conn = DriverManager.getConnection(JDBC_URL);
         var cs = conn.prepareCall(sql)) {
       cs.registerOutParameter(1, Types.INTEGER);
       cs.execute();
