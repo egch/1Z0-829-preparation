@@ -8,10 +8,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Savepoint;
 
-public class UseOfRollback {
+public class SavePoint {
 
   public static void main(String[] args) throws SQLException {
-    new UseOfRollback().savePoint();
+    new SavePoint().savePoint();
   }
 
   void savePoint() throws SQLException {
