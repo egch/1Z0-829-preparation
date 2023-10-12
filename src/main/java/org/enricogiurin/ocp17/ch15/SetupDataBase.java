@@ -129,7 +129,7 @@ public class SetupDataBase {
   private static void run(Connection conn, String sql) throws SQLException {
     try (PreparedStatement ps = conn.prepareStatement(sql)) {
       int updated = ps.executeUpdate();
-      System.out.println("updated "+updated+" records");
+      System.out.println("updated " + updated + " records");
     }
   }
 

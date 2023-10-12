@@ -70,13 +70,12 @@ public class SavePoint {
 
   void countRecords() throws SQLException {
     var sql = "select count(*) from people";
-    try(Connection connection = DriverManager.getConnection(JDBC_URL);
+    try (Connection connection = DriverManager.getConnection(JDBC_URL);
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        ResultSet resultSet = preparedStatement.executeQuery())
-    {
-      if(resultSet.next()){
+        ResultSet resultSet = preparedStatement.executeQuery()) {
+      if (resultSet.next()) {
         int cnt = resultSet.getInt(1);
-        System.out.println("there are "+cnt+" records in table people");
+        System.out.println("there are " + cnt + " records in table people");
       }
     }
   }

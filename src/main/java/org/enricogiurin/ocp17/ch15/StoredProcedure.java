@@ -30,11 +30,11 @@ public class StoredProcedure {
   //neither IN nor OUT parameters
   void read_e_names() throws SQLException {
     var sql = "{call read_e_names()}";
-    try(Connection connection = DriverManager.getConnection(JDBC_URL);
+    try (Connection connection = DriverManager.getConnection(JDBC_URL);
         CallableStatement callableStatement = connection.prepareCall(sql);
         ResultSet resultSet = callableStatement.executeQuery()
-    ){
-      while (resultSet.next()){
+    ) {
+      while (resultSet.next()) {
         System.out.println(resultSet.getString("name"));
         //Elsa
         //Ester

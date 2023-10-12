@@ -23,6 +23,7 @@ public class UseOfPreparedStatement {
     try (Connection connection = DriverManager.getConnection(JDBC_URL);
         PreparedStatement preparedStatement = connection.prepareStatement(
             "insert into games (id, name) values (1, ?)")) {
+      printDriverInfo(connection);
       preparedStatement.setString(1, "m-football");
       int row = preparedStatement.executeUpdate();
       System.out.println("inserted: " + row);
@@ -97,4 +98,10 @@ public class UseOfPreparedStatement {
     }
   }
 
+
+  private void printDriverInfo(Connection connection) throws SQLException {
+    System.out.println("Driver Name: " + connection.getMetaData().getDriverName());
+    System.out.println("Driver Version: " + connection.getMetaData().getDriverVersion());
+  }
 }
+
