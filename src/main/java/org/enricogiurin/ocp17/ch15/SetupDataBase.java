@@ -31,6 +31,7 @@ public class SetupDataBase {
     run(conn, "DROP PROCEDURE read_names_by_letter IF EXISTS");
     run(conn, "DROP PROCEDURE magic_number IF EXISTS");
     run(conn, "DROP PROCEDURE double_number IF EXISTS");
+    run(conn, "DROP PROCEDURE two_in_out IF EXISTS");
     run(conn, "DROP TABLE names IF EXISTS");
     run(conn, "DROP TABLE exhibits IF EXISTS");
     run(conn, "DROP TABLE habitat IF EXISTS");
@@ -120,10 +121,19 @@ public class SetupDataBase {
              SET num = 42;
               END""";
 
+    String twoInOutParam = """
+        CREATE PROCEDURE two_in_out(OUT num INT, IN p1 VARCHAR(10), IN p2 INT) READS SQL DATA
+              BEGIN ATOMIC
+              DECLARE p1_as_int INT;
+              SET p1_as_int = CAST(p1 as INT);
+              SET num = p1_as_int + p2;
+              END""";
+
     run(conn, noParams);
     run(conn, inParam);
     run(conn, outParam);
     run(conn, inOutParam);
+    run(conn, twoInOutParam);
   }
 
   private static void run(Connection conn, String sql) throws SQLException {

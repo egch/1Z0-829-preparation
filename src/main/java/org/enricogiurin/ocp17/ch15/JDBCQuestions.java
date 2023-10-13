@@ -12,7 +12,7 @@ public class JDBCQuestions {
 
 
   public static void main(String[] args) throws SQLException {
-    new JDBCQuestions().switchAutoCommitFromFalseToTrue();
+    new JDBCQuestions().rollback();
   }
 
   void updateHabitat() throws SQLException {
@@ -27,7 +27,7 @@ public class JDBCQuestions {
   }
 
   void rollback() throws SQLException {
-    String sql = "INSERT INTO games VALUES(3, 'Jenga');";
+    String sql = "INSERT INTO games(id, name) VALUES(3, 'Jenga');";
     try (Connection conn = DriverManager.getConnection(JDBC_URL);
         PreparedStatement ps = conn.prepareStatement(sql, ResultSet.TYPE_FORWARD_ONLY,
             ResultSet.CONCUR_READ_ONLY)

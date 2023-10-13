@@ -12,7 +12,7 @@ import java.sql.Types;
 public class StoredProcedure {
 
   public static void main(String[] args) throws SQLException {
-    new StoredProcedure().double_number();
+    new StoredProcedure().magic_number();
   }
 
   //out parameters
@@ -70,5 +70,9 @@ public class StoredProcedure {
       System.out.println(cs.getInt("num"));
     }
   }
+
+
+  //two in, on out
+
 
 }

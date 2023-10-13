@@ -84,6 +84,9 @@ public class UseOfPreparedStatement {
       boolean isResultSet = preparedStatement.execute();
       if (!isResultSet) {
         System.out.println("updated: " + preparedStatement.getUpdateCount());
+      }else{
+        //we do not use it but just to see how to retrieve it
+        ResultSet resultSet = preparedStatement.getResultSet();
       }
     }
   }
