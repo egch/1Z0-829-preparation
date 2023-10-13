@@ -14,7 +14,7 @@ public class CustomProcedure {
   }
 
   void two_in_out() throws SQLException {
-    var sql = "{ call two_in_out(?, ?, ?) }";
+    var sql = "{ ?=call two_in_out(?, ?, ?) }";
     try (Connection conn = DriverManager.getConnection(JDBC_URL);
         var cs = conn.prepareCall(sql)) {
       cs.registerOutParameter("num", Types.INTEGER);
@@ -27,9 +27,13 @@ public class CustomProcedure {
   }
 
   void two_in_out_parameter_index() throws SQLException {
-    var sql = "{ call two_in_out(?, ?, ?) }";
+    //mind the space between = and call
+    var sql = "{  ?= call two_in_out(?, ?, ?) }";
+    var sql_eq = "{ call two_in_out(?, ?, ?) }";
+
+    //sql and sql_eq are both correct
     try (Connection conn = DriverManager.getConnection(JDBC_URL);
-        var cs = conn.prepareCall(sql)) {
+        var cs = conn.prepareCall(sql_eq)) {
       cs.registerOutParameter(1, Types.INTEGER);
       cs.setString(2, "15");
       cs.setInt(3, 2);
@@ -38,5 +42,7 @@ public class CustomProcedure {
       System.out.println(cs.getInt("num"));
     }
   }
+
+
 
 }

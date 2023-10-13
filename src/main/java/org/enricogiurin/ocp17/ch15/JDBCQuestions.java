@@ -12,7 +12,7 @@ public class JDBCQuestions {
 
 
   public static void main(String[] args) throws SQLException {
-    new JDBCQuestions().rollback();
+    new JDBCQuestions().switchAutoCommitFromFalseToTrue();
   }
 
   void updateHabitat() throws SQLException {
@@ -64,8 +64,8 @@ public class JDBCQuestions {
       try (PreparedStatement ps = conn.prepareStatement(sql)) {
         ps.executeUpdate();
       }
-      //The code starts with autocommit off. Then we turn autocommit mode back on a
-      // nd immediately commit the transaction.
+      //The code starts with autocommit off. Then we turn autocommit mode back on
+      // and immediately commit the transaction.
       conn.setAutoCommit(true);
     }
   }
