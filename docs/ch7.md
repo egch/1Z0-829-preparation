@@ -14,7 +14,7 @@ Concise form:
 ```java
 public interface Run {
 
-  public void run();
+  void run();
 }
 ```
 

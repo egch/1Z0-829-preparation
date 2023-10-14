@@ -16,10 +16,10 @@ public class Money<T> {
 
 ```java
 List<? extends Number> listOfInteger = new ArrayList<>();
-//does not compile...what if is a list of AtomicInteger
+//does not compile...what if it's a list of AtomicInteger
 //listOfInteger.add(new Integer(3));  
 
-//does not compile...what if is a list of Integer
+//does not compile...what if it's a list of Integer
 //listOfInteger.add(new AtomicInteger(2)); 
 ```
 We cannot add element to a list declared s upper bounded wildcards!
@@ -44,3 +44,15 @@ Comparator<Integer> comparator = (n1,n2)->n1-n2;
 TreeSet<Integer> set1 = new TreeSet<>(comparator);
 TreeSet<Integer> set2 = new TreeSet<>(Set.of(1, 2, 3));
 ````
+
+### Comparator
+package: java.util
+```java
+int compare(T o1, T o2);
+```
+
+### Comparable
+package: java.lang
+```java
+int compareTo(T o1);
+```
