@@ -113,3 +113,30 @@ abstract class Dog {
 
 ```
 The static method ciao() is marked final so it cannot be hidden in the subclass.
+
+
+## Access to protected method. IMPORTANT!!!
+```java
+package a;
+class A {
+  protected hello(){}
+}
+```
+
+```java
+package b;
+class B extends A {
+
+  public static void main(String[] args) {
+    B b1 = new B();
+    b1.hello(); //fine this compile!
+    
+    A b2 = new B();
+    //THIS DOES NOT COMPILE!
+    //b2.hello();  
+  }
+}
+```
+In the main method I am in the package **b**, and I am trying to access to a protected method defined in the class A (the type is A, not B)
+which is in the package **a**, then a different package.
+Then it does not compile!

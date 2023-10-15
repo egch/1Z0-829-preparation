@@ -7,7 +7,7 @@ import java.util.ResourceBundle;
 public class LoadOfResourceBundle {
 
   public static void main(String[] args) {
-    new LoadOfResourceBundle().fruits();
+    new LoadOfResourceBundle().fruitsUsingDefault();
   }
 
   void load() {
@@ -29,7 +29,7 @@ public class LoadOfResourceBundle {
   }
 
   void fruits() {
-    Locale.setDefault(new Locale("ch", "CH"));
+    Locale.setDefault(new Locale("it", "CH"));
     Locale italy = new Locale(Locale.ITALIAN.getLanguage(), Locale.ITALY.getCountry());
     ResourceBundle bundle = ResourceBundle.getBundle("ch11.Fruits", italy);
     String value = bundle.getString("grapes"); //Uva Ialia (it_IT)
@@ -46,11 +46,19 @@ public class LoadOfResourceBundle {
       System.out.println(e.getMessage());
     }
 
-
     //reading message
     value = bundle.getString("message");
     System.out.println(MessageFormat.format(value, "Pere", "Kiwi"));
+  }
 
-
+  void fruitsUsingDefault() {
+    Locale.setDefault(new Locale("it", "CH"));
+    Locale us = new Locale("en", "US");
+    ResourceBundle bundle = ResourceBundle.getBundle("ch11.Fruits", us);
+    //there ain't bundle for US, so it will be used the default
+    String value = bundle.getString("grapes"); //Uva (it)
+    System.out.println(value);
+    value = bundle.getString("mango"); //(it-ch)
+    System.out.println(value);
   }
 }
