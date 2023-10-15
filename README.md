@@ -20,8 +20,11 @@ Exam Number: 1Z0-829
 13. [Concurrency](docs/ch13.md)
 14. [I/O](docs/ch14.md)
 15. [JDBC](docs/ch15.md)
+16. 
+### Extra
+-  [Pitfalls & Tips](docs/pitfall.md)
 
-[Review](docs/ReviewFocusTopics.md)
+
 
 ## Links
 * https://medium.com/wearewaes/all-you-need-to-know-on-how-to-become-an-ocp-java-se-17-developer-918d3ebd60d2

@@ -18,6 +18,13 @@ I can't assign a lambda to a var!!!!
 var lambda=s->s+2;
 ```
 
+### Lambda boxing
+```java
+//does not compile
+Function<Integer, Boolean> function = (int i) -> {return false;}
+```
+The type is Integer in the Function and int in the lambda.
+
 ## Function
 
 ### Compose

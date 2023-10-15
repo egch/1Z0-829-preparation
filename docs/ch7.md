@@ -55,6 +55,7 @@ sealed class HumanBeing {}
 
 sealed class Male extends HumanBeing {}
 ```
+Ahe subclass (Male) of a sealed class (HumanBeing) **must be marked** final, sealed, or non-sealed.
 
 ### Sealed interfaces
 
@@ -94,6 +95,7 @@ public record Person(String firstName, String lastName) {
   }
 }
 ```
+A compact constructor cannot set an instance variable.
 ### Overloaded constructor
 ```java
 public record Person(String firstName, String lastName) {
@@ -105,3 +107,13 @@ public record Person(String firstName, String lastName) {
   }
 }
 ```
+### Record with instance variables
+```java
+record Game() {
+  //does not compile
+   final int score = 10;
+}
+
+```
+It does not compile because records cannot include instance variables not listed in the declaration of the record, 
+as it could break immutability.
