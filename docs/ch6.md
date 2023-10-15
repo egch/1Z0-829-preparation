@@ -119,7 +119,7 @@ The static method ciao() is marked final so it cannot be hidden in the subclass.
 ```java
 package a;
 class A {
-  protected hello(){}
+  protected void hello(){}
 }
 ```
 
