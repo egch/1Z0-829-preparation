@@ -33,3 +33,29 @@ public void bass(String... values, int... nums) {}
 ## Passing data among methods
 _Java is a “pass-by-value” language. This means that a copy of the variable is made and the method receives that copy. 
 Assignments made in the method do not affect the caller._
+
+## Access to protected method. IMPORTANT!!!
+```java
+package a;
+class A {
+  protected void hello(){}
+}
+```
+
+```java
+package b;
+class B extends A {
+
+  public static void main(String[] args) {
+    B b1 = new B();
+    b1.hello(); //fine this compile!
+    
+    A b2 = new B();
+    //THIS DOES NOT COMPILE!
+    //b2.hello();  
+  }
+}
+```
+In the main method I am in the package **b**, and I am trying to access to a protected method defined in the class A (the type is A, not B)
+which is in the package **a**, then a different package.
+Then it does not compile!
