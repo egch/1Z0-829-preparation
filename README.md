@@ -20,7 +20,7 @@ Exam Number: 1Z0-829
 13. [Concurrency](docs/ch13.md)
 14. [I/O](docs/ch14.md)
 15. [JDBC](docs/ch15.md)
-16. 
+
 ### Extra
 -  [Pitfalls & Tips](docs/pitfall.md)
 
