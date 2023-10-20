@@ -53,9 +53,10 @@ public class ResolvePaths {
 
   void toRealPathNotExisting() throws IOException {
     Path notAFile = Path.of("cicciopasticcio.txt");
-
     //Exception in thread "main" java.nio.file.NoSuchFileException: cicciopasticcio.txt
-    System.out.println(notAFile.toRealPath());
+    Path realPath = notAFile.toRealPath();
+
+    System.out.println(realPath);
   }
 
   //we assume the link exist and also the corresponding target folder /tmp/a/b

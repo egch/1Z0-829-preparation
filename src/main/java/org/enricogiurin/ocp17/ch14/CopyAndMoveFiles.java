@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 public class CopyAndMoveFiles {
 
   public static void main(String[] args) throws IOException {
-    new CopyAndMoveFiles().delete();
+    new CopyAndMoveFiles().copy_replace();
   }
 
   //if file already exist
