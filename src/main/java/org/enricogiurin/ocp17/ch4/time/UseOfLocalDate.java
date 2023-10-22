@@ -1,7 +1,6 @@
 package org.enricogiurin.ocp17.ch4.time;
 
 import java.time.LocalDate;
-
 import java.time.Month;
 import java.time.temporal.ChronoUnit;
 

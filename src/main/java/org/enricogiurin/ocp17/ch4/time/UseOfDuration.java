@@ -3,7 +3,6 @@ package org.enricogiurin.ocp17.ch4.time;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 
 public class UseOfDuration {
