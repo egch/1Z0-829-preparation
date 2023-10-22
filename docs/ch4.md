@@ -107,6 +107,10 @@ jshell> java.time.ZonedDateTime.now()
 $49 ==> 2023-05-14T19:56:46.627004+02:00[Europe/Zurich]
 ```
 
+### GMT vs UTC
+- GMT - Greenwich Mean Time
+- UTC - Coordinated Universal Time
+
 ### Duration
 ```java
 jshell> java.time.Duration.ofSeconds(758768437)

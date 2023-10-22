@@ -1,6 +1,8 @@
 package org.enricogiurin.ocp17.ch4.time;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Set;
@@ -8,7 +10,7 @@ import java.util.Set;
 public class UseOfZonedDateTime {
 
   public static void main(String[] args) {
-    new UseOfZonedDateTime().zoneDateTime();
+    new UseOfZonedDateTime().printZones();
   }
 
   void zoneDateTime() {
@@ -30,10 +32,25 @@ public class UseOfZonedDateTime {
 
   }
 
-  void showZones() {
+  void printZones() {
     Set<String> availableZoneIds = ZoneId.getAvailableZoneIds();
     System.out.println(String.format("found %d time zones", availableZoneIds.size()));
     availableZoneIds.forEach(System.out::println);
+  }
+
+  void createZonedDateTime() {
+    ZoneId zoneZurich = ZoneId.of("Europe/Zurich");
+
+    ZonedDateTime zdtExtended = ZonedDateTime.of(2023, 11, 10, 1, 20, 30, 100, zoneZurich);
+
+    LocalDate localDate = LocalDate.now();
+    LocalTime localTime = LocalTime.now();
+    ZonedDateTime zdtLDLT = ZonedDateTime.of(localDate, localTime, zoneZurich);
+
+    LocalDateTime localDateTime = LocalDateTime.now();
+    ZonedDateTime zdtLDT = ZonedDateTime.of(localDateTime, zoneZurich);
+    System.out.println(zdtLDT);  //2023-10-22T08:26:16.798939+02:00[Europe/Zurich]
+
   }
 
   void invalidZoneId() {
