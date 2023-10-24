@@ -2,13 +2,14 @@ package org.enricogiurin.ocp17.ch4.time;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 public class UseOfDuration {
 
   public static void main(String[] args) {
-    new UseOfDuration().addDurationToDate();
+    new UseOfDuration().durationWithLocalDate();
   }
 
   void between() {
@@ -52,6 +53,16 @@ public class UseOfDuration {
     //Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unit must not have an estimated duration
     Duration oneMonth = Duration.of(1, ChronoUnit.MONTHS);
     System.out.println(oneMonth);
+  }
+
+  void durationWithLocalDate() {
+    //Duration is supposed to be used with objects that contain times.
+    LocalDate now = LocalDate.now();
+    //Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported unit: Seconds
+    //I cannot use Duration with LocalDate
+    LocalDate then = now.plus(Duration.ofDays(1L));
+    System.out.println(then);
+
   }
 
 

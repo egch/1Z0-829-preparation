@@ -25,7 +25,8 @@ public class UseOfPeriod {
     Period period = Period.ofDays(4).plusMonths(2);
     int days = period.getDays();
     int months = period.getMonths();
-    System.out.println("days: "+days+" months: "+months);
+    int years = period.getYears();
+    System.out.println("days: " + days + " months: " + months + " years: " + years);
     //no methods such as getHours, getMinutes, getDays
 
   }

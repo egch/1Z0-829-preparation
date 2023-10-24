@@ -9,8 +9,9 @@ public class TextBlocks {
         example:
         String s = """aaa"""; //does not compile
          */
-    printPyramid();
-    countLines();
+    //printPyramid();
+    //countLines();
+    textBlock();
   }
 
   static void printTextBlock() {
@@ -46,6 +47,17 @@ public class TextBlocks {
         pigeon \
         termite""";
     System.out.print(block);
+  }
+
+  static void textBlock() {
+    String s = """
+        I do not want a newline \
+        This should be in the same line
+        """;
+
+    System.out.println(s);
+
+
   }
 
 
