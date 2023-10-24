@@ -40,6 +40,14 @@ public class UseOfDuration {
     System.out.println("duration 1k nanos: "+duration);
   }
 
+  void methodsOfDuration() {
+    Duration duration = Duration.ofDays(1L);
+    long seconds = duration.getSeconds();
+    System.out.println(seconds);
+    //no methods such as getHours, getMinutes, getDays
+
+  }
+
   void invalidDuration() {
     //Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unit must not have an estimated duration
     Duration oneMonth = Duration.of(1, ChronoUnit.MONTHS);

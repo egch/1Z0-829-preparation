@@ -9,7 +9,7 @@ import java.time.temporal.ChronoUnit;
 public class UseOfPeriod {
 
   public static void main(String[] args) {
-    new UseOfPeriod().parsePeriod();
+    new UseOfPeriod().methodsOfPeriod();
   }
 
   void period() {
@@ -19,6 +19,15 @@ public class UseOfPeriod {
     System.out.println(period);  //P1Y5D
     LocalDateTime future = now.plus(period);
     System.out.println(future); //2024-09-08T03:07:43.919980
+  }
+
+  void methodsOfPeriod() {
+    Period period = Period.ofDays(4).plusMonths(2);
+    int days = period.getDays();
+    int months = period.getMonths();
+    System.out.println("days: "+days+" months: "+months);
+    //no methods such as getHours, getMinutes, getDays
+
   }
 
 
