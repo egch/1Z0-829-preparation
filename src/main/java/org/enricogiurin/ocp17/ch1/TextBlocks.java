@@ -11,7 +11,7 @@ public class TextBlocks {
          */
     //printPyramid();
     //countLines();
-    textBlock();
+    equivalentTextBlock();
   }
 
   static void printTextBlock() {
@@ -56,8 +56,19 @@ public class TextBlocks {
         """;
 
     System.out.println(s);
+  }
 
+  static void equivalentTextBlock() {
+    var quotes = """
+          \"The Quotes that Could\"
+        \"\"\"
+         """;
 
+    var equivalent = """
+          "The Quotes that Could"
+        \"""
+         """;
+    System.out.println(equivalent);
   }
 
 

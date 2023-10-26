@@ -3,8 +3,9 @@ package org.enricogiurin.ocp17.ch4.string;
 public class StringIndent {
 
   public static void main(String[] args) {
-    new StringIndent().stripIndent();
+    new StringIndent().trickyIndent();
   }
+
 
   void indent() {
     var block = """
@@ -20,6 +21,27 @@ public class StringIndent {
     // Today is a wonderful day
     // even though it is raining
     System.out.println(ns.indent(-1));
+  }
+
+
+  void trickyIndent() {
+    var phrase = "prickly \nporcupine";
+    System.out.println(phrase);
+    System.out.println();
+    String pIndent1 = phrase.indent(1);
+    System.out.println(pIndent1);
+    System.out.println();
+    String pIndent0 = phrase.indent(0);
+    System.out.println(pIndent0);
+    System.out.println();
+    String indentMinus1 = phrase.indent(-1);
+    System.out.println(indentMinus1);
+    System.out.println();
+
+    System.out.println(phrase.length());
+    System.out.println(pIndent1.length());
+    System.out.println(pIndent0.length());
+    System.out.println(indentMinus1.length());
   }
 
   void stripIndent() {

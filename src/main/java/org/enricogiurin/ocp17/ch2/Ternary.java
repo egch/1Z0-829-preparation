@@ -4,7 +4,7 @@ public class Ternary {
 
   public static void main(String[] args) {
     //  new Ternary().trickyTernary();
-    new Ternary().complexTernary();
+    new Ternary().ternaryNoParenthesis();
   }
 
   void trickyTernary() {
@@ -22,6 +22,14 @@ public class Ternary {
     int x = 2 > 0 ? 1 : 0;
     //this does not compile as no left assignment
     //2>0?1:0;
+  }
+
+  void ternaryNoParenthesis() {
+    int time = 9;
+    int day = 3;
+    var dinner = ++time>= 10 ? day-- <= 2
+        ? "Takeout" : "Salad" : "Leftovers";
+    System.out.println(dinner);//Salad
   }
 
 

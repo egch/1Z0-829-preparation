@@ -9,7 +9,7 @@ import java.time.temporal.ChronoUnit;
 public class UseOfPeriod {
 
   public static void main(String[] args) {
-    new UseOfPeriod().methodsOfPeriod();
+    new UseOfPeriod().periodDoesNotChain();
   }
 
   void period() {
@@ -19,6 +19,13 @@ public class UseOfPeriod {
     System.out.println(period);  //P1Y5D
     LocalDateTime future = now.plus(period);
     System.out.println(future); //2024-09-08T03:07:43.919980
+  }
+
+  void periodDoesNotChain() {
+
+    //Period does not chain. Only the last method is considered!
+    Period period = Period.ofYears(1).ofMonths(2).ofDays(1);
+    System.out.println(period);  //P1D
   }
 
   void methodsOfPeriod() {
