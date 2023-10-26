@@ -1,9 +1,9 @@
 package org.enricogiurin.ocp17.ch4.string;
 
-public class EmptyOrBlank {
+public class IsEmptyVsIsBlank {
 
   public static void main(String[] args) {
-    new EmptyOrBlank().check();
+    new IsEmptyVsIsBlank().check();
   }
 
   void check() {

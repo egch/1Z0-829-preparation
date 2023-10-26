@@ -23,16 +23,20 @@ public class StringIndent {
   }
 
   void stripIndent() {
-    String html = """
-                      <html>
-                         <body>
-                             <p>Hello, world</p>
-                         </body>
-                      </html>
-        """;
-    System.out.println(html);
-    System.out.println(html.stripIndent());
+    var text = " a\n"
+        + "  b\n"
+        + " c";
 
+    System.out.println("Original Text:");
+    System.out.println(text);
+    System.out.println("length: " + text.length());
+
+    String stripped = text.stripIndent();  //9
+
+    System.out.println("\nStripped Text:");
+    System.out.println(stripped);
+    System.out.println("length: " + stripped.length()); //6
   }
+
 
 }

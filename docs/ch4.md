@@ -116,3 +116,12 @@ $49 ==> 2023-05-14T19:56:46.627004+02:00[Europe/Zurich]
 jshell> java.time.Duration.ofSeconds(758768437)
 $54 ==> PT210769H37S
 ```
+
+## Converting String to number
+```java 
+//  this method returns a primitive long
+var aLongPrimitive = Long.parseLong("123");
+
+//this method returns a Long object
+var aLong = Long.valueOf("123");
+```

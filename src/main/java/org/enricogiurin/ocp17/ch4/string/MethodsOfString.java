@@ -3,7 +3,7 @@ package org.enricogiurin.ocp17.ch4.string;
 public class MethodsOfString {
 
   public static void main(String[] args) {
-    new MethodsOfString().trim();
+    new MethodsOfString().stripVsTrim();
   }
 
   void replace() {
@@ -44,6 +44,21 @@ public class MethodsOfString {
     String source = " ciao \n";
     String target = source.trim();
     print(target);
+  }
+
+  void stripVsTrim() {
+    char unicodeSpace = '\u2000';
+    String text =
+        unicodeSpace + "Unicode space" + unicodeSpace; // This string contains unicode space
+    String trimmedText = text.trim();
+    String strippedText = text.strip();
+
+    System.out.println(
+        "Trimmed Text:  " + "#" + trimmedText + "#"); // Trimmed Text:  # Unicode space #
+    System.out.println(
+        "Stripped Text: " + "#" + strippedText + "#"); // Stripped Text: #Unicode space#
+
+
   }
 
 
