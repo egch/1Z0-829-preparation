@@ -1,9 +1,9 @@
 package org.enricogiurin.ocp17.ch3;
 
-public class Loop {
+public class ForLoop {
 
   public static void main(String[] args) {
-    new Loop().forPreIncrementVsPostIncrement();
+    new ForLoop().forPreIncrementVsPostIncrement();
   }
 
   void loopWithDouble() {
@@ -40,10 +40,19 @@ public class Loop {
       System.out.println("x: " + x + " - y: " + y);
     }
 
+
+
     //You can declare multiple elements in a for loop, but the data type must be listed only once
 /*  for(long x=0, long y=0; x<10 && y<10; x++, y++){
       System.out.println("x: "+x+" - y: "+y);
     }*/
+  }
+
+  void multipleVariablesInt() {
+    //separation is with comma
+    for(int i=0, j=0;i<10 && j<10; i++, j++){
+
+    }
   }
 
 
@@ -52,6 +61,8 @@ public class Loop {
       System.out.println("stop me pls!");
     }
   }
+
+
 
   void forLabels() {
     outer:

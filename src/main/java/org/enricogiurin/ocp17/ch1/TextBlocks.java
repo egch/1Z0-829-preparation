@@ -11,7 +11,7 @@ public class TextBlocks {
          */
     //printPyramid();
     //countLines();
-    equivalentTextBlock();
+    anotherTextBlock();
   }
 
   static void printTextBlock() {
@@ -56,6 +56,13 @@ public class TextBlocks {
         """;
 
     System.out.println(s);
+  }
+
+  static void anotherTextBlock() {
+    String textBlock = """
+        This is a text block
+        """;
+    System.out.println(textBlock);
   }
 
   static void equivalentTextBlock() {

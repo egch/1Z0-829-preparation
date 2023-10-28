@@ -10,7 +10,7 @@ import java.time.ZonedDateTime;
 public class DaylightSavingTime {
 
   public static void main(String[] args) {
-    new DaylightSavingTime().dayLightSavingTimeNovember();
+    new DaylightSavingTime().dstNovember();
 
   }
 
@@ -62,6 +62,18 @@ public class DaylightSavingTime {
     System.out.println(later.getHour() + " "
         + offset.equals(later.getOffset()));
     System.out.println(later.getOffset()); //-04:00
+  }
+
+  void dstNovember() {
+    LocalDate localDate = LocalDate.of(2022, Month.NOVEMBER, 6);
+    LocalTime time = LocalTime.of(1, 0);
+    ZoneId zone = ZoneId.of("America/New_York");
+    ZonedDateTime zonedDateTime = ZonedDateTime.of(localDate, time, zone);
+    System.out.println(zonedDateTime); //2022-11-06T01:00-04:00[America/New_York]
+    zonedDateTime = zonedDateTime.plusHours(1);
+    //we repeat the hour but the offset is changed
+    System.out.println(zonedDateTime); //2022-11-06T01:00-05:00[America/New_York]
+
   }
 
 
