@@ -55,7 +55,7 @@ sealed class HumanBeing {}
 
 sealed class Male extends HumanBeing {}
 ```
-Ahe subclass (Male) of a sealed class (HumanBeing) **must be marked** final, sealed, or non-sealed.
+A subclass (Male) of a sealed class (HumanBeing) **must be marked** either final or sealed or non-sealed.
 
 ### Sealed interfaces
 

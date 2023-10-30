@@ -10,4 +10,9 @@ public record RecordConstructor(int size, String brand, LocalDate expires) {
     //For this reason, the first line must be a call to another constructor,
     this(0, "", LocalDate.now());
   }
+
+  public RecordConstructor(int size, String brand) {
+    //For this reason, the first line must be a call to another constructor,
+    this(size, brand, LocalDate.now());
+  }
 }
