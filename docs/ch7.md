@@ -54,8 +54,10 @@ The permits clause is optional if the subclass is nested or declared in the same
 sealed class HumanBeing {}
 
 sealed class Male extends HumanBeing {}
+non-sealed class EuropeanMale extends HumanBeing {}
+final class AsianMale extends HumanBeing {}
 ```
-A subclass (Male) of a sealed class (HumanBeing) **must be marked** either final or sealed or non-sealed.
+A subclass (Male) of a sealed class (HumanBeing) must be marked either **final** or **sealed** or **non-sealed**.
 
 ### Sealed interfaces
 
@@ -95,7 +97,19 @@ public record Person(String firstName, String lastName) {
   }
 }
 ```
-A compact constructor cannot set an instance variable.
+A compact constructor cannot set an instance variable through this but just with the normal assignment operator.
+
+
+```java
+public record Name(String name) {
+  Name {
+    name = "Enrico"; //this works
+    //this.name = "Enrico"; //this does not compile
+  }
+}
+```
+
+```java
 ### Overloaded constructor
 ```java
 public record Person(String firstName, String lastName) {
