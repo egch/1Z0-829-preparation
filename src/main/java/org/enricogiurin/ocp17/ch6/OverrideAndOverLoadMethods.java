@@ -39,8 +39,8 @@ class Dog extends Pet {
   String name;
 
   //Static methods cannot be annotated with @Override
-  //overridden and hidden methods can have covariant return types.
-  // @Override
+  //overridden, and hidden methods can have covariant return types.
+  //@Override
   static String group() {
     return Dog.class.getSimpleName();
   }

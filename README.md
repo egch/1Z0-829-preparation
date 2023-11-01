@@ -26,8 +26,12 @@ Exam Number: 1Z0-829
 
 
 
-## Links
+## Resources
+### Links
 * https://medium.com/wearewaes/all-you-need-to-know-on-how-to-become-an-ocp-java-se-17-developer-918d3ebd60d2
 * https://education.oracle.com/java-se-17-developer/pexam_1Z0-829
 * www.selikoff.net/ocp-17/
 * https://docs.oracle.com/en/java/javase/17/docs/api/
+### Books
+* [Oracle® Certified Professional Java SE 17 Developer Practice Tests EXAM 1Z0-829](https://www.amazon.com/Oracle-Certified-Professional-Developer-Practice/dp/1119864615)
+* [OCP Oracle® Certified Professional Java SE 17 Developer Study Guide Exam 1Z0-829](https://www.amazon.com/Oracle-Certified-Professional-Developer-Study/dp/1119864585)

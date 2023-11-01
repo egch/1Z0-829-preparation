@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.ch6;
+package org.enricogiurin.ocp17.ch6.inheritance;
 
 public class HidingVariables {
 

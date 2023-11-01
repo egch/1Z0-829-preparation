@@ -40,7 +40,7 @@ class Crocodile extends Reptile {
     System.out.println("reptile weight: " + super.weight);
     System.out.println("crocodile weight: " + this.weight);
 
-    //skinColor is only defined in the child class, therefore cannot be accessed with the super.
+    //skinColor is only defined in the child class, therefore, cannot be accessed with the super.
     //System.out.println("reptile skinColor: "+super.skinColor); does not compile
     System.out.println("crocodile skinColor: " + this.skinColor);
   }

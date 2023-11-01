@@ -19,7 +19,7 @@ public abstract class Whale {
 ```
 ## Creating Immutable Objects
 ### Declaring an Immutable Class
-1. Mark the class as final or make all of the constructors private.
+1. Mark the class as final or make all the constructors private.
 2. Mark all the instance variables private and final.
 3. Don’t define any setter methods.
 4. Don’t allow referenced mutable objects to be modified.
@@ -83,6 +83,15 @@ public class Fly extends Insect {
       return 5;
    } }
 ```
+
+### About Override instance variables
+Instance variables **are not overridden**, they are hidden.
+Polymorphism and overriding do not apply to instance variables.
+
+[Hiding Variables](../src/main/java/org/enricogiurin/ocp17/ch6/inheritance/HidingVariables.java)  
+[Hiding Variables - 2](../src/main/java/org/enricogiurin/ocp17/ch6/inheritance/OverrideInstanceVariables.java)
+
+
 ## Abstract
 ### abstract & final
 **abstract** and **final** together does not compile!

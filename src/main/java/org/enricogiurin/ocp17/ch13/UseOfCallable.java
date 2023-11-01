@@ -31,5 +31,9 @@ public class UseOfCallable {
       executorService.shutdown();
     }
   }
+
+  void simpleCallable(){
+    Callable<String> callable = ()->"hello";
+  }
 }
 
