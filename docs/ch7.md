@@ -63,7 +63,7 @@ A subclass (Male) of a sealed class (HumanBeing) must be marked either **final**
 
 ### Sealed interfaces
 
-A sealed interface restricts which subclasses may implement it.
+A sealed interface restricts which **subclasses** may implement it.
 ```java
 public sealed interface SealedInterface permits SealedInterfaceImpl {}
 

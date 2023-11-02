@@ -25,7 +25,7 @@ public class Car {
       //inner class can be private/protected/package/public
       public class Engine {
 
-        //intentionally it has the same name as the outer class
+        //intentionally, it has the same name as the outer class
         private final String name;
 
         //Remember that private constructors can be used by any methods within the outer class.

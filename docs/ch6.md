@@ -25,6 +25,13 @@ public abstract class Whale {
 4. Don’t allow referenced mutable objects to be modified.
 5. Use a constructor to set all properties of the object, making a copy if needed.
 
+## Inheritance
+### Extends & Implements
+Mind that extends come before implements!
+```java
+class Jaguar extends Feline implements Run {...}
+```
+
 ## Override instance vs static methods
 Instance method cannot override static method 
 
@@ -121,4 +128,4 @@ abstract class Dog {
   }
 
 ```
-The static method ciao() is marked final so it cannot be hidden in the subclass.
+The static method ciao() is marked final, so it cannot be hidden in the subclass.
