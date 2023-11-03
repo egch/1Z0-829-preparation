@@ -6,6 +6,14 @@ public class UseOfInstanceOf {
     new UseOfInstanceOf().usage();
   }
 
+  void instanceOfNull() {
+    String s = "";
+    //does not compile
+/*    if(s instanceof null){
+      System.out.println("ciao");
+    }*/
+  }
+
   void usage() {
     Exception exception = new Exception();
     Throwable t = new Throwable();
@@ -18,22 +26,21 @@ public class UseOfInstanceOf {
     }
 
     //this won't compile
-
-/*
-if(s instanceof Throwable){
-            System.out.println("It's an instance of Throwable");
-        }
-        */
+    /*
+    if(s instanceof Throwable){
+                System.out.println("It's an instance of Throwable");
+            }
+    */
   }
 
   void invalidInstanceof() {
     Integer number = 5;
     //invalid instanceof...number cannot be a string
-/*
-  if(number instanceof  String){
-      //
-    }
-*/
+    /*
+      if(number instanceof  String){
+          //
+        }
+    */
 
     //but this is valid
     Object n2 = 5;
@@ -53,8 +60,8 @@ if(s instanceof Throwable){
     // previously defined local variable defined on line 41.
 
     //TODO - review this
-/*    else if (!(fish instanceof String guppy)) {
-        throw new RuntimeException();
+    /*    else if (!(fish instanceof String guppy)) {
+            throw new RuntimeException();
      }*/
     System.out.print("Swim!");
   }

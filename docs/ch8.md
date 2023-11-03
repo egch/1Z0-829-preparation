@@ -25,6 +25,12 @@ Function<Integer, Boolean> function = (int i) -> {return false;}
 ```
 The type is Integer in the Function and int in the lambda.
 
+### Lambda and variables effective final
+Lambdas require **local variables** and **method parameters** to be effectively final to use them.
+Instance and static variables can be used regardless of whether they are effectively final.
+[LambdaEffectiveFinal](src/main/java/org/enricogiurin/ocp17/book/ch8/LambdaEffectiveFinal.java)
+
+
 ## Function
 
 ### Compose
