@@ -95,8 +95,8 @@ public class Fly extends Insect {
 Instance variables **are not overridden**, they are hidden.
 Polymorphism and overriding do not apply to instance variables.
 
-[Hiding Variables](../src/main/java/org/enricogiurin/ocp17/ch6/inheritance/HidingVariables.java)  
-[Hiding Variables - 2](../src/main/java/org/enricogiurin/ocp17/ch6/inheritance/OverrideInstanceVariables.java)
+[Hiding Variables](../src/main/java/org/enricogiurin/ocp17/book/ch6/inheritance/HidingVariables.java)  
+[Hiding Variables - 2](../src/main/java/org/enricogiurin/ocp17/book/ch6/inheritance/OverrideInstanceVariables.java)
 
 
 ## Abstract

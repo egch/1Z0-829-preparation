@@ -45,7 +45,7 @@ to prevent errors.
 First, if a class or interface inherits two interfaces containing default methods with the same
 signature, it must override the method with its own implementation.
 
-[Inherit two default methods with the same signature](../src/main/java/org/enricogiurin/ocp17/ch7/interfaces/defaultmethods/InheritTwoDefaultMethods.java)
+[Inherit two default methods with the same signature](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/defaultmethods/InheritTwoDefaultMethods.java)
 
 ## Sealed
 ### Same file
