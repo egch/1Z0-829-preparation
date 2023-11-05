@@ -13,7 +13,7 @@ public class Tadpole extends Frog {
     Frog f = new Tadpole();
     //'eat()' has protected access in 'org.enricogiurin.ocp17.ch6.extendprotected.animal.Frog'
 
-    //here you are in the package other and you are tyring to access to a method of Frog
+    //here you are in the package other, and you are tyring to access to a method of Frog
     //(the type is Frog, not Tadpole) which is protected, then you cannot!
     //f.eat();
 

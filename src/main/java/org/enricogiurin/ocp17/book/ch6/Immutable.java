@@ -3,7 +3,7 @@ package org.enricogiurin.ocp17.book.ch6;
 import java.util.ArrayList;
 import java.util.List;
 
-//with final I prevent to have a mutable sub-class
+//with final I prevent having a mutable sub-class
 public final class Immutable {
 
   //fields are private/final and no setter defined
@@ -12,7 +12,7 @@ public final class Immutable {
 
   public Immutable(String name, List<Integer> list) {
     this.name = name;
-    //I make a copy of list passed in the constructor
+    //I make a copy of the list passed in the constructor
     this.list = new ArrayList<>(list);
   }
 

@@ -15,10 +15,21 @@ public enum SeasonWithValues {
 
   private String description;
 
+  //enum constructors are implicitly private!
   SeasonWithValues(String description) {
     System.out.println("building description for " + this.name());
     this.description = description;
   }
+
+
+  //enum constructors are implicitly private!
+  /*public */
+  SeasonWithValues() {
+    this.description = "default";
+  }
+
+
+
 
   //this is the default method, but we are not forced to define!
   public String getMood() {
