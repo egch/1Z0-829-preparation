@@ -60,13 +60,13 @@ public class TryWithResources {
 
   }
 
-  void noteEffectiveFinal() {
+  void notEffectiveFinal() {
     //alternative way, but mf1 needs to be final or effective final
     var mf1 = new MyFileClass(1);
     //Variable used as a try-with-resources resource should be final or effectively final
     try (mf1) {
       //with this uncommented won't compile
-      //  mf1=null;
+       // mf1=null;
 
     } catch (Exception e) {
 
