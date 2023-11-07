@@ -61,24 +61,7 @@ public class UseOfArrays {
     System.out.println(result);
   }
 
-  void arrayCreation() {
 
-    //here I specify the size
-    int[] array1 = new int[3];
-
-    //here I specify the values
-    int[] array2 = new int[]{1, 2, 3};
-    //anonymous array
-    int[] array3 = {1, 2, 3};
-    //strange but valid ways to create array
-    int array4[] = new int[3];
-    int[] array5 = new int[3];
-    int array6[] = new int[3];
-
-    //strange array definition
-    java.util.Date[] dates[] = new java.util.Date[2][];
-    dates[0][0] = new Date();
-  }
 
   void equalsOnArrays() {
     int[] a1 = {1, 2, 3};
