@@ -8,7 +8,7 @@ import java.util.TreeSet;
 public class UseOfSet {
 
   public static void main(String[] args) {
-    new UseOfSet().treeSet();
+    new UseOfSet().treeSetWithElementsThatDoNotImplementComparable();
   }
 
   void create() {
@@ -33,5 +33,26 @@ public class UseOfSet {
     TreeSet<Integer> set1 = new TreeSet<>(comparator);
     TreeSet<Integer> set2 = new TreeSet<>(Set.of(1, 2, 3));
   }
+
+  void treeSetWithElementsThatDoNotImplementComparable() {
+    Set<IDoNotImplementComparable> set = new TreeSet<>();
+    // cannot be cast to class java.lang.Comparable (org.enricogiurin.ocp17.book.ch9.UseOfSet$IDoNotImplementComparable
+    //here throws a ClassCastException
+    set.add(new IDoNotImplementComparable(10));
+    set.add(new IDoNotImplementComparable(20));
+    for (IDoNotImplementComparable e:set){
+      System.out.println(e);
+    }
+
+  }
+
+  static class IDoNotImplementComparable {
+    private final int element;
+
+    public IDoNotImplementComparable(int element) {
+      this.element = element;
+    }
+  }
+
 
 }

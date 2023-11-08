@@ -15,5 +15,18 @@ public class Vararg {
     }
     System.out.println("result is: " + result);
   }
+  //Vararg parameter must be the last in the list
+  //there should be only one vararg parameter
+  void multipleVararg(int... elements
+      /*, String... list*/  //does not compile
+      ) {
+  }
+
+  void usingVarargAsVariable(String... names) {
+    //does not compile
+    //While varargs is used like an array from within the method,
+    // it can only be used as a method parameter.
+    //String... names2 = names;
+  }
 
 }

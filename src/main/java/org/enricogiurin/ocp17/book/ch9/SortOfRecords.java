@@ -13,7 +13,8 @@ public class SortOfRecords {
     Person fabio = new Person("Peter", 7);
     List<Person> boys = Arrays.asList(enrico, luca, fabio);
 
-    Comparator<Person> comparator = Comparator.comparing(Person::name).thenComparingInt(Person::age)
+    Comparator<Person> comparator = Comparator.comparing(Person::name)
+        .thenComparingInt(Person::age)
         .reversed();
 
     Collections.sort(boys, comparator);

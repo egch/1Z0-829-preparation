@@ -56,3 +56,12 @@ package: java.lang
 ```java
 int compareTo(T o1);
 ```
+
+### Deque
+![Deque](images/Deque.png)
+
+
+![deque-stack.png](images/Deque-Stack.png)
+
+ - LinkedList implements Deque
+ - ArrayDeque implements Deque

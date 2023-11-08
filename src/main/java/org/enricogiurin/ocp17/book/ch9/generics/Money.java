@@ -13,14 +13,9 @@ public class Money<T> {
     return null;
   }
 
-
   public Money(T currency, BigDecimal amount) {
     this.currency = currency;
     this.amount = amount;
-  }
-
-  public static void main(String[] args) {
-    //Money<Dollar> dollar = new Money<>()
   }
 
   public BigDecimal getAmountInDollars() {
@@ -28,8 +23,13 @@ public class Money<T> {
   }
 
 
+
+  public static void main(String[] args) {
+    //Money<Dollar> dollar = new Money<>()
+  }
+
+
 }
 
-class Dollar {
-
-}
+class Dollar {}
+class CHF {}

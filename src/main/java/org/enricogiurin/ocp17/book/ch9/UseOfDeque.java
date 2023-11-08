@@ -1,5 +1,6 @@
 package org.enricogiurin.ocp17.book.ch9;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -55,6 +56,16 @@ public class UseOfDeque {
     stack.pop(); //[]
     peek = stack.peek();
     System.out.println(peek);  //null
+  }
+
+  void arrayDequeue() {
+    //The offer() method inserts an element at the end of the queue
+    Deque<String> q = new ArrayDeque<>();
+    q.offer("snowball"); // [snowball]
+    q.offer("minnie"); // [snowball, minnie]
+    q.offer("sugar"); // [snowball, minnie, sugar]
+
+    System.out.print(q.peek() + " " + q.peek() + " " + q.size()); // snowball snowball 3
 
   }
 

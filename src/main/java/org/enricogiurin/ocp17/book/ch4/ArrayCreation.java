@@ -32,6 +32,13 @@ public class ArrayCreation {
         {1,3,5}};
     //weird but allowed
     int[] m3[] = new int[3][3];
+
+    int m4[][] = new int[3][3];
+  }
+
+  void arrayWithVar() {
+    var myArray = new int[3];  //valid
+    //var wrong[] = new int[3];  //does not compile
   }
 
 

@@ -56,6 +56,11 @@ public class CollectionsOfGenerics {
     List<?> list2 = new ArrayList<String>();
   }
 
+  void wrongCollectionWithGenerics() {
+    //does not compile
+    //List<String> strings = new ArrayList<?>();
+  }
+
 
 
 }
