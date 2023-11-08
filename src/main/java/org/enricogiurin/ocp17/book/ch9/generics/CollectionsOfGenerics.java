@@ -43,8 +43,8 @@ public class CollectionsOfGenerics {
     exceptions.add(new IOException("error"));// yes we can add it
     exceptions.add(new FileNotFoundException("error"));// yes we can add it
 
-    //we cannot add Exception as it could be a list of IOException and Exception is not an IOException
-    //exceptions.add(new Exception("error"));// yes we can add it
+    //we cannot add an Exception as it could be a list of IOException and Exception is not an IOException
+    //exceptions.add(new Exception("error"))
 
   }
 

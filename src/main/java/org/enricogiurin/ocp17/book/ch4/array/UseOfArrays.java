@@ -1,7 +1,6 @@
-package org.enricogiurin.ocp17.book.ch4;
+package org.enricogiurin.ocp17.book.ch4.array;
 
 import java.util.Arrays;
-import java.util.Date;
 
 public class UseOfArrays {
 
