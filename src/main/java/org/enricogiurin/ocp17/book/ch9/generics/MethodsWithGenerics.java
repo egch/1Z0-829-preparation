@@ -1,11 +1,13 @@
 package org.enricogiurin.ocp17.book.ch9.generics;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Set;
 
 public class MethodsWithGenerics {
 
   public static void main(String[] args) {
-    new MethodsWithGenerics().callFindMin();
+    new MethodsWithGenerics().callAddElementToCollection();
   }
 
 
@@ -32,6 +34,22 @@ public class MethodsWithGenerics {
       }
     }
     return min;
+  }
+
+
+  <T extends Collection<U>, U extends CharSequence> U addElementToCollection(T list, U element) {
+    list.add(element);
+    return element;
+  }
+
+  void callAddElementToCollection() {
+    ArrayList<String> list = new ArrayList<>();
+    String enrico = addElementToCollection(list, "Enrico");
+    System.out.println("size: "+list.size());
+
+    var integers = new ArrayList<Integer>();
+    //does not compile
+   // addElementToCollection(integers, 5);
   }
 
   void callGetFirstElement() {

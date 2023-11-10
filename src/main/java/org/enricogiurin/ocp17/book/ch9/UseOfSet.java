@@ -8,7 +8,7 @@ import java.util.TreeSet;
 public class UseOfSet {
 
   public static void main(String[] args) {
-    new UseOfSet().treeSetWithElementsThatDoNotImplementComparable();
+    new UseOfSet().treeSetDoesNotAllowNullValues();
   }
 
   void create() {
@@ -26,6 +26,15 @@ public class UseOfSet {
     set.add(10);
     set.add(10);
     set.forEach(System.out::println);  //2, 5, 10
+  }
+
+  void treeSetDoesNotAllowNullValues() {
+    TreeSet<Integer> set = new TreeSet<>();
+    set.add(5);
+    //Exception in thread "main" java.lang.NullPointerException
+    //	at java.base/java.util.Objects.requireNonNull(Objects.java:209)
+    set.add(null);  //I cannot add null to TreeSet
+
   }
 
   void treeSetWithComparator() {

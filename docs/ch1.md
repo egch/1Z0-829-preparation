@@ -1,10 +1,10 @@
 # Building Blocks
-
-
+### Calling java on file with java extension
 java directly on .java file, no need to call javac.
 ```shell
 $ java HelloWorld.java
 ```
+And no _HelloWorld.class_ being created!
 ## packages
 From project root folder
 ```shell

@@ -29,7 +29,7 @@ We cannot add an element to a list declared s upper bounded wildcards!
 
 ```java
 List<? super IOException> exceptions = new ArrayList<Exception>();
-//
+
 exceptions.add(new IOException("error"));// yes we can add it
 exceptions.add(new FileNotFoundException("error"));// yes we can add it
 

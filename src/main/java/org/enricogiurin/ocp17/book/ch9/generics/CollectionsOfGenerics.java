@@ -3,6 +3,7 @@ package org.enricogiurin.ocp17.book.ch9.generics;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -33,8 +34,17 @@ public class CollectionsOfGenerics {
 
     List<? extends Number> list = new ArrayList<>();
 
-    //same goes with this
+    //the same goes with this
   }
+
+
+    public static void addException(Collection<? super Throwable> coll) {
+      //I can add any class whose superclass is Throwable
+      coll.add(new RuntimeException());
+      coll.add(new Exception());
+      coll.add(new Throwable());
+    }
+
 
   void lowerBoundedWildcards() {
     List<? super IOException> exceptions = new ArrayList<Exception>();
