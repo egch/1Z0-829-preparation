@@ -20,6 +20,7 @@ public class FunctionalInterfacesForPrimitives {
 
   void doubleSupplier() {
     DoubleSupplier ds = () -> new Random().nextDouble();
+    //mind the method: getAsDouble()!
     System.out.println(ds.getAsDouble());
   }
 

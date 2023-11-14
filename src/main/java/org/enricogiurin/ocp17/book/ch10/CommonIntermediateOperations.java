@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public class CommonIntermediateOperations {
     public static void main(String[] args) {
-        new CommonIntermediateOperations().peak();
+        new CommonIntermediateOperations().concat();
     }
     void distinct() {
         //distinct based on equals
@@ -48,7 +48,12 @@ public class CommonIntermediateOperations {
 
         //somehow equivalent to flatMap
         Stream<Integer> concat = Stream.concat(streamA, streamB);
-        concat.forEach(System.out::println);  //1...10
+        int sum = concat
+            .peek(System.out::println) //1,2...10
+            .mapToInt(n -> n)
+            .sum();
+        System.out.println(sum); //55
+
     }
 
     void sorted() {

@@ -1,12 +1,13 @@
 package org.enricogiurin.ocp17.book.ch10;
 
 import java.util.function.Predicate;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class InfiniteStream {
 
   public static void main(String[] args) {
-    new InfiniteStream().iteratePostIncrement();
+    new InfiniteStream().concatenateInfiniteStream();
   }
 
   void infiniteStream() {
@@ -35,10 +36,19 @@ public class InfiniteStream {
         .limit(10)
         .forEach(System.out::println); //prints 1....1
 
-    Stream.iterate(1, x-> ++x)  //the pre-increment is taken in account
+    Stream.iterate(1, x-> ++x)  //the pre-increment is taken into account
         .limit(10)
         .forEach(System.out::println); //prints 1....10
+  }
 
+  void concatenateInfiniteStream() {
+    var odds = IntStream.iterate(1, a -> a+2);
+    var evens = IntStream.iterate(2, a -> a+2);
+    //since we have limit 3 only the first 3 elements from odds are taken
+    var sum = IntStream.concat(odds, evens)
+        .peek(System.out::println) //1...3...5
+        .limit(3).sum();
+    System.out.print(sum);
   }
 
 }

@@ -5,7 +5,7 @@ import java.util.Optional;
 public class UseOfOptional {
 
   public static void main(String[] args) {
-    new UseOfOptional().optionalThrowWithSupplier();
+    new UseOfOptional().optionalOfNull();
   }
 
   void use() {
@@ -34,5 +34,19 @@ public class UseOfOptional {
 
     //Exception in thread "main" java.lang.RuntimeException: no value!
     optional.orElseThrow(()->new RuntimeException("no value!"));
+  }
+
+  void optionalOfNull() {
+    var empty = Optional.empty();
+    System.out.println(empty.isPresent()); //false
+    var method = Optional.ofNullable(null);
+    System.out.println(method.isPresent()); //false
+
+    //this throws a NPE at runtime as I pass the null value
+    var param = Optional.of(null);
+
+
+
+
   }
 }
