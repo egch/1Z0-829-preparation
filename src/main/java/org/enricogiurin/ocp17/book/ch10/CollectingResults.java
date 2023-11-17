@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 public class CollectingResults {
 
   public static void main(String[] args) {
-    new CollectingResults().groupingByBoolean();
+    new CollectingResults().groupingBySet();
   }
 
   void averagingInt() {
@@ -42,7 +42,18 @@ public class CollectingResults {
   void groupingBy() {
     Stream<String> fruitStream = fruitStream();
     Map<Integer, List<String>> map = fruitStream.collect(Collectors.groupingBy(String::length));
-    System.out.println(map);  //{4=[Kiwi, Pear, Lime], 5=[Apple, Grape, Peach, Mango, Lemon], 6=[Orange, Banana]}
+    //{4=[Kiwi, Pear, Lime], 5=[Apple, Grape, Peach, Mango, Lemon], 6=[Orange, Banana, Banana]}
+    //as you can see, Banana is present twice
+    System.out.println(map);
+  }
+
+  void groupingBySet() {
+    Stream<String> fruitStream = fruitStream();
+    Map<Integer, Set<String>> map = fruitStream.collect(Collectors.groupingBy(String::length,
+        Collectors.toSet()));
+    //{4=[Lime, Kiwi, Pear], 5=[Apple, Grape, Peach, Mango, Lemon], 6=[Orange, Banana]}
+    //as you can see, Banana is present only once!
+    System.out.println(map);
   }
 
   void groupingByBoolean() {
@@ -52,12 +63,7 @@ public class CollectingResults {
 
   }
 
-  void groupingBySet() {
-    Stream<String> fruitStream = fruitStream();
-    Map<Integer, Set<String>> map = fruitStream.collect(Collectors.groupingBy(String::length,
-        Collectors.toSet()));
-    System.out.println(map);  //{4=[Lime, Kiwi, Pear], 5=[Apple, Grape, Peach, Mango, Lemon], 6=[Orange, Banana]}
-  }
+
 
   void partitioningBy() {
     Stream<String> fruitStream = fruitStream();
@@ -78,9 +84,10 @@ public class CollectingResults {
 
   }
 
+  //note that Banana is present twice
   private Stream<String> fruitStream() {
     return Stream.of("Orange", "Apple", "Banana", "Grape", "Kiwi",
-        "Pear", "Peach", "Mango", "Lemon", "Lime");
+        "Pear", "Peach", "Mango", "Lemon", "Lime", "Banana");
   }
 
 

@@ -33,15 +33,6 @@ public class CommonIntermediateOperations {
     }
 
 
-    void flatMap() {
-        List<Integer> listA = List.of(1, 2, 3, 4, 5);
-        List<Integer> listB = List.of(6, 7, 8, 9, 10);
-        //we merge two list
-        Stream.of(listA, listB)
-                .flatMap(list -> list.stream())
-                .forEach(System.out::println);  //1...10
-    }
-
     void concat() {
         Stream<Integer> streamA = Stream.of(1, 2, 3, 4, 5);
         Stream<Integer> streamB = Stream.of(6, 7, 8, 9, 10);

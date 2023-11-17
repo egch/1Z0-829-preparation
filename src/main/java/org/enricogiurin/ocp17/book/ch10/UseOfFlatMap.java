@@ -2,6 +2,7 @@ package org.enricogiurin.ocp17.book.ch10;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class UseOfFlatMap {
 
@@ -23,7 +24,21 @@ public class UseOfFlatMap {
     System.out.println(allAuthors);
   }
 
+  void flatMap() {
+    List<Integer> listA = List.of(1, 2, 3, 4, 5);
+    List<Integer> listB = List.of(6, 7, 8, 9, 10);
+    //we merge two list
+    Stream.of(listA, listB)
+        .flatMap(list -> list.stream())
+        .forEach(System.out::println);  //1...10
+  }
+
+
+  record Book(String title, List<String> authors) {
+
+  }
 }
 
 
-record Book(String title, List<String> authors) {}
+
+

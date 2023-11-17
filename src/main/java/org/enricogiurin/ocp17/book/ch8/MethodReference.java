@@ -1,5 +1,9 @@
 package org.enricogiurin.ocp17.book.ch8;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
+
 @FunctionalInterface
 interface Converter {
 
@@ -65,6 +69,14 @@ public class MethodReference {
 
     System.out.println(creatorMR.create("enrico"));
     System.out.println(createLambda.create("enrico"));
+  }
+
+  void createArrayList() {
+    Function<Integer, List<Integer>> lambda = (n) -> new ArrayList<>(n);
+    Function<Integer, List<Integer>> methodReference = ArrayList::new;
+
+    List<Integer> result = lambda.apply(5);
+    List<Integer> listMR = methodReference.apply(5);
   }
 
 }
