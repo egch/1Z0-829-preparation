@@ -1,5 +1,6 @@
 package org.enricogiurin.ocp17.book.ch13.parallelstream;
 
+
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
@@ -30,8 +31,5 @@ public class ParallelStreamReduce {
     System.out.println(reduce);
   }
 
-  void fibonacci() {
-
-  }
 
 }

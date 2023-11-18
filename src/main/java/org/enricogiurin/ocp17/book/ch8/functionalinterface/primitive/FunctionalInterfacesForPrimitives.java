@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch8;
+package org.enricogiurin.ocp17.book.ch8.functionalinterface.primitive;
 
 import java.util.Random;
 import java.util.function.BooleanSupplier;
