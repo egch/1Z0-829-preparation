@@ -1,5 +1,7 @@
 package org.enricogiurin.ocp17.book.ch10;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.function.BinaryOperator;
 import java.util.stream.Stream;
@@ -7,7 +9,7 @@ import java.util.stream.Stream;
 public class Reduce {
 
     public static void main(String[] args) {
-        new Reduce().reduceThreeArguments();
+        new Reduce().reduceThreeArgumentsWithUDifferentThanT();
     }
 
     void reduceOneArg() {
@@ -48,5 +50,18 @@ public class Reduce {
         System.out.println("Product of elements: " + product);
     }
 
+    //created by CGPT
+    void reduceThreeArgumentsWithUDifferentThanT() {
+        //we convert a list of numbers into a string
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 
+        // Using reduction with three arguments to concatenate integers to a String
+        String concatenatedString = numbers.stream()
+            .reduce(
+                "Numbers: ",                        // Identity value (base string)
+                (String s, Integer n) -> s + n,   // Accumulator function:I have enlightened the real type String and Integer
+                (st1, st2) -> st1 + st2    // Combiner function (combine results of parallel execution)
+            );
+        System.out.println(concatenatedString); //Numbers: 12345
+    }
 }
