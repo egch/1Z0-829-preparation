@@ -18,7 +18,7 @@ public class SequentialStream {
         .sequential()  // This makes the stream sequential
         .collect(Collectors.toList());
     System.out.println("Sequential Stream Result: " + sequentialResult);
-    }
+  }
 
 
 }

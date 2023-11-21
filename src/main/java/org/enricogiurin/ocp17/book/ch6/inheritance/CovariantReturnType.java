@@ -1,5 +1,10 @@
 package org.enricogiurin.ocp17.book.ch6.inheritance;
 
+interface Run {
+
+  Number getSpeed();
+}
+
 public class CovariantReturnType {
 
   public static void main(String[] args) {
@@ -9,11 +14,8 @@ public class CovariantReturnType {
 
 }
 
-interface Run {
-  Number getSpeed();
-}
-
 abstract class Feline {
+
   abstract Long getSpeed();
 }
 

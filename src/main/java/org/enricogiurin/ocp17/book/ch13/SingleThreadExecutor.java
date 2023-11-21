@@ -6,10 +6,6 @@ import java.util.concurrent.TimeUnit;
 
 public class SingleThreadExecutor {
 
-  public static void main(String[] args) throws InterruptedException {
-    new SingleThreadExecutor().awaitTermination();
-  }
-
   Runnable printInventory = () -> System.out.println("Printing zoo inventory");
   Runnable printRecords = () -> {
     for (int i = 0; i < 100; i++) {
@@ -17,7 +13,9 @@ public class SingleThreadExecutor {
     }
   };
 
-
+  public static void main(String[] args) throws InterruptedException {
+    new SingleThreadExecutor().awaitTermination();
+  }
 
   void executor() {
     //a single thread
@@ -37,7 +35,7 @@ public class SingleThreadExecutor {
 
     //try to submit a task after the shutdown
     try {
-      executorService.execute(()-> System.out.println("hello"));
+      executorService.execute(() -> System.out.println("hello"));
     } catch (Exception e) {
       //java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@85ede7b[Not completed,
       e.printStackTrace();
@@ -48,7 +46,7 @@ public class SingleThreadExecutor {
     ExecutorService executorService = Executors.newSingleThreadExecutor();
     try {
       executorService.execute(printRecords);
-    }finally {
+    } finally {
       executorService.shutdownNow();
       System.out.println("shutdown!");
     }
@@ -58,14 +56,14 @@ public class SingleThreadExecutor {
     ExecutorService executorService = Executors.newSingleThreadExecutor();
     try {
       executorService.execute(printRecords);
-    }finally {
+    } finally {
       executorService.shutdownNow();
       System.out.println("shutdown!");
     }
     boolean terminated = executorService.awaitTermination(1L, TimeUnit.MICROSECONDS);
-    if(executorService.isTerminated()){
+    if (executorService.isTerminated()) {
       System.out.println("we are done");
-    }else {
+    } else {
       System.out.println("at least one task is still going");
     }
   }

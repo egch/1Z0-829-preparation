@@ -59,9 +59,8 @@ public class UseOfDecimalFormat {
         .mapToObj(v -> new DecimalFormat(pattern).format(v))
         .collect(Collectors.joining("> <"));
     //<005.21> <008.49> <1,234.0>
-    System.out.println("<"+message+">");
+    System.out.println("<" + message + ">");
   }
-
 
 
 }

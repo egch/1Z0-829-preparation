@@ -66,7 +66,7 @@ public class TryWithResources {
     //Variable used as a try-with-resources resource should be final or effectively final
     try (mf1) {
       //with this uncommented won't compile
-       // mf1=null;
+      // mf1=null;
 
     } catch (Exception e) {
 

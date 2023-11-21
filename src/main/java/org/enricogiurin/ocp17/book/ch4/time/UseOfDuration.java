@@ -38,7 +38,7 @@ public class UseOfDuration {
     System.out.println(duration); //PT48H1M1S
 
     duration = Duration.ofNanos(1000L);
-    System.out.println("duration 1k nanos: "+duration);
+    System.out.println("duration 1k nanos: " + duration);
   }
 
   void methodsOfDuration() {

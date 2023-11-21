@@ -14,8 +14,6 @@ public class UseOfCompactNumberFormat {
   void format() {
     Locale swissGermanLocale = new Locale("de", "CH");
 
-
-
     double value = 152_000.45;
     Stream<NumberFormat> formatters = Stream.of(
         NumberFormat.getCompactNumberInstance(Locale.getDefault(), Style.SHORT),
@@ -29,7 +27,7 @@ public class UseOfCompactNumberFormat {
         NumberFormat.getNumberInstance()
     );
     formatters
-        .map(s->s.format(value))
+        .map(s -> s.format(value))
         .forEach(System.out::println);
   }
 

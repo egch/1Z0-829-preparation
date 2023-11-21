@@ -46,9 +46,10 @@ public class UseOfPeriod {
     performTask(start, end, period);
 
   }
+
   private void performTask(LocalDate start, LocalDate end, Period period) {
     LocalDate up = start;
-    while (up.isBefore(end)){
+    while (up.isBefore(end)) {
       System.out.println("performing task");
       up = up.plus(period);
     }
@@ -62,7 +63,7 @@ public class UseOfPeriod {
     //Exception in thread "main" java.time.format.DateTimeParseException: Text cannot be parsed to a Period
     try {
       Period.parse("2M3D");
-    }catch (DateTimeException e) {
+    } catch (DateTimeException e) {
       e.printStackTrace();
     }
   }

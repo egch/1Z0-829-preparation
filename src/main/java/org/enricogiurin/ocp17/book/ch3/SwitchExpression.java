@@ -39,13 +39,14 @@ public class SwitchExpression {
     };  //mind the semicolon
     System.out.println("today is: " + result);
   }
+
   void switchExpressionWithNoReturnValueAssigned() {
-    int cnt=0;
+    int cnt = 0;
     char c = 'a';
     //there is no return value assigned so the default is not needed
     switch (c) {
-      case 'a'->cnt++;
-      case 'b'->cnt++;
+      case 'a' -> cnt++;
+      case 'b' -> cnt++;
     }
     System.out.println(cnt); //1
   }

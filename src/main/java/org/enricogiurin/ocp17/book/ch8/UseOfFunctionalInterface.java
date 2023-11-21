@@ -28,7 +28,6 @@ interface Zebra extends Sprint {
 
 }
 
-
 //this cannot be FI as it defines a method with the same signature of Object
 /*@FunctionalInterface
 interface fakeFI {
@@ -40,6 +39,7 @@ interface fakeFI {
 // it is a FI as it inherits the abstract method from Object.
 @FunctionalInterface
 interface TrickyFI {
+
   String toString();
 
   void run();

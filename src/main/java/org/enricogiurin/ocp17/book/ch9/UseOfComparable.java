@@ -8,6 +8,7 @@ public class UseOfComparable {
   public static void main(String[] args) {
     new UseOfComparable().sort();
   }
+
   void sort() {
     HumanBiometrics p1 = new HumanBiometrics(100, 180);
     HumanBiometrics p2 = new HumanBiometrics(90, 170);
@@ -20,19 +21,19 @@ public class UseOfComparable {
 
 record HumanBiometrics(int weight, int height) implements Comparable<HumanBiometrics> {
 
-    private double calculateBMI() {
-      // Calculate BMI using the formula: BMI = weight (kg) / (height^2) (m^2)
-      return (double) weight / (height * height);
-    }
+  private double calculateBMI() {
+    // Calculate BMI using the formula: BMI = weight (kg) / (height^2) (m^2)
+    return (double) weight / (height * height);
+  }
 
   /**
    * We order the human beings based on the BMI index.
    */
   @Override
-    public int compareTo(HumanBiometrics other) {
-      // Compare based on BMI values
-      double thisBMI = this.calculateBMI();
-      double otherBMI = other.calculateBMI();
-      return Double.compare(thisBMI, otherBMI);
-    }
+  public int compareTo(HumanBiometrics other) {
+    // Compare based on BMI values
+    double thisBMI = this.calculateBMI();
+    double otherBMI = other.calculateBMI();
+    return Double.compare(thisBMI, otherBMI);
+  }
 }

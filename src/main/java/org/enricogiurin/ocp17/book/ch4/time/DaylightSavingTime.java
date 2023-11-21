@@ -43,7 +43,7 @@ public class DaylightSavingTime {
     //we move the clock one hour forward
     zonedDateTime = zonedDateTime.plusHours(1);
     System.out.println(zonedDateTime); //2023-11-05T01:30-05:00[US/Eastern]
-   //we move the clock one hour forward
+    //we move the clock one hour forward
     zonedDateTime = zonedDateTime.plusHours(1);
     System.out.println(zonedDateTime); // 2023-11-05T02:30-05:00[US/Eastern]
   }

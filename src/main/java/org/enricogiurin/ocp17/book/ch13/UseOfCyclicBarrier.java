@@ -13,8 +13,10 @@ public class UseOfCyclicBarrier {
 
   void fourPeopleHavingDinner() {
     final int numberOfParticipants = 10;
-    CyclicBarrier c1 = new CyclicBarrier(numberOfParticipants, () -> System.out.println("-> food is ready!"));
-    CyclicBarrier c2 = new CyclicBarrier(numberOfParticipants, () -> System.out.println("-> we have eaten the food"));
+    CyclicBarrier c1 = new CyclicBarrier(numberOfParticipants,
+        () -> System.out.println("-> food is ready!"));
+    CyclicBarrier c2 = new CyclicBarrier(numberOfParticipants,
+        () -> System.out.println("-> we have eaten the food"));
     ExecutorService executorService = Executors.newFixedThreadPool(numberOfParticipants);
     try {
       for (int j = 0; j < numberOfParticipants; j++) {

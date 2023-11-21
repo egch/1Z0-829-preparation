@@ -13,6 +13,7 @@ public class UseOfLocalDateTime {
     UseOfLocalDateTime useOfLocalDateTime = new UseOfLocalDateTime();
     useOfLocalDateTime.createLocalDateTime();
   }
+
   void now() {
     LocalDate date = LocalDate.now();
     LocalTime time = LocalTime.now();
@@ -22,7 +23,8 @@ public class UseOfLocalDateTime {
     System.out.println(date);  //2023-10-21
     System.out.println(time); //22:45:09.164355
     System.out.println(dateTime); //2023-10-21T22:45:09.164446  (mind the T)
-    System.out.println(zonedDateTime); //2023-10-21T22:45:09.165079+02:00[Europe/Zurich] (mind the timezone)
+    System.out.println(
+        zonedDateTime); //2023-10-21T22:45:09.165079+02:00[Europe/Zurich] (mind the timezone)
   }
 
   void createLocalDateTime() {
@@ -47,7 +49,7 @@ public class UseOfLocalDateTime {
     ZoneOffset zurichOffset = ZoneOffset.ofHours(2);
 
     //Keep in mind that System.currentTimeMillis() returns ms, while the method expects seconds
-    LocalDateTime ofEpochSecond = LocalDateTime.ofEpochSecond(System.currentTimeMillis()/1000, 0,
+    LocalDateTime ofEpochSecond = LocalDateTime.ofEpochSecond(System.currentTimeMillis() / 1000, 0,
         zurichOffset);
     System.out.println(ofEpochSecond); //2023-10-22T03:41:27
   }

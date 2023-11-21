@@ -43,6 +43,7 @@ public class UseOfLocale {
     //£153,000.25, English
     //£153,000.25, German
   }
+
   private void printCurrency(Locale locale, double money) {
     String format = NumberFormat.getCurrencyInstance().format(money) + ", " +
         locale.getDisplayLanguage();

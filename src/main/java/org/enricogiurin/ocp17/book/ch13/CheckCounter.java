@@ -2,9 +2,8 @@ package org.enricogiurin.ocp17.book.ch13;
 
 public class CheckCounter {
 
-  private static int counter = 0;
-
   static final int COUNT_TO = 1_000_000_000;
+  private static int counter = 0;
 
   public static void main(String[] a) {
     Thread mainThread = Thread.currentThread();
@@ -22,7 +21,7 @@ public class CheckCounter {
 
     //here I monitor the counter
     while (counter < COUNT_TO) {
-      System.out.println("counter: "+counter);
+      System.out.println("counter: " + counter);
       try {
         System.out.println("state: " + thread.getState());
         Thread.sleep(1); //1ms
@@ -31,7 +30,7 @@ public class CheckCounter {
       }
     }
     System.out.println("[end]state: " + thread.getState());
-    System.out.println("[end]counter: "+counter);
+    System.out.println("[end]counter: " + counter);
     //state: TERMINATED
 
   }

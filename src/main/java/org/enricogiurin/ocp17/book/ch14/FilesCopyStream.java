@@ -29,7 +29,7 @@ public class FilesCopyStream {
   void copyOutputStream() throws IOException {
     Path source = Path.of("/tmp/a.txt");
 
-    try( OutputStream outputStream = new FileOutputStream("/tmp/b.txt")){
+    try (OutputStream outputStream = new FileOutputStream("/tmp/b.txt")) {
       long bytes = Files.copy(source, outputStream);
       System.out.println("written " + bytes + " bytes");
     }

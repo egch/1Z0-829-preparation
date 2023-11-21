@@ -16,7 +16,8 @@ public class LockPrintHello {
       System.out.println("Hello");
       try {
         Thread.sleep(1000);
-      }catch (Exception e){}
+      } catch (Exception e) {
+      }
     } finally {
       lock.unlock();
     }
@@ -25,18 +26,19 @@ public class LockPrintHello {
   void print() throws InterruptedException {
     //lock with fairness true
     Lock lock = new ReentrantLock(false);
-    new Thread(()->printHello(lock)).start();
+    new Thread(() -> printHello(lock)).start();
     try {
       Thread.sleep(100);
-    }catch (Exception e){}
+    } catch (Exception e) {
+    }
 
-    if(lock.tryLock(10, TimeUnit.SECONDS)){
+    if (lock.tryLock(10, TimeUnit.SECONDS)) {
       try {
         System.out.println("lock obtained");
-      }finally {
+      } finally {
         lock.unlock();
       }
-    }else{
+    } else {
       System.out.println("couldn't achieve the lock");
     }
   }

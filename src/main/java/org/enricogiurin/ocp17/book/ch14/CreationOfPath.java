@@ -9,12 +9,13 @@ public class CreationOfPath {
   public static void main(String[] args) {
     new CreationOfPath().fileSystems();
   }
-  void pathOf(){
+
+  void pathOf() {
     Path path = Path.of("/tmp", "/subfolder", "fileName.txt");
     System.out.println(path);
   }
 
-  void pathsGet(){
+  void pathsGet() {
     Path path = Paths.get("/folderA", "folderB", "file");
     System.out.println(path);
   }

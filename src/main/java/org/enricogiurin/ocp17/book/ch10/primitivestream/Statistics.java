@@ -12,7 +12,7 @@ public class Statistics {
   void statistic() {
     DoubleSummaryStatistics summaryStatistics = DoubleStream.iterate(1D, n -> n + n / 2)
         .limit(10L)
-        .peek(n-> System.out.print(n+" "))
+        .peek(n -> System.out.print(n + " "))
         .summaryStatistics();
     System.out.println();
     double average = summaryStatistics.getAverage();
@@ -20,19 +20,20 @@ public class Statistics {
     double sum = summaryStatistics.getSum();
     double min = summaryStatistics.getMin();
     double max = summaryStatistics.getMax();
-    System.out.println("average: "+average);
-    System.out.println("count: "+count);
-    System.out.println("sum: "+sum);
-    System.out.println("min: "+min);
-    System.out.println("max: "+max);
+    System.out.println("average: " + average);
+    System.out.println("count: " + count);
+    System.out.println("sum: " + sum);
+    System.out.println("min: " + min);
+    System.out.println("max: " + max);
   }
+
   void empty() {
     DoubleSummaryStatistics doubleSummaryStatistics = DoubleStream.empty()
         .summaryStatistics();
-    System.out.println("average: "+doubleSummaryStatistics.getAverage()); //0.0
-    System.out.println("count: "+doubleSummaryStatistics.getCount()); //0
-    System.out.println("min: "+doubleSummaryStatistics.getMin()); //Infinity
-    System.out.println("max: "+doubleSummaryStatistics.getMax()); //-Infinity
+    System.out.println("average: " + doubleSummaryStatistics.getAverage()); //0.0
+    System.out.println("count: " + doubleSummaryStatistics.getCount()); //0
+    System.out.println("min: " + doubleSummaryStatistics.getMin()); //Infinity
+    System.out.println("max: " + doubleSummaryStatistics.getMax()); //-Infinity
   }
 
 }

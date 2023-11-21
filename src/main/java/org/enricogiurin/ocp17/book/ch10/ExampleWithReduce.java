@@ -11,12 +11,13 @@ public class ExampleWithReduce {
   public String concat1(List<String> values) {
     return values.parallelStream()
         .reduce("a",
-            (x,y)->x+y,
+            (x, y) -> x + y,
             String::concat);
   }
+
   public String concat2(List<String> values) {
     return values.parallelStream()
-        .reduce((w,z)->z+w).get();
+        .reduce((w, z) -> z + w).get();
   }
 
   void usage() {

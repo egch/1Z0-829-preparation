@@ -18,7 +18,7 @@ public class InfiniteStream {
   }
 
   void iterate() {
-    Predicate<String> predicate = s -> s.length()> 3;
+    Predicate<String> predicate = s -> s.length() > 3;
     var stream = Stream.iterate("-",
         s -> !s.isEmpty(), (s) -> s + s);
     //Exception in thread "main" java.lang.OutOfMemoryError: Overflow: String length out of range
@@ -32,18 +32,18 @@ public class InfiniteStream {
   }
 
   void iteratePostIncrement() {
-    Stream.iterate(1, x->x++)  //the postincrement is ignored
+    Stream.iterate(1, x -> x++)  //the postincrement is ignored
         .limit(10)
         .forEach(System.out::println); //prints 1....1
 
-    Stream.iterate(1, x-> ++x)  //the pre-increment is taken into account
+    Stream.iterate(1, x -> ++x)  //the pre-increment is taken into account
         .limit(10)
         .forEach(System.out::println); //prints 1....10
   }
 
   void concatenateInfiniteStream() {
-    var odds = IntStream.iterate(1, a -> a+2);
-    var evens = IntStream.iterate(2, a -> a+2);
+    var odds = IntStream.iterate(1, a -> a + 2);
+    var evens = IntStream.iterate(2, a -> a + 2);
     //since we have limit 3 only the first 3 elements from odds are taken
     var sum = IntStream.concat(odds, evens)
         .peek(System.out::println) //1...3...5

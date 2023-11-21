@@ -6,13 +6,6 @@ import java.util.concurrent.TimeUnit;
 
 public class MethodOfExecutors {
 
-  public static void main(String[] args) throws InterruptedException {
-    MethodOfExecutors methodOfExecutors = new MethodOfExecutors();
-    methodOfExecutors.newSingleThreadExecutor();
-    methodOfExecutors.newFixedThreadPool();
-    methodOfExecutors.newCachedThreadPool();
-  }
-
   Runnable runnable = () -> {
     try {
       Thread.sleep(1000);
@@ -21,6 +14,12 @@ public class MethodOfExecutors {
     }
   };
 
+  public static void main(String[] args) throws InterruptedException {
+    MethodOfExecutors methodOfExecutors = new MethodOfExecutors();
+    methodOfExecutors.newSingleThreadExecutor();
+    methodOfExecutors.newFixedThreadPool();
+    methodOfExecutors.newCachedThreadPool();
+  }
 
   void newCachedThreadPool() throws InterruptedException {
     //all tasks completed
@@ -51,14 +50,14 @@ public class MethodOfExecutors {
       for (int j = 0; j < 10; j++) {
         executorService.execute(runnable);
       }
-    }finally {
+    } finally {
       executorService.shutdown();
     }
     executorService.awaitTermination(1, TimeUnit.MINUTES);
-    if(executorService.isTerminated()){
+    if (executorService.isTerminated()) {
       System.out.println("all tasks completed");
     }
-    System.out.println("time taken: "+(System.currentTimeMillis()-start));
+    System.out.println("time taken: " + (System.currentTimeMillis() - start));
   }
 
 }

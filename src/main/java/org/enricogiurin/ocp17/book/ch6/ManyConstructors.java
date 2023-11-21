@@ -11,11 +11,6 @@ public class ManyConstructors {
     this.name = name;
   }
 
-  public void setAge(int age){
-    //does not compile as this.age is final
-   // this.age = age;
-  }
-
   public ManyConstructors(int age) {
     this(age, "Enrico");
   }
@@ -28,6 +23,11 @@ public class ManyConstructors {
     var enrico = new ManyConstructors();
     System.out.println(enrico);
 
+  }
+
+  public void setAge(int age) {
+    //does not compile as this.age is final
+    // this.age = age;
   }
 
   @Override

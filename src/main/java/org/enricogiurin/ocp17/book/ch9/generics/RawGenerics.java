@@ -34,7 +34,8 @@ public class RawGenerics {
 
 }
 
-class SimpleGenerics<T>{
+class SimpleGenerics<T> {
+
   private final T t;
 
   public SimpleGenerics(T t) {

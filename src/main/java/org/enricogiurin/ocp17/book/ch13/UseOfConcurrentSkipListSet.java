@@ -7,26 +7,27 @@ import java.util.concurrent.TimeUnit;
 
 public class UseOfConcurrentSkipListSet {
 
+  private final ConcurrentSkipListSet<Integer> concurrentSet =
+      new ConcurrentSkipListSet<>();
+
   public static void main(String[] args) throws InterruptedException {
     new UseOfConcurrentSkipListSet().runExample();
   }
 
-  private final ConcurrentSkipListSet<Integer> concurrentSet =
-      new ConcurrentSkipListSet<>();
   private void runExample() throws InterruptedException {
     // Create an ExecutorService with a fixed pool of threads
     ExecutorService executorService = Executors.newFixedThreadPool(3);
 
     // Submit tasks to add elements concurrently
     try {
-      executorService.submit(() -> addElements(1,10));
+      executorService.submit(() -> addElements(1, 10));
       executorService.submit(() -> addElements(6, 10));
     } finally {
       executorService.shutdown();
     }
 
     executorService.awaitTermination(1, TimeUnit.MINUTES);
-    if(executorService.isTerminated()){
+    if (executorService.isTerminated()) {
       System.out.println("all tasks completed");
     }
     iterateOverSet();

@@ -32,8 +32,8 @@ public class UseOfCallable {
     }
   }
 
-  void simpleCallable(){
-    Callable<String> callable = ()->"hello";
+  void simpleCallable() {
+    Callable<String> callable = () -> "hello";
   }
 }
 

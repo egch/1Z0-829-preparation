@@ -18,10 +18,12 @@ public class Teeing {
                 Collectors.summingInt(Integer::intValue),
                 Collectors.reducing(1, (a, b) -> a * b),
                 Data::new));
-    System.out.println("sum is: "+collect.sum());  //sum is: 55
-    System.out.println("product is: "+collect.product());  //product is: 3628800
+    System.out.println("sum is: " + collect.sum());  //sum is: 55
+    System.out.println("product is: " + collect.product());  //product is: 3628800
 
   }
 }
 
-record Data(int sum, int product){}
+record Data(int sum, int product) {
+
+}

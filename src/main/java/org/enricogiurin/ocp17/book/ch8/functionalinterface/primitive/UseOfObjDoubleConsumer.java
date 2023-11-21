@@ -9,7 +9,7 @@ public class UseOfObjDoubleConsumer {
   }
 
   void use() {
-    ObjDoubleConsumer<String> fi = (d, s) -> System.out.println("double: "+d+" obj: "+s);
+    ObjDoubleConsumer<String> fi = (d, s) -> System.out.println("double: " + d + " obj: " + s);
     fi.accept("hello", 4.5D); //hello obj: 4.5
   }
 

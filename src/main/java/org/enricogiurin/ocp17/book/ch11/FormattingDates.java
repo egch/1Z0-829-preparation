@@ -26,7 +26,8 @@ public class FormattingDates {
   }
 
   void customFormatWithText() {
-    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("'Today is: 'dd-MM-yyy' with time: ' hh:mm:ss");
+    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(
+        "'Today is: 'dd-MM-yyy' with time: ' hh:mm:ss");
     LocalDateTime now = LocalDateTime.now();
     String time = now.format(dateTimeFormatter);
     System.out.println(time);  //Today is: 22-09-2023 with time:  08:46:36

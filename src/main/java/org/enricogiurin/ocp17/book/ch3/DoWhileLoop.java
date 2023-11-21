@@ -18,9 +18,8 @@ public class DoWhileLoop {
   void emptyBody() {
     int x = 10;
     do {
-    }while(x-- > 5);
+    } while (x-- > 5);
   }
-
 
 
 }

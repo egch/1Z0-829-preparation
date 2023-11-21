@@ -10,6 +10,7 @@ public class UseOfLocalDate {
   public static void main(String[] args) {
     new UseOfLocalDate().invalidAdd();
   }
+
   void manipulatingDates() {
     LocalDate now = LocalDate.now();
     now = now.plus(1L, ChronoUnit.DAYS);

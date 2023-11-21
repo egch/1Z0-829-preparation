@@ -8,9 +8,9 @@ public class ArrayPointers {
 
   void reference() {
     int[][] matrix = new int[10][10];
-    matrix[0][0]=25;
+    matrix[0][0] = 25;
     Object[] reference = matrix;
-    int[] array = (int[])reference[0];
+    int[] array = (int[]) reference[0];
     System.out.println(array[0]);
   }
 

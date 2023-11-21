@@ -40,8 +40,6 @@ public class ForLoop {
       System.out.println("x: " + x + " - y: " + y);
     }
 
-
-
     //You can declare multiple elements in a for loop, but the data type must be listed only once
 /*  for(long x=0, long y=0; x<10 && y<10; x++, y++){
       System.out.println("x: "+x+" - y: "+y);
@@ -50,7 +48,7 @@ public class ForLoop {
 
   void multipleVariablesInt() {
     //separation is with comma
-    for(int i=0, j=0;i<10 && j<10; i++, j++){
+    for (int i = 0, j = 0; i < 10 && j < 10; i++, j++) {
 
     }
   }
@@ -61,7 +59,6 @@ public class ForLoop {
       System.out.println("stop me pls!");
     }
   }
-
 
 
   void forLabels() {

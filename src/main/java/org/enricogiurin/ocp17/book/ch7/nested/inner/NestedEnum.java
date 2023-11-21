@@ -5,6 +5,14 @@ public class NestedEnum {
   public static void main(String[] args) {
     new NestedEnum().use();
   }
+
+  void use() {
+    Binary binary = Binary.ZERO;
+    System.out.println(binary);
+    TypeOfInteger type = TypeOfInteger.EVEN;
+    System.out.println(type.getDescription());
+  }
+
   //inner class, such as enum, can be declared private, protected, public, static, final
   public enum Binary {
     ZERO, ONE
@@ -13,22 +21,16 @@ public class NestedEnum {
   private enum TypeOfInteger {
     ODD("odd numbers"), EVEN("even numbers");
 
-    String getDescription() {
-      return description;
-    }
-
     private String description;
+
     TypeOfInteger(String description) {
       this.description = description;
     }
 
-  }
+    String getDescription() {
+      return description;
+    }
 
-  void use() {
-    Binary binary = Binary.ZERO;
-    System.out.println(binary);
-    TypeOfInteger type = TypeOfInteger.EVEN;
-    System.out.println(type.getDescription());
   }
 
 }

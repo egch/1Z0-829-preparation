@@ -20,7 +20,7 @@ public class UseOfFinally {
   private int calculate() {
     try {
       System.out.println("try");
-      int go =  2 / 0;
+      int go = 2 / 0;
       return 1;
     } catch (Exception e) {
       System.out.println("catch");

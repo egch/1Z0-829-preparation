@@ -17,12 +17,11 @@ public class UseOfComparator {
     List<Person> people = buildPeople();
     people.sort(comparator);
     people.forEach(System.out::println);
-   //now we search...but we need to specify the comparator, and we assume the collection
+    //now we search...but we need to specify the comparator, and we assume the collection
     //is already sorted based on that order
     int index = Collections.binarySearch(people, new Person(18, 80), comparator);
     System.out.println(index);  //0
   }
-
 
 
   void sorting() {

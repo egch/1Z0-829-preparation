@@ -29,9 +29,9 @@ public class InterruptThread {
 
     // Main thread waits for a while and then interrupts the worker thread
     try {
-      System.out.println("[before]state worker thread: "+workerThread.getState().name());
+      System.out.println("[before]state worker thread: " + workerThread.getState().name());
       Thread.sleep(3000); // Wait for 3 seconds
-      System.out.println("[after]state worker thread: "+workerThread.getState().name());
+      System.out.println("[after]state worker thread: " + workerThread.getState().name());
       workerThread.interrupt(); // Interrupt the worker thread
     } catch (InterruptedException e) {
       e.printStackTrace();

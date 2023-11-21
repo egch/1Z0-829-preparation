@@ -34,23 +34,23 @@ public class MethodsOfFile {
   }
 
   void infoFile(File file) {
-    if(file.exists()){
-      System.out.println("absolute path: "+file.getAbsolutePath());
-      System.out.println("is Directory: "+file.isDirectory());
-      System.out.println("parent path: "+file.getParent());
-      if(file.isFile()){
-        System.out.println("length: "+file.length());
-        System.out.println("last modified: "+file.lastModified());
-      }else{
-        for(File f:file.listFiles()){
+    if (file.exists()) {
+      System.out.println("absolute path: " + file.getAbsolutePath());
+      System.out.println("is Directory: " + file.isDirectory());
+      System.out.println("parent path: " + file.getParent());
+      if (file.isFile()) {
+        System.out.println("length: " + file.length());
+        System.out.println("last modified: " + file.lastModified());
+      } else {
+        for (File f : file.listFiles()) {
           System.out.println(f.getName());
         }
       }
     }
   }
 
-  private File buildFile(){
-    return  new File("/tmp", "a.txt");
+  private File buildFile() {
+    return new File("/tmp", "a.txt");
   }
 
 }

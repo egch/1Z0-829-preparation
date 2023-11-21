@@ -29,8 +29,6 @@ public enum SeasonWithValues {
   }
 
 
-
-
   //this is the default method, but we are not forced to define!
   public String getMood() {
     return "default";

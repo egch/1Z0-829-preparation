@@ -18,7 +18,7 @@ public class ForEachOrdered {
     //in this case I will have always 100
     //as I use forEachOrdered
     List<Integer> data = new ArrayList<>();
-    IntStream.range(0,100)
+    IntStream.range(0, 100)
         .parallel()
         .forEachOrdered(s -> data.add(s));
     System.out.println(data.size());
@@ -28,7 +28,7 @@ public class ForEachOrdered {
   //as the collection is not synchro
   void forEach() {
     List<Integer> data = new ArrayList<>();
-    IntStream.range(0,100)
+    IntStream.range(0, 100)
         .parallel()
         .forEach(s -> data.add(s));
     System.out.println(data.size());

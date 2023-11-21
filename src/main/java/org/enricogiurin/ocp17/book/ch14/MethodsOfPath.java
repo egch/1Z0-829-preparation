@@ -69,8 +69,8 @@ public class MethodsOfPath {
 
     try {
       //it's start inclusive, end exclusive so there ain't sub-path from 2 to 1
-      pom.subpath(2,2);
-    }catch (IllegalArgumentException e){
+      pom.subpath(2, 2);
+    } catch (IllegalArgumentException e) {
       System.err.println(e.getMessage());
     }
   }

@@ -27,7 +27,7 @@ public class Ternary {
   void ternaryNoParenthesis() {
     int time = 9;
     int day = 3;
-    var dinner = ++time>= 10 ? day-- <= 2
+    var dinner = ++time >= 10 ? day-- <= 2
         ? "Takeout" : "Salad" : "Leftovers";
     System.out.println(dinner);//Salad
   }

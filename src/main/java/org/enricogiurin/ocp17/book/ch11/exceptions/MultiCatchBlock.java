@@ -13,7 +13,7 @@ public class MultiCatchBlock {
     String[] array = {"a"};
     try {
       Integer.parseInt(array[1]);
-    }catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
+    } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
       e.printStackTrace();
     }
   }
@@ -25,7 +25,7 @@ public class MultiCatchBlock {
       fileReader.close();
       //Types in multi-catch must be disjoint: 'java.io.FileNotFoundException' is a subclass of 'java.io.IOException'
       /*} catch (IOException | FileNotFoundException e) { */
-    }catch (IOException e) {
+    } catch (IOException e) {
       e.printStackTrace();
     }
   }

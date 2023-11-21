@@ -12,22 +12,22 @@ public class UsageOfLongStream {
   void sum() {
     LongStream range = LongStream.range(1, 20);
     long sum = range.sum();
-    System.out.println("sum is: "+sum);
+    System.out.println("sum is: " + sum);
   }
 
   void average() {
     LongStream rangeClosed = LongStream.rangeClosed(1, 20);
     //note that is an OptionalDouble
     OptionalDouble optionalDouble = rangeClosed.average();
-    if(optionalDouble.isPresent()){
-      System.out.println("average is: "+optionalDouble.getAsDouble()); //average is: 10.5
+    if (optionalDouble.isPresent()) {
+      System.out.println("average is: " + optionalDouble.getAsDouble()); //average is: 10.5
     }
 
     LongStream emptyStream = LongStream.empty();
     optionalDouble = emptyStream.average();
-    if(optionalDouble.isPresent()){
-      System.out.println("average is: "+optionalDouble.getAsDouble());
-    }else{
+    if (optionalDouble.isPresent()) {
+      System.out.println("average is: " + optionalDouble.getAsDouble());
+    } else {
       System.out.println("no data found");
     }
 

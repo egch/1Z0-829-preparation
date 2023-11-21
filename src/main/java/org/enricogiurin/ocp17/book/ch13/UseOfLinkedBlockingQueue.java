@@ -16,20 +16,21 @@ public class UseOfLinkedBlockingQueue {
     producer(queue);
     consumer(queue);
   }
+
   void producer(LinkedBlockingQueue<Integer> blockingQueue) {
     ExecutorService executorService = Executors.newCachedThreadPool();
     try {
-    for (int j = 0; j < 10; j++) {
-      final int value = j;
-      executorService.execute(()-> {
-        try {
-          blockingQueue.offer(value, 10, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-          throw new RuntimeException(e);
-        }
-      });
-    }
-  }finally {
+      for (int j = 0; j < 10; j++) {
+        final int value = j;
+        executorService.execute(() -> {
+          try {
+            blockingQueue.offer(value, 10, TimeUnit.SECONDS);
+          } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+          }
+        });
+      }
+    } finally {
       executorService.shutdown();
     }
   }
@@ -43,7 +44,7 @@ public class UseOfLinkedBlockingQueue {
       } catch (InterruptedException e) {
         throw new RuntimeException(e);
       }
-      System.out.println("consumed from queue: "+value);
+      System.out.println("consumed from queue: " + value);
     };
 
     ExecutorService executorService = Executors.newSingleThreadExecutor();
@@ -51,7 +52,7 @@ public class UseOfLinkedBlockingQueue {
       for (int j = 0; j < 10; j++) {
         executorService.execute(read);
       }
-    }finally {
+    } finally {
       executorService.shutdown();
     }
 

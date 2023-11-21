@@ -7,7 +7,7 @@ public record CompactConstructorRecord(String firstName, String lastName, int ag
     if (firstName.isEmpty() || lastName.isEmpty()) {
       throw new IllegalArgumentException("invalid");
     }
-    age=30;
+    age = 30;
 
     //Cannot assign a value to final variable 'age'
     //compact constructor cannot modify fields

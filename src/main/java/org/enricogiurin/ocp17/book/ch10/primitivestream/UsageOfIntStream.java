@@ -7,26 +7,27 @@ import java.util.stream.Stream;
 public class UsageOfIntStream {
 
   public static void main(String[] args) {
-    new UsageOfIntStream().boxed();
+    new UsageOfIntStream().parallel();
   }
+
   void average() {
     IntStream intStream = java.util.stream.IntStream.rangeClosed(0, 9);
-    intStream.average().ifPresent((avg)-> System.out.println(avg)); //4.5
+    intStream.average().ifPresent((avg) -> System.out.println(avg)); //4.5
     //I can't call it on an existing stream
     //Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
     //	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:229)
     int sum = intStream.sum();
-    System.out.println("sum is: "+sum);
+    System.out.println("sum is: " + sum);
   }
 
   void sum() {
     //9 included
     IntStream rangeClosed = IntStream.rangeClosed(0, 9);
-    System.out.println("sum: "+rangeClosed.sum()); //45
+    System.out.println("sum: " + rangeClosed.sum()); //45
 
     //9 not included
     IntStream range = IntStream.range(0, 9);
-    System.out.println("sum: "+range.sum()); //36
+    System.out.println("sum: " + range.sum()); //36
   }
 
   void minAndMax() {
@@ -44,8 +45,18 @@ public class UsageOfIntStream {
     IntStream rangeClosed = IntStream.rangeClosed(0, 100);
     //create a stream with the wrapper Integer
     Stream<Integer> stream = rangeClosed.boxed();
-    stream.forEach(n-> System.out.print(n+" "));
-
+    stream.forEach(n -> System.out.print(n + " "));
   }
+
+  void parallel() {
+    IntStream rangeClosed = IntStream.rangeClosed(0, 100);
+    //note: by calling parallel() on an IntStream you get another IntStream, not Stream<Integer>
+    IntStream parallelIntStream = rangeClosed.parallel();
+    long count = parallelIntStream.peek((s) -> System.out.print(s + " "))
+        .count();
+    //count: 101
+    System.out.println("count: " + count);
+  }
+
 
 }

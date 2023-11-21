@@ -16,7 +16,7 @@ public class WriteBuffer {
 
   void copyStream(InputStream inputStream, OutputStream outputStream) throws IOException {
     int b;
-    while ((b= inputStream.read())!=-1){
+    while ((b = inputStream.read()) != -1) {
       outputStream.write(b);
     }
   }
@@ -27,7 +27,7 @@ public class WriteBuffer {
     var reader = new InputStreamReader(new FileInputStream(file1));
     try (var writer = new FileWriter(file2)) {
       char[] buffer = new char[10];
-      while(reader.read(buffer) != -1) {
+      while (reader.read(buffer) != -1) {
         writer.write(buffer);
         // n1
       }
@@ -48,7 +48,7 @@ public class WriteBuffer {
       char[] buffer = new char[10];
       int bytesRead;
       while ((bytesRead = reader.read(buffer)) != -1) {
-        System.out.println("read bytes: "+bytesRead);
+        System.out.println("read bytes: " + bytesRead);
         //I only copy the characters effectively read
         writer.write(buffer, 0, bytesRead); // Corrected line
       }

@@ -9,11 +9,11 @@ public class ExampleWithStream {
   }
 
   void unordered() {
-    IntStream.rangeClosed(1,10)
+    IntStream.rangeClosed(1, 10)
         .boxed()
         .unordered()
         .parallel()
-        .forEach(n -> System.out.print(n+" "));
+        .forEach(n -> System.out.print(n + " "));
   }
 
 }

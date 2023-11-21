@@ -9,24 +9,24 @@ public class ThrowThenThrows {
   void throwException() throws Exception {
     throw new Exception();
   }
+
   //we do not need to declare the RuntimeException in the method signature
-  void throwRuntimeException()  {
+  void throwRuntimeException() {
     throw new RuntimeException();
   }
 
   //we do not need to declare the Error in the method signature
-  void throwError()  {
+  void throwError() {
     throw new Error();
   }
 
-  void throwInFinally() throws Exception{
+  void throwInFinally() throws Exception {
     try {
 
-    }finally {
+    } finally {
       throw new Exception("finally");
     }
   }
-
 
 
 }

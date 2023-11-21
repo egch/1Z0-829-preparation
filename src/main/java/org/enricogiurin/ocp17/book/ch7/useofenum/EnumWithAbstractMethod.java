@@ -1,17 +1,5 @@
 package org.enricogiurin.ocp17.book.ch7.useofenum;
 
-public class EnumWithAbstractMethod {
-  public static void main(String[] args) {
-    RGB red = RGB.RED;
-    System.out.println(red.getColorName()); //prints Red
-
-    //does not compile because message is defined only on RED
-    //System.out.println(red.message());
-
-  }
-}
-
-
 enum RGB {
   RED {
     //each enum must implement the abstract method
@@ -42,6 +30,18 @@ enum RGB {
 
   //abstract method
   public abstract String getColorName();
+}
+
+public class EnumWithAbstractMethod {
+
+  public static void main(String[] args) {
+    RGB red = RGB.RED;
+    System.out.println(red.getColorName()); //prints Red
+
+    //does not compile because message is defined only on RED
+    //System.out.println(red.message());
+
+  }
 }
 
 

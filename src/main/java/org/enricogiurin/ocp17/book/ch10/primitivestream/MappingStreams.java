@@ -9,13 +9,14 @@ public class MappingStreams {
   public static void main(String[] args) {
     new MappingStreams().mapToInt();
   }
+
   void mapToInt() {
     Stream<String> fruitStream = Stream.of("Apple", "Banana", "Orange", "Grape", "Kiwi");
     //I mapped them to an IntStream
     IntStream intStream = fruitStream.mapToInt(value -> value.length());
     OptionalDouble optionalDouble = intStream.average();
     //average length of fruits is: 5.2
-    optionalDouble.ifPresent(d-> System.out.println("average length of fruits is: "+d));
+    optionalDouble.ifPresent(d -> System.out.println("average length of fruits is: " + d));
   }
 
   void mapToObj() {

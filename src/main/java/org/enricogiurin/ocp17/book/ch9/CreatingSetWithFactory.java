@@ -9,6 +9,7 @@ public class CreatingSetWithFactory {
     CreatingSetWithFactory instance = new CreatingSetWithFactory();
     instance.setOf();
   }
+
   void copyOf() {
     List<String> azureCerts = List.of("az-900", "az-104", "az-204");
     //this takes a collection as parameter

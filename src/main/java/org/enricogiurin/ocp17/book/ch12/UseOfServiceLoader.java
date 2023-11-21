@@ -10,10 +10,11 @@ import java.util.stream.Stream;
 public class UseOfServiceLoader {
 
   void load() {
-    List<Dog> all  = new ArrayList<>();
+    List<Dog> all = new ArrayList<>();
     //here it's using the iterator of ServiceLoader
-    for (Dog current : ServiceLoader.load(Dog.class))
+    for (Dog current : ServiceLoader.load(Dog.class)) {
       all.add(current);
+    }
   }
 
   void equivalentLoad() {
@@ -26,6 +27,8 @@ public class UseOfServiceLoader {
         .toList();
   }
 
-  static class Dog {}
+  static class Dog {
+
+  }
 
 }

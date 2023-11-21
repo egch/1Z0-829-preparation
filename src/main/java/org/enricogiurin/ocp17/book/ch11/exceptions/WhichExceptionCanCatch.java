@@ -5,24 +5,28 @@ public class WhichExceptionCanCatch {
   void catchError() {
     try {
 
-    }catch (Error e) {}
+    } catch (Error e) {
+    }
   }
 
   void catchException() {
     try {
-    }catch (Exception e) {}
+    } catch (Exception e) {
+    }
   }
 
   void catchThrowable() {
     try {
 
-    }catch (Throwable e) {}
+    } catch (Throwable e) {
+    }
   }
 
   void catchRTE() {
     try {
 
-    }catch (RuntimeException e) {}
+    } catch (RuntimeException e) {
+    }
   }
 
   //Exception 'java.io.IOException' is never thrown in the corresponding try block
@@ -43,9 +47,6 @@ public class WhichExceptionCanCatch {
   }
 
 
-
-
-
   public void transform(String c) {
     try {
       rollOut();
@@ -54,11 +55,18 @@ public class WhichExceptionCanCatch {
   }
 
 
-  void throwingClassCastException() throws ClassCastException {} ;
+  void throwingClassCastException() throws ClassCastException {
+  }
 
-  void rollOut() throws ClassCastException {}
-  void throwsError() throws Error {}
+  ;
 
-  void throwingException() throws Exception {}
+  void rollOut() throws ClassCastException {
+  }
+
+  void throwsError() throws Error {
+  }
+
+  void throwingException() throws Exception {
+  }
 
 }

@@ -2,7 +2,6 @@ package org.enricogiurin.ocp17.book.ch11.exceptions;
 
 
 import java.io.IOException;
-import org.enricogiurin.ocp17.crashcourse.casting.Ex;
 
 
 //I can declare throws for any Exception in the method signature
@@ -30,6 +29,7 @@ public class ThrowsExceptionNotThrown {
   }
 
 
-  void doNothing(){}
+  void doNothing() {
+  }
 
 }

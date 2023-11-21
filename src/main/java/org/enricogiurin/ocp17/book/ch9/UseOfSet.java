@@ -38,7 +38,7 @@ public class UseOfSet {
   }
 
   void treeSetWithComparator() {
-    Comparator<Integer> comparator = (n1,n2)->n1-n2;
+    Comparator<Integer> comparator = (n1, n2) -> n1 - n2;
     TreeSet<Integer> set1 = new TreeSet<>(comparator);
     TreeSet<Integer> set2 = new TreeSet<>(Set.of(1, 2, 3));
   }
@@ -49,13 +49,14 @@ public class UseOfSet {
     //here throws a ClassCastException
     set.add(new IDoNotImplementComparable(10));
     set.add(new IDoNotImplementComparable(20));
-    for (IDoNotImplementComparable e:set){
+    for (IDoNotImplementComparable e : set) {
       System.out.println(e);
     }
 
   }
 
   static class IDoNotImplementComparable {
+
     private final int element;
 
     public IDoNotImplementComparable(int element) {

@@ -4,16 +4,16 @@ public class ExceptionInAutoCloseable {
 
   //here I use the throws clause in the method signature
   void tryWith() throws Exception {
-    try(var myAutoCloseable = new MyAutoCloseable()){
+    try (var myAutoCloseable = new MyAutoCloseable()) {
       System.out.println("hello");
     }
   }
 
   //here I catch the exception
-  void tryWithCatch()  {
-    try(var myAutoCloseable = new MyAutoCloseable()){
+  void tryWithCatch() {
+    try (var myAutoCloseable = new MyAutoCloseable()) {
       System.out.println("hello");
-    }catch (Exception e){
+    } catch (Exception e) {
 
     }
   }

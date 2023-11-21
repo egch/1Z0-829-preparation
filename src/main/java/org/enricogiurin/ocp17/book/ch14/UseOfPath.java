@@ -16,25 +16,23 @@ public class UseOfPath {
   }
 
 
-
   //same as org/enricogiurin/ocp17/ch14/io/MethodsOfFile.java
   //but with Path
   void infoPath(Path path) throws IOException {
-    if(Files.exists(path)){
-      System.out.println("absolute path: "+path.toAbsolutePath());
-      System.out.println("is Directory: "+Files.isDirectory(path));
-      System.out.println("parent path: "+path.getParent());
-      if(Files.isRegularFile(path)){
-        System.out.println("length: "+Files.size(path));
-        System.out.println("last modified: "+Files.getLastModifiedTime(path));
-      }else{
-        try(Stream<Path> stream = Files.list(path)) {
+    if (Files.exists(path)) {
+      System.out.println("absolute path: " + path.toAbsolutePath());
+      System.out.println("is Directory: " + Files.isDirectory(path));
+      System.out.println("parent path: " + path.getParent());
+      if (Files.isRegularFile(path)) {
+        System.out.println("length: " + Files.size(path));
+        System.out.println("last modified: " + Files.getLastModifiedTime(path));
+      } else {
+        try (Stream<Path> stream = Files.list(path)) {
           stream.forEach(System.out::println);
         }
       }
     }
   }
-
 
 
   void fileToPath() {

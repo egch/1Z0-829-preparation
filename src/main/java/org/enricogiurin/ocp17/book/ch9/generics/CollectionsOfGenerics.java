@@ -11,6 +11,13 @@ import java.util.TreeSet;
 
 public class CollectionsOfGenerics {
 
+  public static void addException(Collection<? super Throwable> coll) {
+    //I can add any class whose superclass is Throwable
+    coll.add(new RuntimeException());
+    coll.add(new Exception());
+    coll.add(new Throwable());
+  }
+
   void extendsType() {
 
     //on the right side I can use any exceptions child of RTE
@@ -37,19 +44,10 @@ public class CollectionsOfGenerics {
     //the same goes with this
   }
 
-
-    public static void addException(Collection<? super Throwable> coll) {
-      //I can add any class whose superclass is Throwable
-      coll.add(new RuntimeException());
-      coll.add(new Exception());
-      coll.add(new Throwable());
-    }
-
-
   void lowerBoundedWildcards() {
     List<? super IOException> exceptions = new ArrayList<Exception>();
     //exceptions can be a list of:
-      //- IOException or any class having IOException as super
+    //- IOException or any class having IOException as super
     exceptions.add(new IOException("error"));// yes we can add it
     exceptions.add(new FileNotFoundException("error"));// yes we can add it
 
@@ -70,7 +68,6 @@ public class CollectionsOfGenerics {
     //does not compile
     //List<String> strings = new ArrayList<?>();
   }
-
 
 
 }

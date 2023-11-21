@@ -3,6 +3,7 @@ package org.enricogiurin.ocp17.book.ch11.exceptions;
 import java.io.IOException;
 
 public class CatchMethodWithThrows {
+
   void catchThrowingIOException() {
     try {
       throwingIOException();
@@ -15,7 +16,7 @@ public class CatchMethodWithThrows {
     throwingIOException();
   }
   /*
-  ************************
+   ************************
    */
 
   void catchThrowingException() {
@@ -31,6 +32,9 @@ public class CatchMethodWithThrows {
   }
 
 
-  void throwingIOException() throws IOException {}
-  void throwingException() throws Exception {}
+  void throwingIOException() throws IOException {
+  }
+
+  void throwingException() throws Exception {
+  }
 }

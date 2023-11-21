@@ -4,6 +4,7 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.stream.IntStream;
 
 public class CyclicBarrierHanging {
+
   final int NUM_THREADS = 30;
   //my mac has 12 processors so having limit barrier greater makes
   //the code hanging, no matter the number of threads

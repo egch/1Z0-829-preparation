@@ -8,8 +8,7 @@ public class CatchExceptionNotThrown {
       doNothing();
     }
     //does not compile as IOException is never thrown
-/*    catch (IOException e) {}*/
-    finally {
+    /*    catch (IOException e) {}*/ finally {
       System.out.println("finally");
     }
   }
@@ -37,6 +36,8 @@ public class CatchExceptionNotThrown {
     } catch (RuntimeException e) {
     }
   }
-  void doNothing(){}
+
+  void doNothing() {
+  }
 
 }

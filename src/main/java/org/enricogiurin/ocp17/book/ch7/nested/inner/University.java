@@ -6,16 +6,37 @@ import java.util.UUID;
 import org.enricogiurin.ocp17.book.ch7.nested.inner.University.Department.Professor;
 
 /**
- * Example of nested classes, from OCP book.
- * The outer class is University, which has two inner classes: Department and Student.
+ * Example of nested classes, from OCP book. The outer class is University, which has two inner
+ * classes: Department and Student.
  */
 public class University {
+
   private String id;
+
   public University() {
     this.id = UUID.randomUUID().toString();
   }
 
+  static void createProfessor() {
+    Professor professor = new University().new Department().new Professor("Dr. Ross");
+    professor.printID();
+  }
+
+  static void createProfessorMultiLines() {
+    University university = new University();
+    University.Department department = university.new Department();
+    University.Department.Professor professor = department.new Professor("Dr. Smith");
+    professor.printID();
+  }
+
+  public static void main(String[] args) {
+    createProfessor();
+    System.out.println();
+    createProfessorMultiLines();
+  }
+
   public class Department {
+
     private String id;
 
     public Department() {
@@ -23,6 +44,7 @@ public class University {
     }
 
     public class Professor {
+
       private String name;
       private String id;
 
@@ -31,33 +53,14 @@ public class University {
         this.id = UUID.randomUUID().toString();
       }
 
-      void printID(){
-        System.out.println("University id: "+University.this.id);
+      void printID() {
+        System.out.println("University id: " + University.this.id);
         //System.out.println("University id: "+this.id); //equivalent
-        System.out.println("Department id: "+University.Department.this.id);
-       // System.out.println("Department id: "+Department.this.id); //equivalent
-        System.out.println("professor id: "+University.Department.Professor.this.id);
+        System.out.println("Department id: " + University.Department.this.id);
+        // System.out.println("Department id: "+Department.this.id); //equivalent
+        System.out.println("professor id: " + University.Department.Professor.this.id);
         //System.out.println("professor id: "+Professor.this.id);//equivalent
       }
     }
-  }
-
-  static void createProfessor() {
-    Professor professor = new University().new Department().new Professor("Dr. Ross");
-    professor.printID();
-  }
-
-  static void createProfessorMultiLines(){
-    University university = new University();
-    University.Department department = university.new Department();
-    University.Department.Professor professor = department.new Professor("Dr. Smith");
-    professor.printID();
-  }
-
-
-  public static void main(String[] args) {
-    createProfessor();
-    System.out.println();
-    createProfessorMultiLines();
   }
 }

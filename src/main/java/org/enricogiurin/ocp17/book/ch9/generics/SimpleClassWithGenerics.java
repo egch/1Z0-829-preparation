@@ -4,6 +4,10 @@ public class SimpleClassWithGenerics {
 
 }
 
-class A<AAAGGG> {}
+class A<AAAGGG> {
 
-class B<HHHJJJ> {}
+}
+
+class B<HHHJJJ> {
+
+}

@@ -8,6 +8,7 @@ public class UsageOfDoubleStream {
   public static void main(String[] args) {
     new UsageOfDoubleStream().methods();
   }
+
   void generateRandom() {
     DoubleStream.generate(Math::random)
         .limit(5L)
@@ -15,7 +16,7 @@ public class UsageOfDoubleStream {
   }
 
   void fractions() {
-    DoubleStream.iterate(1D/2, d->d/2)
+    DoubleStream.iterate(1D / 2, d -> d / 2)
         .limit(5L)
         .forEach(System.out::println);
     //0.5
@@ -31,18 +32,18 @@ public class UsageOfDoubleStream {
     OptionalDouble max = DoubleStream.generate(Math::random)
         .limit(5L)
         .max();
-    max.ifPresent(n-> System.out.println("max is: "+n));
+    max.ifPresent(n -> System.out.println("max is: " + n));
 
     OptionalDouble min = DoubleStream.generate(Math::random)
         .limit(5L)
         .min();
-    min.ifPresent(n-> System.out.println("min is: "+n));
+    min.ifPresent(n -> System.out.println("min is: " + n));
 
     //here we have an OptionalDouble as the stream could be empty
     OptionalDouble average = DoubleStream.generate(Math::random)
         .limit(5L)
         .average();
-    average.ifPresent(n-> System.out.println("average is: "+n));
+    average.ifPresent(n -> System.out.println("average is: " + n));
 
     /*
       from here no Optional
@@ -52,13 +53,13 @@ public class UsageOfDoubleStream {
     double sum = DoubleStream.generate(Math::random)
         .limit(5L)
         .sum();
-    System.out.println("sum is: "+ sum);
+    System.out.println("sum is: " + sum);
 
     //here we have a long because in case of empty stream the count is zero
     long count = DoubleStream.generate(Math::random)
         .limit(5L)
         .count();
-    System.out.println("count is: "+ count);
+    System.out.println("count is: " + count);
 
 
   }

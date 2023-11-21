@@ -7,15 +7,19 @@ public class Money<T> {
   private T currency;
   private BigDecimal amount;
 
-  public T createT(){
-    //Type parameter 'T' cannot be instantiated directly
-   // return new T();
-    return null;
-  }
-
   public Money(T currency, BigDecimal amount) {
     this.currency = currency;
     this.amount = amount;
+  }
+
+  public static void main(String[] args) {
+    //Money<Dollar> dollar = new Money<>()
+  }
+
+  public T createT() {
+    //Type parameter 'T' cannot be instantiated directly
+    // return new T();
+    return null;
   }
 
   public BigDecimal getAmountInDollars() {
@@ -23,13 +27,12 @@ public class Money<T> {
   }
 
 
+}
 
-  public static void main(String[] args) {
-    //Money<Dollar> dollar = new Money<>()
-  }
-
+class Dollar {
 
 }
 
-class Dollar {}
-class CHF {}
+class CHF {
+
+}
