@@ -5,7 +5,7 @@ import java.util.List;
 public class ExampleWithReduce {
 
   public static void main(String[] args) {
-    new ExampleWithReduce().usage();
+    new ExampleWithReduce().consistent();
   }
 
   public String concat1(List<String> values) {
@@ -26,6 +26,21 @@ public class ExampleWithReduce {
     System.out.println(s1); //aEnricoaJohn
     String s2 = concat2(names);
     System.out.println(s2);  //MarioEnrico
+  }
+
+  void consistent() {
+    var data = List.of(1, 2, 3);
+    int f = data.parallelStream()
+        .reduce(1,
+            (a, b) -> {
+              System.out.println("[accumulator] a:" + a + " - b:" + b);
+              return a + b;
+            },
+            (a, b) -> {
+              System.out.println("[combiner] a:" + a + " - b:" + b);
+              return a + b;
+            });
+    System.out.println(f);
   }
 
 }

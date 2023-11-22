@@ -2,6 +2,7 @@ package org.enricogiurin.ocp17.book.ch8;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 @FunctionalInterface
@@ -31,7 +32,13 @@ interface StringCopier {
 public class MethodReference {
 
   public static void main(String[] args) {
-    new MethodReference().constructorWithParameter();
+    new MethodReference().charAt();
+  }
+
+  void charAt() {
+    BiFunction<String, Integer, Character> stringIntegerCharacterBiFunction = String::charAt;
+    Character c = stringIntegerCharacterBiFunction.apply("John", 2);
+    System.out.println(c);
   }
 
   void staticMethod() {
