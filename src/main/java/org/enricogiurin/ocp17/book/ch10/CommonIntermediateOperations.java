@@ -3,13 +3,14 @@ package org.enricogiurin.ocp17.book.ch10;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
 public class CommonIntermediateOperations {
 
   public static void main(String[] args) {
-    new CommonIntermediateOperations().concat();
+    new CommonIntermediateOperations().sortedComparatorReverseOrder();
   }
 
   void distinct() {
@@ -75,6 +76,19 @@ public class CommonIntermediateOperations {
     list.stream()
         .sorted((n1, n2) -> n2 - n1)
         .forEach(System.out::println); //9 ...0
+  }
+
+
+  void sortedComparatorReverseOrder() {
+    Comparator<String> stringComparator = Comparator.reverseOrder();
+    var s = Stream.of("over the river",
+        "through the woods",
+        "to grandmother's house we go");
+
+    s.filter(n -> n.startsWith("t"))
+        .sorted(stringComparator)
+        .findFirst()
+        .ifPresent(System.out::println); //to grandmother's house we go
   }
 
   void peak() {

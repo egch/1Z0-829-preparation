@@ -2,10 +2,10 @@ package org.enricogiurin.ocp17.book.ch10;
 
 import java.util.Optional;
 
-public class UseOfOptional {
+public class UsageOfOptional {
 
   public static void main(String[] args) {
-    new UseOfOptional().optionalOfNull();
+    new UsageOfOptional().optionalOfNull();
   }
 
   void use() {

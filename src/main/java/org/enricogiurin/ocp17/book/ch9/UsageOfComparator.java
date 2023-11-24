@@ -5,10 +5,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class UseOfComparator {
+public class UsageOfComparator {
 
   public static void main(String[] args) {
-    new UseOfComparator().thenComparing();
+    new UsageOfComparator().thenComparing();
   }
 
   void thenComparing() {
@@ -43,9 +43,11 @@ public class UseOfComparator {
     people.add(new Person(18, 80));
     return people;
   }
+
+  record Person(int age, int weight) {
+
+  }
 }
 
 
-record Person(int age, int weight) {
 
-}

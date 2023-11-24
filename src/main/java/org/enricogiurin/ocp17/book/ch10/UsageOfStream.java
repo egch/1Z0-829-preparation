@@ -3,10 +3,10 @@ package org.enricogiurin.ocp17.book.ch10;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class UseOfStream {
+public class UsageOfStream {
 
   public static void main(String[] args) {
-    new UseOfStream().reduceMultiply();
+    new UsageOfStream().reduceMultiply();
   }
 
   void infiniteRandom() {

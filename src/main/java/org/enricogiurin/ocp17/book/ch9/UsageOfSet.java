@@ -5,10 +5,10 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class UseOfSet {
+public class UsageOfSet {
 
   public static void main(String[] args) {
-    new UseOfSet().treeSetDoesNotAllowNullValues();
+    new UsageOfSet().treeSetDoesNotAllowNullValues();
   }
 
   void create() {

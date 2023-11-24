@@ -8,7 +8,7 @@ abstract method test.
 
 ## Lambda
 
-I can't assign a lambda to a var!!!!
+**I can't assign a lambda to a var!!!!**
 
 ```java
 //  Error:

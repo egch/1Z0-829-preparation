@@ -8,19 +8,20 @@ public class ForEachOrdered {
 
   public static void main(String[] args) {
     ForEachOrdered instance = new ForEachOrdered();
+    //instance.forEachOrdered();
     instance.forEach();
-    instance.forEach();
-
   }
 
 
   void forEachOrdered() {
-    //in this case I will have always 100
+    //in this case, I will have always 100
     //as I use forEachOrdered
     List<Integer> data = new ArrayList<>();
     IntStream.range(0, 100)
         .parallel()
-        .forEachOrdered(s -> data.add(s));
+        .forEachOrdered(s -> {
+          System.out.println("processing value: "+s);
+          data.add(s);});
     System.out.println(data.size());
   }
 
@@ -30,7 +31,9 @@ public class ForEachOrdered {
     List<Integer> data = new ArrayList<>();
     IntStream.range(0, 100)
         .parallel()
-        .forEach(s -> data.add(s));
+        .forEach(s -> {
+        //  System.out.println("processing value: "+s);
+          data.add(s);});
     System.out.println(data.size());
   }
 

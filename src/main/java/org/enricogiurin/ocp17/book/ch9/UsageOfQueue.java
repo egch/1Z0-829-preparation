@@ -3,10 +3,10 @@ package org.enricogiurin.ocp17.book.ch9;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class UseOfQueue {
+public class UsageOfQueue {
 
   public static void main(String[] args) {
-    new UseOfQueue().queueException();
+    new UsageOfQueue().queueException();
   }
 
   void useQueue() {

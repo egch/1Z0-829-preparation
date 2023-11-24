@@ -3,10 +3,10 @@ package org.enricogiurin.ocp17.book.ch10.primitivestream;
 import java.util.DoubleSummaryStatistics;
 import java.util.stream.DoubleStream;
 
-public class Statistics {
+public class UsageOfDoubleSummaryStatistics {
 
   public static void main(String[] args) {
-    new Statistics().empty();
+    new UsageOfDoubleSummaryStatistics().empty();
   }
 
   void statistic() {

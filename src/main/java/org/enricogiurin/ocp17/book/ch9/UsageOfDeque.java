@@ -4,10 +4,10 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 
-public class UseOfDeque {
+public class UsageOfDeque {
 
   public static void main(String[] args) {
-    new UseOfDeque().stack();
+    new UsageOfDeque().stack();
   }
 
   void methodWithoutException() {

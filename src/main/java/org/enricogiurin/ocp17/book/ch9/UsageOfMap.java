@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiFunction;
 
-public class UseOfMap {
+public class UsageOfMap {
 
   public static void main(String[] args) {
-    new UseOfMap().insertNull();
+    new UsageOfMap().insertNull();
   }
 
   void createMap() {

@@ -52,32 +52,36 @@ public class MethodsOfList {
 
 
   }
+
+
+  //internal data class
+  class Data {
+
+    String value;
+
+    public Data(String value) {
+      this.value = value;
+    }
+
+    @Override
+    public int hashCode() {
+      return value.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      Data data = (Data) o;
+      return Objects.equals(value, data.value);
+    }
+  }
 }
 
 
-//internal data class
-class Data {
 
-  String value;
 
-  public Data(String value) {
-    this.value = value;
-  }
-
-  @Override
-  public int hashCode() {
-    return value.hashCode();
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Data data = (Data) o;
-    return Objects.equals(value, data.value);
-  }
-}
