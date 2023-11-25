@@ -19,6 +19,5 @@ public class FindAnyFirst {
     Stream.of("a", "b", "c")
         .findFirst()
         .ifPresent(System.out::println); //a
-
   }
 }

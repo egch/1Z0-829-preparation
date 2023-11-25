@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Spliterator;
 import java.util.stream.Stream;
 
-public class UsageOfSplitIterator {
+public class UsageOfSpliterator {
 
   public static void main(String[] args) {
-    new UsageOfSplitIterator().infiniteStream();
+    new UsageOfSpliterator().shareToys();
   }
 
   void use() {
@@ -45,7 +45,16 @@ public class UsageOfSplitIterator {
 
     status = spliterator.tryAdvance(System.out::println);  //no more elements
     System.out.println(status);   //false
+  }
 
+  void justSpliterator() {
+    //in this method we only all spliterator(), we do not call trySplit()
+    //so at the end is just a normal stream
+    Stream<String> fruitStream = Stream.of("Apple", "Banana", "Orange", "Grape", "Kiwi");
+    //here applied on the stream
+    Spliterator<String> spliterator = fruitStream.spliterator();
+    //Apple Banana Orange Grape Kiwi
+    spliterator.forEachRemaining(s -> System.out.print(s+" "));
   }
 
   void infiniteStream() {
@@ -56,4 +65,21 @@ public class UsageOfSplitIterator {
     var split = spliterator.trySplit();
     split.tryAdvance(System.out::print); //x
   }
+
+  void shareToys() {
+        record Toy(String name){ }
+
+        var toys = Stream.of(
+               new Toy("Toy A"),
+               new Toy("Toy B"),
+               new Toy("Toy C"),
+               new Toy("Toy D"));
+
+        var spliterator = toys.spliterator();
+        var batch = spliterator.trySplit();  //batch contains the first two: Toy A, Toy B
+
+        var more = batch.tryAdvance(x -> {}); //we remove Toy A from batch but it still contains Toy B
+        System.out.println(more);  //true - as it still contains Toy B
+        spliterator.tryAdvance(System.out::println); //here we print the first of the 2nd group: Toy C
+     }
 }

@@ -30,6 +30,9 @@ Lambdas require **local variables** and **method parameters** to be effectively 
 Instance and static variables can be used regardless of whether they are effectively final.
 [LambdaEffectiveFinal](src/main/java/org/enricogiurin/ocp17/book/ch8/LambdaEffectiveFinal.java)
 
+### Deferred execution
+Deferred execution means the lambda expression is not evaluated until runtime, but it is compiled.  
+In the context of lambdas in Java, deferred execution refers to the delayed execution of the code encapsulated within the lambda expression.
 
 ## Function
 
