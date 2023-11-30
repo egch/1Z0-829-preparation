@@ -3,11 +3,12 @@ package org.enricogiurin.ocp17.book.ch9;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.BiConsumer;
 
 public class MethodsOfMap {
 
   public static void main(String[] args) {
-    new MethodsOfMap().modifyMap();
+    new MethodsOfMap().forEach();
   }
 
   void createMap() {
@@ -52,7 +53,14 @@ public class MethodsOfMap {
   private Map<Integer, String> buildMutableMap() {
     HashMap<Integer, String> mutableMap = new HashMap<>(buildMap());
     return mutableMap;
+  }
 
-
+  void forEach() {
+    //using lambda
+    Map<Integer, String> map = buildMap();
+    BiConsumer<Integer, String> biConsumer =
+        (key, value) -> System.out.println("key: %s - value: %s".formatted(key, value));
+    //NOTE! it uses a BIConsumer, not a consumer!
+    map.forEach(biConsumer);
   }
 }

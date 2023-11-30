@@ -60,6 +60,15 @@ int compareTo(T o1);
 ### Deque
 ![Deque](images/Deque.png)
 
+### Map
+#### foreach
+```java
+    Map<Integer, String> map = buildMap();
+    BiConsumer<Integer, String> biConsumer =
+        (key, value)-> System.out.println("key: %s - value: %s".formatted(key, value));
+    //NOTE! it uses a BIConsumer, not a consumer!
+    map.forEach(biConsumer);
+```
 
 ![deque-stack.png](images/Deque-Stack.png)
 

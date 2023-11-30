@@ -14,8 +14,9 @@ public class UsageOfIntSummaryStatistics {
     int min = intSummaryStatistics.getMin();
     int max = intSummaryStatistics.getMax();
     double avg = intSummaryStatistics.getAverage();
-    System.out.println("min: %s - max: %s - avg: %s"
-        .formatted(min, max, avg));
+    long count = intSummaryStatistics.getCount();
+    System.out.println("count: %d - min: %s - max: %s - avg: %s"
+        .formatted(count, min, max, avg));
 
   }
 

@@ -55,3 +55,12 @@ function._
     System.out.print(compose.apply(2));  // (2*3) + 4 = 10
 
 ```
+## Functional Interfaces
+### BooleanSupplier
+
+```java
+BooleanSupplier bs = () -> Math.random() >= 0.5;
+boolean result = bs.bs.getAsBoolean();
+```
+
+It's _getAsBoolean()_ **NOT** get()
