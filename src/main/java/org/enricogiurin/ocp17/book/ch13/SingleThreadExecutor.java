@@ -14,7 +14,7 @@ public class SingleThreadExecutor {
   };
 
   public static void main(String[] args) throws InterruptedException {
-    new SingleThreadExecutor().awaitTermination();
+    new SingleThreadExecutor().executor();
   }
 
   void executor() {

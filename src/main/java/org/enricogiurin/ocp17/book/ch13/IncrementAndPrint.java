@@ -23,7 +23,7 @@ public class IncrementAndPrint {
   //order is not kept but neither duplicate nor missing
   void possibleDuplicateOrMissingValues() {
     ExecutorService executorService = Executors.newFixedThreadPool(20);
-    Wrapper wrapper = new Wrapper();
+    SimpleWrapper wrapper = new SimpleWrapper();
     try {
       for (int j = 0; j < 20; j++) {
         executorService.submit(wrapper::incrementAndPrint);
@@ -70,7 +70,7 @@ public class IncrementAndPrint {
   }
 
 
-  static class Wrapper {
+  static class SimpleWrapper {
 
     private int counter;
 

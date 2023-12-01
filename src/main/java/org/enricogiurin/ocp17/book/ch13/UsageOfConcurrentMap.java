@@ -3,11 +3,11 @@ package org.enricogiurin.ocp17.book.ch13;
 import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class UseOfConcurrentMap {
+public class UsageOfConcurrentMap {
 
   public static void main(String[] args) {
     //   new UseOfConcurrentMap().notConcurrentMap();
-    new UseOfConcurrentMap().notConcurrentMap();
+    new UsageOfConcurrentMap().concurrentMap();
   }
 
   void notConcurrentMap() {

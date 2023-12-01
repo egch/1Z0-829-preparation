@@ -21,7 +21,8 @@ public class ForEachOrdered {
         .parallel()
         .forEachOrdered(s -> {
           System.out.println("processing value: "+s);
-          data.add(s);});
+          data.add(s);}
+        );
     System.out.println(data.size());
   }
 

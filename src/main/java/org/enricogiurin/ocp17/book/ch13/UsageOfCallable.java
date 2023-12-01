@@ -6,16 +6,16 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
-public class UseOfCallable {
+public class UsageOfCallable {
 
   public static void main(String[] args) {
-    new UseOfCallable().submit();
+    new UsageOfCallable().submit();
   }
 
   void submit() {
     Callable<String> forCallable = () -> {
       for (int j = 0; j < 1_000; j++) {
-        System.out.print(j + " ");
+        //System.out.print(j + " ");
       }
       System.out.println();
       return "done";

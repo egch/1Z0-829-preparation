@@ -33,6 +33,7 @@ public class InterruptThread {
       Thread.sleep(3000); // Wait for 3 seconds
       System.out.println("[after]state worker thread: " + workerThread.getState().name());
       workerThread.interrupt(); // Interrupt the worker thread
+      System.out.println("[after interrupt]state worker thread: " + workerThread.getState().name());
     } catch (InterruptedException e) {
       e.printStackTrace();
     }

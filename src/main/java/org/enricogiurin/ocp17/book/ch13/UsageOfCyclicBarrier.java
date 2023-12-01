@@ -5,14 +5,14 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class UseOfCyclicBarrier {
+public class UsageOfCyclicBarrier {
 
   public static void main(String[] args) {
-    new UseOfCyclicBarrier().fourPeopleHavingDinner();
+    new UsageOfCyclicBarrier().peopleHavingDinner();
   }
 
-  void fourPeopleHavingDinner() {
-    final int numberOfParticipants = 10;
+  void peopleHavingDinner() {
+    final int numberOfParticipants = 5;
     CyclicBarrier c1 = new CyclicBarrier(numberOfParticipants,
         () -> System.out.println("-> food is ready!"));
     CyclicBarrier c2 = new CyclicBarrier(numberOfParticipants,

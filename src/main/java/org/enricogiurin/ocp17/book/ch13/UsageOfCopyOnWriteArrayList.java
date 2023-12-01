@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class UseOfCopyOnWriteArrayList {
+public class UsageOfCopyOnWriteArrayList {
 
   public static void main(String[] args) {
     //    new UseOfCopyOnWriteArrayList().addDuringIteration();
-    new UseOfCopyOnWriteArrayList().addDuringIteration();
+    new UsageOfCopyOnWriteArrayList().addDuringIterationNotConcurrent();
   }
 
   void addDuringIteration() {

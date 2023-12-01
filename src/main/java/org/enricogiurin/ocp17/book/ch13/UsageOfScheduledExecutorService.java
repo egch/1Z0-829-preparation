@@ -7,11 +7,11 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class UseOfScheduledExecutorService {
+public class UsageOfScheduledExecutorService {
 
   public static void main(String[] args)
       throws ExecutionException, InterruptedException, TimeoutException {
-    new UseOfScheduledExecutorService().scheduleCallable();
+    new UsageOfScheduledExecutorService().scheduleCallable();
   }
 
   //done
@@ -31,12 +31,13 @@ public class UseOfScheduledExecutorService {
     ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
     ScheduledFuture<String> future;
     try {
-      future = scheduledExecutorService.schedule(() -> "ciao", 1,
+      //we wait (at least) 2s before executing the task
+      future = scheduledExecutorService.schedule(() -> "ciao", 2,
           TimeUnit.SECONDS);
     } finally {
       scheduledExecutorService.shutdown();
     }
-    String result = future.get(2L, TimeUnit.SECONDS);
+    String result = future.get(5L, TimeUnit.SECONDS);
     System.out.println(result);
   }
 }

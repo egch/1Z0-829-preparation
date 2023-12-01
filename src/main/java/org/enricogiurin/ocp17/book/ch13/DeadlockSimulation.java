@@ -6,6 +6,12 @@ import java.util.concurrent.Executors;
 public class DeadlockSimulation {
 
   public static void main(String[] args) {
+    new DeadlockSimulation().execute();
+
+
+  }
+
+  void execute() {
     Food food = new Food();
     Drink drink = new Drink();
 
@@ -18,13 +24,14 @@ public class DeadlockSimulation {
     } finally {
       executorService.shutdown();
     }
-
   }
+
+
 
   record Person(String name) {
 
     void eatAndDrink(Food food, Drink drink) {
-      System.out.println(name + " waiting to eat...");
+      System.out.println(name + " is waiting to eat...");
       synchronized (food) {
         System.out.println(name + " is eating");
         synchronized (drink) {
@@ -34,7 +41,7 @@ public class DeadlockSimulation {
     }
 
     void drinkAndEat(Food food, Drink drink) {
-      System.out.println(name + " waiting to drink...");
+      System.out.println(name + " is waiting to drink...");
       synchronized (drink) {
         System.out.println(name + " is drinking");
         synchronized (food) {
@@ -43,13 +50,11 @@ public class DeadlockSimulation {
       }
     }
   }
+
+  class Food {}
+
+  class Drink {}
 }
 
-class Food {
 
-}
-
-class Drink {
-
-}
 

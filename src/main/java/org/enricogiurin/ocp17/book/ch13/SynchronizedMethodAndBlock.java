@@ -8,8 +8,7 @@ public class SynchronizedMethodAndBlock {
       System.out.println("Hello");
     }
   }
-
   synchronized void ciao() {
-    System.out.println("Hello");
+    System.out.println("ciao");
   }
 }

@@ -4,14 +4,15 @@ import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.IntStream;
 
-public class UseOfConcurrentSkipListSet {
+public class UsageOfConcurrentSkipListSet {
 
   private final ConcurrentSkipListSet<Integer> concurrentSet =
       new ConcurrentSkipListSet<>();
 
   public static void main(String[] args) throws InterruptedException {
-    new UseOfConcurrentSkipListSet().runExample();
+    new UsageOfConcurrentSkipListSet().runExample();
   }
 
   private void runExample() throws InterruptedException {
@@ -31,14 +32,14 @@ public class UseOfConcurrentSkipListSet {
       System.out.println("all tasks completed");
     }
     iterateOverSet();
-
   }
 
   private void addElements(int start, int end) {
-    for (int i = start; i <= end; i++) {
-      concurrentSet.add(i);
-      System.out.println(Thread.currentThread().getName() + " added: " + i);
-    }
+    IntStream.rangeClosed(start, end)
+        .forEach(value -> {
+          concurrentSet.add(value);
+          System.out.println(Thread.currentThread().getName() + " added: " + value);
+        });
   }
 
   private void iterateOverSet() {
@@ -46,5 +47,4 @@ public class UseOfConcurrentSkipListSet {
       System.out.println(element);
     }
   }
-
 }

@@ -3,10 +3,10 @@ package org.enricogiurin.ocp17.book.ch13;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.IntStream;
 
-public class UseOfAtomicWrapper {
+public class UsageOfAtomicWrapper {
 
   public static void main(String[] args) {
-    new UseOfAtomicWrapper().undeterminedResult();
+    new UsageOfAtomicWrapper().undeterminedResult();
   }
 
   //one of possible results
