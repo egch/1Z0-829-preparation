@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch13;
+package org.enricogiurin.ocp17.book.ch13.thread;
 
 public class CheckCounter {
 
@@ -13,9 +13,8 @@ public class CheckCounter {
       }
       //I do interrupt the main thread when I am done
       //so I can exit the main once I reached the 1 million counter
+      System.out.println("Interrupting the main thread...");
       mainThread.interrupt();
-      System.out.println("main thread interrupted");
-
     });
     thread.start();
 
@@ -24,14 +23,24 @@ public class CheckCounter {
       System.out.println("counter: " + counter);
       try {
         System.out.println("state: " + thread.getState());
-        Thread.sleep(1); //1ms
+        Thread.sleep(5); //5ms
       } catch (InterruptedException e) {
-        System.out.println("Interrupted!");
+        System.out.println("main thread interrupted!");
       }
     }
     System.out.println("[end]state: " + thread.getState());
     System.out.println("[end]counter: " + counter);
     //state: TERMINATED
-
   }
 }
+
+//one of the possible last outputs
+
+//counter: 822600014
+//state: RUNNABLE
+//counter: 959651629
+//state: RUNNABLE
+//Interrupting the main thread...
+//main thread interrupted
+//[end]state: TERMINATED
+//[end]counter: 1000000000

@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch13;
+package org.enricogiurin.ocp17.book.ch13.cyclicbarrier;
 
 import java.util.concurrent.CyclicBarrier;
 import java.util.stream.IntStream;

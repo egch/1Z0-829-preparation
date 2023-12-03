@@ -11,4 +11,15 @@ public class SynchronizedMethodAndBlock {
   synchronized void ciao() {
     System.out.println("ciao");
   }
+
+  private static String message() {
+    return "hello";
+  }
+
+  String synchronizedOnClass() {
+    //this is a synchronized block on the class
+    synchronized (SynchronizedMethodAndBlock.class) {
+      return message();
+    }
+  }
 }
