@@ -6,10 +6,10 @@ import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
 
-public class UseOfMark {
+public class UsageOfMark {
 
   public static void main(String[] args) throws IOException {
-    new UseOfMark().markSkip();
+    new UsageOfMark().markSkip();
   }
 
   void mark() throws IOException {

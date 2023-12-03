@@ -3,10 +3,10 @@ package org.enricogiurin.ocp17.book.ch14.io;
 import java.io.File;
 import java.nio.file.Path;
 
-public class UseOfFile {
+public class UsageOfFile {
 
   public static void main(String[] args) {
-    new UseOfFile().notExistingFile();
+    new UsageOfFile().notExistingFile();
   }
 
   void file() {

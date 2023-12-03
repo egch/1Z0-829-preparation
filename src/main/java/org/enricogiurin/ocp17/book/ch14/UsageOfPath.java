@@ -6,12 +6,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.stream.Stream;
 
-public class UseOfPath {
+public class UsageOfPath {
 
   public static void main(String[] args) throws IOException {
     //new FileAndPath().file();
     //new FileAndPath().path();
-    UseOfPath useOfPath = new UseOfPath();
+    UsageOfPath useOfPath = new UsageOfPath();
     useOfPath.infoPath(Path.of("/tmp/a.txt"));
   }
 

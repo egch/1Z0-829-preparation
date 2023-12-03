@@ -45,38 +45,44 @@ public class SerializationWithExtend {
       return (Eagle) ois.readObject();
     }
   }
+
+  /*
+   * inner classes
+   */
+
+  //Bird itself is not serializable
+  class Bird {
+
+    protected transient String name;
+    protected int age;
+
+    public Bird() {
+      this.name = "Matt";
+      this.age = 30;
+    }
+
+    public String getName() {
+      return name;
+    }
+
+    public int getAge() {
+      return age;
+    }
+  }
+
+  class Eagle extends Bird implements Serializable {
+
+    {
+      this.name = "Olivia";
+    }
+
+    public Eagle() {
+      this.name = "Bridget";
+    }
+
+
+  }
 }
 
 
-//Bird itself is not serializable
-class Bird {
 
-  protected transient String name;
-  protected int age;
-
-  public Bird() {
-    this.name = "Matt";
-    this.age = 30;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public int getAge() {
-    return age;
-  }
-}
-
-class Eagle extends Bird implements Serializable {
-
-  {
-    this.name = "Olivia";
-  }
-
-  public Eagle() {
-    this.name = "Bridget";
-  }
-
-
-}

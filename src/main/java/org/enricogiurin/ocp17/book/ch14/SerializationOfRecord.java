@@ -50,11 +50,13 @@ public class SerializationOfRecord {
     } catch (EOFException e) {
     }
   }
+
+  record Person(String firstName, String lastName) implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 2L;
+  }
 }
 
 
-record Person(String firstName, String lastName) implements Serializable {
 
-  @Serial
-  private static final long serialVersionUID = 2L;
-}

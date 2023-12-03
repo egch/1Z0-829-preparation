@@ -2,10 +2,10 @@ package org.enricogiurin.ocp17.book.ch14;
 
 import java.io.PrintStream;
 
-public class UseOfPrintStream {
+public class UsageOfPrintStream {
 
   public static void main(String[] args) {
-    new UseOfPrintStream().error();
+    new UsageOfPrintStream().error();
   }
 
   void close() {
