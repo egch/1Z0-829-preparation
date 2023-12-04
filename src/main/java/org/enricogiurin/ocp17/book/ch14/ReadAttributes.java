@@ -15,7 +15,7 @@ import java.util.Set;
 public class ReadAttributes {
 
   public static void main(String[] args) throws IOException {
-    new ReadAttributes().modifyingAttributes();
+    new ReadAttributes().readAttributes();
   }
 
   /*
@@ -35,6 +35,7 @@ public class ReadAttributes {
     System.out.println("creationTime: " + attributes.creationTime());
     System.out.println("lastAccessTime: " + attributes.lastAccessTime());
     System.out.println("lastModifiedTime: " + attributes.lastModifiedTime());
+    System.out.println("size of file: " + attributes.size()); //288
   }
 
   void readAttributesMac() throws IOException {

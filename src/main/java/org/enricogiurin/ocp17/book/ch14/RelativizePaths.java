@@ -5,11 +5,11 @@ import java.nio.file.Path;
 public class RelativizePaths {
 
   public static void main(String[] args) {
-    new RelativizePaths().relativize();
+    new RelativizePaths().relativize_relative();
   }
 
   //both P1 & P2 are relative
-  void relativize() {
+  void relativize_relative() {
     Path path1 = Path.of("fish.txt");
     Path path2 = Path.of("friendly/birds.txt");
     //  ../friendly/birds.txt
@@ -22,9 +22,9 @@ public class RelativizePaths {
   void relativize_absolute() {
     Path path1 = Path.of("/tmp/fish.txt");
     Path path2 = Path.of("/user/friendly/birds.txt");
-    //  ../friendly/birds.txt
+    //  ../../user/friendly/birds.txt
     System.out.println(path1.relativize(path2));
-    // ../../fish.txt
+    // ../../../tmp/fish.txt
     System.out.println(path2.relativize(path1));
   }
 
