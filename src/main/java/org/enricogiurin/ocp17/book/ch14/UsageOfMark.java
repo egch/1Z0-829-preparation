@@ -5,11 +5,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
+import java.util.Arrays;
 
 public class UsageOfMark {
 
   public static void main(String[] args) throws IOException {
-    new UsageOfMark().markSkip();
+    new UsageOfMark().readBytes();
   }
 
   void mark() throws IOException {
@@ -78,6 +79,26 @@ public class UsageOfMark {
     }
     //PEOE
     System.out.println(sb);
+  }
+
+  void readBytes() throws IOException {
+    final var luck = new byte[] { 1, 2, 3, 4, 5, 6, 7 };
+    byte[] buffer = new byte[2];
+    try (InputStream is = new ByteArrayInputStream(luck)) {
+      is.read(buffer);
+      System.out.println(Arrays.toString(buffer)); //[1, 2]
+      if (!is.markSupported()) {
+        return;
+      }
+      is.mark(5);
+      is.read();
+      is.read();
+      is.skip(3);
+      is.reset();  //we go back to (3) which is after read 1 and 2
+      int read = is.read();
+      System.out.println(read);  //3
+    }
+
   }
 
 }
