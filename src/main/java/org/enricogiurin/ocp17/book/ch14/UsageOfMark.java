@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class UsageOfMark {
 
   public static void main(String[] args) throws IOException {
-    new UsageOfMark().readBytes();
+    new UsageOfMark().jumpAround();
   }
 
   void mark() throws IOException {
@@ -35,16 +35,17 @@ public class UsageOfMark {
     try (InputStream inputStream = new ByteArrayInputStream(name.getBytes())) {
       if (inputStream.markSupported()) {
         inputStream.mark(1);
-        System.out.print((char) inputStream.read());
-        System.out.print((char) inputStream.read());
-        System.out.print((char) inputStream.read());
-        System.out.print((char) inputStream.read());
-        System.out.print((char) inputStream.read());
-        System.out.print((char) inputStream.read());
-        System.out.print((char) inputStream.read());
-        System.out.print((char) inputStream.read());
-        System.out.print((char) inputStream.read());
-        System.out.print((char) inputStream.read());
+        //ciao￿￿￿￿￿￿
+        System.out.print((char) inputStream.read());  //c
+        System.out.print((char) inputStream.read());  //i
+        System.out.print((char) inputStream.read());  //a
+        System.out.print((char) inputStream.read());  //o
+        System.out.print((char) inputStream.read());  //￿
+        System.out.print((char) inputStream.read());  //￿
+        System.out.print((char) inputStream.read());  //￿
+        System.out.print((char) inputStream.read());  //￿
+        System.out.print((char) inputStream.read());  //￿
+        System.out.print((char) inputStream.read());  //￿
         inputStream.reset();
         System.out.println();
       }
@@ -52,6 +53,20 @@ public class UsageOfMark {
       System.out.print((char) inputStream.read());
       //ciao￿￿￿￿￿￿
       //ci
+    }
+  }
+
+   void jumpAround() throws IOException {
+    final String name = "0123456789";
+    InputStream is = new ByteArrayInputStream(name.getBytes());
+    try (is) {
+      is.skip(1);  // -> 1
+      is.read();  //1 -> 2
+      is.skip(1); // -> 3
+      is.mark(4);  //mark to (3)
+      is.skip(1);  //-> 4
+      is.reset();  //goes back to (3)
+      System.out.print((char)is.read());  //3
     }
   }
 

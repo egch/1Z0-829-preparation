@@ -22,25 +22,26 @@ public class SerializationOfRecord {
 
   void serializePerson() throws IOException {
     Person enrico = new Person("Enrico", "Giurin");
-    Person balint = new Person("Balint", "Domokos");
+    Person john = new Person("John", "Doe");
     Path dest = Path.of("/tmp/people.ser");
 
     try (ObjectOutputStream oos = new ObjectOutputStream(
         new BufferedOutputStream(
             Files.newOutputStream(dest)))) {
       oos.writeObject(enrico);
-      oos.writeObject(balint);
+      oos.writeObject(john);
     }
   }
 
   void deSerializePerson() throws IOException, ClassNotFoundException {
 
     //Person[firstName=Enrico, lastName=Giurin]
-    //Person[firstName=Balint, lastName=Domokos]
+    //Person[firstName=John, lastName=Doe]
     Path dest = Path.of("/tmp/people.ser");
     try (ObjectInputStream ois = new ObjectInputStream(
         new BufferedInputStream(
             Files.newInputStream(dest)))) {
+      //this is the proper way to read multiple items from a file
       while (true) {
         var obj = ois.readObject();
         if (obj instanceof Person p) {
@@ -51,8 +52,8 @@ public class SerializationOfRecord {
     }
   }
 
+  //NOTE! record needs to implement Serializable to be serialized
   record Person(String firstName, String lastName) implements Serializable {
-
     @Serial
     private static final long serialVersionUID = 2L;
   }
