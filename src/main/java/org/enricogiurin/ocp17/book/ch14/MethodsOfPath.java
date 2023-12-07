@@ -11,7 +11,7 @@ public class MethodsOfPath {
   public static void main(String[] args) throws IOException {
     // new MethodsOfPath().report();
     // new MethodsOfPath().list();
-    new MethodsOfPath().subPath();
+    new MethodsOfPath().list();
   }
 
   void report() throws IOException {
@@ -55,31 +55,7 @@ public class MethodsOfPath {
     }
   }
 
-  void subPath() {
-    Path pom = Path.of("pom.xml").toAbsolutePath();
-    //  /Users/enrico/github/ocp17/1Z0-829-preparation/pom.xml
-    System.out.println("path: " + pom);
-    //6
-    System.out.println("size of names: " + pom.getNameCount());
-    //Users/enrico/github
-    System.out.println("sub-path[0,3]: " + pom.subpath(0, 3));
 
-    //github/ocp17/1Z0-829-preparation/pom.xml
-    System.out.println("sub-path[2,3]: " + pom.subpath(2, 3));
-
-    try {
-      //it's start inclusive, end exclusive so there ain't sub-path from 2 to 1
-      pom.subpath(2, 2);
-    } catch (IllegalArgumentException e) {
-      System.err.println(e.getMessage());
-    }
-  }
-
-  void subPath2() {
-    var p2 = Paths.get("/zoo/animals/bear/koala/food.txt");
-    //                       0     1      2    3     4
-    System.out.println(p2.subpath(1, 3).getName(1));
-  }
 
   void pathElements() {
     Path pom = Path.of("pom.xml").toAbsolutePath();
