@@ -54,6 +54,7 @@ public class JDBCQuestions {
     }
   }
 
+  //when you run this twice in a row, the 2nd time you will get an exception
   void switchAutoCommitFromFalseToTrue() throws SQLException {
 
     try (Connection conn = DriverManager.getConnection(SetupDataBase.JDBC_URL)) {

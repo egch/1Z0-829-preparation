@@ -14,7 +14,7 @@ public class CustomProcedure {
   }
 
   void two_in_out() throws SQLException {
-    var sql = "{ ?=call two_in_out(?, ?, ?) }";
+    var sql = "{ ?= call two_in_out(?, ?, ?) }";
     try (Connection conn = DriverManager.getConnection(JDBC_URL);
         var cs = conn.prepareCall(sql)) {
       cs.registerOutParameter("num", Types.INTEGER);

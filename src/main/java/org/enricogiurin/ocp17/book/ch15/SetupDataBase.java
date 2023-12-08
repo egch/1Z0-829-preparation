@@ -10,6 +10,7 @@ import java.sql.SQLException;
 /**
  * //copied from here:
  * https://www.selikoff.net/2022/01/22/ocp-17-book-bonus-creating-a-hsql-database-in-java-17/
+ * Run this main to clean up db before any other execution
  */
 public class SetupDataBase {
 
