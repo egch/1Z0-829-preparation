@@ -37,7 +37,7 @@ public class SavePoint {
       ps.setInt(1, 2);
       ps.setString(2, "Kara");
       ps.executeUpdate();
-      conn.rollback(sp);  //we rollback till savePoint
+      conn.rollback(sp);  //we roll back till savePoint
       conn.commit();
     }
   }

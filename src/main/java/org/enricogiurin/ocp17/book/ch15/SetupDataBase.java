@@ -89,6 +89,8 @@ public class SetupDataBase {
 
     run(conn, "INSERT INTO counts(id, num) VALUES (1, 4)");
     run(conn, "INSERT INTO counts(id, num) VALUES (2, 5)");
+
+    run(conn, "INSERT INTO games(id, name, description) VALUES (1, 'Monopoly', 'Property trading board game')");
   }
 
   private static void createStoredProcedures(Connection conn) throws SQLException {

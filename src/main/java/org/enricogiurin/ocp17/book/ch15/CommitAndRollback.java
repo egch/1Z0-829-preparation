@@ -9,7 +9,22 @@ import java.sql.SQLException;
 public class CommitAndRollback {
 
   public static void main(String[] args) throws SQLException {
-    new CommitAndRollback().addAndSubtract();
+    new CommitAndRollback().rollbackOnAutocommit();
+  }
+
+  void rollbackOnAutocommit() throws SQLException {
+    String SQL_UPDATE = """
+        update games set description = 'Boring' where name = 'Monopoly'""";
+    try(Connection conn = DriverManager.getConnection(SetupDataBase.JDBC_URL);
+        PreparedStatement preparedStatement = conn.prepareStatement(SQL_UPDATE)) {
+      int update = preparedStatement.executeUpdate();
+      System.out.println(update);
+      boolean isAutocommit = conn.getAutoCommit();
+      System.out.println("autocommit: "+isAutocommit);
+      //this call has no effect
+      conn.rollback();
+    }
+
   }
 
   void addAndSubtract() throws SQLException {

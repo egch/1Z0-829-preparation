@@ -5,26 +5,42 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 
 
-public class UseOfPreparedStatement {
+public class UsageOfPreparedStatement {
 
   public static void main(String[] args) throws SQLException {
-    UseOfPreparedStatement instance = new UseOfPreparedStatement();
+    UsageOfPreparedStatement instance = new UsageOfPreparedStatement();
+    /*
     instance.insert();
     instance.update_execute();
     instance.selectWithBind();
     instance.delete();
+    */
+    instance.updateSetNull();
   }
 
   void insert() throws SQLException {
     try (Connection connection = DriverManager.getConnection(SetupDataBase.JDBC_URL);
         PreparedStatement preparedStatement = connection.prepareStatement(
-            "insert into games (id, name) values (1, ?)")) {
+            "insert into games (id, name) values (2, ?)")) {
       printDriverInfo(connection);
       preparedStatement.setString(1, "m-football");
       int row = preparedStatement.executeUpdate();
       System.out.println("inserted: " + row);
+    }
+  }
+
+  void updateSetNull() throws SQLException {
+    try(Connection conn = DriverManager.getConnection(SetupDataBase.JDBC_URL);
+        PreparedStatement preparedStatement = conn.prepareStatement("update games set description = ? where name = ?")
+    ){
+      //you need to set the type
+      preparedStatement.setNull(1, Types.VARCHAR);
+      preparedStatement.setString(2, "Monopoly");
+      int update = preparedStatement.executeUpdate();
+      System.out.println(update);
     }
   }
 
