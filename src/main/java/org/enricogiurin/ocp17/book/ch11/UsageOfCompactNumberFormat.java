@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class UsageOfCompactNumberFormat {
 
   public static void main(String[] args) {
-    new UsageOfCompactNumberFormat().roundAmount();
+    new UsageOfCompactNumberFormat().roundAmountShort();
   }
 
   void simpleCompactNumberInstance() {
@@ -56,7 +56,13 @@ public class UsageOfCompactNumberFormat {
 
     System.out.println(longFormat.format(amount));  //2 million
     System.out.println(shortFormat.format(amount));  //2M
+  }
 
+  void roundAmountShort() {
+    double amount = 123_456.789;
+    NumberFormat compactNumberInstance = NumberFormat.getCompactNumberInstance(
+        Locale.getDefault(), Style.SHORT);
+    System.out.print(compactNumberInstance.format(amount)); //123K
   }
 
 

@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch11;
+package org.enricogiurin.ocp17.book.ch11.resourcebundle;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
