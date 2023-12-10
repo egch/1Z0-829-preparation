@@ -2,12 +2,13 @@ package org.enricogiurin.ocp17.book.ch11;
 
 import java.text.MessageFormat;
 import java.util.Locale;
+import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 public class LoadOfResourceBundle {
 
   public static void main(String[] args) {
-    new LoadOfResourceBundle().fruitsUsingDefault();
+    new LoadOfResourceBundle().fruits();
   }
 
   void load() {
@@ -42,7 +43,7 @@ public class LoadOfResourceBundle {
     //mango is (only) defined in it_CH but it won't be considered
     try {
       value = bundle.getString("mango");
-    } catch (Exception e) {
+    } catch (MissingResourceException e) {
       System.out.println(e.getMessage());
     }
 

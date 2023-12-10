@@ -3,11 +3,12 @@ package org.enricogiurin.ocp17.book.ch11;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
+import java.util.Locale.Builder;
 
 public class Formatting {
 
   public static void main(String[] args) throws ParseException {
-    new Formatting().currency();
+    new Formatting().price();
   }
 
 
@@ -37,6 +38,15 @@ public class Formatting {
     NumberFormat italy = NumberFormat.getCurrencyInstance(Locale.ITALY);
     //40,00 €
     System.out.println(italy.format(price));
+
+    Locale ch = new Builder()
+        .setLanguage(Locale.GERMAN.getLanguage())
+        .setRegion("CH")
+        .build();
+
+    NumberFormat swissCurrency = NumberFormat.getCurrencyInstance(ch);
+    //CHF 40.00
+    System.out.println(swissCurrency.format(price));
   }
 
   void parse() throws ParseException {

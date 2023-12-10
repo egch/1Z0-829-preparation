@@ -37,7 +37,7 @@ public class ParsingNumbers {
 
   //TODO - fix this code
   void parseSwissSalaries() throws ParseException {
-    String salary = "153,000.25 CHF";
+    String salary = "CHF 153,000.25";
     Locale swissGerman = new Locale("de", "CH");
     Currency chfCurrency = Currency.getInstance("CHF");
     String chf = chfCurrency.getCurrencyCode();

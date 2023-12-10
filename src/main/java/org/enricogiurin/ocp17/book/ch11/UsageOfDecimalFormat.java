@@ -7,18 +7,18 @@ import java.util.Locale;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 
-public class UseOfDecimalFormat {
+public class UsageOfDecimalFormat {
 
   public static void main(String[] args) {
-    new UseOfDecimalFormat().pattern();
+    new UsageOfDecimalFormat().format();
   }
 
   void format() {
     double wealth = 500_000.45;
-    final String format = "###,###,###.000";
+    final String format = "###,###,###.000000";
     NumberFormat nf = new DecimalFormat(format);
     String result = nf.format(wealth);
-    System.out.println(result); //500,000.450
+    System.out.println(result); //500,000.450000
   }
 
   void formatWithDefault() {
