@@ -49,6 +49,7 @@ public class LoadOfResourceBundle {
 
     //reading message
     value = bundle.getString("message");
+    //Mi piacciono le Pere e Kiwi
     System.out.println(MessageFormat.format(value, "Pere", "Kiwi"));
   }
 
