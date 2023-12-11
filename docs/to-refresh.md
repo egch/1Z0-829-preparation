@@ -17,3 +17,7 @@
 
 ### Nested classes
 - static nested classes
+
+### Modules
+Service Provider, Interface, Locator, Consumer
+ 
