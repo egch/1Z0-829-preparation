@@ -6,10 +6,10 @@ import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
 
-public class UseOfPeriod {
+public class UsageOfPeriod {
 
   public static void main(String[] args) {
-    new UseOfPeriod().periodDoesNotChain();
+    new UsageOfPeriod().periodDoesNotChain();
   }
 
   void period() {

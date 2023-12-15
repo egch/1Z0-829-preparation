@@ -10,7 +10,7 @@ import java.time.ZonedDateTime;
 public class DaylightSavingTime {
 
   public static void main(String[] args) {
-    new DaylightSavingTime().dstNovember();
+    new DaylightSavingTime().dstNovember2();
 
   }
 
@@ -73,8 +73,18 @@ public class DaylightSavingTime {
     zonedDateTime = zonedDateTime.plusHours(1);
     //we repeat the hour but the offset is changed
     System.out.println(zonedDateTime); //2022-11-06T01:00-05:00[America/New_York]
-
   }
+
+  void dstNovember2() {
+    var localDate = LocalDate.of(2022, 3, 13);
+    var localTime = LocalTime.of(2, 0);
+    var zone = ZoneId.of("America/New_York");
+    var z = ZonedDateTime.of(localDate, localTime, zone);
+    // java adjusts the time to 3 a.m. automatically and changes the time zone.
+    // It does not throw an exception
+    System.out.println(z);  //2022-03-13T03:00-04:00[America/New_York]
+  }
+
 
 
 }

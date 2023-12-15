@@ -68,19 +68,23 @@ In this case will be used class from the package _fruits_ as:
 **importing by class name takes precedence over wildcards!**
 
 ### Text Blocks
+![Text Blocks](images/TextBlocks.png)
 ```java
-"""
-Hello
-World
-"""
+String tb = """
+    Hello
+    World""";
 ```
-the code inside the """ is just text.  
-
-
+the code within the `"""` and `"""` is just text.   
+text blocks require a break between beginning and the end.
+#### Example
 ```java
+String s = """aaa"""; //does not compile
+```
+
+```shell
 jshell> var text = """
-   ...> Enrico e' un \
-   ...> bravo ragazzo"""
-text ==> "Enrico e' un bravo ragazzo"
+   ...> John is a good guy\
+   ...>  and he's my friend""";
+text ==> "John is a good guy and he's my friend"
 ```
-Remember that a backslash (\)) means to skip the line break.
+Remember that a backslash (**\\**) means to skip the line break.

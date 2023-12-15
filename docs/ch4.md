@@ -5,7 +5,7 @@
 2. If either operand is a String, + means concatenation. 
 3. The expression is evaluated left to right.
 ### String strip
-```java
+```jshelllanguage
 jshell> String s = "  01234   "
         s ==> "  01234   "
         jshell> var s1 = s.strip()
@@ -19,7 +19,7 @@ jshell> String s = "  01234   "
 ### CharSequence
 Both **String** and **StringBuilder** implement _CharSequence_.
 ### formatted
-```java
+```jshelllanguage
 jshell> var name = "John"
 name ==> "John"
 
@@ -32,7 +32,7 @@ s ==> "John is 30 years old"
 ```
 
 ## String pool
-```java
+```jshelllanguage
 jshell> String s1 = "ab"
 s1 ==> "ab"
 
@@ -50,16 +50,14 @@ $20 ==> "ab"
 
 jshell> s1==s3
 $21 ==> false
-
 ```
 ## Arrays
-```java
+```jshelllanguage
 jshell> int[] array = new int[]{1,2,3}
 array ==> int[3] { 1, 2, 3 }
 
 jshell> int[] array = {1,2,3}  //anonymous array
 array ==> int[3] { 1, 2, 3 }
-
 
 ```
 ### Arrays declaration
@@ -116,6 +114,14 @@ $49 ==> 2023-05-14T19:56:46.627004+02:00[Europe/Zurich]
 jshell> java.time.Duration.ofSeconds(758768437)
 $54 ==> PT210769H37S
 ```
+
+### Period
+```java
+//Period does not chain. Only the last method is considered!
+Period period = Period.ofYears(1).ofMonths(2).ofDays(1);
+System.out.println(period);  //P1D
+```
+The `Period` class does not have methods such as `getSeconds()`, `getMinutes()`, `getHours()`.
 
 ## Converting String to number
 ```java 

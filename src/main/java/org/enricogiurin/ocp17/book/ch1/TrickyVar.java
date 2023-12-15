@@ -15,17 +15,18 @@ public class TrickyVar {
     }
   }
 
+  static class Var {
+
+    // var is not a reserved word in Java
+    public void var() {
+      var var = "var";
+    }
+
+    public void Var() {
+      Var var = new Var();
+    }
+  }
 
 }
 
-class Var {
 
-  // var is not a reserved word in Java
-  public void var() {
-    var var = "var";
-  }
-
-  public void Var() {
-    Var var = new Var();
-  }
-}
