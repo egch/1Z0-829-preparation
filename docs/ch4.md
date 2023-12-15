@@ -114,6 +114,8 @@ $49 ==> 2023-05-14T19:56:46.627004+02:00[Europe/Zurich]
 jshell> java.time.Duration.ofSeconds(758768437)
 $54 ==> PT210769H37S
 ```
+#### toString
+PT24H : starts with **PT**
 
 ### Period
 ```java
@@ -122,7 +124,8 @@ Period period = Period.ofYears(1).ofMonths(2).ofDays(1);
 System.out.println(period);  //P1D
 ```
 The `Period` class does not have methods such as `getSeconds()`, `getMinutes()`, `getHours()`.
-
+#### toString
+P1D : starts with **P**
 ## Converting String to number
 ```java 
 //  this method returns a primitive long

@@ -90,3 +90,27 @@ double d = x;
 //not allowed
 x = d;
 ```
+
+## Java Operator Precedence
+In increasing order, lowest to the highest
+
+| Operator             | Description                              | Evaluation Order    |
+|----------------------|------------------------------------------|---------------------|
+| Postfix              | `expr++ expr--`                          | Left to Right       |
+| Unary                | `++expr --expr +expr -expr ~ !`          | Right to Left       |
+| Cast                 | `(type)`                                 | Right to Left       |
+| Multiplicative       | `* / %`                                  | Left to Right       |
+| Additive             | `+ -`                                    | Left to Right       |
+| Shift                | `<< >> >>>`                              | Left to Right       |
+| Relational           | `< > <= >= instanceof`                   | Left to Right       |
+| Equality             | `== !=`                                  | Left to Right       |
+| Bitwise AND          | `&`                                      | Left to Right       |
+| Bitwise XOR          | `^`                                      | Left to Right       |
+| Bitwise OR           | `|`                                      | Left to Right       |
+| Logical AND          | `&&`                                     | Left to Right       |
+| Logical OR           | `||`                                     | Left to Right       |
+| Conditional          | `? :`                                    | Right to Left       |
+| Assignment           | `= += -= *= /= %= &= ^= |= <<= >>= >>>=` | Right to Left       |
+| Comma                | `,`                                      | Left to Right       |
+
+

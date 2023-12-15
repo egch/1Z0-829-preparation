@@ -5,6 +5,9 @@ public class UsageOfLogicalOperator {
   public static void main(String[] args) {
     new UsageOfLogicalOperator().exclusiveOr();
   }
+
+
+  //XOR -> ^ (caret)
   void exclusiveOr() {
     boolean[] values = {false, true};
     for(boolean opA:values){

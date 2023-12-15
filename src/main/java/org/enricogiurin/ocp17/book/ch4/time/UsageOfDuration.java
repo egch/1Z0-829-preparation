@@ -6,10 +6,10 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-public class UseOfDuration {
+public class UsageOfDuration {
 
   public static void main(String[] args) {
-    new UseOfDuration().durationWithLocalDate();
+    new UsageOfDuration().durationWithLocalDate();
   }
 
   void between() {
@@ -55,12 +55,17 @@ public class UseOfDuration {
     System.out.println(oneMonth);
   }
 
+  //Duration is supposed to be used with objects that contain times, i.e. LocalTime, LocalDateTime
+  // It has an ofDays() method, this is a convenience method to represent a large number of seconds.
+  // This means that calling Duration.ofDays(1) is fine.
   void durationWithLocalDate() {
     //Duration is supposed to be used with objects that contain times.
     LocalDate now = LocalDate.now();
     //Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported unit: Seconds
     //I cannot use Duration with LocalDate
-    LocalDate then = now.plus(Duration.ofDays(1L));
+    Duration d1D = Duration.ofDays(1L);
+    System.out.println(d1D); //PT24H
+    LocalDate then = now.plus(d1D);
     System.out.println(then);
 
   }
