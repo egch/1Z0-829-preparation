@@ -42,23 +42,37 @@ public class PatternMatching {
     }
   }
 
+  void instanceOfWIthPrimitives(Object x) {
+    //not allowed primitive types with instanceOf
+/*
+    if(x instanceof int){
+          System.out.println("it's an int!");
+    }
+*/
+    //but this is allowed
+    if(x instanceof Integer){
+      System.out.println("it's an int!");
+    }
+  }
+
   void flowScoping(Number number) {
     //it cannot make sure data is an integer
     //does not compile
-/*    if(number instanceof Integer data || data.compareTo(5)>0){
-
-    }*/
+/*
+    if(number instanceof Integer data || data.compareTo(5)>0){
+    }
+*/
 
     //this is fine as it's a logical and
     if (number instanceof Integer data && data.compareTo(5) > 0) {
 
     }
 
-    //this not fine as it is a short-circuit logical and: both of the parts needs to be evaluated
-    //does not compile!
-/*    if(number instanceof Integer data & data.compareTo(5)>0){
-
-    }*/
-
+    //this is not fine as it is short-circuit logical and: both of the parts need to be evaluated
+    //does not compile! (bitwise AND Operator)
+/*
+if(number instanceof Integer data & data.compareTo(5)>0){
+}
+*/
   }
 }

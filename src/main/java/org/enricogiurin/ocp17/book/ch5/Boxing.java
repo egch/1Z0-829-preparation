@@ -3,7 +3,7 @@ package org.enricogiurin.ocp17.book.ch5;
 public class Boxing {
 
   public static void main(String[] args) {
-    new Boxing().nullUnbox();
+    new Boxing().boxingArgument();
   }
 
   void boxing() {
@@ -22,6 +22,20 @@ public class Boxing {
     //Exception in thread "main" java.lang.NullPointerException:
     // Cannot invoke "java.lang.Integer.intValue()" because "wrapper" is null
     int primitive = wrapper;
+  }
+
+  void boxingArgument() {
+    class NestedLocal{
+      void print(Object obj){
+        if(obj instanceof Integer num){
+          System.out.println(num+2);
+        }
+      }
+    }//end of nested local
+    NestedLocal nestedLocal = new NestedLocal();
+    //here boxing is applied
+    nestedLocal.print(5);
+    nestedLocal.print(Integer.valueOf(5));
   }
 
 }

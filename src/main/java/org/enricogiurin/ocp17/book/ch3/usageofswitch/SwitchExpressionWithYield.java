@@ -1,9 +1,9 @@
-package org.enricogiurin.ocp17.book.ch3;
+package org.enricogiurin.ocp17.book.ch3.usageofswitch;
 
-public class SwitchYield {
+public class SwitchExpressionWithYield {
 
   public static void main(String[] args) {
-    new SwitchYield().exampleWithYield(6);
+    new SwitchExpressionWithYield().exampleWithYield(6);
   }
 
   void exampleWithYield(int x) {
@@ -42,20 +42,24 @@ public class SwitchYield {
     System.out.println(goal);
   }
 
-  void switchComplex() {
-    int parameter = 5;
-    int result = switch (parameter) {
-      case 0 -> 0;
-      case 1 -> build();
-      default -> 5;
+  void wrongYield() {
 
-    };
+    int magicNumber = 7;
+    var ok = switch (magicNumber) {
+      //break is not allowed in a switch expression
+      //case 7 -> true; break;
+
+      //missing semicolon
+      //case 9 -> {yield true}
+
+      //missing brackets
+      //case 11 -> yield true;
+
+      //you can't mix switch expression and switch statement syntax.
+      //case 13: {yield true;}
+      default -> false;
+      };
   }
-
-  int build() {
-    return 4;
-  }
-
 
 }
 

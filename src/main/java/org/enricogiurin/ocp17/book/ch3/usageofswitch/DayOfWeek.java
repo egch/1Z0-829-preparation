@@ -1,6 +1,6 @@
-package org.enricogiurin.ocp17.book.ch3;
+package org.enricogiurin.ocp17.book.ch3.usageofswitch;
 
-public enum DayOfWeek {
+enum DayOfWeek {
   SUNDAY,
   MONDAY,
   TUESDAY,

@@ -12,7 +12,6 @@ void compare(Number number) {
 ### Pattern Matching - edge cases
 ```java
   void notCompatible(Throwable t) {
-
     //type not compatible - t cannot be a string
     /*
     if(t instanceof String s) {
@@ -25,8 +24,11 @@ void compare(Number number) {
     }
   }
 ```
-## switch
-
+## Switch
+The value of a case statement must be one of these:
+* a constant;
+* a literal value;
+* a final variable.
 ### Switch supported types
  - int,byte, short, char
  - Integer, Byte, Short, Character
@@ -45,5 +47,16 @@ void compare(Number number) {
       default -> "weekend";
     };
   }
+```
+We can have a switch expression even without return value assigned.
+```java
+    int cnt = 0;
+    char c = 'a';
+    //there is no return value assigned so the default is not needed!
+    switch (c) {
+      case 'a' -> cnt++;
+      case 'b' -> cnt++;
+    }
+    System.out.println(cnt); //1
 ```
 

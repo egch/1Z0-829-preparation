@@ -1,4 +1,5 @@
-package org.enricogiurin.ocp17.book.ch3;
+package org.enricogiurin.ocp17.book.ch3.usageofswitch;
+
 
 public class SwitchExpression {
 
@@ -49,6 +50,20 @@ public class SwitchExpression {
       case 'b' -> cnt++;
     }
     System.out.println(cnt); //1
+  }
+
+  void switchComplex() {
+    int parameter = 5;
+    int result = switch (parameter) {
+      case 0 -> 0;
+      case 1 -> build();
+      default -> 5;
+
+    };
+  }
+
+  int build() {
+    return 4;
   }
 
 
