@@ -3,6 +3,7 @@ package org.enricogiurin.ocp17.book.ch1;
 public class TextBlocks {
 
   public static void main(String[] args) {
+    new TextBlocks().whiteSpace();
         /*
         starts with """ and ends with """
         text blocks requires a break between beginning and the end
@@ -11,7 +12,7 @@ public class TextBlocks {
          */
     //printPyramid();
     //countLines();
-    anotherTextBlock();
+
   }
 
   static void printTextBlock() {
@@ -76,6 +77,14 @@ public class TextBlocks {
         \"""
          """;
     System.out.println(equivalent);
+  }
+
+  void whiteSpace() {
+    var block = """
+    green
+      yellow
+    """;
+    System.out.println("#"+block+"#");
   }
 
 

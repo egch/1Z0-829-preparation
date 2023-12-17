@@ -68,7 +68,9 @@ In this case will be used class from the package _fruits_ as:
 **importing by class name takes precedence over wildcards!**
 
 ### Text Blocks
-![Text Blocks](images/TextBlocks.png)
+
+<img src="images/TextBlocks.png" alt="Text Blocks" width="40%">
+
 ```java
 String tb = """
     Hello

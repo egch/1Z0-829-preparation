@@ -5,10 +5,10 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
-public class UseOfInstant {
+public class UsageOfInstant {
 
   public static void main(String[] args) {
-    new UseOfInstant().differentTZ();
+    new UsageOfInstant().durationBetweenTwoInstants();
   }
 
   //I can use toInstant only with ZonedDateTime (not LDT)
@@ -29,7 +29,16 @@ public class UseOfInstant {
 
     Duration duration = Duration.between(instantZRH, instantZRH);
     System.out.println(duration);  //PT0S
+  }
 
+  void durationBetweenTwoInstants() {
+    Instant before = Instant.now();
+    for (int j = 0; j < 100; j++) {
+      //do nothing
+    }
+    Instant now = Instant.now();
+    Duration duration = Duration.between(before, now);
+    System.out.println("time elapsed: %d ns ".formatted(duration.getNano()));  //time elapsed: 3000 ns
   }
 
 

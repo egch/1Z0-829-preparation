@@ -34,10 +34,10 @@ public class MethodsOfString {
 
   void stripLeadingTrailing() {
     String source = " ciao ";
-    // #ciao #
-    print(source.stripLeading());
-    //# ciao#
-    print(source.stripTrailing());
+    //remove space at the beginning
+    print(source.stripLeading()); // #ciao #
+    //remove space at the end
+    print(source.stripTrailing()); // # ciao#
   }
 
   void trim() {
@@ -49,14 +49,14 @@ public class MethodsOfString {
   void stripVsTrim() {
     char unicodeSpace = '\u2000';
     String text =
-        unicodeSpace + "Unicode space" + unicodeSpace; // This string contains unicode space
+        unicodeSpace + "text" + unicodeSpace; // This string contains unicode space
     String trimmedText = text.trim();
     String strippedText = text.strip();
 
     System.out.println(
-        "Trimmed Text:  " + "#" + trimmedText + "#"); // Trimmed Text:  # Unicode space #
+        "Trimmed Text:  #" + trimmedText + "#"); // Trimmed Text:  # text #
     System.out.println(
-        "Stripped Text: " + "#" + strippedText + "#"); // Stripped Text: #Unicode space#
+        "Stripped Text: #" + strippedText + "#"); // Stripped Text: #text#
 
 
   }

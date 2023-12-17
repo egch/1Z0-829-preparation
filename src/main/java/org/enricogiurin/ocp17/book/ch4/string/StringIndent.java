@@ -3,7 +3,7 @@ package org.enricogiurin.ocp17.book.ch4.string;
 public class StringIndent {
 
   public static void main(String[] args) {
-    new StringIndent().trickyIndent();
+    new StringIndent().indentBL();
   }
 
 
@@ -58,6 +58,39 @@ public class StringIndent {
     System.out.println("\nStripped Text:");
     System.out.println(stripped);
     System.out.println("length: " + stripped.length()); //6
+  }
+
+
+/*
+#1234
+567#
+# 1234
+ 567
+#
+#1234
+567
+#
+#1234
+567
+#
+
+*/
+  void indentBL() {
+    var name = "1234 \n567";
+    System.out.println("#%s#".formatted(name));
+    //System.out.println(name.length());
+
+    var indent1 = name.indent(1);
+    System.out.println("#%s#".formatted(indent1));
+    //System.out.println(indent1.length());
+
+    var indent0 = name.indent(0);
+    System.out.println("#%s#".formatted(indent0));
+    //System.out.println(indent0.length());
+
+    var indentMinus1 = name.indent(-1);
+    System.out.println("#%s#".formatted(indentMinus1));
+    //System.out.println(indentMinus1.length());
   }
 
 

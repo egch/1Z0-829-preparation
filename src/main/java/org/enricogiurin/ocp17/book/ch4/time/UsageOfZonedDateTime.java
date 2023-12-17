@@ -10,7 +10,7 @@ import java.util.Set;
 public class UsageOfZonedDateTime {
 
   public static void main(String[] args) {
-    new UsageOfZonedDateTime().printZones();
+    new UsageOfZonedDateTime().zoneDateTime();
   }
 
   void zoneDateTime() {

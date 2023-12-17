@@ -4,7 +4,7 @@ public class OperatorPrecedence {
 
   public static void main(String[] args) {
     OperatorPrecedence op = new OperatorPrecedence();
-    op.postIncrementTricky();
+    op.ternary();
   }
 
   void relational() {
@@ -49,7 +49,21 @@ public class OperatorPrecedence {
     // 5++ -> 6
     // 0 - 6 = -6
     System.out.println(result); //-6
-
   }
+
+  void ternary() {
+    int a = 9;
+    int b = 3;
+    var result = ++a>= 10 ? b-- <= 2
+        ? "A" : "B" : "C";
+    /*
+    1. ++a>=10 -> 10>=10 -> then we can exclude the last block "C"
+    2. b--<=2 ? "A" : "B"
+    3. (b--<=2) --> false (post decrease) -> "B"
+     */
+
+    System.out.println(result);  // "B"
+  }
+
 
 }

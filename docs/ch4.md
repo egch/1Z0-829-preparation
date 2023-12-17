@@ -89,7 +89,7 @@ $35 ==> 1  //1 is the first position in which arrayA & arrayB differs
 ```
 ## Math
 ### floor & ceil
-```java
+```jshelllanguage
 jshell> double floor = Math.floor(3.8)
 floor ==> 3.0  //double
 
@@ -97,20 +97,26 @@ jshell> double ceil = Math.ceil(3.8)
 ceil ==> 4.0  //double
 ```
 ## Dates & Times
-```java
+```jshelllanguage
 jshell> java.time.LocalDateTime.now()
 $48 ==> 2023-05-14T19:56:29.738748
 
 jshell> java.time.ZonedDateTime.now()
 $49 ==> 2023-05-14T19:56:46.627004+02:00[Europe/Zurich]
 ```
+### ZonedDateTime
+```shell
+2021–10–25T09:13:07.769–05:00[America/New_York]
 
+2023-12-16T14:30:00.000-05:00[America/New_York]
+
+```
 ### GMT vs UTC
 - GMT - Greenwich Mean Time
 - UTC - Coordinated Universal Time
 
 ### Duration
-```java
+```jshelllanguage
 jshell> java.time.Duration.ofSeconds(758768437)
 $54 ==> PT210769H37S
 ```
@@ -126,6 +132,14 @@ System.out.println(period);  //P1D
 The `Period` class does not have methods such as `getSeconds()`, `getMinutes()`, `getHours()`.
 #### toString
 P1D : starts with **P**
+
+
+### Instant
+The Instant class represents a specific moment in time in the GMT time zone.
+#### Format
+```java
+YYYY-MM-DDTHH:mm:ss.SSSZ
+```
 ## Converting String to number
 ```java 
 //  this method returns a primitive long
@@ -134,4 +148,34 @@ var aLongPrimitive = Long.parseLong("123");
 //this method returns a Long object
 var aLong = Long.valueOf("123");
 sout.println(aLong.toString());
+```
+
+## Manipulating String
+### indent
+However, indent() also normalizes whitespace characters. 
+First, a line break is added to the end of the string if not already there. 
+Second, any line breaks are converted to the `\n` format.
+
+```java
+    var name = "1234 \n567";
+    var indent1 = name.indent(1);
+    System.out.println("#%s#".formatted(indent1));
+```
+It prints:
+```shell
+# 1234 
+ 567
+#
+```
+
+### translateEscapes
+```java
+  void translateNL() {
+    String source = "Today is\\nSaturday";
+    System.out.println(source); //Today is\nSaturday
+
+    //Today is
+    //Saturday
+    System.out.println(source.translateEscapes());
+  }
 ```

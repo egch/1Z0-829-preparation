@@ -4,8 +4,8 @@ public class StringToLong {
 
   public static void main(String[] args) {
     StringToLong instance = new StringToLong();
-    instance.parseLong();
-    instance.valueOf();
+    instance.valueOfInvalidNumber();
+    //instance.valueOf();
   }
 
   void parseLong() {
@@ -17,10 +17,25 @@ public class StringToLong {
     System.out.println(aLongPrimitive);
   }
 
+  //Exception in thread "main" java.lang.NumberFormatException: For input string: "not a long"
+  void parseInvalidNumber() {
+    long result = Long.parseLong("not a long");
+    System.out.println(result);
+
+  }
+
   void valueOf() {
     //this method returns a Long object
     var aLong = Long.valueOf("123");
+    //aLong is a Long
     System.out.println(aLong.toString());
+  }
+
+  // Exception in thread "main" java.lang.NumberFormatException: For input string: "not a Long"
+  void valueOfInvalidNumber() {
+    Long result = Long.valueOf("not a Long");
+    System.out.println(result);
+
   }
 
 }

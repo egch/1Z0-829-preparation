@@ -1,7 +1,7 @@
 # Methods
 ## Autoboxing
 ### Failing cases
-```java
+```shell
 jshell> long p = 8
 p ==> 8
 
@@ -59,3 +59,18 @@ class B extends A {
 In the main method I am in the package **b**, and I am trying to access to a protected method defined in the class A (the type is A, not B)
 which is in the package **a**, then a different package.
 Then it does not compile!
+
+## String to number
+### parseLong
+```java
+var result = Long.parseLong("17")
+//result is a primitive lonn
+//System.out.println(result.toString()); //does not compile
+```
+### valueOf
+```java
+var result = Long.valueOf("17")
+//result is a Long
+System.out.println(result.toString()); //does compile!
+```
+```
