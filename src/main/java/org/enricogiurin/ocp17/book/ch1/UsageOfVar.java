@@ -1,9 +1,9 @@
 package org.enricogiurin.ocp17.book.ch1;
 
-public class UseOfVar {
+public class UsageOfVar {
 
   public static void main(String[] args) {
-    new UseOfVar().whatType();
+    new UsageOfVar().whatType();
   }
 
   //cannot use var as an instance variable
@@ -69,6 +69,16 @@ public class UseOfVar {
     var type = 2 / 3;
     //in this case is an int
     System.out.println(type);
+  }
+
+  void multipleVar() {
+    //not allowed
+    //var is not allowed in a compound declaration
+    //var x=5, y=6;
+
+    //but this is fine!
+    var x= 5;
+    var y=6;
   }
 }
 

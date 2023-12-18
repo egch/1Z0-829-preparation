@@ -1,7 +1,24 @@
 # Class Design
 ## Abstract
-Only instance methods can be marked abstract within a class!
-Not variables, constructors, or static methods.
+Only instance methods can be marked abstract within a class!   
+**Not variables, constructors, or static methods.**
+
+```java
+public abstract class AnAbstractClass {
+  abstract void hello();
+  //Illegal combination of modifiers: 'abstract' and 'private'
+  private abstract void notAllowed();  //does not compile!
+  
+  //Illegal combination of modifiers: 'final' and 'abstract'
+  abstract final void notAllowed(); //does not compile!
+  
+  //Illegal combination of modifiers: 'abstract' and 'static'
+  abstract static void notAllowed(); //does not compile!
+  
+  //Modifier 'abstract' not allowed here
+  abstract AnAbstractClass(){} //does not compile!
+}
+```
 ### Abstract & Final
 Due to this incompatibility, Java does not permit a class or method to be marked both abstract and final.
 ```java

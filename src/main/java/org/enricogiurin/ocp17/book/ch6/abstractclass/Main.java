@@ -29,6 +29,4 @@ class Child extends Parent {
   }
 }
 
-abstract class AbstractChild extends Parent {
-
-}
+abstract class AbstractChild extends Parent {}

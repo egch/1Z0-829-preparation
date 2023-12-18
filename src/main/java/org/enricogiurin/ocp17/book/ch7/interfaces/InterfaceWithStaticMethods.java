@@ -3,11 +3,12 @@ package org.enricogiurin.ocp17.book.ch7.interfaces;
 interface Certifications {
 
   //public by default
-  public static void ocp17() {
-  }
+  public static void ocp17() {}
 
-  private static void az204() {
-  }
+  private static void az204() {}
+
+  //cannot have a final static method on an interface
+  //static final void notAllowed() {}
 
   default void certsPassed() {
     ocp17();

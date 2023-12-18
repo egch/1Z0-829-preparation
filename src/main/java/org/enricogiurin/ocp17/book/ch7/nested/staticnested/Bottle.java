@@ -4,7 +4,7 @@ public class Bottle {
 
   public static void main(String[] stars) {
     var bottle = new Bottle();
-    //wrong way to instantiate a static nested class
+    //this is wrong way to instantiate a static nested class
     //does not compile
     //Wrapper q = bottle.new Wrapper();
 

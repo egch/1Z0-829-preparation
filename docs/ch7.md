@@ -50,6 +50,19 @@ signature, it must override the method with its own implementation.
 ## Sealed
 ### Same file
 The permits clause is optional if the subclass is nested or declared in the same file.
+
+```java
+//same file
+public sealed class Snake {}
+final class Cobra extends Snake {}
+```
+### Different files
+```java
+public sealed class Snake permits Cobra, Viper {}
+//separated files
+final class Cobra extends Snake {}
+non-sealed class Viper extends Snake {}
+```
 ```java
 //same file
 //no permits needed 
