@@ -24,11 +24,22 @@ class Concrete implements InterfaceWithPrivateMethods {
   public static void main(String[] args) {
     InterfaceWithPrivateMethods instance = new Concrete();
     instance.sayCiao();  //ciao
-
   }
+
+
 
   @Override
   public void hello(String name) {
 
+  }
+
+  // a private interface method cannot be called in a method outside the interface declaration.
+  @Override
+  public void sayCiao() {
+
+    InterfaceWithPrivateMethods.super.sayCiao();
+
+    //ciao()' has private access in InterfaceWithPrivateMethods'
+    //ciao(); //does not compile
   }
 }

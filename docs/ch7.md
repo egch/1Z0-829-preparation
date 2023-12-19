@@ -13,19 +13,14 @@ Concise form:
 
 ```java
 public interface Run {
-
   void run();
 }
 ```
-
 An interface cannot be marked as final
-
 ```java
 //does not compile
 public final interface Walk {}
-
 ```
-
 Interface variables are implicitly public, static, final.
 
 ```java
@@ -34,6 +29,23 @@ public interface Weight {
   public static final int max_height = 50;  
 }  
 
+```
+### private methods
+A private interface method **cannot** be called in a method outside the interface declaration.
+
+```java
+interface InterfaceWithAPrivateMethod {
+  private void message();
+  void hello();
+}
+
+class InterfaceWithAPrivateMethodImpl implements InterfaceWithAPrivateMethod {
+  @Override
+  public void hello(){
+    //does not compile!
+    //message();
+  }
+}
 ```
 
 ### Override
@@ -114,7 +126,6 @@ public record Person(String firstName, String lastName) {
 ```
 A compact constructor cannot set an instance variable through this but just with the normal assignment operator.
 
-
 ```java
 public record Name(String name) {
   Name {
@@ -124,7 +135,6 @@ public record Name(String name) {
 }
 ```
 
-```java
 ### Overloaded constructor
 ```java
 public record Person(String firstName, String lastName) {
