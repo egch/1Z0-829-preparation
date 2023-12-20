@@ -1,9 +1,9 @@
 package org.enricogiurin.ocp17.book.ch2;
 
-public class UseOfInstanceOf {
+public class UsageOfInstanceof {
 
   public static void main(String[] args) {
-    new UseOfInstanceOf().nullInstanceOf();
+    new UsageOfInstanceof().nullInstanceOf();
   }
 
 
@@ -55,7 +55,7 @@ public class UseOfInstanceOf {
 
   }
 
-  void instanceOfScope() {
+  void instanceofScope() {
     Object fish = "fish";
 
     if (!(fish instanceof String guppy)) {

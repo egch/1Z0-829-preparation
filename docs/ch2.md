@@ -114,7 +114,7 @@ In increasing order, lowest to the highest
 | Comma                | `,`                                      | Left to Right       |
 
 
-## InstanceOf
+## Instanceof
 ### null case
 ```java
 //it always returns false

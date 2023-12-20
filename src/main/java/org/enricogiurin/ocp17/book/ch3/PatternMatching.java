@@ -42,8 +42,8 @@ public class PatternMatching {
     }
   }
 
-  void instanceOfWIthPrimitives(Object x) {
-    //not allowed primitive types with instanceOf
+  void instanceofWIthPrimitives(Object x) {
+    //not allowed primitive types with instanceof
 /*
     if(x instanceof int){
           System.out.println("it's an int!");

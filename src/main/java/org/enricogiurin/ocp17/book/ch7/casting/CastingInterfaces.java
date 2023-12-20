@@ -11,7 +11,7 @@ interface Lazy {
 public class CastingInterfaces {
 
   public static void main(String[] args) {
-    new CastingInterfaces().instanceOf();
+    new CastingInterfaces()._instanceof();
   }
 
   void classCastException() {
@@ -23,7 +23,7 @@ public class CastingInterfaces {
     Sport enricoDoesSport = (Sport) enrico;
   }
 
-  void instanceOf() {
+  void _instanceof() {
     Enrico enrico = new Enrico();
     if (enrico instanceof Sport sport) {
       System.out.println("enrico does sport");
