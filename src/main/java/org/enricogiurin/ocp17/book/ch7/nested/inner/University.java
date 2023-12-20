@@ -29,10 +29,17 @@ public class University {
     professor.printID();
   }
 
+  static void createProfessorInOneLine(){
+    //using a single line
+    Professor johnDoe = new University().new Department().new Professor("John Doe");
+    System.out.println(johnDoe.name);
+  }
+
   public static void main(String[] args) {
     createProfessor();
     System.out.println();
     createProfessorMultiLines();
+    createProfessorInOneLine();
   }
 
   public class Department {

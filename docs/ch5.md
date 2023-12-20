@@ -23,11 +23,15 @@ jshell> Long wrapper = 8
 ### Effective final
 The test for effectively final is if the final modifier can be added to the local variable and the code still compiles.
 ## varargs
-Two varargs parameters are not allowed in the same method. 
+Two varargs parameters are not allowed in the same method.  
+A method may contain **at most** one varargs parameter, 
+and it must appear **as the last argument** in the list.
 
 ```java
-//won't compile
+//won't compile!
 public void bass(String... values, int... nums) {}
+//won't compile!
+public void hello(String... values, String desc) {}
 ```
 
 ## Passing data among methods

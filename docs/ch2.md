@@ -114,3 +114,17 @@ In increasing order, lowest to the highest
 | Comma                | `,`                                      | Left to Right       |
 
 
+## InstanceOf
+### null case
+```java
+//it always returns false
+if(null instanceof String){
+  System.out.println("It's null");
+}
+```
+
+```java
+Object object = new String("A");
+//this does not compile!
+// if(object instanceof null){}
+```

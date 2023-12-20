@@ -1,14 +1,12 @@
 # Beyond Classes
 
 ## Interface
-
 ```java
 public abstract interface Run { //abstract implicit modifiers
 
   public abstract void run();  //public abstract implicit modifiers
 }
 ```
-
 Concise form:
 
 ```java
@@ -87,24 +85,26 @@ final class AsianMale extends HumanBeing {}
 A subclass (Male) of a sealed class (HumanBeing) must be marked either **final** or **sealed** or **non-sealed**.
 
 ### Sealed interfaces
-
-A sealed interface restricts which **subclasses** may implement it.
+Permits list can apply to:
+* a class that implements the interface
+* An interface that extends the interface.
 ```java
-public sealed interface SealedInterface permits SealedInterfaceImpl {}
+// Sealed interface
+public sealed interface Pet permits Cat, Dog, Rabbit {}
 
-//other file
-public final class SealedInterfaceImpl implements SealedInterface {}
+// Classes permitted to implement sealed interface Pet
+public final class Cat implements Pet {}
+public final class Dog implements Pet {}
 
+// Interface permitted to extend sealed interface pet
+public non-sealed interface Rabbit extends Pet {}
 ```
-
+[Example of sealed interface](../src/main/java/org/enricogiurin/ocp17/book/ch7/sealed/interfaces/Pet.java)
 ### Sealed Classes
-
 The permits clause is optional if the subclass is nested or declared in the same file.
-
 ## Final
 ```java
 final class AFinal {
-
   public static void main(String[] args) {
     //I can't override a final class
     //new AFinal() {}; //does not compile
@@ -125,7 +125,6 @@ public record Person(String firstName, String lastName) {
 }
 ```
 A compact constructor cannot set an instance variable through this but just with the normal assignment operator.
-
 ```java
 public record Name(String name) {
   Name {
@@ -156,3 +155,23 @@ record Game() {
 ```
 It does not compile because records cannot include instance variables not listed in the declaration of the record, 
 as it could break immutability.
+
+## enum
+### Abstract method
+If an enum contains an abstract method, then every enum value must include an override of this abstract method.
+```java
+public enum Gender {
+  MALE {
+    @Override
+    public String description() {
+      return "male";
+    }
+  }, FEMALE {
+    @Override
+    public String description() {
+      return "female";
+    }
+  };
+  public abstract String description();
+}
+```

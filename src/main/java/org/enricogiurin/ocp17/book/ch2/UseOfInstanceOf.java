@@ -3,16 +3,9 @@ package org.enricogiurin.ocp17.book.ch2;
 public class UseOfInstanceOf {
 
   public static void main(String[] args) {
-    new UseOfInstanceOf().usage();
+    new UseOfInstanceOf().nullInstanceOf();
   }
 
-  void instanceOfNull() {
-    String s = "";
-    //does not compile
-/*    if(s instanceof null){
-      System.out.println("ciao");
-    }*/
-  }
 
   void usage() {
     Exception exception = new Exception();
@@ -47,6 +40,19 @@ public class UseOfInstanceOf {
     if (n2 instanceof String) {
       //
     }
+  }
+
+  void nullInstanceOf() {
+    //this always returns false!
+    if(null instanceof String){
+      System.out.println("It's null");
+    }else {
+      System.out.println("It's not");
+    }
+    Object object = new String("A");
+    //this does not compile!
+   // if(object instanceof null){}
+
   }
 
   void instanceOfScope() {

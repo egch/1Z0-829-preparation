@@ -29,6 +29,11 @@ The type is Integer in the Function and int in the lambda.
 Lambdas require **local variables** and **method parameters** to be effectively final to use them.
 Instance and static variables can be used regardless of whether they are effectively final.
 [LambdaEffectiveFinal](src/main/java/org/enricogiurin/ocp17/book/ch8/LambdaEffectiveFinal.java)
+#### Rules
+When using lambda expressions that access instance variables, local variables, or parameters:
+* local variables **must be** effective final
+* parameters **must be** effective final
+* instance variables **are not subject** to the effective final constraint.
 
 ### Deferred execution
 Deferred execution means the lambda expression is not evaluated until runtime, but it is compiled.  
