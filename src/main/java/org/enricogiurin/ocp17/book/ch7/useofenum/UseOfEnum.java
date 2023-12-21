@@ -1,7 +1,5 @@
 package org.enricogiurin.ocp17.book.ch7.useofenum;
 
-import org.enricogiurin.ocp17.book.ch7.Season;
-
 public class UseOfEnum {
 
   void switchEnum() {

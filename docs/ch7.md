@@ -175,3 +175,11 @@ public enum Gender {
   public abstract String description();
 }
 ```
+### Constructors
+enum constructors are implicitly private.
+```java
+  public SeasonWithValues(String description) {  //does not compile!
+    this.description = description;
+  }
+```
+[Enum With Fields](../src/main/java/org/enricogiurin/ocp17/book/ch7/useofenum/SeasonWithValues.java)

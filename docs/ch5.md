@@ -1,7 +1,7 @@
 # Methods
 ## Autoboxing
 ### Failing cases
-```shell
+```jshelllanguage
 jshell> long p = 8
 p ==> 8
 
@@ -77,4 +77,16 @@ var result = Long.valueOf("17")
 //result is a Long
 System.out.println(result.toString()); //does compile!
 ```
+
+## Overloading
+### Overloading primitive types
+Since there is no exact match, Java attempts to promote the primitive type to **double** before trying to wrap it as a Float.
+```java
+void print(double d);
+void print(Float f);
+
+//caller
+print(2F); //this calls the method print(double d)
+
 ```
+[Overloading primitives](../src/main/java/org/enricogiurin/ocp17/book/ch5/MethodMatchingOverloading.java)
