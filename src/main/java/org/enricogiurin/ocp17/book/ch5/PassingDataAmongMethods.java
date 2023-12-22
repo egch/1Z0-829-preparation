@@ -7,28 +7,51 @@ public class PassingDataAmongMethods {
 
   public static void main(String[] args) {
     PassingDataAmongMethods instance = new PassingDataAmongMethods();
-    int a = 2;
-    instance.sum(a);
-    //2
-    System.out.println(a);
-
-    //now with object
-    HashMap<String, String> map = new HashMap<>();
-    instance.addEntry(map);
-    //Zurigo
-    System.out.println(map.get("Enrico"));
-
+    instance.callHandlingAnArray();
   }
 
-  void sum(int a) {
+  void callSum() {
+    int a = 2;
+    sum(a);
+    //2
+    System.out.println(a);
+  }
+
+  void callAddEntry() {
+    HashMap<String, String> map = new HashMap<>();
+    addEntry(map);
+    //Zurich
+    System.out.println(map.get("John"));
+  }
+
+
+  void callHandlingAnArray() {
+    int[] myArray = new int[2];
+    myArray[0] = 5;
+    handlingAnArray(myArray);
+    //5
+    System.out.println(myArray[0]);
+  }
+
+  /*
+   ***** internal methods *****
+   */
+  private void handlingAnArray(int[] array) {
+    //since array was assigned a new object, changes do not affect myArray (the caller)
+    array = new int[2];
+    array[0] = 1;
+  }
+
+  private void sum(int a) {
     //this has no effect -> passing by value
     a += 5;
   }
 
-  void addEntry(Map<String, String> map) {
-    map.put("Enrico", "Zurigo");
+  private void addEntry(Map<String, String> map) {
+    map.put("John", "Zürich");
     //this has no effect -> but the content of map is changed before
     map = null;
   }
+
 
 }

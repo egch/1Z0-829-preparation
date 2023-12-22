@@ -20,7 +20,6 @@ An interface cannot be marked as final
 public final interface Walk {}
 ```
 Interface variables are implicitly public, static, final.
-
 ```java
 public interface Weight {
   int max_weight = 5;
@@ -28,6 +27,19 @@ public interface Weight {
 }  
 
 ```
+
+### Interfaces with the same default name
+Class which implements two interfaces with the same(signature) default method:
+```java
+@Override
+public void go() {
+    Run.super.go();
+    //or
+    Walk.super.go();
+}
+```
+[Full Example](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/defaultmethods/InheritTwoDefaultMethods.java)
+
 ### private methods
 A private interface method **cannot** be called in a method outside the interface declaration.
 
