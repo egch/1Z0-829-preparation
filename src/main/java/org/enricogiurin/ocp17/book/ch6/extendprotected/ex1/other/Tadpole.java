@@ -1,6 +1,6 @@
-package org.enricogiurin.ocp17.book.ch6.extendprotected.other;
+package org.enricogiurin.ocp17.book.ch6.extendprotected.ex1.other;
 
-import org.enricogiurin.ocp17.book.ch6.extendprotected.animal.Frog;
+import org.enricogiurin.ocp17.book.ch6.extendprotected.ex1.animal.Frog;
 
 public class Tadpole extends Frog {
 
