@@ -22,4 +22,12 @@ public record RecordConstructor(int size, String brand, LocalDate expires) {
   public RecordConstructor(int size, LocalDate expires, String brand) {
     this(size, brand, expires);
   }
+
+  //Non-canonical record constructor must delegate to another constructor
+  //An overloaded record constructor must begin with an explicit call to another constructor via this()
+/*  public RecordConstructor(LocalDate expires) {
+    this.size = 0;
+    this.brand="a";
+    this.expires = expires;
+  }*/
 }

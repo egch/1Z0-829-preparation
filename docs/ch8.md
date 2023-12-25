@@ -9,7 +9,6 @@ abstract method test.
 ## Lambda
 
 **I can't assign a lambda to a var!!!!**
-
 ```java
 //  Error:
 //  cannot infer type for local variable lambda

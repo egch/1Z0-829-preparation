@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch8;
+package org.enricogiurin.ocp17.book.ch8.lambda;
 
 public class LambdaAsArgument {
 
