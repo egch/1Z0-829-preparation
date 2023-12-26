@@ -1,11 +1,7 @@
 package org.enricogiurin.ocp17.book.ch4.time;
 
-import static java.time.temporal.ChronoUnit.MINUTES;
-
 import java.time.Duration;
 import java.time.LocalTime;
-import java.time.Period;
-import java.util.concurrent.TimeUnit;
 
 public class UsageOfLocalTime {
 

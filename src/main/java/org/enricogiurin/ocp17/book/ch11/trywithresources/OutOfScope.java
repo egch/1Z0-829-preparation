@@ -1,6 +1,5 @@
 package org.enricogiurin.ocp17.book.ch11.trywithresources;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class OutOfScope {

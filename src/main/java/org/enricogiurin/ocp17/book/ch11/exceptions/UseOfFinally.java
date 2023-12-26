@@ -8,7 +8,7 @@ public class UseOfFinally {
     //int calculate = instance.calculate();
     //System.out.println(calculate);
 
-    instance.systemExit();
+    instance.handleSuppressedFinallyWin();
   }
 
   void invokeCalculate() {
@@ -43,6 +43,36 @@ public class UseOfFinally {
     } finally {
       //in this case finally won't be executed
       System.out.println("finally");
+    }
+  }
+
+  void finallyWin() {
+    try {
+      throw new ClassCastException();
+    } catch (IllegalArgumentException e) {
+      throw new IllegalArgumentException();
+    } catch (RuntimeException e) {
+      throw new NullPointerException();
+    } finally {
+      //this is the exception will be printed in the stack trace
+      throw new RuntimeException();
+    }
+  }
+
+  void handleSuppressedFinallyWin() {
+    try {
+      finallyWin();
+    }catch (Exception e) {
+      e.printStackTrace();
+
+      //no suppressed
+      if(e.getSuppressed().length==0)  {
+        System.out.println("no suppressed");
+        return;
+      }
+      for(Throwable th:e.getSuppressed()) {
+        System.out.println("suppressed: "+th.getMessage());
+      }
     }
 
   }
