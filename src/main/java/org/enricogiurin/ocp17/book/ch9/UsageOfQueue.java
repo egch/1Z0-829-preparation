@@ -1,5 +1,6 @@
 package org.enricogiurin.ocp17.book.ch9;
 
+import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -31,7 +32,13 @@ public class UsageOfQueue {
 
     //equivalent of peek but throws an exception if empty
     peek = queue.element();
+  }
 
+  void methodsOfQueue() {
+    Queue<String> queue = new ArrayDeque<>();
+    queue.add("John");
+    //there ain't method such as addLas as it's not a double-ended queue
+    //queue.addLast("Doe");  //does not compile!
   }
 
 }
