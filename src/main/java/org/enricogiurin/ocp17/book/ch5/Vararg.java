@@ -24,10 +24,9 @@ public class Vararg {
   }
 
   void usingVarargAsVariable(String... names) {
-    //does not compile
     //While varargs is used like an array from within the method,
     // it can only be used as a method parameter.
-    //String... names2 = names;
+    //String... names2 = names;  //    //Does not compile!
   }
 
 }

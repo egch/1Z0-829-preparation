@@ -1,6 +1,5 @@
 # Collections and Generics
 ## Generics
-
 ````java
 public class Money<T> {
     private T currency;
@@ -9,8 +8,18 @@ public class Money<T> {
         // return new T();
     }
 }
-
 ````
+### Diamond Operator
+```java
+List<String> list = new ArrayList<>();
+```
+The diamond operator `<>` cannot be used on the left side of the assignment.
+
+```java
+HashSet<> set = new HashSet<Object>();  //does not compile!
+```
+### Instantiate with generics
+[Example](../src/main/java/org/enricogiurin/ocp17/book/ch9/generics/InstantiateClassWithGenerics.java)
 ## Bounding Generic Types
 ### Upper-Bounded wildcards
 
@@ -37,7 +46,26 @@ exceptions.add(new FileNotFoundException("error"));// yes we can add it
 //exceptions.add(new Exception("error"));
 ```
 We can only add element whose type is **IOException** or one of its children.
+
+[Example wildcard](../src/main/java/org/enricogiurin/ocp17/book/ch9/generics/CollectionsOfGenericsWithWildcard.java)
 ## Collections
+### Immutable Collections
+```java
+List<String> list = List.of("a", "b");
+Set<String> set = Set.of("a", "b");
+List<String> listCopyOf = List.copyOf(list);
+List<String> listCopyOfSet = List.copyOf(set);
+Set<String> setCopyOf = Set.copyOf(set);
+Set<String> setCopyOfList = Set.copyOf(list);
+```
+#### Sorting an immutable collection
+```java
+List<Integer> list = List.of(5, 3, 1);
+//I cannot sort an immutable collection!
+//Exception in thread "main" java.lang.UnsupportedOperationException
+//	at java.base/java.util.ImmutableCollections.uoe(ImmutableCollections.java:142)
+Collections.sort(list);
+```
 ### TreeSet
 ````java
 Comparator<Integer> comparator = (n1,n2)->n1-n2;
@@ -74,3 +102,13 @@ int compareTo(T o1);
 
  - LinkedList implements Deque
  - ArrayDeque implements Deque
+### Collections and null values
+- `ArrayList`: allows null
+- `LinkedList`: allows null
+- `HashSet`: allows null
+- `TreeSet`: **DOES NOT** allow null
+```java
+Set<Integer> set = new TreeSet<>();
+//Exception java.lang.NullPointerException: Cannot invoke "java.lang.Comparable.compareTo(Object)" because "k1" is null
+set.add(null);
+```

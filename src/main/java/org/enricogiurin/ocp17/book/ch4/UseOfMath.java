@@ -15,6 +15,7 @@ public class UseOfMath {
   }
 
   void round() {
+    //Note that it returns a Long
     long round = Math.round(5.2D);
     //5
     System.out.println(round);

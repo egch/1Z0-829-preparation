@@ -7,7 +7,7 @@ import java.util.LinkedList;
 public class UsageOfDeque {
 
   public static void main(String[] args) {
-    new UsageOfDeque().stack();
+    new UsageOfDeque().offerAndPush();
   }
 
   void methodWithoutException() {
@@ -64,9 +64,15 @@ public class UsageOfDeque {
     q.offer("snowball"); // [snowball]
     q.offer("minnie"); // [snowball, minnie]
     q.offer("sugar"); // [snowball, minnie, sugar]
-
     System.out.print(q.peek() + " " + q.peek() + " " + q.size()); // snowball snowball 3
+  }
 
+  void offerAndPush() {
+    var deque = new ArrayDeque<>();
+    deque.offer(5);
+    deque.offer(7);
+    deque.push(10); //[10, 5, 7]
+    System.out.println(deque.poll() + ", " + deque.poll());  //10, 5
   }
 
 }

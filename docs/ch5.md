@@ -33,7 +33,11 @@ public void bass(String... values, int... nums) {}
 //won't compile!
 public void hello(String... values, String desc) {}
 ```
-
+### varargs as variable
+While varargs is used like an array from within the method, it can only be used as a method parameter!
+```java
+String... value;  //does not compile!
+```
 ## Passing data among methods
 _Java is a “pass-by-value” language. This means that a copy of the variable is made and the method receives that copy. 
 Assignments made in the method do not affect the caller._

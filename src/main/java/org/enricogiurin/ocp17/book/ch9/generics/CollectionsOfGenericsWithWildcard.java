@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class CollectionsOfGenerics {
+public class CollectionsOfGenericsWithWildcard {
 
   public static void addException(Collection<? super Throwable> coll) {
     //I can add any class whose superclass is Throwable
@@ -53,6 +53,26 @@ public class CollectionsOfGenerics {
 
     //we cannot add an Exception as it could be a list of IOException and Exception is not an IOException
     //exceptions.add(new Exception("error"))
+  }
+
+  void lowerBoundedWildcards2() {
+    Collection<? super Exception> exList = new ArrayList<>();
+    //here I can add everything is a child of Exception
+    exList.add(new RuntimeException());
+    exList.add(new Exception());
+    //but I cannot add Error
+    //exList.add(new Error());  does not compile
+
+    Collection<? super RuntimeException> rteList = new ArrayList<>();
+    //here I can add everything is a child of RuntimeException
+    rteList.add(new RuntimeException());
+    rteList.add(new IndexOutOfBoundsException());
+
+    //but I cannot a generic Exception
+    //rteList.add(new Exception());  //does not compile
+
+    Exception ex = new RuntimeException();
+    //rteList.add(ex); //not even like this because it's declared as Exception (in spite is a RTE)
 
   }
 
@@ -60,7 +80,7 @@ public class CollectionsOfGenerics {
     //this means list of Object
     //I cannot add element on this list
     List<?> q = List.of("mouse", "parrot");
-    //I cannot add element on this list
+    //I cannot add elements on this list
     List<?> list2 = new ArrayList<String>();
   }
 

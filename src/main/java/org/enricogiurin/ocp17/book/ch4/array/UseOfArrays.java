@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class UseOfArrays {
 
   public static void main(String[] args) {
-    new UseOfArrays().useEquals();
+    new UseOfArrays().compare();
   }
 
   void callProcess() {
@@ -53,13 +53,12 @@ public class UseOfArrays {
     int[] array2 = {1, 3, 5};
     int[] array3 = {1, 5, 5};
     int result = Arrays.compare(array1, array2);
-    //0
-    System.out.println(result);
+    System.out.println(result);  //0
+    //the first element which they differ is the 2nd position (3 vs 5)
+    //In this case, we get a negative number because 3 is smaller than 5
     result = Arrays.compare(array1, array3);
-    //-1
-    System.out.println(result);
+    System.out.println(result);  //-1
   }
-
 
   void equalsOnArrays() {
     int[] a1 = {1, 2, 3};

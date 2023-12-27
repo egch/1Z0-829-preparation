@@ -20,6 +20,8 @@ public class CreatingSetWithFactory {
   }
 
   void setOf() {
+
+    //keep in mind that Set.of() takes a vararg as argument (not a list)
     //this is an immutable set
     //this takes a varargs as parameter
     Set<String> mySkillSet = Set.of("java", "azure", "ML");

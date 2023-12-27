@@ -3,7 +3,7 @@ package org.enricogiurin.ocp17.book.ch2;
 public class Casting {
 
   public static void main(String[] args) {
-    new Casting().castingLong();
+    new Casting().dangerousCast();
   }
 
   void castingLong() {
@@ -57,6 +57,15 @@ public class Casting {
     //casting a short into int
     useInt(s);
     useShort(s);
+  }
+
+  void dangerousCast() {
+    int[][] array = {{1, 2, 3}, {2}};
+    //keep in mind that int[] is an object;
+    Object[] arrObj = array;
+    //compiles but exception at runtime
+    //Exception in thread "main" java.lang.ArrayStoreException: java.lang.String
+    arrObj[0] = "hello";
   }
 
 

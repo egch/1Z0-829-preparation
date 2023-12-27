@@ -15,7 +15,6 @@ jshell> String s = "  01234   "
         jshell> var s3 = s.stripTrailing()
         s3 ==> "  01234"  //remove trailing spaces
 ```
-
 ### CharSequence
 Both **String** and **StringBuilder** implement _CharSequence_.
 ### formatted
@@ -60,10 +59,9 @@ jshell> int[] array = {1,2,3}  //anonymous array
 array ==> int[3] { 1, 2, 3 }
 
 ```
-### Arrays declaration
+### Arrays declaration/creation
 ```java
 java.util.Date[] dates[] = new java.util.Date[2][];
-
 ```
 ```java
 int[] array = new int[3];  //here I specify the dimenstion
@@ -72,11 +70,10 @@ int[] array2 = new int[]{1, 4}; //here I specify the values
 // array creation with both dimension expression and initialization is illegal
 //int[] array3 = new int[2]{1,2}; //does not compile!
 ```
-
+[Multi Dimensional Array](../src/main/java/org/enricogiurin/ocp17/book/ch4/array/MultiDimensionalArray.java)
 
 ### mismatch
-```java
-
+```jshelllanguage
 jshell> int[] arrayA = {1,2}
 arrayA ==> int[2] { 1, 2 }
 
@@ -85,7 +82,36 @@ arrayB ==> int[2] { 1, 3 }
 
 jshell> Arrays.mismatch(arrayA, arrayB)
 $35 ==> 1  //1 is the first position in which arrayA & arrayB differs
+```
+### compare
+```java
+void compare() {
+    int[] array1 = {1, 3, 5};
+    int[] array2 = {1, 3, 5};
+    int[] array3 = {1, 5, 5};
+    int result = Arrays.compare(array1, array2);
+    System.out.println(result);  //0  (the 2 arrays are identical)
 
+    //the first element which they differ is the 2nd position (3 vs 5)
+    //In this case, we get a negative number because 3 is smaller than 5
+    result = Arrays.compare(array1, array3);
+    System.out.println(result);  //-1
+}
+```
+### Arrays Sort String (natural order)
+1. Numbers
+2. Uppercase
+3. Lowercase
+### Binary Search
+```java
+var arr = new String[]{"PIG", "pig", "123"};
+//Numbers sort before letters and uppercase sorts before lowercase.
+Arrays.sort(arr);  //"123", "PIG", "pig"
+int position = Arrays.binarySearch(arr, "Pippa");
+//result : -insertionPoint -1
+//insertionPoint (ideally) would be 2 (after "PIG")
+//-> result = -2 -1 = -3
+System.out.println(position);  //-3
 ```
 ## Math
 ### floor & ceil
@@ -95,6 +121,17 @@ floor ==> 3.0  //double
 
 jshell> double ceil = Math.ceil(3.8)
 ceil ==> 4.0  //double
+```
+
+### round
+Note that return type of `round()` is `long`
+```java
+long round = Math.round(5.2D); //5
+```
+
+### pow
+```java
+double pow = Math.pow(4.0, 2.0); //16.0
 ```
 ## Dates & Times
 ```jshelllanguage
