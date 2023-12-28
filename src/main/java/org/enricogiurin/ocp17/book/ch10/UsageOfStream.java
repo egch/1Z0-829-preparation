@@ -17,6 +17,7 @@ public class UsageOfStream {
 
   void min() {
     Stream<String> boys = Stream.of("enrico", "luca", "fabio");
+    //min() requires a Comparator
     Optional<String> min = boys.min((o1, o2) -> o1.length() - o2.length());
     min.ifPresent(mv -> System.out.println(mv));
   }

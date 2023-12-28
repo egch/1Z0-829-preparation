@@ -2,7 +2,7 @@ package org.enricogiurin.ocp17.book.ch8;
 
 import java.util.function.Supplier;
 
-public class UseOfSupplier {
+public class UsageOfSupplier {
 
   private Supplier<String> supplierAsClass = new Supplier<String>() {
     @Override
@@ -15,7 +15,7 @@ public class UseOfSupplier {
   private Supplier supplierWithNoGenerics = () -> Double.valueOf(5.2);
 
   public static void main(String[] args) {
-    new UseOfSupplier().consumeSupplier();
+    new UsageOfSupplier().consumeSupplier();
   }
 
 
@@ -32,6 +32,16 @@ public class UseOfSupplier {
     Object o = supplierWithNoGenerics.get();
   }
 
+
+  void supplierOfDouble() {
+    //Do not confuse with DoubleSupplier
+    Supplier<Double> supplier = () -> {
+      return Double.valueOf(Math.random());
+    };
+    //it returns the Wrapper of Double
+    Double aDouble = supplier.get();
+    System.out.println(aDouble);
+  }
 
 }
 

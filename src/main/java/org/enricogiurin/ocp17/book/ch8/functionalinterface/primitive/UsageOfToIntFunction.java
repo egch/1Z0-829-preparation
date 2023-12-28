@@ -3,12 +3,12 @@ package org.enricogiurin.ocp17.book.ch8.functionalinterface.primitive;
 import java.util.List;
 import java.util.function.ToIntFunction;
 
-public class UseOfToIntFunction {
+public class UsageOfToIntFunction {
 
   ToIntFunction<List<String>> toIntFunction = list -> list.size();
 
   public static void main(String[] args) {
-    new UseOfToIntFunction().processLambda();
+    new UsageOfToIntFunction().processLambda();
   }
 
   void process() {
@@ -17,8 +17,9 @@ public class UseOfToIntFunction {
   }
 
   void processLambda() {
+    ToIntFunction<String> toIntF = s -> s.length();
     List.of("a", "ab", "abc").stream()
-        .mapToInt(s -> s.length())
+        .mapToInt(toIntF)
         .forEach(System.out::println);
   }
 
