@@ -1,8 +1,8 @@
 # Core APIs
 ## String Methods
 ### String concatenation
-1. If both operands are numeric, + means numeric addition. 
-2. If either operand is a String, + means concatenation. 
+1. If both operands are numeric, `+` means numeric addition. 
+2. If either operand is a String, `+` means concatenation. 
 3. The expression is evaluated left to right.
 ### String strip
 ```jshelllanguage

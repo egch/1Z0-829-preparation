@@ -23,8 +23,8 @@ long aLong = 2;
 aLong -=1.0;  //THIS works
 
 ```
-### Compound operators - tricky
-```java
+### Compound operators — tricky
+```jshelllanguage
 jshell> long x = 5L
     x ==> 5
 
@@ -39,14 +39,13 @@ jshell> long x = 5L
 ```
 
 ## Arithmetic operators
-_+ - / *_
+`+ - / *`
 
 The arithmetic operands are cast to int before to proceed
 ```java
 short s=5, t=6;
 //fails because s*t is an int
 short result = s * t;//fails!
-
 ```
 
 ## Bitwise operator ~
@@ -135,7 +134,6 @@ if(null instanceof String){
   System.out.println("It's null");
 }
 ```
-
 ```java
 Object object = new String("A");
 //this does not compile!

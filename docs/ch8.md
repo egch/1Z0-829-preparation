@@ -49,11 +49,10 @@ If evaluation of either function throws an exception, it is relayed to the calle
 function._
 
 ```java
-    Function<Integer, Integer> after=a->a+4;
-    Function<Integer, Integer> before=a->a*3;
-    Function<Integer, Integer> compose=after.compose(before);
-    System.out.print(compose.apply(2));  // (2*3) + 4 = 10
-
+Function<Integer, Integer> after=a->a+4;
+Function<Integer, Integer> before=a->a*3;
+Function<Integer, Integer> compose=after.compose(before);
+System.out.print(compose.apply(2));  // (2*3) + 4 = 10
 ```
 ## Functional Interfaces
 

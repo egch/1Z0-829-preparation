@@ -8,15 +8,12 @@ void compare(Number number) {
    }
 }
 ```
-
 ### Pattern Matching - edge cases
 ```java
   void notCompatible(Throwable t) {
     //type not compatible - t cannot be a string
     /*
-    if(t instanceof String s) {
-      
-    }
+    if(t instanceof String s) {}
     */
     //strange behaviour for interface!
     if(t instanceof List list) {
