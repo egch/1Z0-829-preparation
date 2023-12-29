@@ -2,10 +2,10 @@ package org.enricogiurin.ocp17.book.ch8.functionalinterface.primitive;
 
 import java.util.function.IntUnaryOperator;
 
-public class UseOfIntUnaryOperator {
+public class UsageOfIntUnaryOperator {
 
   public static void main(String[] args) {
-    new UseOfIntUnaryOperator().intUnaryOperator();
+    new UsageOfIntUnaryOperator().intUnaryOperator();
   }
 
   void use() {

@@ -12,12 +12,8 @@
 - text block, backslash
 - text block: essential, incidental whitespace.
 
-### sealed
-- nested sealed class
-
-### Nested classes
-- static nested classes
-
-### Modules
-Service Provider, Interface, Locator, Consumer
+### Parallel Stream
+- reduce
+- accumulator, combiner
+ 
  

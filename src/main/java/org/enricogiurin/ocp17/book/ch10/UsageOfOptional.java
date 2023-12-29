@@ -44,7 +44,5 @@ public class UsageOfOptional {
 
     //this throws a NPE at runtime as I pass the null value
     var param = Optional.of(null);
-
-
   }
 }

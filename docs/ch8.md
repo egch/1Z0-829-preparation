@@ -36,6 +36,19 @@ When using lambda expressions that access instance variables, local variables, o
 Deferred execution means the lambda expression is not evaluated until runtime, but it is compiled.  
 In the context of lambdas in Java, deferred execution refers to the delayed execution of the code encapsulated within the lambda expression.
 
+## Method Reference
+The same Method Reference, `ArrayList::new`, can be applied to different FunctionalInterface:
+* `Function<Integer, List<Integer>>`
+* `Supplier<List<Integer>> supplier`
+```java
+Function<Integer, List<Integer>> create = n->new ArrayList<>(n);
+Function<Integer, List<Integer>> createMR = ArrayList::new;
+
+List<Integer> list = createMR.apply(10);
+
+//but we can also avoid passing the initial capacity, then in this case it's a Supplier
+Supplier<List<Integer>> supplier = ArrayList::new;
+```
 ## Function
 ### Compose
 ```java
@@ -74,5 +87,12 @@ System.out.print(compose.apply(2));  // (2*3) + 4 = 10
 BooleanSupplier bs = () -> Math.random() >= 0.5;
 boolean result = bs.bs.getAsBoolean();
 ```
-
 It's _getAsBoolean()_ **NOT** get()
+### IntUnaryOperator
+Note: this FI does not have generics!
+```java
+//note that this FI does not have generics
+IntUnaryOperator intUnaryOperator = n -> n * 2;
+int result = intUnaryOperator.applyAsInt(10);
+System.out.println(result);
+```
