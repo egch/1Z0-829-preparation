@@ -3,6 +3,7 @@ package org.enricogiurin.ocp17.book.ch8;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
 import java.util.function.Function;
 
 @FunctionalInterface
@@ -32,7 +33,7 @@ interface StringCopier {
 public class MethodReference {
 
   public static void main(String[] args) {
-    new MethodReference().charAt();
+    new MethodReference().contains();
   }
 
   void charAt() {
@@ -84,6 +85,14 @@ public class MethodReference {
 
     List<Integer> result = lambda.apply(5);
     List<Integer> listMR = methodReference.apply(5);
+  }
+
+  void contains() {
+    BiPredicate<String, String> biPredicate = (s,t)->s.contains(t);
+    BiPredicate<String, String> biPredicateMR = String::contains;
+
+    boolean result = biPredicateMR.test("dog", "og");
+    System.out.println(result);
   }
 
 }

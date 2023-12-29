@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 public class CollectingResults {
 
   public static void main(String[] args) {
-    new CollectingResults().partitioningByCounting();
+    new CollectingResults().summingInt();
   }
 
   void averagingInt() {
@@ -49,6 +49,25 @@ public class CollectingResults {
     System.out.println(map);
     //{false=[Orange, Apple, Banana, Grape, Peach, Mango, Lemon], true=[Kiwi, Pear, Lime]}
 
+  }
+
+  void summingInt() {
+    record Data(String name, int score){}
+    Stream<Data> scores = Stream.of(
+        new Data("John", 1),
+        new Data("Robert", 8),
+        new Data("John", 9),
+        new Data("Robert", 7),
+        new Data("Jack", 6)
+    );
+    Map<String, Integer> map = scores.collect(
+        Collectors.groupingBy(Data::name, Collectors.summingInt(Data::score)));
+    map.forEach(((k, v)-> System.out.println(k+": "+v)));
+    /*
+    Robert: 15
+    John: 10
+    Jack: 6
+     */
   }
 
   void partitioningByCounting() {

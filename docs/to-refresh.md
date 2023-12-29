@@ -15,5 +15,7 @@
 ### Parallel Stream
 - reduce
 - accumulator, combiner
+### Method reference
+- in which case it's possible to move from a lambda to a MR
  
  
