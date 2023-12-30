@@ -65,4 +65,6 @@ public class Reduce {
         );
     System.out.println(concatenatedString); //Numbers: 12345
   }
+
+
 }

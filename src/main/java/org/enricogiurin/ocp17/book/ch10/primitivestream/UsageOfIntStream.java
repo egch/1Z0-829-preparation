@@ -1,5 +1,6 @@
 package org.enricogiurin.ocp17.book.ch10.primitivestream;
 
+import java.util.OptionalDouble;
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -7,7 +8,7 @@ import java.util.stream.Stream;
 public class UsageOfIntStream {
 
   public static void main(String[] args) {
-    new UsageOfIntStream().parallel();
+    new UsageOfIntStream().averageOptionalDouble();
   }
 
   void average() {
@@ -18,6 +19,16 @@ public class UsageOfIntStream {
     //	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:229)
     int sum = intStream.sum();
     System.out.println("sum is: " + sum);
+  }
+
+  void averageOptionalDouble() {
+    OptionalDouble optionalDouble = IntStream.of(1, 5, 6, 7, 8, 9, 10)
+        .average();
+    if (optionalDouble.isPresent()) {
+      //it's getAsDouble() not get()!
+      System.out.println(optionalDouble.getAsDouble());
+    }
+
   }
 
   void sum() {

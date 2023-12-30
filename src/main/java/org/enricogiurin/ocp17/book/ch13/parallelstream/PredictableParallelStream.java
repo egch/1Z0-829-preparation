@@ -15,7 +15,7 @@ public class PredictableParallelStream {
    * <p>
    * Identity Value for the Accumulator: The identity value used as the initial value for the
    * accumulator must be a true identity for the accumulator function. An identity value ID should
-   * satisfy the property that for any value a, accumulator(ID, a) is equal to a.
+   * satisfy the property that for any value a, accumulator (ID, a) is equal to a.
    */
   void predictable() {
     IntStream intStream = IntStream.rangeClosed(1, 100);

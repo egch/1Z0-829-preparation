@@ -1,6 +1,6 @@
 package org.enricogiurin.ocp17.book.ch7.record;
 
-public class UseOfRecord {
+public class UsageOfRecord {
 
   public static void main(String[] args) {
     Person person = new Person("Enrico", "Giurin");
