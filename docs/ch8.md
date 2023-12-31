@@ -15,16 +15,26 @@ abstract method test.
 //  Error:
 //  cannot infer type for local variable lambda
 //  (lambda expression needs an explicit target-type)
-var lambda=s->s+2;
+var lambda=s->s+2;  //does not compile
 ```
 Same with MR
 ```java
 // cannot infer type for local variable consumer
 //    (method reference needs an explicit target-type)
-var consumer = System.out::print
+var consumer = System.out::print; //does not compile
+```
+### Using var in lambda
+```java
+Predicate<String> pred3 = (final var s) -> s.isEmpty();
+Predicate<String> pred5 = (var s) -> s.isEmpty();
 ```
 
-
+I cannot mix var with type in the same lambda"
+```java
+//Cannot mix 'var' and explicitly typed parameters in lambda expression
+Comparator<String> c = (var s1, String s2) -> 0;  //does not compile!
+```
+[Using var in lambda](../src/main/java/org/enricogiurin/ocp17/book/ch8/lambda/UsageOfVarInLambda.java)
 
 ### Lambda boxing
 ```java
@@ -36,6 +46,7 @@ The type is Integer in the Function and int in the lambda.
 ### Lambda and variables effective final
 Lambdas require **local variables** and **method parameters** to be effectively final to use them.
 Instance and static variables can be used regardless of whether they are effectively final.
+
 [LambdaEffectiveFinal](../src/main/java/org/enricogiurin/ocp17/book/ch8/LambdaEffectiveFinal.java)
 #### Rules
 When using lambda expressions that access instance variables, local variables, or parameters:

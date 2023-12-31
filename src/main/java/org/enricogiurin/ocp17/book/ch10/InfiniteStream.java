@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 public class InfiniteStream {
 
   public static void main(String[] args) {
-    new InfiniteStream().concatenateInfiniteStream();
+    new InfiniteStream().generateFindFindAny();
   }
 
   void infiniteStream() {
@@ -50,5 +50,22 @@ public class InfiniteStream {
         .limit(3).sum();
     System.out.print(sum);
   }
+
+  //this is not infinite as we just need the first element
+  void generateFindFirst() {
+    String result = Stream.generate(() -> "a")
+        .findFirst()
+        .orElse("nothing");
+    System.out.println(result);
+  }
+
+  //this is not infinite as we just need any element
+  void generateFindFindAny() {
+    String result = Stream.generate(() -> "a")
+        .findAny()
+        .orElse("nothing");
+    System.out.println(result);
+  }
+
 
 }

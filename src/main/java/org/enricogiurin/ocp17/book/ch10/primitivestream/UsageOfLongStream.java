@@ -1,6 +1,7 @@
 package org.enricogiurin.ocp17.book.ch10.primitivestream;
 
 import java.util.OptionalDouble;
+import java.util.function.LongToIntFunction;
 import java.util.stream.LongStream;
 
 public class UsageOfLongStream {
@@ -30,7 +31,13 @@ public class UsageOfLongStream {
     } else {
       System.out.println("no data found");
     }
+  }
 
+  void map() {
+    LongToIntFunction longToIntFunction = (long l) -> (int) l;
+    LongStream.rangeClosed(1L, 10L)
+        .mapToInt(longToIntFunction)  //at this point it's an IntStream
+        .forEach(System.out::println);
   }
 
 }

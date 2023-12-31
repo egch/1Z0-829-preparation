@@ -3,6 +3,7 @@ package org.enricogiurin.ocp17.book.ch10;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Teeing {
 
@@ -37,12 +38,30 @@ public class Teeing {
         .boxed()
         .collect(teeing);
     System.out.println(collect); //Data[sum=98, product=10080000]
+  }
 
+  //here I want to have a report with the count and the sum of all the values
+  void teeing2() {
+    record DataReport(long count, long sum) {
 
+    }
+    record DataWrapper(int value) {
+
+    }
+    Stream<DataWrapper> stream = Stream.of(
+        new DataWrapper(1),
+        new DataWrapper(3),
+        new DataWrapper(5),
+        new DataWrapper(15));
+
+    DataReport dataReport = stream.collect(Collectors.teeing(
+        Collectors.counting(),
+        Collectors.summingLong(DataWrapper::value),
+        DataReport::new));
+    System.out.println(dataReport);
   }
 
   record Data(int sum, int product) {
-
   }
 }
 

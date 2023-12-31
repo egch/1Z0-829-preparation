@@ -81,14 +81,19 @@ public class CommonIntermediateOperations {
 
   void sortedComparatorReverseOrder() {
     Comparator<String> stringComparator = Comparator.reverseOrder();
-    var s = Stream.of("over the river",
-        "through the woods",
-        "to grandmother's house we go");
-
+    var s = Stream.of("a",
+        "t1",
+        "t2");
     s.filter(n -> n.startsWith("t"))
+        // .sorted(Comparator::reverseOrder)  //does not compile like this
         .sorted(stringComparator)
         .findFirst()
-        .ifPresent(System.out::println); //to grandmother's house we go
+        .ifPresent(System.out::println); //t2
+  }
+
+  void aboutSortedComparatorReverseOrder() {
+    Runnable reverseOrder = Comparator::reverseOrder;
+    Comparator<String> comparator = Comparator.reverseOrder();
   }
 
   void peak() {

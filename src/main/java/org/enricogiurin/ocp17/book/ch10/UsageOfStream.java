@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 public class UsageOfStream {
 
   public static void main(String[] args) {
-    new UsageOfStream().reduceMultiply();
+    new UsageOfStream().reAssignStream();
   }
 
   void infiniteRandom() {
@@ -32,6 +32,19 @@ public class UsageOfStream {
     Stream<Integer> integerStream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     Integer result = integerStream.peek(System.out::println).reduce(1, (n1, n2) -> n1 * n2);
     System.out.println(result);
+  }
+
+  void reAssignStream() {
+    Stream<Integer> s1 = Stream.of(8, 2);
+    Stream<Integer> s2 = Stream.of(10, 20);
+    s2 = s1.filter(n -> n > 4);
+    s1 = s2.filter(n -> n < 1);
+    System.out.println(s1);
+    System.out.println(s2);
+    System.out.println(s1 == s2);
+    System.out.println(s1.count());
+    //Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
+    System.out.println(s2.count());
   }
 
 
