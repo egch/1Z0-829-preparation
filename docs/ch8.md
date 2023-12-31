@@ -104,13 +104,14 @@ System.out.print(compose.apply(2));  // (2*3) + 4 = 10
 | `BiConsumer<T, U>`    | `void accept(T t, U u)`  |
 | `BiFunction<T, U, R>` | `R apply(T t, U u)`      |
 
-### BooleanSupplier
+### Functional Interfaces for Primitives
+#### BooleanSupplier
 ```java
 BooleanSupplier bs = () -> Math.random() >= 0.5;
 boolean result = bs.bs.getAsBoolean();
 ```
 It's _getAsBoolean()_ **NOT** get()
-### IntUnaryOperator
+#### IntUnaryOperator
 Note: this FI does not have generics!
 ```java
 //note that this FI does not have generics

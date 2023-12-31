@@ -5,12 +5,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class CommonIntermediateOperations {
 
   public static void main(String[] args) {
-    new CommonIntermediateOperations().sortedComparatorReverseOrder();
+    new CommonIntermediateOperations().concatWithIntStream();
   }
 
   void distinct() {
@@ -47,7 +48,19 @@ public class CommonIntermediateOperations {
         .mapToInt(n -> n)
         .sum();
     System.out.println(sum); //55
+  }
 
+  void concatWithIntStream() {
+    IntStream odds = IntStream.iterate(1, a -> a + 2);
+    IntStream evens = IntStream.iterate(2, a -> a + 2);
+    //only the odds will be considered
+    int sum = IntStream.concat(odds, evens)
+        .limit(3)
+        .sum();
+    System.out.println(sum);  //9
+
+    //does not work with normal Stream.concat
+    //Stream.concat(odds, evens)  //does not compile
   }
 
   void sorted() {

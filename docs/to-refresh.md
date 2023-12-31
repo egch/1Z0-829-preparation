@@ -28,4 +28,6 @@
 - SplitIterator
 - DoubleToLongFunction
 - Set.of(1f,2f,3f,4f).stream() reduce() - unordered
- 
+- Stream.sorted() NOT .sort()
+- BooleanSupplier: getAsBoolean() NOT get()
+- Stream.concat() works only with Stream , NOT IntStream

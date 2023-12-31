@@ -17,6 +17,7 @@ public class FunctionalInterfacesForPrimitives {
   void booleanSupplier() {
     BooleanSupplier bs = () -> Math.random() >= 0.5;
     for (int j = 0; j < 10; j++) {
+      //note that it's getAsBoolean() NOT get()
       System.out.println(bs.getAsBoolean());
     }
   }
