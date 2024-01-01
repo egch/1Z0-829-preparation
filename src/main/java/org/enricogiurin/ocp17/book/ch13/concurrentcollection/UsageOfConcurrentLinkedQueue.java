@@ -1,5 +1,7 @@
 package org.enricogiurin.ocp17.book.ch13.concurrentcollection;
 
+
+import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
@@ -12,7 +14,7 @@ public class UsageOfConcurrentLinkedQueue {
   private Queue<Integer> queue = new ConcurrentLinkedQueue<>();
 
   public static void main(String[] args) throws InterruptedException {
-    new UsageOfConcurrentLinkedQueue().addAndConsume();
+    new UsageOfConcurrentLinkedQueue().removeWhileIterate();
   }
 
   void addAndConsume() throws InterruptedException {
@@ -39,6 +41,17 @@ public class UsageOfConcurrentLinkedQueue {
     if (awaitTermination) {
       System.out.println("size queue is: " + queue.size());
     }
+  }
+
+  void removeWhileIterate() {
+    List<Integer> list = List.of(1, 2, 3, 4, 5);
+    ConcurrentLinkedQueue<Integer> concurrentLinkedQueue = new ConcurrentLinkedQueue<>(list);
+    //not throwing an exception
+    for (Integer n : concurrentLinkedQueue) {
+      concurrentLinkedQueue.remove(n);
+    }
+    System.out.println("queue has size: %s".formatted(concurrentLinkedQueue.size())); //0
+
   }
 
 }

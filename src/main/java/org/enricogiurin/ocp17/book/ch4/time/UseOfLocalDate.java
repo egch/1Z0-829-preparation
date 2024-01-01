@@ -8,7 +8,7 @@ import java.time.temporal.ChronoUnit;
 public class UseOfLocalDate {
 
   public static void main(String[] args) {
-    new UseOfLocalDate().invalidAdd();
+    new UseOfLocalDate().is2024LapYear();
   }
 
   void manipulatingDates() {
@@ -44,6 +44,14 @@ public class UseOfLocalDate {
   void invalidLocalDate() {
     //Exception in thread "main" java.time.DateTimeException: Invalid value for MonthOfYear (valid values 1 - 12): 16
     LocalDate notALD = LocalDate.of(2023, 16, 12);
+  }
+
+  void is2024LapYear() {
+    //this works, so 2024 is a lap year
+    LocalDate lapDate = LocalDate.of(2024, Month.FEBRUARY, 29);
+    //throws an exception
+    //: Invalid date 'February 29' as '2023' is not a leap year
+    LocalDate lapDate2023 = LocalDate.of(2023, Month.FEBRUARY, 29);
   }
 
 }

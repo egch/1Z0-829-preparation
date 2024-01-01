@@ -66,6 +66,8 @@ public class UsageOfScheduledExecutorService {
     }
   }
 
+  //with scheduleAtFixedRate can result in the same action
+  // being executed by two threads at the same time
   void scheduleAtFixedRate() throws InterruptedException {
     ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(10);
     //scheduleWithFixedDelay accepts only Runnable, not Callable

@@ -31,3 +31,9 @@
 - Stream.sorted() NOT .sort()
 - BooleanSupplier: getAsBoolean() NOT get()
 - Stream.concat() works only with Stream , NOT IntStream
+
+- ConcurrentLinkedQueue
+- Future.get() throws  InterruptedException and a  ExecutionException
+- Do not exist in Executor: newFixedScheduledThreadPool() / newThreadPool()
+- calling Future.get() is blocking
+- scheduleAtFixedRate() parameters

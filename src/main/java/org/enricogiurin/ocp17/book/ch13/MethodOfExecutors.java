@@ -7,6 +7,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
@@ -75,6 +76,15 @@ public class MethodOfExecutors {
       System.out.println(result);
     }
     System.out.println("time taken: " + (System.currentTimeMillis() - start));
+  }
+
+  void allMethods() {
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+    ExecutorService cachedExecutorService = Executors.newCachedThreadPool();
+    ExecutorService fixedExecutorService = Executors.newFixedThreadPool(10);
+    //scheduled methods
+    ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(10);
+    ScheduledExecutorService singleScheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
   }
 
 }

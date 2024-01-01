@@ -51,5 +51,17 @@ public class UsageOfCallable {
   void simpleCallable() {
     Callable<String> callable = () -> "hello";
   }
+
+  void anonymousCallable() {
+    new Callable<String>() {
+
+      @Override
+      public String call() throws Exception {
+        return "hello";
+      }
+    };
+  }
+
+
 }
 
