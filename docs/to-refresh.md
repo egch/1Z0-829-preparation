@@ -37,3 +37,5 @@
 - Do not exist in Executor: newFixedScheduledThreadPool() / newThreadPool()
 - calling Future.get() is blocking
 - scheduleAtFixedRate() parameters
+- shutdownNow() and awaitTermination
+- 

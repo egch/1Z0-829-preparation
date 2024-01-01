@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch13;
+package org.enricogiurin.ocp17.book.ch13.atomic;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
