@@ -12,19 +12,18 @@ import java.nio.file.StandardCopyOption;
 public class FilesCopyStream {
 
   public static void main(String[] args) throws IOException {
-    new FilesCopyStream().copyOutputStream();
+    //new FilesCopyStream().copyOutputStream();
+    new FilesCopyStream().copyInputStream();
   }
 
   void copyInputStream() throws IOException {
-    try (InputStream resourceAsStream = getClass().getClassLoader()
-        .getResourceAsStream("files/sentences.txt");
+    Path out = Path.of("/tmp/sentences.txt");
+    //copy files
+    try (InputStream resourceAsStream = getClass().getResourceAsStream("/files/sentences.txt");
         BufferedInputStream bufferedInputStream = new BufferedInputStream(resourceAsStream)) {
-      Path target = Path.of("/tmp/sentences.txt");
-      long bytes = Files.copy(bufferedInputStream, target, StandardCopyOption.REPLACE_EXISTING);
-      System.out.println("read " + bytes + " bytes");
+      Files.copy(bufferedInputStream, out, StandardCopyOption.REPLACE_EXISTING);
     }
   }
-
 
   void copyOutputStream() throws IOException {
     Path source = Path.of("/tmp/a.txt");

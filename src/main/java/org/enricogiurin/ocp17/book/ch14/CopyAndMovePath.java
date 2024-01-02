@@ -6,10 +6,10 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.stream.Stream;
 
-public class CopyAndMoveFiles {
+public class CopyAndMovePath {
 
   public static void main(String[] args) throws IOException {
-    new CopyAndMoveFiles().copy_replace();
+    new CopyAndMovePath().copy_replace();
   }
 
   //if file already exist

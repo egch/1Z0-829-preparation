@@ -7,7 +7,7 @@ import java.nio.file.Path;
 public class CreateDirectories {
 
   public static void main(String[] args) throws IOException {
-    new CreateDirectories().createDir();
+    new CreateDirectories().createNotExistingDirectories();
   }
 
   //if the folder already exists:
@@ -21,6 +21,13 @@ public class CreateDirectories {
   //this won't throw an exception if the directory already exists
   void createDirectories() throws IOException {
     Path aaa = Path.of("/tmp/aaa");
+    Path directory = Files.createDirectories(aaa);
+    System.out.println(directory);
+  }
+
+  //this won't throw an exception if the directory already exists
+  void createNotExistingDirectories() throws IOException {
+    Path aaa = Path.of("/notexisting/aaa");
     Path directory = Files.createDirectories(aaa);
     System.out.println(directory);
   }

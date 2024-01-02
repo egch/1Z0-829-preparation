@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class UsageOfMark {
 
   public static void main(String[] args) throws IOException {
-    new UsageOfMark().jumpAround();
+    new UsageOfMark().readBytes();
   }
 
   void mark() throws IOException {
@@ -108,7 +108,10 @@ public class UsageOfMark {
       is.mark(5);
       is.read();
       is.read();
-      is.skip(3);
+      //we skip other the size of the array (luck)
+      is.skip(12);
+      int read1 = is.read();  //this returns -1 as it is out of size
+      System.out.println(read1);
       is.reset();  //we go back to (3) which is after read 1 and 2
       int read = is.read();
       System.out.println(read);  //3

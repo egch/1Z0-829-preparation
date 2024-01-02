@@ -15,7 +15,7 @@ import java.util.Set;
 public class ReadAttributes {
 
   public static void main(String[] args) throws IOException {
-    new ReadAttributes().readAttributes();
+    new ReadAttributes().modifyAttributeCreationTime();
   }
 
   /*
@@ -62,6 +62,24 @@ public class ReadAttributes {
     view.setTimes(now, now, now);
     attributes = Files.readAttributes(hw, BasicFileAttributes.class);
     System.out.println("lastModifiedTime: " + attributes.lastModifiedTime());
+  }
+
+  void modifyAttributeCreationTime() throws IOException {
+    //run $ touch a.txt before
+    Path path = Path.of("/tmp/a.txt");
+    BasicFileAttributes basicFileAttributes = Files.readAttributes(path, BasicFileAttributes.class);
+    FileTime fileTime = basicFileAttributes.creationTime();
+    System.out.println("creation time is: %s".formatted(fileTime));
+    FileTime now = FileTime.from(Instant.now().minus(1, ChronoUnit.DAYS));
+
+    //I need this to modify creation time of the file a.txt
+    BasicFileAttributeView fileAttributeView = Files.getFileAttributeView(path,
+        BasicFileAttributeView.class);
+    fileAttributeView.setTimes(now, now, now);
+    basicFileAttributes = Files.readAttributes(path, BasicFileAttributes.class);
+    FileTime fileTimeUpdated = basicFileAttributes.creationTime();
+    System.out.println("creation time is now: %s".formatted(fileTimeUpdated));
+
   }
 
 }

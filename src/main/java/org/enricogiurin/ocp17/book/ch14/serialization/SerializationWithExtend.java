@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch14;
+package org.enricogiurin.ocp17.book.ch14.serialization;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

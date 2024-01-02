@@ -38,4 +38,10 @@
 - calling Future.get() is blocking
 - scheduleAtFixedRate() parameters
 - shutdownNow() and awaitTermination
-- 
+
+- Path.of() and Paths.get() //do not confuse
+- NOT new Console() but System.console();
+- Writer abstract class
+- mind the checked exception within lambda, example: toRealPath()
+- mark, check if the stream supports mark: inputStream.markSupported()
+- Files.isSameFile() check if the real file exists

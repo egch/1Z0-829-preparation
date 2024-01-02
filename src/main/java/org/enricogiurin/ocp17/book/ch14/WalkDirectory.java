@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.BiPredicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -11,7 +12,7 @@ import java.util.stream.Stream;
 public class WalkDirectory {
 
   public static void main(String[] args) throws IOException {
-    new WalkDirectory().findSymbolicLink();
+    new WalkDirectory().walkAndPrintRealPath();
   }
 
   void getSize() throws IOException {
@@ -21,7 +22,7 @@ public class WalkDirectory {
     System.out.println("size is: " + size + " bytes");
   }
 
-  //print all the files within the current dir
+  //print all the files within the current dir and the subdir
   void walk() throws IOException {
     Path path = Path.of(".");
     try (Stream<Path> stream = Files.walk(path)) {
@@ -36,6 +37,24 @@ public class WalkDirectory {
     try (Stream<Path> stream = Files.walk(path, 5)) {
       stream.forEach(System.out::println);
     }
+  }
+
+  void walkAndPrintRealPath() throws IOException {
+    Path path = Path.of(".");
+    final AtomicLong cnt = new AtomicLong(0);
+    try (Stream<Path> pathStream = Files.walk(path)) {
+      pathStream.forEach(p -> {
+        try {
+          cnt.incrementAndGet();
+          Path realPath = p.toRealPath();
+          System.out.println(realPath);
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        }
+      });
+    }
+    //6367 files to date
+    System.out.println("counted %s files".formatted(cnt.get()));
   }
 
   //File found: /Users/enrico/github/ocp17/1Z0-829-preparation/./src/main/java/org/enricogiurin/ocp17/ch10/UseOfOptional.java

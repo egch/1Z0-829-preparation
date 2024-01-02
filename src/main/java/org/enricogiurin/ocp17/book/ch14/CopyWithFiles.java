@@ -22,6 +22,7 @@ public class CopyWithFiles {
   void copyByLines() throws IOException {
     Path pom = Path.of("pom.xml");
     Path dest = Path.of("/tmp/" + System.currentTimeMillis() + "_pom.xml");
+    //note: this returns a list, not a stream. And this is all in memory
     List<String> listOfLines = Files.readAllLines(pom);
     Files.write(dest, listOfLines);
   }
@@ -54,8 +55,5 @@ public class CopyWithFiles {
         writer.newLine();
       }
     }
-
   }
-
-
 }
