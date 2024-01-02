@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 public class UsageOfSubPath {
 
   public static void main(String[] args) {
-    new UsageOfSubPath().normalize();
+    new UsageOfSubPath().example();
   }
 
   void subPath() {
@@ -60,6 +60,30 @@ public class UsageOfSubPath {
         .resolve("m1.meteor").normalize();
     System.out.print(halleysComet.equals(lexellsComet) ?
         "Same!" : "Different!");
+  }
+
+  void example() {
+    Path original = Path.of("stars/./rocks/../m1.meteor");
+    var path = original
+        .subpath(1, 5).normalize();
+    System.out.println(path);  //m1.meter
+
+    int nameCount = original.getNameCount();
+    for (int j = 0; j < nameCount; j++) {
+      System.out.println(original.subpath(j, j + 1));
+    }
+    System.out.println();
+    for (int j = 0; j < nameCount; j++) {
+      System.out.println(original.subpath(0, j + 1));
+    }
+    /*
+      stars
+      stars/.
+      stars/./rocks
+      stars/./rocks/..
+      stars/./rocks/../m1.meteor
+     */
+
   }
 
 }
