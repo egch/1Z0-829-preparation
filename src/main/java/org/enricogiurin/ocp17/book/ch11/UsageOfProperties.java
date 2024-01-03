@@ -2,10 +2,10 @@ package org.enricogiurin.ocp17.book.ch11;
 
 import java.util.Properties;
 
-public class UseOfProperties {
+public class UsageOfProperties {
 
   public static void main(String[] args) {
-    new UseOfProperties().readProperties();
+    new UsageOfProperties().readProperties();
   }
 
   void readProperties() {

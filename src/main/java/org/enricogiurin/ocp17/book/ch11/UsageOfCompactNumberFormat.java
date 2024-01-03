@@ -2,13 +2,14 @@ package org.enricogiurin.ocp17.book.ch11;
 
 import java.text.NumberFormat;
 import java.text.NumberFormat.Style;
+import java.util.List;
 import java.util.Locale;
 import java.util.stream.Stream;
 
 public class UsageOfCompactNumberFormat {
 
   public static void main(String[] args) {
-    new UsageOfCompactNumberFormat().roundAmountShort();
+    new UsageOfCompactNumberFormat().round();
   }
 
   void simpleCompactNumberInstance() {
@@ -49,6 +50,7 @@ public class UsageOfCompactNumberFormat {
   }
 
   void roundAmount() {
+    // rounds to the nearest whole number within the three-digit range
     double amount = 1_900_000.0D;
     var longFormat = NumberFormat.getCompactNumberInstance(
         Locale.getDefault(), Style.LONG);
@@ -56,6 +58,16 @@ public class UsageOfCompactNumberFormat {
 
     System.out.println(longFormat.format(amount));  //2 million
     System.out.println(shortFormat.format(amount));  //2M
+  }
+
+  void round() {
+    var shortFormat = NumberFormat.getCompactNumberInstance();
+    List<Double> list = List.of(199D, 1_990D, 19_900D, 199_000D, 1_990_000D);
+    for (double d : list) {
+      System.out.println(shortFormat.format(d));
+    }
+
+
   }
 
   void roundAmountShort() {

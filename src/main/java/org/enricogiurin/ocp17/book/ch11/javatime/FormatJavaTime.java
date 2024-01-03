@@ -1,16 +1,13 @@
-package org.enricogiurin.ocp17.book.ch11;
+package org.enricogiurin.ocp17.book.ch11.javatime;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Month;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 
 public class FormatJavaTime {
 
   public static void main(String[] args) {
-    new FormatJavaTime().trickyDateFormatter();
+    new FormatJavaTime().format();
   }
 
   void format() {
@@ -58,24 +55,6 @@ public class FormatJavaTime {
     System.out.println(time);  //22-09-2023 - 08:49:27
   }
 
-  void ofLocalizedDate() {
-    LocalDate localDate = LocalDate.of(2023, Month.NOVEMBER, 10);
-    LocalTime localTime = LocalTime.of(0, 0);
-    LocalDateTime localDateTime = LocalDateTime.of(localDate, localTime);
-
-    //The DateTimeFormatter is created with ofLocalizedDate().
-    // It knows how to format date fields but not time field
-    DateTimeFormatter dtfOfLocalizedDate = DateTimeFormatter
-        .ofLocalizedDate(FormatStyle.SHORT);
-    //this can handle date
-    dtfOfLocalizedDate.format(localDate);
-    //this can also handle date
-    dtfOfLocalizedDate.format(localDateTime);
-    //this has no clue what a date is
-    //Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported field: DayOfMonth
-    dtfOfLocalizedDate.format(localTime);
-  }
-
   void trickyDateFormatter() {
     //mind the single quotes
     final String pattern = """
@@ -87,6 +66,15 @@ public class FormatJavaTime {
     LocalDate today = LocalDate.now();
     String result = today.format(dateTimeFormatter);
     System.out.println(result); //yyyy-MM
+  }
+
+  void formatWithComplexPattern() {
+    //mind the double apostrophe next to "o'clock"
+    String pattern = "MMMM dd' at 'hh' o''clock'";
+    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(pattern);
+    LocalDateTime now = LocalDateTime.now();
+    String result = now.format(dateTimeFormatter);
+    System.out.println(result);  //January 03 at 02 o'clock
   }
 
 }

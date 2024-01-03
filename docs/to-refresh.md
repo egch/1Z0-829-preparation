@@ -54,3 +54,6 @@
 - stacktrace when the system error stream is closed
 
 - CallableStatement: difference execute/executeQuery
+
+- CompactNumberInstance
+- MessageFormat

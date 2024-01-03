@@ -10,7 +10,7 @@ import java.util.stream.DoubleStream;
 public class UsageOfDecimalFormat {
 
   public static void main(String[] args) {
-    new UsageOfDecimalFormat().manyFormat();
+    new UsageOfDecimalFormat().pattern();
   }
 
   void format() {
@@ -54,11 +54,11 @@ public class UsageOfDecimalFormat {
   }
 
   void pattern() {
-    String pattern = "#,###,000.0#";
-    var message = DoubleStream.of(5.21, 8.49, 1234)
+    String pattern = "#,###,000.####";
+    var message = DoubleStream.of(5.21, 8.499, 1234)
         .mapToObj(v -> new DecimalFormat(pattern).format(v))
         .collect(Collectors.joining("> <"));
-    //<005.21> <008.49> <1,234.0>
+    //005.21> <008.499> <1,234>
     System.out.println("<" + message + ">");
   }
 
