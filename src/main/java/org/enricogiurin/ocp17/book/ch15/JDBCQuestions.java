@@ -10,7 +10,7 @@ public class JDBCQuestions {
 
 
   public static void main(String[] args) throws SQLException {
-    new JDBCQuestions().switchAutoCommitFromFalseToTrue();
+    new JDBCQuestions().psExecutedTwice();
   }
 
   void updateHabitat() throws SQLException {

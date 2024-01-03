@@ -64,6 +64,8 @@ public class StoredProcedure {
     var sql = "{call double_number(?) }";
     try (Connection connection = DriverManager.getConnection(JDBC_URL);
         CallableStatement cs = connection.prepareCall(sql)) {
+      //remember: CREATE PROCEDURE double_number(INOUT num INT) READS SQL DATA
+      //so num is both IN parameter and OUT parameter
       cs.setInt("num", 23);
       cs.registerOutParameter("num", Types.INTEGER);
       cs.execute();
