@@ -9,6 +9,11 @@ Abbreviated Form
 ```shell
 javac -p mods -d feeding feeding/zoo/animal/feeding/*.java feeding/module-info.java
 ```
+### add-exports
+If you must use an internal API that has been made inaccessible by default, then you can break encapsulation using the `--add-exports` command-line option.
+```shell
+$javac -p out --add-exports moduleA/com.example.util=moduleB -d out/moduleB **/.java
+```
 ## Running module
 Extended Form
 ```shell
@@ -23,14 +28,24 @@ Showing useful information
 java -p mods -m zoo.animal.feeding/zoo.animal.feeding.Task --show-module-resolution
 ```
 When this option is present, the JVM will output information about how it resolved module dependencies.
-### add-exports
-If you must use an internal API that has been made inaccessible by default, then you can break encapsulation using the `--add-exports` command-line option.
-```shell
-$javac -p out --add-exports moduleA/com.example.util=moduleB -d out/moduleB **/.java
-```
+
 ### jar
 ```shell
 $ jar -cvf mods/zoo.animal.feeding.jar -C feeding/ .
+```
+
+#### describe-module
+```shell
+$ jar --file mods/zoo.staff.jar --describe-module
+#equivalent
+$ jar --file mods/zoo.staff.jar -d
+ ```
+```shell
+requires java.base mandated
+requires zoo.animal.care
+requires zoo.animal.feeding
+requires zoo.animal.talks
+contains zoo.staff
 ```
 ## Main Commands
 ### list
@@ -44,19 +59,7 @@ $ jdeps –s zoo.animal.puppy.jar
 ```
 * `-s` / `-summary` - Summarizes output
 * `--jdk-internals` / `-jdkinternals` - Lists uses of internal APIs
-* 
-### describe-module
-```shell
-$ jar --file mods/talks-1.0.0-SNAPSHOT.jar --describe-module
- ```
-```shell
-    exports zoo.animal.talks.content
-    exports zoo.animal.talks.media
-    exports zoo.animal.talks.schedule
-    requires java.base mandated
-    requires zoo.animal.care
-    requires zoo.animal.feeding
-```
+
 ### jlink
 ```shell
 $ jlink --module-path mods --add-modules zoo.animal.talks --output zooApp 

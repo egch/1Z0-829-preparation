@@ -65,7 +65,7 @@
   - jdeps summary: -s  DONE
 - jlink parameters  DONE
 - java and show-module-resolution  DONE
-- jar and java -d parameter  (NOT clear with jar)
+- jar and java -d parameter  DONE
 - javac parameters : p  DONE
 - jmod command   DONE
 - When a module on the module path does not contain a module-info file, all packages are exported DONE
