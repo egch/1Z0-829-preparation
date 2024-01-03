@@ -57,3 +57,8 @@
 
 - CompactNumberInstance
 - MessageFormat
+
+- to identify component of the modules
+- --add-exports  directive
+- modules supported by jdk (refresh)
+- jdeps parameters
