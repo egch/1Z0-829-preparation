@@ -57,8 +57,17 @@
 
 - CompactNumberInstance
 - MessageFormat
-
+### Modules
 - to identify component of the modules
-- --add-exports  directive
-- modules supported by jdk (refresh)
-- jdeps parameters
+- --add-exports  directive  DONE
+- modules supported by jdk (refresh)  DONE
+- jdeps parameters!!!  DONE
+  - jdeps summary: -s  DONE
+- jlink parameters  DONE
+- java and show-module-resolution  DONE
+- jar and java -d parameter  (NOT clear with jar)
+- javac parameters : p  DONE
+- jmod command   DONE
+- When a module on the module path does not contain a module-info file, all packages are exported DONE
+- module extensions: jar & jmod  DONe
+- requires mandated java.base  DONE
