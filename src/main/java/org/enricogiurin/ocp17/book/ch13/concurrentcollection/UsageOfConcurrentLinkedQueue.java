@@ -14,7 +14,7 @@ public class UsageOfConcurrentLinkedQueue {
   private Queue<Integer> queue = new ConcurrentLinkedQueue<>();
 
   public static void main(String[] args) throws InterruptedException {
-    new UsageOfConcurrentLinkedQueue().removeWhileIterate();
+    new UsageOfConcurrentLinkedQueue().addAndConsume();
   }
 
   void addAndConsume() throws InterruptedException {

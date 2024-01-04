@@ -12,7 +12,7 @@ import java.sql.Types;
 public class StoredProcedure {
 
   public static void main(String[] args) throws SQLException {
-    new StoredProcedure().magic_number();
+    new StoredProcedure().double_number();
   }
 
   //out parameters
@@ -61,19 +61,18 @@ public class StoredProcedure {
 
   //INOUT parameter
   void double_number() throws SQLException {
-    var sql = "{call double_number(?) }";
+    var sql = "{call double_number(?) }";  //CREATE PROCEDURE double_number(INOUT num INT) READS SQL DATA
     try (Connection connection = DriverManager.getConnection(JDBC_URL);
         CallableStatement cs = connection.prepareCall(sql)) {
       //remember: CREATE PROCEDURE double_number(INOUT num INT) READS SQL DATA
       //so num is both IN parameter and OUT parameter
       cs.setInt("num", 23);
       cs.registerOutParameter("num", Types.INTEGER);
-      cs.execute();
-      System.out.println(cs.getInt("num"));
+      boolean isResultSet = cs.execute();
+      if(!isResultSet){
+        System.out.println(cs.getInt("num"));
+      }
     }
   }
-
-  //two in, on out
-
 
 }

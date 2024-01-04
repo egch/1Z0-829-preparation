@@ -11,7 +11,7 @@ public class UsageOfScheduledExecutorService {
 
   private Runnable runnable = () -> {
     try {
-      Thread.sleep(2_000);
+      Thread.sleep(500);
       System.out.println("I am done!");
     } catch (InterruptedException e) {
       throw new RuntimeException(e);

@@ -32,42 +32,11 @@
 - BooleanSupplier: getAsBoolean() NOT get()
 - Stream.concat() works only with Stream , NOT IntStream
 
-- ConcurrentLinkedQueue
-- Future.get() throws  InterruptedException and a  ExecutionException
-- Do not exist in Executor: newFixedScheduledThreadPool() / newThreadPool()
-- calling Future.get() is blocking
+### Concurrency
+
 - scheduleAtFixedRate() parameters
 - shutdownNow() and awaitTermination
 
-- Path.of() and Paths.get() //do not confuse
-- NOT new Console() but System.console();
-- Writer abstract class
-- mind the checked exception within lambda, example: toRealPath()
-- mark, check if the stream supports mark: inputStream.markSupported()
-- Files.isSameFile() check if the real file exists
-- How to choose what I/O classes to use, i.e. :
-    - BufferedReader
-    - FileReader
-    - ObjectInputStream
-    - FileInputStream
-    - BufferedInputStream
-- stacktrace when the system error stream is closed
 
-- CallableStatement: difference execute/executeQuery
 
-- CompactNumberInstance
-- MessageFormat
-### Modules
-- to identify component of the modules
-- --add-exports  directive  DONE
-- modules supported by jdk (refresh)  DONE
-- jdeps parameters!!!  DONE
-  - jdeps summary: -s  DONE
-- jlink parameters  DONE
-- java and show-module-resolution  DONE
-- jar and java -d parameter  DONE
-- javac parameters : p  DONE
-- jmod command   DONE
-- When a module on the module path does not contain a module-info file, all packages are exported DONE
-- module extensions: jar & jmod  DONe
-- requires mandated java.base  DONE
+
