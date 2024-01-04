@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch13;
+package org.enricogiurin.ocp17.book.ch13.scheduledexecutorservice;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
@@ -16,12 +16,11 @@ public class UsageOfScheduledExecutorService {
     } catch (InterruptedException e) {
       throw new RuntimeException(e);
     }
-
   };
 
   public static void main(String[] args)
       throws ExecutionException, InterruptedException, TimeoutException {
-    new UsageOfScheduledExecutorService().scheduleWithFixedDelay();
+    new UsageOfScheduledExecutorService().scheduleAtFixedRate();
   }
 
   //done
@@ -77,11 +76,12 @@ public class UsageOfScheduledExecutorService {
           runnable,
           2, 1, TimeUnit.SECONDS);
       Thread.sleep(10_000);
-      //after some time we shout it down
+      //after some time we shut it down
     } finally {
       scheduledExecutorService.shutdown();
     }
   }
+
 
 }
 

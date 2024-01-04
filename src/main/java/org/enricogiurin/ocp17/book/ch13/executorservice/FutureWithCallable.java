@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch13;
+package org.enricogiurin.ocp17.book.ch13.executorservice;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;

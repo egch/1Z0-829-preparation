@@ -1,10 +1,13 @@
-package org.enricogiurin.ocp17.book.ch13;
+package org.enricogiurin.ocp17.book.ch13.executorservice;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class SingleThreadExecutor {
+  public static void main(String[] args) throws InterruptedException {
+    new SingleThreadExecutor().shutdownNow();
+  }
 
   Runnable printInventory = () -> System.out.println("Printing zoo inventory");
   Runnable printRecords = () -> {
@@ -13,9 +16,7 @@ public class SingleThreadExecutor {
     }
   };
 
-  public static void main(String[] args) throws InterruptedException {
-    new SingleThreadExecutor().executor();
-  }
+
 
   void executor() {
     //a single thread

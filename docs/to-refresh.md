@@ -32,10 +32,7 @@
 - BooleanSupplier: getAsBoolean() NOT get()
 - Stream.concat() works only with Stream , NOT IntStream
 
-### Concurrency
 
-- scheduleAtFixedRate() parameters
-- shutdownNow() and awaitTermination
 
 
 
