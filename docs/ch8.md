@@ -105,12 +105,18 @@ System.out.print(compose.apply(2));  // (2*3) + 4 = 10
 | `BiFunction<T, U, R>` | `R apply(T t, U u)`      |
 
 ### Functional Interfaces for Primitives
-#### BooleanSupplier
+#### BooleanSupplier & others
 ```java
 BooleanSupplier bs = () -> Math.random() >= 0.5;
 boolean result = bs.bs.getAsBoolean();
 ```
 It's _getAsBoolean()_ **NOT** get()
+
+Similarly, we have:
+- `IntSupplier`: `getAsInt()`
+- `LongSupplier`: `getAsLong()`
+- `DoubleSupplier`: `getAsDouble()`
+
 #### IntUnaryOperator
 Note: this FI does not have generics!
 ```java
@@ -119,3 +125,13 @@ IntUnaryOperator intUnaryOperator = n -> n * 2;
 int result = intUnaryOperator.applyAsInt(10);
 System.out.println(result);
 ```
+
+#### XtoYFunction
+IntToLongFunction
+```java
+IntToLongFunction intToLongFunction = (int n)->Long.MAX_VALUE;
+long result = intToLongFunction.applyAsLong(5);
+```
+In general is:
+ - primitive type per X
+ - applyAsY(x)

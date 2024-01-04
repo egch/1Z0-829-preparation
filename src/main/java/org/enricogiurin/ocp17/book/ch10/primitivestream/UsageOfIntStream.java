@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class UsageOfIntStream {
 
   public static void main(String[] args) {
-    new UsageOfIntStream().averageOptionalDouble();
+    new UsageOfIntStream().concat();
   }
 
   void average() {
@@ -67,6 +67,14 @@ public class UsageOfIntStream {
         .count();
     //count: 101
     System.out.println("count: " + count);
+  }
+
+  void concat() {
+    IntStream odds = IntStream.iterate(1, n -> n + 2);
+    IntStream evens = IntStream.iterate(0, n -> n + 2);
+    IntStream.concat(odds, evens)
+        .limit(5)
+        .forEach(System.out::println);  //1,3,5,7,9
   }
 
 

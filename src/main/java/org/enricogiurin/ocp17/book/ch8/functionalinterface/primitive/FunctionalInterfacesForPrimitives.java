@@ -6,28 +6,17 @@ import java.util.Random;
 import java.util.function.BooleanSupplier;
 import java.util.function.DoublePredicate;
 import java.util.function.DoubleSupplier;
+import java.util.function.IntSupplier;
 import java.util.function.LongConsumer;
+import java.util.function.LongSupplier;
 
 public class FunctionalInterfacesForPrimitives {
 
   public static void main(String[] args) {
-    new FunctionalInterfacesForPrimitives().longConsumer();
+    new FunctionalInterfacesForPrimitives().doublePredicate();
   }
 
-  void booleanSupplier() {
-    BooleanSupplier bs = () -> Math.random() >= 0.5;
-    for (int j = 0; j < 10; j++) {
-      //note that it's getAsBoolean() NOT get()
-      System.out.println(bs.getAsBoolean());
-    }
-  }
 
-  void doubleSupplier() {
-    DoubleSupplier ds = () -> new Random().nextDouble();
-    //mind the method: getAsDouble()!
-    double asDouble = ds.getAsDouble();
-    System.out.println(asDouble);
-  }
 
   void doublePredicate() {
     DoublePredicate dp = d -> d % 2 == 0;

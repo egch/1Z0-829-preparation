@@ -26,11 +26,11 @@
 - IntStream sum
 - Stream<Long> mapToLong
 - SplitIterator
-- DoubleToLongFunction
+- DoubleToLongFunction [DONE]
 - Set.of(1f,2f,3f,4f).stream() reduce() - unordered
-- Stream.sorted() NOT .sort()
-- BooleanSupplier: getAsBoolean() NOT get()
-- Stream.concat() works only with Stream , NOT IntStream
+- Stream.sorted() NOT .sort()   [DONE]
+- BooleanSupplier: getAsBoolean() NOT get()  [DONE]
+- Stream.concat() works only with Stream , NOT IntStream [DONE]
 
 
 

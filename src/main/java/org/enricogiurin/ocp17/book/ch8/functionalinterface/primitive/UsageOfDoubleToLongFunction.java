@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch10.primitivestream;
+package org.enricogiurin.ocp17.book.ch8.functionalinterface.primitive;
 
 import java.util.function.DoubleToLongFunction;
 import java.util.function.Function;
