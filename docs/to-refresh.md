@@ -19,13 +19,13 @@
 - in which case it's possible to move from a lambda to a MR
 
 ## Failed
-- Intstream average() returns an OptionalDouble whose method is getAsDouble()
-- access to variables record
-- You cannot assign a var to a lambda, method reference!
-- IntSummaryStatistics, not IntegerSummaryStatistics.
-- IntStream sum
-- Stream<Long> mapToLong
-- SplitIterator
+- Intstream average() returns an OptionalDouble whose method is getAsDouble() [DONE]
+- access to variables record [DONE]
+- You cannot assign a var to a lambda, method reference!  [DONE]
+- IntSummaryStatistics, not IntegerSummaryStatistics. [DONE]
+- IntStream sum [DONE]
+- Stream<Long> mapToLong [DONE]
+- SplitIterator [DONE]
 - DoubleToLongFunction [DONE]
 - Set.of(1f,2f,3f,4f).stream() reduce() - unordered
 - Stream.sorted() NOT .sort()   [DONE]

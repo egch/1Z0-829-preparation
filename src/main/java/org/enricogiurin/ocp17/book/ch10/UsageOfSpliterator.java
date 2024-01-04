@@ -8,22 +8,29 @@ import java.util.stream.Stream;
 public class UsageOfSpliterator {
 
   public static void main(String[] args) {
-    new UsageOfSpliterator().shareToys();
+    new UsageOfSpliterator().forEachRemaining();
   }
 
   void use() {
     List<String> words = Arrays.asList("Hello", "World", "Java", "Programming");
-    //here applied on the collection
     Spliterator<String> spliterator = words.spliterator();
-    //half of data
-    Spliterator<String> spliterator1 = spliterator.trySplit();
-    spliterator1.forEachRemaining(System.out::println); //hello world
-    //spliterator1.forEachRemaining(System.out::println); //world
-    System.out.println("-----");
+    Spliterator<String> si1 = spliterator.trySplit();
+    boolean isThere = si1.tryAdvance(System.out::println);  //Hello
+    isThere = si1.tryAdvance(System.out::println);  //world
+    //even if tryAdvance returns false you can keep calling
+    isThere = si1.tryAdvance(System.out::println);  //empty
+    System.out.println(isThere);  //false
+  }
 
-    //spliterator contains the remaining 2 elements: "Java", "Programming")
-    spliterator.tryAdvance(System.out::println); // Prints "Java"
-    spliterator.tryAdvance(System.out::println); // Prints "Programming"
+  void forEachRemaining() {
+    List<String> words = Arrays.asList("Hello", "World", "Java", "Programming");
+    Spliterator<String> spliterator = words.spliterator();
+    Spliterator<String> firstHalf = spliterator.trySplit();
+    while (firstHalf.tryAdvance(System.out::println)) {
+    }  //Hello World
+    System.out.println();
+    spliterator.forEachRemaining(System.out::println);  //Java Programming
+
   }
 
   void fruits() {

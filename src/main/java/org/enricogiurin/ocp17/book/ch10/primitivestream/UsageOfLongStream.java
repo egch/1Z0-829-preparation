@@ -2,6 +2,7 @@ package org.enricogiurin.ocp17.book.ch10.primitivestream;
 
 import java.util.OptionalDouble;
 import java.util.function.LongToIntFunction;
+import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
 public class UsageOfLongStream {
@@ -38,6 +39,17 @@ public class UsageOfLongStream {
     LongStream.rangeClosed(1L, 10L)
         .mapToInt(longToIntFunction)  //at this point it's an IntStream
         .forEach(System.out::println);
+  }
+
+  void mixedWithIntStream() {
+    double average = LongStream.of(6L, 10L)
+        .summaryStatistics()
+        .getAverage();  //here I have not an optional
+
+    double asDouble = IntStream.of(6, 8)
+        .mapToLong(i -> i)
+        .average()
+        .getAsDouble();  //here I have an optional
   }
 
 }

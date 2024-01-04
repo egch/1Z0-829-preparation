@@ -2,10 +2,10 @@ package org.enricogiurin.ocp17.book.ch10;
 
 import java.util.List;
 
-public class ReduceToCountTotLengthOfSting {
+public class ReduceToCountTotLengthOfString {
 
   public static void main(String[] args) {
-    new ReduceToCountTotLengthOfSting().reduceParallel();
+    new ReduceToCountTotLengthOfString().reduceParallel();
   }
 
   void reduce() {

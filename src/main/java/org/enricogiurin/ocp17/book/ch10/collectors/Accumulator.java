@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch10;
+package org.enricogiurin.ocp17.book.ch10.collectors;
 
 import java.util.TreeSet;
 import java.util.stream.Collectors;

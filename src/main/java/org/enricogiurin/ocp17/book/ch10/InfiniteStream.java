@@ -1,5 +1,6 @@
 package org.enricogiurin.ocp17.book.ch10;
 
+import java.util.Random;
 import java.util.function.Predicate;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -7,7 +8,7 @@ import java.util.stream.Stream;
 public class InfiniteStream {
 
   public static void main(String[] args) {
-    new InfiniteStream().generateFindFindAny();
+    new InfiniteStream().iterateWithPredicate();
   }
 
   void infiniteStream() {
@@ -28,7 +29,15 @@ public class InfiniteStream {
 
     //Therefore, the maximum length of String in Java is 0 to 2147483647.
     // So, we can have a String with the length of 2,147,483,647 characters, theoretically.
+  }
 
+  void iterateWithPredicate() {
+    Random random = new Random();
+    Stream<Integer> stream = Stream.iterate(0, n -> n < 90, n -> random.nextInt(100));
+    long count = stream
+        .peek(System.out::println)
+        .count();
+    System.out.println(count);
   }
 
   void iteratePostIncrement() {
@@ -60,7 +69,7 @@ public class InfiniteStream {
   }
 
   //this is not infinite as we just need any element
-  void generateFindFindAny() {
+  void generateFindAny() {
     String result = Stream.generate(() -> "a")
         .findAny()
         .orElse("nothing");

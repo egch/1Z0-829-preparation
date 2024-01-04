@@ -7,16 +7,17 @@ import java.util.stream.Stream;
 public class ParallelStreamReduce {
 
   public static void main(String[] args) {
-    new ParallelStreamReduce().factorial(10);
+    new ParallelStreamReduce().reduceMergeChars();
   }
 
-  void reduce() {
-    Stream<Character> stream = Stream.of('e', 'n', 'r', 'i', 'c', 'o');
+  void reduceMergeChars() {
+    Stream<Character> stream = Stream.of('c', 'e', 'r', 't', 'i', 'f', 'i', 'c', 'a', 't', 'i', 'o',
+        'n');
     String word = stream.parallel()
         .reduce("",
             (String s, Character c) -> s + c,
             (String s1, String s2) -> s1 + s2);
-    System.out.println(word);
+    System.out.println(word);  //certification
   }
 
   void factorial(long n) {
@@ -30,6 +31,5 @@ public class ParallelStreamReduce {
         );
     System.out.println(reduce);
   }
-
 
 }

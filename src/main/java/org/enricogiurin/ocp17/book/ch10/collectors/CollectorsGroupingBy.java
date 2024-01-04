@@ -1,4 +1,6 @@
-package org.enricogiurin.ocp17.book.ch10;
+package org.enricogiurin.ocp17.book.ch10.collectors;
+
+import static org.enricogiurin.ocp17.book.ch10.StreamUtils.fruitStream;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,10 +68,27 @@ public class CollectorsGroupingBy {
     System.out.println(map);
   }
 
-  //note that Banana is present twice
-  private Stream<String> fruitStream() {
-    return Stream.of("Orange", "Apple", "Banana", "Grape", "Kiwi",
-        "Pear", "Peach", "Mango", "Lemon", "Lime", "Banana");
+
+  void groupingBySummingInt() {
+    record Data(String name, int score) {
+
+    }
+    Stream<Data> scores = Stream.of(
+        new Data("John", 1),
+        new Data("Robert", 8),
+        new Data("John", 9),
+        new Data("Robert", 7),
+        new Data("Jack", 6)
+    );
+    Map<String, Integer> map = scores.collect(
+        Collectors.groupingBy(Data::name, Collectors.summingInt(Data::score)));
+    map.forEach(((k, v) -> System.out.println(k + ": " + v)));
+    /*
+    Robert: 15
+    John: 10
+    Jack: 6
+     */
   }
+
 
 }

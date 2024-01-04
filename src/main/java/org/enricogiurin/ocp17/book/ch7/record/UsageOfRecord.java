@@ -18,6 +18,7 @@ record Person(String firstName, String lastName) {
     System.out.println("hello");
   }
 
+  //the method can access directly to instance variables of the record
   void printCustomHello() {
     System.out.println("hello " + firstName + ", " + lastName);
   }

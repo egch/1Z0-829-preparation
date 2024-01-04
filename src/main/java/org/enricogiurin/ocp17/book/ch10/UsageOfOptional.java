@@ -34,6 +34,8 @@ public class UsageOfOptional {
 
     //Exception in thread "main" java.lang.RuntimeException: no value!
     optional.orElseThrow(() -> new RuntimeException("no value!"));
+    //wrong way
+    //optional.orElseThrow(() -> throw new RuntimeException("no value!"));  //does not compile!!
   }
 
   void optionalOfNull() {

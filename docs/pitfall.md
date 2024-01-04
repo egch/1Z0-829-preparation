@@ -16,3 +16,11 @@
 across all threads and processes, while the synchronized classes do not. 
 - Future.get() throws  InterruptedException and a  ExecutionException, and they block execution 
 - scheduled methods: newScheduledThreadPool(10)/newSingleThreadScheduledExecutor()
+
+## Stream
+-  IntSummaryStatistics, not IntegerSummaryStatistics. 
+-  Do not confuse IntStream with Stream<Integer>
+- Stream.concat(s1, s2) works only with 2 streams
+- Optional.orElseThrow()
+## Lambda
+- `var x = ()->"hello"` does not compile! - you cannot assign a lambda to a var
