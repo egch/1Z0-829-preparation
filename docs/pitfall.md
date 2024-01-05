@@ -24,3 +24,7 @@ across all threads and processes, while the synchronized classes do not.
 - Optional.orElseThrow()
 ## Lambda
 - `var x = ()->"hello"` does not compile! - you cannot assign a lambda to a var
+- check the right symbol! it's -> NOT =>
+
+## Various
+- check if a field is final in the code

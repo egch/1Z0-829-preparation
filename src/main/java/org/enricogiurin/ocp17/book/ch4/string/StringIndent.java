@@ -3,7 +3,7 @@ package org.enricogiurin.ocp17.book.ch4.string;
 public class StringIndent {
 
   public static void main(String[] args) {
-    new StringIndent().indentBL();
+    new StringIndent().stripIndent();
   }
 
 
@@ -45,9 +45,9 @@ public class StringIndent {
   }
 
   void stripIndent() {
-    var text = " a\n"
-        + "  b\n"
-        + " c";
+    var text = "  a\n"
+        + "       b\n"
+        + "       c";
 
     System.out.println("Original Text:");
     System.out.println(text);
@@ -61,20 +61,8 @@ public class StringIndent {
   }
 
 
-/*
-#1234
-567#
-# 1234
- 567
-#
-#1234
-567
-#
-#1234
-567
-#
 
-*/
+
   void indentBL() {
     var name = "1234 \n567";
     System.out.println("#%s#".formatted(name));
@@ -92,6 +80,21 @@ public class StringIndent {
     System.out.println("#%s#".formatted(indentMinus1));
     //System.out.println(indentMinus1.length());
   }
+
+  /*
+#1234
+567#
+# 1234
+ 567
+#
+#1234
+567
+#
+#1234
+567
+#
+
+*/
 
 
 }
