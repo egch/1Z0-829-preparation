@@ -67,10 +67,11 @@ import org.enricogiurin.ocp17.ch1.phones.*;
 In this case will be used class from the package _fruits_ as:  
 **importing by class name takes precedence over wildcards!**
 
-### Text Blocks
-
+## Text Blocks
 <img src="images/TextBlocks.png" alt="Text Blocks" width="40%">
 
+
+[Text Blocks](../src/main/java/org/enricogiurin/ocp17/book/ch1/TextBlocks.java)
 ```java
 String tb = """
     Hello
@@ -78,15 +79,23 @@ String tb = """
 ```
 the code within the `"""` and `"""` is just text.   
 text blocks require a break between beginning and the end.
-#### Example
+### Example
 ```java
 String s = """aaa"""; //does not compile
 ```
 
-```shell
+```jshelllanguage
 jshell> var text = """
    ...> John is a good guy\
    ...>  and he's my friend""";
 text ==> "John is a good guy and he's my friend"
 ```
 Remember that a backslash (**\\**) means to skip the line break.
+
+```java
+    String s = """
+        Hello \
+        World
+        """;
+    System.out.println(s);  //Hello World
+```

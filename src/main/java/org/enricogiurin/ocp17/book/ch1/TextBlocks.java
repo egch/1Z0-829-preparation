@@ -3,7 +3,7 @@ package org.enricogiurin.ocp17.book.ch1;
 public class TextBlocks {
 
   public static void main(String[] args) {
-    new TextBlocks().whiteSpace();
+    new TextBlocks().equivalentTextBlock();
         /*
         starts with """ and ends with """
         text blocks requires a break between beginning and the end
@@ -50,12 +50,11 @@ public class TextBlocks {
     System.out.print(block);
   }
 
-  static void textBlock() {
+  void textBlock() {
     String s = """
         I do not want a newline \
         This should be in the same line
         """;
-
     System.out.println(s);
   }
 
@@ -66,7 +65,7 @@ public class TextBlocks {
     System.out.println(textBlock);
   }
 
-  static void equivalentTextBlock() {
+  void equivalentTextBlock() {
     var quotes = """
           \"The Quotes that Could\"
         \"\"\"

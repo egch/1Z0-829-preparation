@@ -3,13 +3,14 @@ package org.enricogiurin.ocp17.book.ch14;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.stream.Stream;
 
 public class CopyAndMovePath {
 
   public static void main(String[] args) throws IOException {
-    new CopyAndMovePath().copy_replace();
+    new CopyAndMovePath().replaceAnEmptyDirWIthAFile();
   }
 
   //if file already exist
@@ -81,6 +82,19 @@ public class CopyAndMovePath {
     Path pippo = Path.of("/tmp/pippo.txt");
     boolean deleted = Files.deleteIfExists(pippo);
     System.out.println(deleted);
+  }
+
+
+  //  $ touch /tmp/newFile.txt  / rm -rf /tmp/anEmptyDir
+  void replaceAnEmptyDirWIthAFile() throws IOException {
+    Path emptyDir = Path.of("/tmp/anEmptyDir");
+    Path aNewFile = Path.of("/tmp/newFile.txt");
+    Path directories = Files.createDirectories(emptyDir);
+
+    Path newPath = Files.move(aNewFile,
+        emptyDir, StandardCopyOption.REPLACE_EXISTING);
+    System.out.println(newPath);  ///tmp/anEmptyDir
+
   }
 
 

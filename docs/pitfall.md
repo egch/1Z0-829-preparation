@@ -28,3 +28,6 @@ across all threads and processes, while the synchronized classes do not.
 
 ## Various
 - check if a field is final in the code
+
+## Interfaces
+- default method: `Plant.super.leaves()` NOT ~~super.Plant.leaves()~~
