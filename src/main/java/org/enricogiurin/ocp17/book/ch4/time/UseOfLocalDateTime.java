@@ -1,17 +1,21 @@
 package org.enricogiurin.ocp17.book.ch4.time;
 
+
+
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
+import org.enricogiurin.ocp17.various.helper.Enthuware;
 
 public class UseOfLocalDateTime {
 
   public static void main(String[] args) {
     UseOfLocalDateTime useOfLocalDateTime = new UseOfLocalDateTime();
-    useOfLocalDateTime.createLocalDateTime();
+    useOfLocalDateTime.with();
   }
 
   void now() {
@@ -52,6 +56,14 @@ public class UseOfLocalDateTime {
     LocalDateTime ofEpochSecond = LocalDateTime.ofEpochSecond(System.currentTimeMillis() / 1000, 0,
         zurichOffset);
     System.out.println(ofEpochSecond); //2023-10-22T03:41:27
+  }
+
+  @Enthuware
+  void with(){
+    LocalDateTime now = LocalDateTime.now();
+    System.out.println(now);  //2024-01-06T07:04:54.162247
+    LocalDateTime ldt = now.with(DayOfWeek.MONDAY);
+    System.out.println(ldt);  //2024-01-01T07:04:54.162247 ..I guess the prev monday
   }
 
 }

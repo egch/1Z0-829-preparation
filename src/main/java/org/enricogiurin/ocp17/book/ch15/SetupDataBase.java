@@ -14,7 +14,7 @@ import java.sql.SQLException;
  */
 public class SetupDataBase {
 
-  static final String JDBC_URL = "jdbc:hsqldb:file:zoo";
+  public static final String JDBC_URL = "jdbc:hsqldb:file:zoo";
 
   public static void main(String[] args) throws SQLException {
     try (Connection conn = DriverManager.getConnection(JDBC_URL)) {

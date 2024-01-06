@@ -1,10 +1,11 @@
-package org.enricogiurin.ocp17.book.ch15;
+package org.enricogiurin.ocp17.book.ch15.rollback;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import org.enricogiurin.ocp17.book.ch15.SetupDataBase;
 
 public class CommitAndRollback {
 

@@ -17,45 +17,43 @@ public class University {
     this.id = UUID.randomUUID().toString();
   }
 
-  static void createProfessor() {
+  void createProfessor() {
     Professor professor = new University().new Department().new Professor("Dr. Ross");
     professor.printID();
   }
 
-  static void createProfessorMultiLines() {
+  void createProfessorMultiLines() {
     University university = new University();
     University.Department department = university.new Department();
     University.Department.Professor professor = department.new Professor("Dr. Smith");
     professor.printID();
   }
 
-  static void createProfessorInOneLine(){
+  void createProfessorInOneLine(){
     //using a single line
     Professor johnDoe = new University().new Department().new Professor("John Doe");
     System.out.println(johnDoe.name);
   }
 
   public static void main(String[] args) {
-    createProfessor();
+    University university = new University();
+    university.createProfessor();
     System.out.println();
-    createProfessorMultiLines();
-    createProfessorInOneLine();
+    university.createProfessorMultiLines();
+    university.createProfessorInOneLine();
   }
 
-  public class Department {
-
+  class Department {
     private String id;
-
-    public Department() {
+    Department() {
       this.id = UUID.randomUUID().toString();
     }
 
-    public class Professor {
-
+    class Professor {
       private String name;
       private String id;
 
-      public Professor(String name) {
+      Professor(String name) {
         this.name = name;
         this.id = UUID.randomUUID().toString();
       }

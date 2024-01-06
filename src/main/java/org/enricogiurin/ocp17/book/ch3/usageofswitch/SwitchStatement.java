@@ -1,9 +1,11 @@
 package org.enricogiurin.ocp17.book.ch3.usageofswitch;
 
+import org.enricogiurin.ocp17.various.helper.Enthuware;
+
 public class SwitchStatement {
 
   public static void main(String[] args) {
-    new SwitchStatement().mixedDefault();
+    new SwitchStatement().switchMissingCase();
   }
 
   void switchStatementWithColon() {
@@ -67,6 +69,22 @@ public class SwitchStatement {
     }
     System.out.println(result);
   }
+
+  @Enthuware
+  //it prints default
+  //There is no case for THURSDAY and MONDAY, so they are just labels!!
+  void switchMissingCase() {
+    var day = DayOfWeek.MONDAY;
+    switch (day){
+      case TUESDAY:
+      THURSDAY:
+      MONDAY:
+        System.out.println("MONDAY");  //it won't be printed!
+      default:
+        System.out.println("default");  //it prints default
+    }
+  }
+
 
 
 

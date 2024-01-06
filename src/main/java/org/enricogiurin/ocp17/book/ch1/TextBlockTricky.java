@@ -1,9 +1,11 @@
 package org.enricogiurin.ocp17.book.ch1;
 
+import org.enricogiurin.ocp17.various.helper.Enthuware;
+
 public class TextBlockTricky {
 
   public static void main(String[] args) {
-    new TextBlockTricky().backslash();
+    new TextBlockTricky().isValidTB();
 
   }
 
@@ -36,6 +38,16 @@ public class TextBlockTricky {
    \"The Quotes that Could\"
    """;
     System.out.println(quotes2);
+  }
+
+  @Enthuware
+  void isValidTB() {
+    var tb = """\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020
+        """;
+    System.out.println(tb.length());  //0
+
+    var s = "\u0020";
+    System.out.println(s.length());  //1
   }
 
 

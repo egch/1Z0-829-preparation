@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.varie;
+package org.enricogiurin.ocp17.various;
 
 public class ReThrowException {
 

@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.varie;
+package org.enricogiurin.ocp17.various;
 
 import java.math.BigDecimal;
 

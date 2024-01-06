@@ -4,6 +4,10 @@ import java.util.Date;
 
 public class ArrayCreation {
 
+  public static void main(String[] args) {
+    new ArrayCreation().nullArray();
+  }
+
   void creation() {
     int[] a1 = new int[10];
     int[] a2 = new int[]{1, 2, 3};
@@ -39,6 +43,7 @@ public class ArrayCreation {
 
   void arrayWithVar() {
     var myArray = new int[3];  //valid
+    //'var' is not allowed as an element type of an array
     //var wrong[] = new int[3];  //does not compile
   }
 
@@ -60,6 +65,17 @@ public class ArrayCreation {
     //strange array definition
     java.util.Date[] dates[] = new java.util.Date[2][];
     dates[0][0] = new Date();
+  }
+
+  void nullArray() {
+    int[] array = null;
+    int[][] matrix = {{1,2}, null};
+    for (int i = 0; i < matrix.length; i++) {
+      for (int j = 0; j < matrix[i].length; j++) {
+        //Exception in thread "main" java.lang.NullPointerException: Cannot read the array length because "matrix[i]" is null
+        System.out.println(matrix[i][j]);
+      }
+    }
   }
 
 }

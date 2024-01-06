@@ -1,6 +1,6 @@
 package org.enricogiurin.ocp17.book.ch7.useofenum;
 
-public class UseOfEnum {
+public class UsageOfEnum {
 
   void switchEnum() {
     Season summer = Season.SUMMER;

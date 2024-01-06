@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.varie.sof;
+package org.enricogiurin.ocp17.various.sof;
 
 import java.util.Set;
 import java.util.TreeSet;

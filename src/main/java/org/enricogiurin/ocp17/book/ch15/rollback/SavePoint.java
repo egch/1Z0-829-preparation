@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch15;
+package org.enricogiurin.ocp17.book.ch15.rollback;
 
 import static org.enricogiurin.ocp17.book.ch15.SetupDataBase.JDBC_URL;
 
@@ -79,4 +79,6 @@ public class SavePoint {
       }
     }
   }
+
+
 }
