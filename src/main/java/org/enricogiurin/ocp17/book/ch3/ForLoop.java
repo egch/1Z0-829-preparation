@@ -1,5 +1,7 @@
 package org.enricogiurin.ocp17.book.ch3;
 
+import org.enricogiurin.ocp17.various.helper.Enthuware;
+
 public class ForLoop {
 
   public static void main(String[] args) {
@@ -57,6 +59,20 @@ public class ForLoop {
   void infiniteLoop() {
     for (; ; ) {
       System.out.println("stop me pls!");
+    }
+  }
+
+  @Enthuware
+  void loopNotCompiling() {
+    int idx = 0;
+    for (int j = 0; j < 10; j++) {
+      if (idx == 5) {
+        break;
+      } else {
+        continue;
+      }
+      //this line will never be reached, then the code does not compile
+      //System.out.println("never reached");  //does not compile
     }
   }
 

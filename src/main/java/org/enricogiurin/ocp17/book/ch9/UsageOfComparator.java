@@ -1,14 +1,16 @@
 package org.enricogiurin.ocp17.book.ch9;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import org.enricogiurin.ocp17.various.helper.Enthuware;
 
 public class UsageOfComparator {
 
   public static void main(String[] args) {
-    new UsageOfComparator().thenComparing();
+    new UsageOfComparator().reversed();
   }
 
   void thenComparing() {
@@ -44,8 +46,20 @@ public class UsageOfComparator {
     return people;
   }
 
-  record Person(int age, int weight) {
+  @Enthuware
+  void reversed() {
+    Comparator<String> reversedComparator = Comparator.reverseOrder();
+    List<String> list = Arrays.asList("a", "hgh", "81a", "dhY", "Ya", "Y3");
+    list.sort(reversedComparator);
+    String result = String.join(" ", list);
+    System.out.println(result);  //hgh dhY a Ya Y3 81a
 
+    list.sort(Comparator.naturalOrder());
+    result = String.join(" ", list);
+    System.out.println(result);  //81a Y3 Ya a dhY hgh
+  }
+
+  record Person(int age, int weight) {
   }
 }
 

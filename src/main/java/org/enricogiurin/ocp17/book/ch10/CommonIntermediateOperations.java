@@ -5,13 +5,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+import org.enricogiurin.ocp17.various.helper.Enthuware;
 
 public class CommonIntermediateOperations {
 
   public static void main(String[] args) {
-    new CommonIntermediateOperations().concatWithIntStream();
+    new CommonIntermediateOperations().min();
   }
 
   void distinct() {
@@ -115,5 +117,28 @@ public class CommonIntermediateOperations {
         .filter(n -> n % 2 == 0)
         .peek(n -> System.out.println("after filter: " + n))
         .toList();
+  }
+
+  @Enthuware
+  void max() {
+    List<String> list = List.of("a", "ab", "abc", "kk");
+    Optional<String> optMax = list.stream()
+        .max((String s1, String s2) -> s1.length() - s2.length());
+    optMax.ifPresent(s -> System.out.println(s)); //abc
+
+    //similar way
+    Comparator<String> comparator = Comparator.comparing(String::length);
+    optMax = list.stream()
+        .max(comparator);
+    optMax.ifPresent(s -> System.out.println(s)); //abc
+  }
+
+  void min() {
+    //note that this is a Stream<Integer>, not IntStream
+    Stream<Integer> stream = Stream.of(10, 12, 45, 79);
+    Optional<Integer> optMin = stream
+        .min((n1, n2) -> n1 - n2);
+    optMin.ifPresent(System.out::println);  //10
+
   }
 }

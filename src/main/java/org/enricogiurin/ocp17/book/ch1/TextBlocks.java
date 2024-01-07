@@ -1,9 +1,11 @@
 package org.enricogiurin.ocp17.book.ch1;
 
+import org.enricogiurin.ocp17.various.helper.Enthuware;
+
 public class TextBlocks {
 
   public static void main(String[] args) {
-    new TextBlocks().equivalentTextBlock();
+    new TextBlocks().backslash();
         /*
         starts with """ and ends with """
         text blocks requires a break between beginning and the end
@@ -15,7 +17,7 @@ public class TextBlocks {
 
   }
 
-  static void printTextBlock() {
+  void printTextBlock() {
     String s = """
         Today is thursday
         and I guess tomorrow is friday
@@ -30,7 +32,7 @@ public class TextBlocks {
      */
   }
 
-  static void printPyramid() {
+  void printPyramid() {
     String pyramid = """
             *
            * *
@@ -42,7 +44,7 @@ public class TextBlocks {
   }
 
   //will print only 2 line as there is a backslash
-  static void countLines() {
+  void countLines() {
     var block = """ 
         squirrel \s
         pigeon \
@@ -58,7 +60,7 @@ public class TextBlocks {
     System.out.println(s);
   }
 
-  static void anotherTextBlock() {
+  void anotherTextBlock() {
     String textBlock = """
         This is a text block
         """;
@@ -86,5 +88,15 @@ public class TextBlocks {
     System.out.println("#"+block+"#");
   }
 
+  @Enthuware
+    //backslash: \
+  void backslash() {
+    //the char backslash is ignored
+    var digits = """
+        01234\
+        56789""";
+    String s5678 = digits.substring(5, 9);
+    System.out.println(s5678);  //5678
+  }
 
 }

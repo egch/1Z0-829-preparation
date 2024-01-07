@@ -195,3 +195,16 @@ enum constructors are implicitly private.
   }
 ```
 [Enum With Fields](../src/main/java/org/enricogiurin/ocp17/book/ch7/useofenum/SeasonWithValues.java)
+
+### Comparable
+all the enum implements `Comparable`.
+```java
+    int compare = CardinalPoints.NORTH.compareTo(CardinalPoints.EAST);
+
+    //so they can be used in a TreeSet
+    TreeSet<CardinalPoints> set = new TreeSet<>();
+    set.add(CardinalPoints.SOUTH);
+    set.add(CardinalPoints.NORTH);
+    set.add(CardinalPoints.WEST);
+    System.out.println(set); //[NORTH, WEST, SOUTH]
+```

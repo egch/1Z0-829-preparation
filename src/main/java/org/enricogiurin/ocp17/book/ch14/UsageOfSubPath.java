@@ -2,11 +2,12 @@ package org.enricogiurin.ocp17.book.ch14;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import org.enricogiurin.ocp17.various.helper.Enthuware;
 
 public class UsageOfSubPath {
 
   public static void main(String[] args) {
-    new UsageOfSubPath().example();
+    new UsageOfSubPath().getName();
   }
 
   void subPath() {
@@ -31,6 +32,8 @@ public class UsageOfSubPath {
 
   void subPath2() {
     var p2 = Paths.get("/zoo/animals/bear/koala/food.txt");
+    int nameCount = p2.getNameCount();
+    System.out.println(nameCount);
     //                       0     1      2    3     4
     System.out.println(p2.subpath(1, 3).getName(1));
   }
@@ -84,6 +87,18 @@ public class UsageOfSubPath {
       stars/./rocks/../m1.meteor
      */
 
+  }
+
+  @Enthuware
+    //This code does not work on Mac!
+  void getName() {
+    Path ocp = Paths.get("C:\\Data\\ocp17\\code");
+    int nameCount = ocp.getNameCount();
+    System.out.println(nameCount);
+    //the first name is not the drive disk!
+    Path name = ocp.getName(0);
+    //On Mac it should print Data, but it prints: C:\Data\ocp17\code
+    System.out.println(name);
   }
 
 }

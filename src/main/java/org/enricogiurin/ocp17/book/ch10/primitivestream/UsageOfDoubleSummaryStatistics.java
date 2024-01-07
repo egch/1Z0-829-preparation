@@ -1,12 +1,15 @@
 package org.enricogiurin.ocp17.book.ch10.primitivestream;
 
 import java.util.DoubleSummaryStatistics;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
+import org.enricogiurin.ocp17.various.helper.Enthuware;
 
 public class UsageOfDoubleSummaryStatistics {
 
   public static void main(String[] args) {
-    new UsageOfDoubleSummaryStatistics().empty();
+    new UsageOfDoubleSummaryStatistics().summarizingDouble();
   }
 
   void statistic() {
@@ -34,6 +37,22 @@ public class UsageOfDoubleSummaryStatistics {
     System.out.println("count: " + doubleSummaryStatistics.getCount()); //0
     System.out.println("min: " + doubleSummaryStatistics.getMin()); //Infinity
     System.out.println("max: " + doubleSummaryStatistics.getMax()); //-Infinity
+  }
+
+  @Enthuware
+  void summarizingDouble() {
+    record Person(String name, int age) {
+
+    }
+    List<Person> people = List.of(new Person("John", 30),
+        new Person("Mark", 40),
+        new Person("Philip", 50));
+    DoubleSummaryStatistics doubleSummaryStatistics = people.stream()
+        .collect(Collectors.summarizingDouble(p -> p.age()));
+    double max = doubleSummaryStatistics.getMax();
+    double min = doubleSummaryStatistics.getMin();
+    //min: 30.000000 - max: 50.000000
+    System.out.println("min: %f - max: %f".formatted(min, max));
   }
 
 }
