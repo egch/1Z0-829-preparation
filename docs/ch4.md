@@ -177,6 +177,15 @@ The Instant class represents a specific moment in time in the GMT time zone.
 ```java
 YYYY-MM-DDTHH:mm:ss.SSSZ
 ```
+#### Creation
+```java
+//from ZonedDateTime
+Instant instantZRH = zdtZurich.toInstant();
+
+//with now()
+Instant now = Instant.now();
+```
+[Instant](../src/main/java/org/enricogiurin/ocp17/book/ch4/time/UsageOfInstant.java)
 ## Converting String to number
 ```java 
 //  this method returns a primitive long

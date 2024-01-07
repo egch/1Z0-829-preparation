@@ -31,3 +31,6 @@ across all threads and processes, while the synchronized classes do not.
 
 ## Interfaces
 - default method: `Plant.super.leaves()` NOT ~~super.Plant.leaves()~~
+
+## JDBC
+- ResultSet rs: `rs.next()` NOT ~~rs.hasNext()~~

@@ -139,9 +139,19 @@ public record Person(String firstName, String lastName) {
 A compact constructor cannot set an instance variable through this but just with the normal assignment operator.
 ```java
 public record Name(String name) {
-  Name {
+  public Name {
     name = "Enrico"; //this works
     //this.name = "Enrico"; //this does not compile
+  }
+}
+```
+A compact constructor must have the same access access modifiers as the record itself.
+
+```java
+//does not compile
+public record Name(String name) {
+  Name {
+    ...
   }
 }
 ```

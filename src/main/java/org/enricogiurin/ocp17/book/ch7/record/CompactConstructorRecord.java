@@ -3,6 +3,7 @@ package org.enricogiurin.ocp17.book.ch7.record;
 public record CompactConstructorRecord(String firstName, String lastName, int age) {
 
   //this is a compact constructor
+  //access modifiers should be the same as the record. In this case public
   public CompactConstructorRecord {  //no parenthesis
     if (firstName.isEmpty() || lastName.isEmpty()) {
       throw new IllegalArgumentException("invalid");

@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 public class CollectorsGroupingBy {
 
   public static void main(String[] args) {
-    new CollectorsGroupingBy().groupingByRecord();
+    new CollectorsGroupingBy().groupingBy_threeArgs();
   }
 
 
@@ -39,16 +39,6 @@ public class CollectorsGroupingBy {
     System.out.print(map);
   }
 
-  //2 args
-  void groupingBySet() {
-    Stream<String> fruitStream = fruitStream();
-    Map<Integer, Set<String>> map = fruitStream.collect(
-        Collectors.groupingBy(String::length,
-            Collectors.toSet()));
-    //{4=[Lime, Kiwi, Pear], 5=[Apple, Grape, Peach, Mango, Lemon], 6=[Orange, Banana]}
-    //as you can see, Banana is present only once!
-    System.out.println(map);
-  }
 
   //one-arg
   void groupingByBoolean() {
@@ -60,14 +50,43 @@ public class CollectorsGroupingBy {
   }
 
   //one-arg
-  void groupingBy() {
+  void groupingBy_oneArg() {
     Stream<String> fruitStream = fruitStream();
-    Map<Integer, List<String>> map = fruitStream.collect(Collectors.groupingBy(String::length));
+    Map<Integer, List<String>> map = fruitStream.collect(
+        Collectors.groupingBy(
+            String::length));
     //{4=[Kiwi, Pear, Lime], 5=[Apple, Grape, Peach, Mango, Lemon], 6=[Orange, Banana, Banana]}
     //as you can see, Banana is present twice
     System.out.println(map);
   }
 
+
+  //here I specify what collection to use for the values of the map (Set)
+  //2 args
+  void groupingBy_twoArgs() {
+    Stream<String> fruitStream = fruitStream();
+    Map<Integer, Set<String>> map = fruitStream.collect(
+        Collectors.groupingBy(
+            String::length,
+            Collectors.toSet())
+    );
+    //{4=[Lime, Kiwi, Pear], 5=[Apple, Grape, Peach, Mango, Lemon], 6=[Orange, Banana]}
+    //as you can see, Banana is present only once!
+    System.out.println(map);
+  }
+
+  //here I specify what collection to use for the values of the map (Set)
+  //and the map I want (TreeMap)
+  void groupingBy_threeArgs() {
+    Stream<String> fruitStream = fruitStream();
+    TreeMap<Integer, Set<String>> treeMap = fruitStream.collect(Collectors.groupingBy(
+        String::length,
+        TreeMap::new,
+        Collectors.toSet())
+    );
+    //{4=[Lime, Kiwi, Pear], 5=[Apple, Grape, Peach, Mango, Lemon], 6=[Orange, Banana]}
+    System.out.println(treeMap);
+  }
 
   void groupingBySummingInt() {
     record Data(String name, int score) {

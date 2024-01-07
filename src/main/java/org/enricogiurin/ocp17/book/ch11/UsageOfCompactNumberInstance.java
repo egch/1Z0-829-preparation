@@ -4,12 +4,13 @@ import java.text.NumberFormat;
 import java.text.NumberFormat.Style;
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class UsageOfCompactNumberFormat {
+public class UsageOfCompactNumberInstance {
 
   public static void main(String[] args) {
-    new UsageOfCompactNumberFormat().round();
+    new UsageOfCompactNumberInstance().round();
   }
 
   void simpleCompactNumberInstance() {
@@ -58,16 +59,18 @@ public class UsageOfCompactNumberFormat {
 
     System.out.println(longFormat.format(amount));  //2 million
     System.out.println(shortFormat.format(amount));  //2M
+    amount = 1_900;
+    System.out.println(longFormat.format(amount));  //2 thousand
+    System.out.println(shortFormat.format(amount));  //2K
   }
 
   void round() {
     var shortFormat = NumberFormat.getCompactNumberInstance();
-    List<Double> list = List.of(199D, 1_990D, 19_900D, 199_000D, 1_990_000D);
-    for (double d : list) {
-      System.out.println(shortFormat.format(d));
-    }
-
-
+    List<Double> list = List.of(1_900_000D, 23_021D, 21_365_891D, 123.5D, 960_010D, 0.123D);
+    String result = list.stream()
+        .map(d -> shortFormat.format(d))
+        .collect(Collectors.joining(", "));
+    System.out.println(result);  //2M, 23K, 21M, 124, 960K, 0
   }
 
   void roundAmountShort() {

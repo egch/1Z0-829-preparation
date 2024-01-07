@@ -3,7 +3,7 @@ package org.enricogiurin.ocp17.book.ch4;
 public class UseOfStringBuilder {
 
   public static void main(String[] args) {
-    new UseOfStringBuilder().reverse();
+    new UseOfStringBuilder().deleteInDoWhile();
   }
 
   void notEfficient() {
@@ -49,6 +49,14 @@ public class UseOfStringBuilder {
     //now the sb has length 3 -> als
     //Exception in thread "main" java.lang.StringIndexOutOfBoundsException: index 20, length 3
     sb.deleteCharAt(20);
+  }
+
+  void deleteInDoWhile() {
+    StringBuilder sb = new StringBuilder("I am really sleepy");
+    do {
+      sb.delete(0, 3);
+    } while (sb.length() > 3);
+    System.out.println(sb);  //epy
   }
 
   void replace() {

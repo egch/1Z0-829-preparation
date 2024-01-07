@@ -28,6 +28,13 @@ public class CollectionsOfGenericsWithWildcard {
     Set<? extends RuntimeException> set4 = new TreeSet<ArithmeticException>();
   }
 
+  void diamond() {
+    //wrong!
+    //The diamond operator `<>` cannot be used on the left side of the assignment.
+    //List<> list = new ArrayList<>(); does not compile!
+  }
+
+
   void upperBoundedWildcards() {
     List<? extends Number> listOfInteger = new ArrayList<Integer>();
     //we cannot add any element to the list...as we do not know
@@ -82,6 +89,7 @@ public class CollectionsOfGenericsWithWildcard {
     List<?> q = List.of("mouse", "parrot");
     //I cannot add elements on this list
     List<?> list2 = new ArrayList<String>();
+    //list2.add(new Object()); does not compile
   }
 
   void wrongCollectionWithGenerics() {

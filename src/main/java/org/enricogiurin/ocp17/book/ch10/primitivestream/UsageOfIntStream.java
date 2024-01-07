@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class UsageOfIntStream {
 
   public static void main(String[] args) {
-    new UsageOfIntStream().concat();
+    new UsageOfIntStream().sum();
   }
 
   void average() {
@@ -34,11 +34,14 @@ public class UsageOfIntStream {
   void sum() {
     //9 included
     IntStream rangeClosed = IntStream.rangeClosed(0, 9);
-    System.out.println("sum: " + rangeClosed.sum()); //45
+    //note that IntStream.sum(0 returns an int, not a long
+    int sum = rangeClosed.sum();
+    System.out.println("sum: " + sum); //45
 
     //9 not included
     IntStream range = IntStream.range(0, 9);
-    System.out.println("sum: " + range.sum()); //36
+    sum = range.sum();
+    System.out.println("sum: " + sum); //36
   }
 
   void minAndMax() {
