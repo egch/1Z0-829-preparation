@@ -66,5 +66,4 @@ public class SwitchExpression {
     return 4;
   }
 
-
 }

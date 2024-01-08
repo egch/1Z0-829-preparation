@@ -58,14 +58,24 @@ The jdeps command lists information about dependencies within a module.
 $ jdeps –s zoo.animal.puppy.jar 
 ```
 * `-s` / `-summary` - Summarizes output
-* `--jdk-internals` / `-jdkinternals` - Lists uses of internal APIs
+* `--jdk-internals` / `-jdkinternals` - Lists uses of internal APIscd
+#### Screenshot jdeps commands
+
+![jdeps.png](images/jdeps.png)
 
 ### jlink
+extended
 ```shell
 $ jlink --module-path mods --add-modules zoo.animal.talks --output zooApp 
 ```
+Abbreviated
+```shell
+$ jlink -p mods --add-modules zoo.animal.talks --output zooApp 
+```
 * `--add-modules` - List of modules to package
-* `--output` - Name of output directory
+* `--output` - Name of output directory  
+
+This is the contents of the generated folder:
 ```shell
 $ cd zooAPP/    
 $ ls

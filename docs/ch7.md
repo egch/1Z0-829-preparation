@@ -218,3 +218,21 @@ all the enum implements `Comparable`.
     set.add(CardinalPoints.WEST);
     System.out.println(set); //[NORTH, WEST, SOUTH]
 ```
+
+## Nested Classes
+### Nested Local Class
+A local class can access only final and effectively final local variables.
+```java
+  public void sortArray() {
+    int size = 0;
+    class NestedLocal {
+      public void sort() {
+        //size is not effectively fianl, as it's changed in the last line
+        int c = size;  //does not compile!
+      }
+    }
+    //here I modify size, so I make it not effectively final
+    size = 0;
+  }
+```
+[Nested Local Class](../src/main/java/org/enricogiurin/ocp17/book/ch7/nested/local/ArraySorter.java)

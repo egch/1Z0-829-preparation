@@ -88,6 +88,8 @@ int compareTo(T o1);
 ### Deque
 ![Deque](images/Deque.png)
 
+[API Deque](../src/main/java/org/enricogiurin/ocp17/book/ch9/UsageOfDeque.java)
+
 ### Map
 #### foreach
 ```java

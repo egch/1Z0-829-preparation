@@ -8,11 +8,12 @@ import java.util.stream.Stream;
 public class UsageOfSpliterator {
 
   public static void main(String[] args) {
-    new UsageOfSpliterator().forEachRemaining();
+    new UsageOfSpliterator().repeatedCallsToSpliterator();
   }
 
   void use() {
     List<String> words = Arrays.asList("Hello", "World", "Java", "Programming");
+    //here is called on Collection
     Spliterator<String> spliterator = words.spliterator();
     Spliterator<String> si1 = spliterator.trySplit();
     boolean isThere = si1.tryAdvance(System.out::println);  //Hello
@@ -24,6 +25,7 @@ public class UsageOfSpliterator {
 
   void forEachRemaining() {
     List<String> words = Arrays.asList("Hello", "World", "Java", "Programming");
+    //here is called on Collection
     Spliterator<String> spliterator = words.spliterator();
     Spliterator<String> firstHalf = spliterator.trySplit();
     while (firstHalf.tryAdvance(System.out::println)) {
@@ -88,5 +90,19 @@ public class UsageOfSpliterator {
         var more = batch.tryAdvance(x -> {}); //we remove Toy A from batch but it still contains Toy B
         System.out.println(more);  //true - as it still contains Toy B
         spliterator.tryAdvance(System.out::println); //here we print the first of the 2nd group: Toy C
-     }
+  }
+
+  void repeatedCallsToSpliterator() {
+    List<String> list = List.of("a", "b", "c", "d");
+    Spliterator<String> spliterator = list.spliterator();
+    Spliterator<String> siFirst = spliterator.trySplit();
+
+    //the following 3 calls are meaningless since siFirst has already been split off.
+    Spliterator<String> siSecond = spliterator.trySplit();
+    Spliterator<String> siThird = spliterator.trySplit();
+
+    //a, b
+    siFirst.forEachRemaining(s -> System.out.println(s));
+  }
+
 }

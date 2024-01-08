@@ -24,12 +24,20 @@ public class ArraySorter {
     }
   }
 
+
+  /**
+   * Use of final or effectively final. A local class can access only final and effectively final
+   * local variables.
+   */
   public void sortArray() {
     int size = ArraySorter.this.numbers.length;
-
     // Local class for sorting the array
     //scope within the method
     class CustomSorter {
+
+      //local class can contain static methods
+      static void doNothing() {
+      }
 
       public void sort() {
         //how to access to the fields in the outer class
@@ -38,12 +46,9 @@ public class ArraySorter {
         //System.out.println(size);  //does not compile!
       }
     }
-
     CustomSorter sorter = new CustomSorter();
     sorter.sort();
     //here I modify size, so I make it not effectively final
     size = 0;
-
-
   }
 }

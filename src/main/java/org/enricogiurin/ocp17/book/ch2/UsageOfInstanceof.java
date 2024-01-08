@@ -1,5 +1,7 @@
 package org.enricogiurin.ocp17.book.ch2;
 
+import java.util.Collection;
+
 public class UsageOfInstanceof {
 
   public static void main(String[] args) {
@@ -60,7 +62,12 @@ public class UsageOfInstanceof {
 
     if (!(fish instanceof String guppy)) {
       System.out.print("Eat!");
+      return;
     }
+    //here I can access to guppy...because If I am here
+    //that means that fish is an instance of String!
+    System.out.println(guppy);
+
     //Based on flow scoping, guppy is in scope after lines if the type is not a String.
     // In this case, the next line declares a variable guppy that is a duplicate of the
     // previously defined local variable defined on line 41.
@@ -70,6 +77,29 @@ public class UsageOfInstanceof {
             throw new RuntimeException();
      }*/
     System.out.print("Swim!");
+  }
+
+  void instanceOf_interface() {
+    Number number = Integer.valueOf(5);
+    if (number instanceof Integer) {
+      System.out.println("It's an Integer");
+      return;
+    }
+    //Number can never be an instance of String
+    //so the following block does not compile
+/*
+    if(number instanceof  String) {
+      //invalid
+    }
+*/
+    //each class can be in theory an instance of any Interface
+    /*
+    The compiler can't definitively state that number is not a Collection.
+    Some future program could create a subclass of Number that does implement Collection.
+     */
+    if (number instanceof Collection) {
+      System.out.println("unreal but it compiles");
+    }
   }
 
 }

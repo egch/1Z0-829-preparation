@@ -17,9 +17,14 @@
 - I can't add years , or months to Instant, at most days [DONE]
 - StringBuilder.delete()   [DONE]
 - IntStream.sum() returns an int, not a long [DONE]
-- jdeps replace
-- List with generics, ?, extends, super
-- check again ~
-- methods of Deque
-- modules migration from what to what
-- refresh splititerator methods
+- jlink (right but refresh) [DONE]
+- jdeps replace [DONE]
+- to-down & bottom-up migration [DONE]
+- local nested class - final/effectively final [DONE]
+- javac -p --module-path [DONE]
+- refresh Spliterator methods [DONE]
+- List with generics, ?, extends, super [DONE]
+- check again ~ [DONE]
+- methods of Deque [DONE]
+
+

@@ -8,7 +8,9 @@ void compare(Number number) {
    }
 }
 ```
-### Pattern Matching - edge cases
+### Pattern Matching - interface
+The compiler can't definitively state that t is not a List. 
+Some future program could create a subclass of `Throwable` that does implement `List`.
 ```java
   void notCompatible(Throwable t) {
     //type not compatible - t cannot be a string
@@ -21,6 +23,7 @@ void compare(Number number) {
     }
   }
 ```
+[Pattern Matching](../src/main/java/org/enricogiurin/ocp17/book/ch3/PatternMatching.java)
 ## Switch
 The value of a case statement must be one of these:
 * a constant;
@@ -56,4 +59,19 @@ We can have a switch expression even without return value assigned.
     }
     System.out.println(cnt); //1
 ```
+#### yield
+If the switch expression returns a value, then every branch that isn't an expression must yield a value.
 
+```java
+final int score1 = 8, score2 = 3;
+char myScore = 7;
+var goal = switch (myScore) {
+  default -> {
+    if (10 > score1) {
+      yield "unknown";
+    } else {
+    {yield "ciao";}  //brackets not needed
+    }
+}
+```
+[Switch expression with yield](../src/main/java/org/enricogiurin/ocp17/book/ch3/usageofswitch/SwitchExpressionWithYield.java)

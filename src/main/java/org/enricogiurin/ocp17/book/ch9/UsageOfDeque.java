@@ -3,11 +3,12 @@ package org.enricogiurin.ocp17.book.ch9;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
 
 public class UsageOfDeque {
 
   public static void main(String[] args) {
-    new UsageOfDeque().offerAndPush();
+    new UsageOfDeque().emptyDeque();
   }
 
   void methodWithoutException() {
@@ -73,6 +74,48 @@ public class UsageOfDeque {
     deque.offer(7);
     deque.push(10); //[10, 5, 7]
     System.out.println(deque.poll() + ", " + deque.poll());  //10, 5
+  }
+
+  void peek() {
+    Deque<Integer> deque = new ArrayDeque<>();
+    deque.addFirst(1);
+    deque.addFirst(2);
+    deque.addFirst(3);
+    System.out.println("peek: " + deque.peek());  //3
+    System.out.println("peek: " + deque.peekFirst());  //3
+    System.out.println("peek: " + deque.peekLast()); //1
+    //now we empty the deque
+    deque.clear();
+    if (deque.isEmpty()) {
+      System.out.println("deque is empty");
+    }
+    //peek returns null if the deque is empty
+    System.out.println("peek: " + deque.peek());  //null
+    System.out.println("peek: " + deque.peekFirst());  //null
+    System.out.println("peek: " + deque.peekLast()); //null
+
+  }
+
+  void emptyDeque() {
+    Deque<Integer> deque = new ArrayDeque<>();
+    Integer poll = deque.poll();
+    System.out.println("poll: " + poll);
+    try {
+      //pop triggers a NSE if the deque is empty
+      Integer pop = deque.pop();
+    } catch (NoSuchElementException nse) {
+      //we go here
+      nse.printStackTrace();
+    }
+
+    try {
+      //remove triggers a NSE if the deque is empty
+      Integer remove = deque.remove();
+    } catch (NoSuchElementException nse) {
+      //we go here
+      nse.printStackTrace();
+    }
+
   }
 
 }

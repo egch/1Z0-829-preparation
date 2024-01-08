@@ -29,8 +29,9 @@ public class SwitchExpressionWithYield {
         if (10 > score1) {
           yield "unknown";
         } else {
-          yield "ciao";
-
+          {
+            yield "ciao";
+          }  //bracket not needed
         }
       }
       case score1 -> "great";

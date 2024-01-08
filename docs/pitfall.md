@@ -28,9 +28,19 @@ across all threads and processes, while the synchronized classes do not.
 
 ## Various
 - check if a field is final in the code
+- `enum`: check if the constructor is private, or protected!
+- `switch` expression: You CANNOT use `return`;
+- `instanceOf` : a class can always be an instance of an Interface, so the instanceOf in that case is allowed.
+- variable names: _ can be allowed but 
 
 ## Interfaces
 - default method: `Plant.super.leaves()` NOT ~~super.Plant.leaves()~~
+## Classes
+- if there is an abstract method  makes sure the class is declared `abstract`.
+### Nested Classes
+- A local class can access only **final** and **effectively final** local variables
+## Exception
+Check if the variable for the exception, **e**, is not already defined
 
 ## JDBC
 - ResultSet rs: `rs.next()` NOT ~~rs.hasNext()~~

@@ -1,4 +1,5 @@
 # Building Blocks
+## Commands
 ### Calling java on file with java extension
 java directly on .java file, no need to call javac.
 ```shell
@@ -23,6 +24,8 @@ $ java --class-path target/classes org.enricogiurin.ocp17.ch1.HelloWorld
 ## Variables
 - Local variables **need** to be initialized before to be used;
 - Instance variables **do not need** to be initialized before to be used.
+### Variable Names
+[Possible names for variables](../src/main/java/org/enricogiurin/ocp17/book/ch1/NameOfVariables.java)
 
 ### Variables scope
 - **Local variables**: In scope from declaration to the end of the block
@@ -48,8 +51,6 @@ class WrongVar {
   }
 ```
 This compiles as **var** is not a reserved key in java
-
-
 
 ### Garbage Collection
 ```java
