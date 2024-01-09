@@ -14,3 +14,4 @@ to implement the method! [DONE]
 - class with a generic method
 - jlink --output ( no abbreviation)
 - LocalTime with 4 parameters
+- StringBuilder.insert() but NOT ~~String.insert()~~

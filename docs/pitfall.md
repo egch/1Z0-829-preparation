@@ -45,3 +45,4 @@ across all threads and processes, while the synchronized classes do not.
 
 ## JDBC
 - ResultSet rs: `rs.next()` NOT ~~rs.hasNext()~~
+- ResultSet.getInt(1) NOT ~~ResultSet.getInteger(1)~~
