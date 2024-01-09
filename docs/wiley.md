@@ -10,3 +10,7 @@ to implement the method! [DONE]
 - pattern matching [DONE]
 - DoubleToLongFunction [DONE]
 - Comparator thenComparing reversed [DONE]
+
+- class with a generic method
+- jlink --output ( no abbreviation)
+- LocalTime with 4 parameters

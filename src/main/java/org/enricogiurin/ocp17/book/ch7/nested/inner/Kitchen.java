@@ -6,8 +6,6 @@ public class Kitchen {
   class Mixer {
     class Spinner {}
   }
-
-
   public void bake() {
     Spinner f = new Kitchen().new Mixer().new Spinner();
   }

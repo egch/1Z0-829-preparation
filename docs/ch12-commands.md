@@ -72,6 +72,7 @@ Abbreviated
 ```shell
 $ jlink -p mods --add-modules zoo.animal.talks --output zooApp 
 ```
+There is no abbreviated form for the parameter **output**.
 * `--add-modules` - List of modules to package
 * `--output` - Name of output directory  
 
