@@ -3,6 +3,10 @@ package org.enricogiurin.ocp17.book.ch8.functionalinterface.primitive;
 import java.util.function.DoubleToLongFunction;
 import java.util.function.Function;
 
+
+/**
+ * Both IN/OUT are primitives!!!! IN: double (primitive) OUT: long (primitive)
+ */
 public class UsageOfDoubleToLongFunction {
 
   public static void main(String[] args) {

@@ -85,10 +85,17 @@ package: java.lang
 int compareTo(T o1);
 ```
 
+### Queue
+![Methods of Queue.png](images/Queue.png)
+
 ### Deque
 ![Deque](images/Deque.png)
 
 [API Deque](../src/main/java/org/enricogiurin/ocp17/book/ch9/UsageOfDeque.java)
+
+```java
+public interface Deque<E> extends Queue<E> {/**/}
+```
 
 ### Map
 #### foreach

@@ -40,7 +40,8 @@ across all threads and processes, while the synchronized classes do not.
 ### Nested Classes
 - A local class can access only **final** and **effectively final** local variables
 ## Exception
-Check if the variable for the exception, **e**, is not already defined
+- Check if the variable for the exception, **e**, is not already defined
+- check that main throws the checked exception declared in the method
 
 ## JDBC
 - ResultSet rs: `rs.next()` NOT ~~rs.hasNext()~~

@@ -1,11 +1,9 @@
 package org.enricogiurin.ocp17.book.ch12;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.ServiceLoader;
 import java.util.ServiceLoader.Provider;
-import java.util.stream.Stream;
 
 public class UseOfServiceLoader {
 
@@ -17,13 +15,14 @@ public class UseOfServiceLoader {
     }
   }
 
-  void equivalentLoad() {
+  void stream() {
     ServiceLoader<Dog> serviceLoader = ServiceLoader.load(Dog.class);
-    Iterator<Dog> iterator = serviceLoader.iterator();
-    Stream<Provider<Dog>> stream = serviceLoader.stream();
-    List<Dog> all = stream
-        // here it's using a Stream of Provider
-        .map(Provider::get)
+    //here I have a list of Provider
+    List<Provider<Dog>> list = serviceLoader.stream()
+        .toList();
+
+    List<Dog> dogs = serviceLoader.stream()
+        .map(dogProvider -> dogProvider.get())
         .toList();
   }
 

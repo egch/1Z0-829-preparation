@@ -1,6 +1,12 @@
-- abstract class which implements 2 interfaces with the same default method is forced
-to implement the method!
+- abstract class which implements 2 interfaces with the same default method is forced 
+to implement the method! [DONE]
 - increasing levels of operator precedence
-- refresh Locale creation: builder/new
-- Future<Object> even when it's Future<Double>
-
+- refresh Locale creation: builder/new [DONE]
+- Future<Object> even when it's Future<Double> [DONE]
+- number of classes extending sealed class
+- double check this List<?>  [DONE]
+- [module] ServiceLoader.load(Mouse.class)  [DONE]
+- methods of Deque [DONE]
+- pattern matching [DONE]
+- DoubleToLongFunction [DONE]
+- Comparator thenComparing reversed [DONE]

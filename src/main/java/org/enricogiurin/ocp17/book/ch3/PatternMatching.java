@@ -30,13 +30,12 @@ public class PatternMatching {
     if (t instanceof Exception e) {
       System.out.println(e.getMessage());
     }
-    //type not compatible
-    /*
+//type not compatible
+/*
     if(t instanceof String s) {
-
     }
-    */
-    //strange behaviour for interface!
+*/
+    //strange behavior for interface!
     if (t instanceof List list) {
       System.out.println("that's weird");
     }
@@ -70,9 +69,7 @@ public class PatternMatching {
 
     //this is not fine as it is short-circuit logical and: both of the parts need to be evaluated
     //does not compile! (bitwise AND Operator)
-/*
-if(number instanceof Integer data & data.compareTo(5)>0){
-}
-*/
+    /*  if(number instanceof Integer data & data.compareTo(5)>0){}*/
+
   }
 }

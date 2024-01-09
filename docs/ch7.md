@@ -29,7 +29,7 @@ public interface Weight {
 ```
 
 ### Interfaces with the same default name
-Class which implements two interfaces with the same(signature) default method:
+Class which implements two interfaces having the same(signature) default method:
 ```java
 @Override
 public void go() {
@@ -39,7 +39,8 @@ public void go() {
 }
 ```
 [Full Example](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/defaultmethods/InheritTwoDefaultMethods.java)
-
+#### Case abstract clas
+[Abstract class default methods](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/defaultmethods/AbstractClassDefaultMethods.java)
 ### private methods
 A private interface method **cannot** be called in a method outside the interface declaration.
 
