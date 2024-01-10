@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Set;
 
+
+//note: this class has no generics defined in the class itself
 public class MethodsWithGenerics {
 
   public static void main(String[] args) {

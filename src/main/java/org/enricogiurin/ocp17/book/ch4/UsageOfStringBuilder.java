@@ -1,9 +1,9 @@
 package org.enricogiurin.ocp17.book.ch4;
 
-public class UseOfStringBuilder {
+public class UsageOfStringBuilder {
 
   public static void main(String[] args) {
-    new UseOfStringBuilder().deleteInDoWhile();
+    new UsageOfStringBuilder().deleteInDoWhile();
   }
 
   void notEfficient() {
@@ -28,6 +28,7 @@ public class UseOfStringBuilder {
     System.out.println(target);
   }
 
+  //NOTE: insert() is not present in java.lang.String
   void insert() {
     StringBuilder sb = new StringBuilder("animals");
     sb.insert(0, "--");

@@ -18,6 +18,7 @@ public class UsageOfLocalTime {
     System.out.println(localTimeHM); //12:15
     LocalTime localTimeHMS = LocalTime.of(12, 14, 45);
     System.out.println(localTimeHMS); //12:14:45
+    //4 parameters here
     LocalTime localTimeHMSN = LocalTime.of(12, 15, 45, 376);
     System.out.println(localTimeHMSN); //12:15:45.000000376
   }
