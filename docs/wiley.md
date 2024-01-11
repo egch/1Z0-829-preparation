@@ -29,3 +29,4 @@ to implement the method! [DONE]
 - Autocloseable is in java.lang / Closable is in java.io; [DONE]
 - findFirst() method always returns the first element on an ordered stream, regardless if it is serial or parallel, 
 is free to return any element if the stream is unordered. [DONE]
+- creation of Period. Period.of(x,y,z)  [DONE]

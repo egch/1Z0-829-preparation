@@ -3,8 +3,10 @@ package org.enricogiurin.ocp17.book.ch4.time;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
+import org.enricogiurin.ocp17.various.helper.Wiley;
 
 public class UsageOfPeriod {
 
@@ -45,6 +47,16 @@ public class UsageOfPeriod {
     LocalDate end = start.plus(1, ChronoUnit.WEEKS);
     performTask(start, end, period);
 
+  }
+
+  /**
+   * You can create e Period with Period.of(x,y, z)
+   */
+
+  @Wiley
+  void of(){
+    Period birthday = Period.of(2023, Month.NOVEMBER.getValue(), 10);
+    System.out.println(birthday);
   }
 
   private void performTask(LocalDate start, LocalDate end, Period period) {
