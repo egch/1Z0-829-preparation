@@ -41,6 +41,7 @@ across all threads and processes, while the synchronized classes do not.
 - if there is an abstract method  makes sure the class is declared `abstract`.
 ### Nested Classes
 - A local class can access only **final** and **effectively final** local variables
+- anonymous class needs to have semicolon at the end
 ## Exception
 - Check if the variable for the exception, **e**, is not already defined
 - check that main throws the checked exception declared in the method
@@ -49,3 +50,4 @@ across all threads and processes, while the synchronized classes do not.
 ## JDBC
 - ResultSet rs: `rs.next()` NOT ~~rs.hasNext()~~
 - ResultSet.getInt(1) NOT ~~ResultSet.getInteger(1)~~
+- watch out the overlap of conn.savepoint() and conn.rollback()

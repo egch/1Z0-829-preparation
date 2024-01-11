@@ -84,6 +84,7 @@ text blocks require a break between beginning and the end.
 ```java
 String s = """aaa"""; //does not compile
 ```
+**Trailing whitespace**: _spazi bianchi finali_ (IT)
 
 ```jshelllanguage
 jshell> var text = """

@@ -17,11 +17,15 @@ to implement the method! [DONE]
 - StringBuilder.insert() but NOT ~~String.insert()~  [DONE]
 
 - In an unnamed module, a sealed class must include all its subclasses within the same package.
-- I/O - Files.createDirectories and not Path.createDirectories
-- refresh function mapToInt
+- I/O - Files.createDirectories and not Path.createDirectories [DONE]
+- refresh function mapToInt [DONE]
 - HashSet support null values/ and TreeSet does not [DONE]
-- UnaryOperator<T> apply() method not accept()
+- UnaryOperator<T> apply() method not accept() [DONE]
 - increase order operators!!!!!!!!
-- Stream<T>.flatMapToInt()
-- blocktext trailing whitespace.
-- ios.readObject() 
+- Stream<T>.flatMapToInt()  [DONE]
+- blocktext trailing whitespace. [DONE]
+- ios.readObject() [DONE]
+- throws Throwable
+- Autocloseable is in java.lang / Closable is in java.io; [DONE]
+- findFirst() method always returns the first element on an ordered stream, regardless if it is serial or parallel, 
+is free to return any element if the stream is unordered. [DONE]

@@ -2,10 +2,10 @@ package org.enricogiurin.ocp17.book.ch8.functionalinterface;
 
 import java.util.function.UnaryOperator;
 
-public class UseOfUnaryOperator {
+public class UsageOfUnaryOperator {
 
   public static void main(String[] args) {
-    new UseOfUnaryOperator().anonymous();
+    new UsageOfUnaryOperator().anonymous();
   }
 
   void lambda() {

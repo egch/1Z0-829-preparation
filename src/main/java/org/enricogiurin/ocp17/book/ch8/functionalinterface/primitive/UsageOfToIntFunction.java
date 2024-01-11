@@ -8,7 +8,7 @@ public class UsageOfToIntFunction {
   ToIntFunction<List<String>> toIntFunction = list -> list.size();
 
   public static void main(String[] args) {
-    new UsageOfToIntFunction().processLambda();
+    new UsageOfToIntFunction().anonymous();
   }
 
   void process() {
@@ -21,6 +21,17 @@ public class UsageOfToIntFunction {
     List.of("a", "ab", "abc").stream()
         .mapToInt(toIntF)
         .forEach(System.out::println);
+  }
+
+  void anonymous() {
+    ToIntFunction<String> toIntFnc = new ToIntFunction<>() {
+      @Override
+      public int applyAsInt(String value) {
+        return value.length();
+      }
+    };
+    int length = toIntFnc.applyAsInt("1234");
+    System.out.println(length);
   }
 
 }

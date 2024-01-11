@@ -12,13 +12,6 @@ public class CatchMethodWithThrows {
     }
   }
 
-  void throwsThrowingIOException() throws IOException {
-    throwingIOException();
-  }
-  /*
-   ************************
-   */
-
   void catchThrowingException() {
     try {
       throwingException();
@@ -27,14 +20,27 @@ public class CatchMethodWithThrows {
     }
   }
 
+  void catchThrowingThrowable() throws Throwable {
+    throwingThrowable();
+  }
+
   void throwsThrowingException() throws Exception {
     throwingException();
   }
 
-
-  void throwingIOException() throws IOException {
+  void throwsThrowingIOException() throws IOException {
+    throwingIOException();
   }
 
-  void throwingException() throws Exception {
+
+  private void throwingIOException() throws IOException {
   }
+
+  private void throwingException() throws Exception {
+  }
+
+  private void throwingThrowable() throws Throwable {
+  }
+
+
 }
