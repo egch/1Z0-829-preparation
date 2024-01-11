@@ -128,12 +128,14 @@ In increasing order, lowest to the highest
 
 ## Instanceof
 ### null case
+null instanceof T: **always false**
 ```java
 //it always returns false
 if(null instanceof String){
   System.out.println("It's null");
 }
 ```
+T instanceof null: **DOES NOT COMPILE!**
 ```java
 Object object = new String("A");
 //this does not compile!

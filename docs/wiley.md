@@ -30,3 +30,12 @@ to implement the method! [DONE]
 - findFirst() method always returns the first element on an ordered stream, regardless if it is serial or parallel, 
 is free to return any element if the stream is unordered. [DONE]
 - creation of Period. Period.of(x,y,z)  [DONE]
+
+
+- refresh -D java/jar [DONE]
+- Stream.concat(s1, s2): s1, s2 should be Stream, not IntStream [DONE]
+-  t.scheduleAtFixedRate(() 4 args [DONE]
+- review switch expression, yield [DONE]
+- review accumulator, associative etc [DONE]
+- check throws multi catch error [DONE]
+- review reduce parallel stream [DONE]

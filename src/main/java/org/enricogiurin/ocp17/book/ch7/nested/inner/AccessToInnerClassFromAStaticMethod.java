@@ -7,6 +7,9 @@ public class AccessToInnerClassFromAStaticMethod {
      }
    }
 
+   //I can also create a nested inner interface
+   interface A{}
+
   public static void main(String[] args) {
      //cannot be referenced from a static context
     //new Messenger().message("hello");

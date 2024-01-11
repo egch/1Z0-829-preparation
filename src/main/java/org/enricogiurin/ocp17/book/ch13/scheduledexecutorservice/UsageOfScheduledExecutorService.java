@@ -72,6 +72,7 @@ public class UsageOfScheduledExecutorService {
     //scheduleWithFixedDelay accepts only Runnable, not Callable
     try {
       //It does not take into account the duration of the task's execution
+      //it takes 4 args
       scheduledExecutorService.scheduleAtFixedRate(
           runnable,
           2, 1, TimeUnit.SECONDS);

@@ -27,6 +27,7 @@ across all threads and processes, while the synchronized classes do not.
 ## Lambda
 - `var x = ()->"hello"` does not compile! - you cannot assign a lambda to a var
 - check the right symbol! it's -> NOT =>
+- check lambda does not throw a Checked exception
 
 ## Various
 - check if a field is final in the code
@@ -51,3 +52,6 @@ across all threads and processes, while the synchronized classes do not.
 - ResultSet rs: `rs.next()` NOT ~~rs.hasNext()~~
 - ResultSet.getInt(1) NOT ~~ResultSet.getInteger(1)~~
 - watch out the overlap of conn.savepoint() and conn.rollback()
+
+## Serialization
+- always check the class implements Serializable
