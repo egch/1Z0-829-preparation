@@ -83,4 +83,3 @@ Note that `AutoCloseable` is in the `java.lang` package, import it's not needed.
 
 `AutoCloseable` is a more general-purpose interface and can be used for any resource that needs to be closed, 
 not necessarily related to I/O.
-## Localization

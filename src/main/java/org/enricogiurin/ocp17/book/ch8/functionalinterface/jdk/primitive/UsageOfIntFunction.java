@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch8.functionalinterface.primitive;
+package org.enricogiurin.ocp17.book.ch8.functionalinterface.jdk.primitive;
 
 import java.util.function.IntFunction;
 

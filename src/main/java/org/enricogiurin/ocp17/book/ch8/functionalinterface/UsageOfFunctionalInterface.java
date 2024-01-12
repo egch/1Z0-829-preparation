@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch8;
+package org.enricogiurin.ocp17.book.ch8.functionalinterface;
 
 public class UsageOfFunctionalInterface {
 
@@ -6,13 +6,10 @@ public class UsageOfFunctionalInterface {
 /**
  * this cannot be FI as it defines a method with the same signature of Object
  */
-
 //@FunctionalInterface
 interface fakeFI {
   String toString();
 }
-
-
 
 /**
  In spite this defines two abstract methods,
@@ -24,14 +21,13 @@ interface fakeFI {
     void run();
   }
 
-
   @FunctionalInterface
   interface Sprint {
     void sprint();
   }
 
   /**
-   *  it is also a FI as it respects the SAM contract - Single Abstract Method
+   *  This is also a FI as it respects the SAM contract - Single Abstract Method
    */
   @FunctionalInterface
   interface Cat extends Sprint {
@@ -49,11 +45,11 @@ interface fakeFI {
     void run();
   }
 
-
+  /**
+   *  This is a FI as it respects the SAM contract - Single Abstract Method
+   */
   @FunctionalInterface
   interface Dog extends Sprint {
-
   }
-
 
 }

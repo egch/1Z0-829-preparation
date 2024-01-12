@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch8.functionalinterface.primitive.mixed;
+package org.enricogiurin.ocp17.book.ch8.functionalinterface.jdk.primitive.mixed;
 
 import java.util.function.ObjLongConsumer;
 

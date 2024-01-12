@@ -1,14 +1,9 @@
-package org.enricogiurin.ocp17.book.ch8.functionalinterface.primitive;
+package org.enricogiurin.ocp17.book.ch8.functionalinterface.jdk.primitive;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.function.BooleanSupplier;
 import java.util.function.DoublePredicate;
-import java.util.function.DoubleSupplier;
-import java.util.function.IntSupplier;
 import java.util.function.LongConsumer;
-import java.util.function.LongSupplier;
 
 public class FunctionalInterfacesForPrimitives {
 

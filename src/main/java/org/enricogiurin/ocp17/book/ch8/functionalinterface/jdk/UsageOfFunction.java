@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch8.functionalinterface;
+package org.enricogiurin.ocp17.book.ch8.functionalinterface.jdk;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
