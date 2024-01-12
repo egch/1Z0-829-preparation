@@ -84,9 +84,4 @@ public class SwitchStatement {
         System.out.println("default");  //it prints default
     }
   }
-
-
-
-
-
 }

@@ -19,21 +19,29 @@ public abstract class AnAbstractClass {
   abstract AnAbstractClass(){} //does not compile!
 }
 ```
-### Abstract & Final
-Due to this incompatibility, Java does not permit a class or method to be marked both abstract and final.
+### abstract & final
+**abstract** and **final** together, does not compile!
 ```java
 public abstract final class Tortoise { // DOES NOT COMPILE 
     public abstract final void walk(); // DOES NOT COMPILE
 }
 
 ```
-### Abstract and private Modifiers
+### abstract and private Modifiers
 A method cannot be marked as both abstract and private.
 ```java
 public abstract class Whale {
     private abstract void sing(); // DOES NOT COMPILE
 }
 ```
+### abstract & static
+A method cannot be marked as both abstract and static.
+```java
+abstract class Dog {
+   abstract static void counter(); // DOES NOT COMPILE
+}
+```
+
 ## Creating Immutable Objects
 ### Declaring an Immutable Class
 1. Mark the class as final or make all the constructors private.
@@ -119,30 +127,6 @@ Polymorphism and overriding do not apply to instance variables.
 [Parent - Child example](../src/main/java/org/enricogiurin/ocp17/book/ch6/overriding/Child.java)
 
 
-
-
-## Abstract
-### abstract & final
-**abstract** and **final** together does not compile!
-```java
-public abstract final class Ciccio {  // DOES NOT COMPILE
-   public abstract final void eat();   // DOES NOT COMPILE
-}
-```
-### abstract & private
-A method cannot be marked as both abstract and private. 
-```java
-public abstract class Dog {
-   private abstract void baubau(); // DOES NOT COMPILE
-}
-```
-### abstract & static
-A method cannot be marked as both abstract and static.
-```java
-abstract class Dog {
-   abstract static void counter(); // DOES NOT COMPILE
-}
-```
 ## static final
 ```java
   static final void ciao() {

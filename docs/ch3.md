@@ -29,6 +29,16 @@ The value of a case statement must be one of these:
 * a constant;
 * a literal value;
 * a final variable.
+```java
+    int aValue = 5;
+    final int aConstant = 6;
+    switch (x){
+        case 2:  //ok - literal
+        case aConstant:  //ok - constant
+        case aValue: //does not compile, not final
+    }
+
+```
 ### Switch supported types
  - int,byte, short, char
  - Integer, Byte, Short, Character

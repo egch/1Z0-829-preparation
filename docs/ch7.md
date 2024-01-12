@@ -19,11 +19,12 @@ An interface cannot be marked as final
 //does not compile
 public final interface Walk {}
 ```
-Interface variables are implicitly public, static, final.
+Interface variables are implicitly **public, static, final.**
 ```java
 public interface Weight {
   int max_weight = 5;
   public static final int max_height = 50;  
+  String color;  //does not compile as it's not initialized
 }  
 
 ```
@@ -39,7 +40,7 @@ public void go() {
 }
 ```
 [Full Example](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/defaultmethods/InheritTwoDefaultMethods.java)
-#### Case abstract clas
+#### Case abstract class
 [Abstract class default methods](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/defaultmethods/AbstractClassDefaultMethods.java)
 ### private methods
 A private interface method **cannot** be called in a method outside the interface declaration.
@@ -60,7 +61,7 @@ class InterfaceWithAPrivateMethodImpl implements InterfaceWithAPrivateMethod {
 ```
 
 ### Override
-_@Override_ annotation informs the compiler that the element is meant to override an element declared
+`@Override` annotation informs the compiler that the element is meant to override an element declared
 in a superclass and/or interface. While **it is not required** to use this annotation when overriding a method, it helps
 to prevent errors.
 
@@ -95,7 +96,7 @@ sealed class Male extends HumanBeing {}
 non-sealed class EuropeanMale extends HumanBeing {}
 final class AsianMale extends HumanBeing {}
 ```
-A subclass (Male) of a sealed class (HumanBeing) must be marked either **final** or **sealed** or **non-sealed**.
+A subclass (Male) of a sealed class (HumanBeing) must be marked either `final` or `sealed` or `non-sealed`.
 
 ### Sealed interfaces
 Permits list can apply to:
@@ -137,7 +138,7 @@ public record Person(String firstName, String lastName) {
   }
 }
 ```
-A compact constructor cannot set an instance variable through this but just with the normal assignment operator.
+A compact constructor cannot set an instance variable through `this` but just with the normal assignment operator.
 ```java
 public record Name(String name) {
   public Name {
@@ -146,7 +147,7 @@ public record Name(String name) {
   }
 }
 ```
-A compact constructor must have the same access access modifiers as the record itself.
+A compact constructor must have the same access modifiers as the record itself.
 
 ```java
 //does not compile
