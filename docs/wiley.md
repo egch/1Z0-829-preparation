@@ -39,3 +39,20 @@ is free to return any element if the stream is unordered. [DONE]
 - review accumulator, associative etc [DONE]
 - check throws multi catch error [DONE]
 - review reduce parallel stream [DONE]
+- Optional.ofNullable() [DONE]
+- LongStream.mapToInt(n->n) //does not compile, I cannot cast [DONE]
+- check this:
+-  final var javaVersions = List.of(17,11,8);
+   4: var names = List.of("JDK", "Java");
+   5: V: for (var e1 : javaVersions) {
+   6:    E: for (String e2 : names)
+   7:       System.out.println(e1 + "_" + e2);
+   8:       break;
+   9: }
+
+
+: module com.mammal {
+2:    exports com.mammal.cat;
+3:    exports com.mammal.mouse to com.mice;
+4:    uses com.animal;
+5: }

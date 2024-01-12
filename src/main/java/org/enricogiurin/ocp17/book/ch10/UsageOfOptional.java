@@ -39,12 +39,24 @@ public class UsageOfOptional {
   }
 
   void optionalOfNull() {
-    var empty = Optional.empty();
-    System.out.println(empty.isPresent()); //false
-    var method = Optional.ofNullable(null);
-    System.out.println(method.isPresent()); //false
+    String message = null;
+    //this does not throw any exception
+    var optOfNullable = Optional.ofNullable(message);
+
+    try {
+      //but if I call the get yes.
+      //java.util.NoSuchElementException: No value present
+      String tmp = optOfNullable.get();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
 
     //this throws a NPE at runtime as I pass the null value
-    var param = Optional.of(null);
+    try {
+      //java.lang.NullPointerException
+      Optional<String> optMessage = Optional.of(message);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 }

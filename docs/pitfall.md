@@ -23,6 +23,7 @@ across all threads and processes, while the synchronized classes do not.
 -  Do not confuse IntStream with Stream<Integer>
 - Stream.concat(s1, s2) works only with 2 streams
 - Optional.orElseThrow()
+- check if there is more than one terminal operation
 - `IntSummaryStatistics` not ~~IntegerSummaryStatistics~~
 ## Lambda
 - `var x = ()->"hello"` does not compile! - you cannot assign a lambda to a var
@@ -33,7 +34,7 @@ across all threads and processes, while the synchronized classes do not.
 - check if a field is final in the code
 - `enum`: check if the constructor is private, or protected!
 - `switch` expression: You CANNOT use `return`;
-- `instanceOf` : a class can always be an instance of an Interface, so the instanceOf in that case is allowed.
+- `instanceOf` : a class can always be an instance of an Interface, so the instanceOf in that case is allowed. !!!!
 - variable names: _ can be allowed but 
 
 ## Interfaces
