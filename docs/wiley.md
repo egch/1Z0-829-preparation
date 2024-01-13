@@ -27,10 +27,9 @@ to implement the method! [DONE]
 - ios.readObject() [DONE]
 - throws Throwable
 - Autocloseable is in java.lang / Closable is in java.io; [DONE]
-- findFirst() method always returns the first element on an ordered stream, regardless if it is serial or parallel, 
-is free to return any element if the stream is unordered. [DONE]
+  - findFirst() method always returns the first element on an ordered stream, regardless if it is serial or parallel, 
+  is free to return any element if the stream is unordered. [DONE]
 - creation of Period. Period.of(x,y,z)  [DONE]
-
 
 - refresh -D java/jar [DONE]
 - Stream.concat(s1, s2): s1, s2 should be Stream, not IntStream [DONE]
@@ -46,4 +45,5 @@ is free to return any element if the stream is unordered. [DONE]
 - all variables within interfaces are implicitly static and final,
 so they must be initialized with a value when they are declared.  [DONE]
 
-- The value of a case statement must be a constant, a literal value, or a final variable.
+- Which class has a getSeconds() method? Period/Duration [DONE]
+- sequential: from parallel() to serial [DONE]

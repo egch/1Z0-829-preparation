@@ -41,8 +41,18 @@
     }catch (IOException e) {}  //DOES NOT COMPILE!  
   }
 ```
+[CatchExceptions](../src/main/java/org/enricogiurin/ocp17/book/ch11/exceptions/CatchMethodWithThrows.java)
 
-[ThrowingExceptions](../src/main/java/org/enricogiurin/ocp17/book/ch11/exceptions/CatchMethodWithThrows.java)
+### Throws
+A method can declare an exception even if it's not thrown within the method itself.
+```java
+  void throwsRuntimeException() throws RuntimeException {
+    throwingNothing();
+  }
+  void throwingNothing() {}
+```
+[throws Exceptions](../src/main/java/org/enricogiurin/ocp17/book/ch11/exceptions/ThrowsExceptionNotThrown.java)
+
 
 ### Error Classes
 | Error              | Description              | 
