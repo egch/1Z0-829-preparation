@@ -10,7 +10,7 @@
 - mark, check if the stream supports mark: `inputStream.markSupported()`
 - What I/O classes to use? Reader/Writer for text, Stream for primitives and String values
 - Check if the `System.out` or `System.err` is closed within the try-with-resource
-- in the try-with-resources check curly parenthesis is used, not brackets.
+
 
 ## Concurrency
 - the Concurrent classes order read/write access such that access to the class is consistent 
@@ -25,6 +25,7 @@ across all threads and processes, while the synchronized classes do not.
 - `Stream.concat(s1, s2)` works only with 2 streams, not more parameters
 - `Optional.orElseThrow()`
 - check if there is more than one terminal operation
+- Names: Source / Intermediate operation / Terminal operation. ~~Not Origin~~ !
 
 ## Lambda
 - `var x = ()->"hello"` does not compile! - **you cannot assign a lambda to a var**
@@ -34,9 +35,14 @@ across all threads and processes, while the synchronized classes do not.
 ## Various
 - check if a field is final in the code
 - `enum`: check if the constructor is private, or protected!
-- `switch` expression: You CANNOT use `return`;
+
 - `instanceOf` : a class can always be an instance of an Interface, so the instanceOf in that case is allowed. !!!!
 - variable names: `_` can be allowed but not as a char single: `var _` does not compile
+- in the setX() check there is this.x=x
+## check
+- `switch` expression: You CANNOT use `return`;
+- you need the `case` within a `switch`
+
 
 ## Interfaces
 - default method: `Plant.super.leaves()` NOT ~~super.Plant.leaves()~~
@@ -49,6 +55,8 @@ across all threads and processes, while the synchronized classes do not.
 - Check if the variable for the exception, **e**, is not already defined
 - check that main throws the checked exception declared in the method
 especially with the AutoClosable resources
+- in the try-with-resources check curly parenthesis is used, not brackets.
+- try with resources: check in the variable is in scope
 
 ## JDBC
 - ResultSet rs: `rs.next()` NOT ~~rs.hasNext()~~

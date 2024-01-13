@@ -1,19 +1,12 @@
-package org.enricogiurin.ocp17.book.ch1;
+package org.enricogiurin.ocp17.book.ch1.textblocks;
 
 import org.enricogiurin.ocp17.various.helper.Enthuware;
 
 public class TextBlocks {
 
   public static void main(String[] args) {
-    new TextBlocks().backslash();
-        /*
-        starts with """ and ends with """
-        text blocks requires a break between beginning and the end
-        example:
-        String s = """aaa"""; //does not compile
-         */
-    //printPyramid();
-    //countLines();
+    new TextBlocks().equivalentTextBlock();
+
 
   }
 

@@ -52,3 +52,11 @@ so they must be initialized with a value when they are declared.  [DONE]
 - resources: check if for some keys it follows both the std and the default locale [DONE]
 - stripTrailing and stripLeaders and stripIndent [DONE]
 - refresh iterator.next() [DONE]
+
+- The code does not compile because two of the constructors contain a cyclic reference to each other. [DONE]
+
+- module service locator [DONE]
+- reduce check the types [DONE] 
+- instantiate nested static class [DONE]
+- review textblock and backslash [PARTIALLY DONE]
+- review -g vars NPE  [DONE]

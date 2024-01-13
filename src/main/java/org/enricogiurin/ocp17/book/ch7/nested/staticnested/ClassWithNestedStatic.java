@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch7.nested;
+package org.enricogiurin.ocp17.book.ch7.nested.staticnested;
 
 public class ClassWithNestedStatic {
 

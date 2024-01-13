@@ -1,4 +1,18 @@
 # Class Design
+
+## Constructor
+### cyclic reference
+```java
+class Person {
+  Person(){
+    this(4);
+  }
+  //does not compile! cyclic reference
+  Person(int x){
+    this();
+  }
+}
+```
 ## Abstract
 Only instance methods can be marked abstract within a class!   
 **Not variables, constructors, or static methods.**

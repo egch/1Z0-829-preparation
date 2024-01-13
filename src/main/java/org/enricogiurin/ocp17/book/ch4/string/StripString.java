@@ -1,5 +1,7 @@
 package org.enricogiurin.ocp17.book.ch4.string;
 
+import static org.enricogiurin.ocp17.various.helper.TextHelper.wrap;
+
 public class StripString {
 
   public static void main(String[] args) {
@@ -38,8 +40,6 @@ public class StripString {
 
   }
 
-  private String wrap(String s){
-    return "#"+s+"#";
-  }
+
 
 }
