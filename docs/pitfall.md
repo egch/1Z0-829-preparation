@@ -17,6 +17,7 @@
 across all threads and processes, while the synchronized classes do not. 
 - `Future.get()` throws  `InterruptedException` and a  `ExecutionException`, and they block execution 
 - scheduled methods: `newScheduledThreadPool(10)`/`newSingleThreadScheduledExecutor()`
+- when the method is `synchronized`, check if it's static or instance
 
 ## Stream
 -  `IntSummaryStatistics`, not ~~IntegerSummaryStatistics~~. 

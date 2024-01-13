@@ -83,7 +83,10 @@ public class MethodsOfCollection {
     //alternative approach
     list.forEach(s -> System.out.println(s)); //lambda
     list.forEach(System.out::println); //method reference
+  }
 
+  void oldIterator() {
+    List<String> list = new ArrayList<>(List.of("1", "2", "3"));
     //old school iterator
     Iterator<String> iterator = list.iterator();
     while (iterator.hasNext()) {

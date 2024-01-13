@@ -47,3 +47,8 @@ so they must be initialized with a value when they are declared.  [DONE]
 
 - Which class has a getSeconds() method? Period/Duration [DONE]
 - sequential: from parallel() to serial [DONE]
+
+- verify chain of var date2 = date1.plusDays(2).minusDays(1).minusDays(1); [DONE]
+- resources: check if for some keys it follows both the std and the default locale [DONE]
+- stripTrailing and stripLeaders and stripIndent [DONE]
+- refresh iterator.next() [DONE]

@@ -8,7 +8,7 @@ import java.time.temporal.ChronoUnit;
 public class UseOfLocalDate {
 
   public static void main(String[] args) {
-    new UseOfLocalDate().is2024LapYear();
+    new UseOfLocalDate().chainOf();
   }
 
   void manipulatingDates() {
@@ -52,6 +52,17 @@ public class UseOfLocalDate {
     //throws an exception
     //: Invalid date 'February 29' as '2023' is not a leap year
     LocalDate lapDate2023 = LocalDate.of(2023, Month.FEBRUARY, 29);
+  }
+
+  /**
+   * I can concatenate plus and minus on the original date.
+   */
+  void chainOf() {
+    var date = LocalDate.of(2022, Month.AUGUST, 24)
+        .plusYears(1)
+        .minusDays(1)
+        .minusMonths(2);
+    System.out.println(date);  //2023-06-23
   }
 
 }
