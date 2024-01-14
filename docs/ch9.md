@@ -94,6 +94,15 @@ int compareTo(T o1);
 [API Deque](../src/main/java/org/enricogiurin/ocp17/book/ch9/UsageOfDeque.java)
 
 ```java
+    //The offer() method inserts an element at the end of the queue
+    Deque<String> q = new ArrayDeque<>();
+    q.offer("dog"); // [dog]
+    q.offer("cat"); // [dog, cat]
+    q.offer("bunny"); // [dog, cat, bunny]
+    System.out.print(q.peek() + " " + q.size()); // dog 3
+```
+
+```java
 public interface Deque<E> extends Queue<E> {/**/}
 ```
 

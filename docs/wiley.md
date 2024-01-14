@@ -60,3 +60,4 @@ so they must be initialized with a value when they are declared.  [DONE]
 - instantiate nested static class [DONE]
 - review textblock and backslash [PARTIALLY DONE]
 - review -g vars NPE  [DONE]
+- [NIO} refresh resolve/relativize 

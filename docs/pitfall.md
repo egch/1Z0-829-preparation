@@ -1,7 +1,7 @@
 # Pitfalls and Tips
 ## Watch out
 - **case** is a reserved keyword in java
-- mind the **IOException** when you use try with resources*
+- mind the **IOException** when you use try with resources
 - JDBC: PreparedStatement will use the existing parameter set if you don’t replace it.
 - Mind the type used in lambda, there ain't auto boxing. 
 
@@ -44,7 +44,8 @@ across all threads and processes, while the synchronized classes do not.
 ## check
 - `switch` expression: You CANNOT use `return`;
 - you need the `case` within a `switch`
-
+## Collection
+- Deque<String> deque. offer() insert element at the end of the queue
 
 ## Interfaces
 - default method: `Plant.super.leaves()` NOT ~~super.Plant.leaves()~~
@@ -52,7 +53,7 @@ across all threads and processes, while the synchronized classes do not.
 - if there is an abstract method  makes sure the class is declared `abstract`.
 ### Nested Classes
 - A local class can access only **final** and **effectively final** local variables
-- anonymous class needs to have semicolon at the end.
+- anonymous class needs to have **semicolon** at the end.!!!!!
 ## Exception
 - Check if the variable for the exception, **e**, is not already defined
 - check that main throws the checked exception declared in the method
