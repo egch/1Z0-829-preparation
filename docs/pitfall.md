@@ -35,10 +35,12 @@ across all threads and processes, while the synchronized classes do not.
 ## Various
 - check if a field is final in the code
 - `enum`: check if the constructor is private, or protected!
-
 - `instanceOf` : a class can always be an instance of an Interface, so the instanceOf in that case is allowed. !!!!
 - variable names: `_` can be allowed but not as a char single: `var _` does not compile
 - in the setX() check there is this.x=x
+- multilines: check if a variable hasn't been used previously
+## Class Design
+- an instance variable final either is initialized in the constructor or in the code
 ## check
 - `switch` expression: You CANNOT use `return`;
 - you need the `case` within a `switch`

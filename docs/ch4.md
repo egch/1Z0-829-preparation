@@ -50,6 +50,15 @@ $20 ==> "ab"
 jshell> s1==s3
 $21 ==> false
 ```
+## StringBuilder
+### setLength
+```java
+    var sb = new StringBuilder("0123456789");
+    sb.setLength(5);
+    System.out.println(sb);  //01234
+```
+[StringBuilder Methods](../src/main/java/org/enricogiurin/ocp17/book/ch4/UsageOfStringBuilder.java)
+
 ## Arrays
 ```jshelllanguage
 jshell> int[] array = new int[]{1,2,3}

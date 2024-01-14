@@ -3,7 +3,7 @@ package org.enricogiurin.ocp17.book.ch4;
 public class UsageOfStringBuilder {
 
   public static void main(String[] args) {
-    new UsageOfStringBuilder().deleteInDoWhile();
+    new UsageOfStringBuilder().setLength();
   }
 
   void notEfficient() {
@@ -71,6 +71,13 @@ public class UsageOfStringBuilder {
     StringBuilder sb = new StringBuilder("0123456789");
     sb.reverse();
     System.out.println(sb);
+  }
+
+  void setLength() {
+    var sb = new StringBuilder("0123456789");
+    System.out.println(sb); //0123456789
+    sb.setLength(5);
+    System.out.println(sb);  //01234
   }
 
 
