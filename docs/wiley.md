@@ -60,4 +60,11 @@ so they must be initialized with a value when they are declared.  [DONE]
 - instantiate nested static class [DONE]
 - review textblock and backslash [PARTIALLY DONE]
 - review -g vars NPE  [DONE]
-- [NIO} refresh resolve/relativize 
+- NIO refresh resolve/relativize [DONE]
+- In an unnamed module, a sealed class must include all its subclasses within the same package [DONE]
+- doubt: long method(int x){return x;} [DONE]
+- review method primitive vararg call [DONE]
+- invokeAny(List<Callable<T>> list) returns T (not future) [DONE]
+
+- ToDoubleBiFunction [DONE]
+- Character.valueOf('x').byteValue();  [DONE]

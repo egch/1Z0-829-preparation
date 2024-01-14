@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch5;
+package org.enricogiurin.ocp17.book.ch5.overloading;
 
 public class MethodMatchingOverloading {
 

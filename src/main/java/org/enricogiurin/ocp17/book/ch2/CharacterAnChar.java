@@ -32,4 +32,15 @@ public class CharacterAnChar {
     System.out.println(delta);  //25
   }
 
+  /**
+   * Character is not a numeric type and therefore doesn’t supply a byteValue() or intValue method method.
+   */
+  void methodsOfCharacter() {
+    Character a = Character.valueOf('a');
+    char c = a.charValue();
+    //there ain't intValue()
+    //a.intValue()  //does not compile!
+
+  }
+
 }

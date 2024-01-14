@@ -5,7 +5,7 @@ import java.util.function.ToDoubleBiFunction;
 public class UsageOfToDoubleBiFunction {
 
   public static void main(String[] args) {
-    new UsageOfToDoubleBiFunction().average();
+    new UsageOfToDoubleBiFunction().anonymous();
   }
 
   void usage() {
@@ -23,6 +23,17 @@ public class UsageOfToDoubleBiFunction {
         (double) points / races;
     double result = toDoubleBiFunction.applyAsDouble(56, 12);
     System.out.println(result);
+  }
+
+  void anonymous() {
+    ToDoubleBiFunction<String, String> toDoubleBiFunction = new ToDoubleBiFunction<>() {
+      @Override
+      public double applyAsDouble(String s1, String s2) {
+        return Math.max(s1.length(), s2.length());
+      }
+    };
+    double result = toDoubleBiFunction.applyAsDouble("hello", "Zurich");
+    System.out.println(result);  //6.0
   }
 
 }

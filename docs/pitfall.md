@@ -10,6 +10,7 @@
 - mark, check if the stream supports mark: `inputStream.markSupported()`
 - What I/O classes to use? Reader/Writer for text, Stream for primitives and String values
 - Check if the `System.out` or `System.err` is closed within the try-with-resource
+- relativize needs both Path to be either absolute or relative
 
 
 ## Concurrency
