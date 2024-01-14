@@ -1,7 +1,5 @@
 # Lambdas and Functional Interfaces
 
-
-
 ## Lambda
 ### Lambda & var - I can't assign a lambda to a var
 **I can't assign a lambda to a var!!!!**  
@@ -87,6 +85,16 @@ abstract method test.
 | `BiPredicate<T, U>`   | `boolean test(T t, U u)` |
 | `BiConsumer<T, U>`    | `void accept(T t, U u)`  |
 | `BiFunction<T, U, R>` | `R apply(T t, U u)`      |
+
+### built-in functional interfaces.
+#### With obj
+Object is abbreviated to `Obj` in the built-in functional interfaces.
+
+Some from the `java.util.function` package:
+- `ObjIntConsumer<T>`
+- `ObjDoubleConsumer<T>`
+- `ObjLongConsumer<T>`
+
 
 ### Functional Interfaces for Primitives
 #### BooleanSupplier & others

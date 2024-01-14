@@ -40,6 +40,7 @@ across all threads and processes, while the synchronized classes do not.
 - variable names: `_` can be allowed but not as a char single: `var _` does not compile
 - in the setX() check there is this.x=x
 - multilines: check if a variable hasn't been used previously
+- mind the curley brackets in the do/while 
 ## Class Design
 - an instance variable final either is initialized in the constructor or in the code
 ## check

@@ -1,11 +1,11 @@
-package org.enricogiurin.ocp17.book.ch8.functionalinterface.jdk.primitive;
+package org.enricogiurin.ocp17.book.ch8.functionalinterface.jdk.primitive.mixed;
 
 import java.util.function.ObjDoubleConsumer;
 
-public class UseOfObjDoubleConsumer {
+public class UsageOfObjDoubleConsumer {
 
   public static void main(String[] args) {
-    new UseOfObjDoubleConsumer().use();
+    new UsageOfObjDoubleConsumer().use();
   }
 
   void use() {
