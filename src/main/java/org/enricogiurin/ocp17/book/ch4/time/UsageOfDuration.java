@@ -47,6 +47,10 @@ public class UsageOfDuration {
     System.out.println(seconds);
     //no methods such as getHours, getMinutes, getDays
 
+    //Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported unit: Days
+    long days = duration.get(ChronoUnit.DAYS);
+    System.out.println(days);
+
   }
 
   void invalidDuration() {
@@ -61,14 +65,14 @@ public class UsageOfDuration {
   void durationWithLocalDate() {
     //Duration is supposed to be used with objects that contain times.
     LocalDate now = LocalDate.now();
-    //Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported unit: Seconds
-    //I cannot use Duration with LocalDate
     Duration d1D = Duration.ofDays(1L);
     System.out.println(d1D); //PT24H
+    //Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported unit: Seconds
+    //I cannot use Duration with LocalDate
     LocalDate then = now.plus(d1D);
     System.out.println(then);
-
   }
+
 
 
 }

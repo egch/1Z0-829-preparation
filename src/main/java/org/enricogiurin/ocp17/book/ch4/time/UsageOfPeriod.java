@@ -36,7 +36,7 @@ public class UsageOfPeriod {
     int months = period.getMonths();
     int years = period.getYears();
     System.out.println("days: " + days + " months: " + months + " years: " + years);
-    //no methods such as getHours, getMinutes, getDays
+    //no methods such as getHours, getMinutes, getSeconds()
 
   }
 
