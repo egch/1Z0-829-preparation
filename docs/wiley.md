@@ -68,3 +68,5 @@ so they must be initialized with a value when they are declared.  [DONE]
 
 - ToDoubleBiFunction [DONE]
 - Character.valueOf('x').byteValue();  [DONE]
+
+- java --show-module-resolution (module) [DONE]
