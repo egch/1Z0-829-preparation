@@ -13,6 +13,8 @@ public class UsageOfRecord {
 record Person(String firstName, String lastName) {
 
   static int cnt = 0;
+  //Instance field is not allowed in record
+ // final int x = 0;  //does not compile!
 
   static void printHello() {
     System.out.println("hello");

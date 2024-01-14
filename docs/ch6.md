@@ -146,6 +146,5 @@ Polymorphism and overriding do not apply to instance variables.
   static final void ciao() {
     System.out.println("ciao");
   }
-
 ```
 The static method ciao() is marked final, so it cannot be hidden in the subclass.
