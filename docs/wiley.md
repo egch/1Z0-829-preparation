@@ -72,3 +72,8 @@ so they must be initialized with a value when they are declared.  [DONE]
 - java --show-module-resolution (module) [DONE]
 
 - prctice with textblocks
+- Instant can only add days or smaller [DONE]
+- refresh indent, stripIndent, strip
+- BufferedWriter is a wrapper class that requires an instance of Writer to operate on. Since FileOutputStream does not inherit Writer,
+- sealed interfaces
+-  <R> Stream<R> map(Function<? super T, ? extends R> mapper);

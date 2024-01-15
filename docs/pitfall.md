@@ -52,7 +52,7 @@ across all threads and processes, while the synchronized classes do not.
 ## Interfaces
 - default method: `Plant.super.leaves()` NOT ~~super.Plant.leaves()~~
 ## Classes
-- if there is an abstract method  makes sure the class is declared `abstract`.
+- if there is an abstract method  makes sure the class is declared `abstract`.!!!!
 ### Nested Classes
 - A local class can access only **final** and **effectively final** local variables
 - anonymous class needs to have **semicolon** at the end.!!!!!

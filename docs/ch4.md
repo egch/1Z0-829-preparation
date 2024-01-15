@@ -5,15 +5,17 @@
 2. If either operand is a String, `+` means concatenation. 
 3. The expression is evaluated left to right.
 ### String strip
-```jshelllanguage
-jshell> String s = "  01234   "
-        s ==> "  01234   "
-        jshell> var s1 = s.strip()
-        s1 ==> "01234"  //remove leading & trailing spaces
-        jshell> var s2=s.stripLeading()
-        s2 ==> "01234   " //remove leading spaces
-        jshell> var s3 = s.stripTrailing()
-        s3 ==> "  01234"  //remove trailing spaces
+Whitespace consists of spaces along with the `\t` (tab) and `\n` (newline) characters.
+```java
+String s = "  01234   ";
+//remove leading & trailing spaces
+var s1 = s.strip();  // "01234" 
+
+//remove leading spaces
+var s2=s.stripLeading();  // "01234   "
+
+//remove trailing spaces
+var s3 = s.stripTrailing(); // "  01234"
 ```
 ### CharSequence
 Both **String** and **StringBuilder** implement _CharSequence_.
@@ -195,6 +197,18 @@ Instant instantZRH = zdtZurich.toInstant();
 Instant now = Instant.now();
 ```
 [Instant](../src/main/java/org/enricogiurin/ocp17/book/ch4/time/UsageOfInstant.java)
+
+#### plus
+While an Instant represents a specific moment in time using GMT, Java only allows adding or removing units of DAYS or smaller.
+```java
+    Instant now = Instant.now();
+    Instant then = now.plus(1, ChronoUnit.DAYS); //    //2024-01-08T07:47:52.101744Z
+
+    //adding a year - throws an exception
+    //Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported unit: Years
+    Instant inOneYear = now.plus(1, ChronoUnit.YEARS);
+```
+
 ## Converting String to number
 ```java 
 //  this method returns a primitive long
