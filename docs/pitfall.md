@@ -12,6 +12,9 @@
 - Check if the `System.out` or `System.err` is closed within the try-with-resource
 - relativize needs both Path to be either absolute or relative
 
+## Localization
+- there ain't ~~DateFormatter~~ only `DateTimeFormatter`
+
 
 ## Concurrency
 - the Concurrent classes order read/write access such that access to the class is consistent 
@@ -33,6 +36,8 @@ across all threads and processes, while the synchronized classes do not.
 - `var x = ()->"hello"` does not compile! - **you cannot assign a lambda to a var**
 - check the right symbol! it's -> NOT =>
 - check lambda does not throw a Checked exception
+## FunctionalInterface
+- `IntUnaryOperator` is not with generics. So this does not compile: ~~IntUnaryOperator<String>~~
 
 ## Various
 - check if a field is final in the code

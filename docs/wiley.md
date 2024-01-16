@@ -82,4 +82,6 @@ so they must be initialized with a value when they are declared.  [DONE]
 
 - refresh findAny() : [DONE]
 
+- toAbsolutePath() does not throw a checked exception 
+
 
