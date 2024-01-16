@@ -49,6 +49,10 @@ across all threads and processes, while the synchronized classes do not.
 - multilines: check if a variable hasn't been used previously
 - mind the curley brackets in the do/while 
 - Local variable type inference requires a value so that the type can be inferred. `var x;`  //does not compile
+- Arrays Sort String (natural order)
+     1. Numbers
+     2. Uppercase
+     3. Lowercase
 
 ## Class Design
 - an instance variable final either is initialized in the constructor or in the code

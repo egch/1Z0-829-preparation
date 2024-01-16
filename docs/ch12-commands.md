@@ -60,7 +60,7 @@ The jdeps command lists information about dependencies within a module.
 $ jdeps –s zoo.animal.puppy.jar 
 ```
 * `-s` / `-summary` - Summarizes output
-* `--jdk-internals` / `-jdkinternals` - Lists uses of internal APIscd
+* `--jdk-internals` / `-jdkinternals` - The jdeps -jdkinternals option includes analysis of dependencies on JDK internal APIs
 #### Screenshot jdeps commands
 
 ![jdeps.png](images/jdeps.png)
