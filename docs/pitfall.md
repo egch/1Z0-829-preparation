@@ -16,7 +16,7 @@
 ## Concurrency
 - the Concurrent classes order read/write access such that access to the class is consistent 
 across all threads and processes, while the synchronized classes do not. 
-- `Future.get()` throws  `InterruptedException` and a  `ExecutionException`, and they block execution 
+- `Future.get()` throws  `InterruptedException` and a  `ExecutionException`, and they block execution !!!!!!
 - scheduled methods: `newScheduledThreadPool(10)`/`newSingleThreadScheduledExecutor()`
 - when the method is `synchronized`, check if it's static or instance
 
@@ -27,6 +27,7 @@ across all threads and processes, while the synchronized classes do not.
 - `Optional.orElseThrow()`
 - check if there is more than one terminal operation
 - Names: Source / Intermediate operation / Terminal operation. ~~Not Origin~~ !
+- Mind `forEach(System.out::println)`; not ~~forEach(System.out.println);~~
 
 ## Lambda
 - `var x = ()->"hello"` does not compile! - **you cannot assign a lambda to a var**

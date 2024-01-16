@@ -73,7 +73,13 @@ so they must be initialized with a value when they are declared.  [DONE]
 
 - prctice with textblocks
 - Instant can only add days or smaller [DONE]
-- refresh indent, stripIndent, strip
-- BufferedWriter is a wrapper class that requires an instance of Writer to operate on. Since FileOutputStream does not inherit Writer,
-- sealed interfaces
--  <R> Stream<R> map(Function<? super T, ? extends R> mapper);
+- refresh indent, stripIndent, strip [DONE BUT NOT CLEAR]
+- BufferedWriter [DONE]
+
+- refresh javac command options [DONE]
+
+- Set.copyOf(list) [DONE]
+
+- refresh findAny() : [DONE]
+
+

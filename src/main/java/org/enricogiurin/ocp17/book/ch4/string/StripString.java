@@ -6,15 +6,12 @@ public class StripString {
 
   public static void main(String[] args) {
     StripString instance = new StripString();
-    instance.strip();
-    instance.stripIndent();
-    instance.stripLeading();
-    instance.stripTrailing();
+    instance.strip2();
+
   }
   static final char space = '\u0020';
   static final String original = space+"12345"+space;
   void strip() {
-
     String strip = original.strip();
     //before: # 12345 # - after: #12345#
     System.out.println("before: %s - after: %s".formatted(wrap(original), wrap(strip)));
@@ -36,7 +33,19 @@ public class StripString {
     String stripTrailing = original.stripTrailing();
     //before: # 12345 # - after: # 12345#
     System.out.println("before: %s - after: %s".formatted(wrap(original), wrap(stripTrailing)));
+  }
 
+  void strip2() {
+    String text = "\t   a b c\n";
+    //<	   a b c
+    //>
+    System.out.println(wrap(text));
+    var strip = text.strip();
+    //<a b c>
+    System.out.println(wrap(strip));
+
+    strip = text.stripIndent();
+    System.out.println(wrap(strip));
 
   }
 

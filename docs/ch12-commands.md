@@ -5,6 +5,8 @@ Extended Form
 ```shell
 javac --module-path mods -d feeding feeding/zoo/animal/feeding/*.java feeding/module-info.java
 ```
+The `-d `option is used to specify the destination directory for the compiled Java class files.
+
 Abbreviated Form
 ```shell
 javac -p mods -d feeding feeding/zoo/animal/feeding/*.java feeding/module-info.java

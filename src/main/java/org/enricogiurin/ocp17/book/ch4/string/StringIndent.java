@@ -1,9 +1,11 @@
 package org.enricogiurin.ocp17.book.ch4.string;
 
+import static org.enricogiurin.ocp17.various.helper.TextHelper.wrap;
+
 public class StringIndent {
 
   public static void main(String[] args) {
-    new StringIndent().stripIndent();
+    new StringIndent().stripIndent2();
   }
 
 
@@ -58,6 +60,29 @@ public class StringIndent {
     System.out.println("\nStripped Text:");
     System.out.println(stripped);
     System.out.println("length: " + stripped.length()); //6
+  }
+
+  void stripIndent2() {
+    var text = " a\n"
+             + "       b\n"
+             + " c";
+
+    /*
+< a
+       b
+ c>
+     */
+    System.out.println("Original Text:");
+    System.out.println(wrap(text));
+    var strippedText = text.stripIndent();
+
+    System.out.println("\nStripped Text:");
+    /*
+<a
+      b
+c>
+     */
+    System.out.println(wrap(strippedText));
   }
 
 
