@@ -49,8 +49,6 @@ public class MethodsOfList {
     System.out.println("size is " + arrayOfString.length);  //size is 3
     //here we have 10 as passed in the argument
     System.out.println("size is " + arrayOfString2.length);  //size is 10
-
-
   }
 
 

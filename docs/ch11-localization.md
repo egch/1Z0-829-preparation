@@ -60,6 +60,7 @@ double amount = 12.3D;
 Locale.setDefault(Locale.US);
 Locale.setDefault(Category.FORMAT, Locale.ITALY);
 Locale.setDefault(Category.DISPLAY, Locale.UK);
+//  For this reason, the ITALY locale is used to format the data with the €
 System.out.print(NumberFormat.getCurrencyInstance()
     .format(amount));  //12,30 €
 ```

@@ -4,12 +4,13 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.time.temporal.ChronoUnit;
 
 public class UsageOfDuration {
 
   public static void main(String[] args) {
-    new UsageOfDuration().durationWithLocalDate();
+    new UsageOfDuration().durationVsPeriodWithLocalDate();
   }
 
   void between() {
@@ -71,6 +72,16 @@ public class UsageOfDuration {
     //I cannot use Duration with LocalDate
     LocalDate then = now.plus(d1D);
     System.out.println(then);
+  }
+
+  void durationVsPeriodWithLocalDate() {
+    var date = LocalDate.of(2023, 1, 21);
+    var period = Period.ofDays(1);
+    var days = Duration.ofDays(1);
+    System.out.println(date.plus(period));   // 2023-01-22
+    // Unsupported unit: Seconds
+    //I can use Duration with LocalDate
+    System.out.println(date.plus(days));
   }
 
 

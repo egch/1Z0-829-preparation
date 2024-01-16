@@ -33,7 +33,6 @@ List<? extends Number> listOfInteger = new ArrayList<>();
 ```
 We cannot add an element to a list declared s upper bounded wildcards!
 
-
 ### Lower-Bounded wildcards
 
 ```java
@@ -72,6 +71,16 @@ Comparator<Integer> comparator = (n1,n2)->n1-n2;
 TreeSet<Integer> set1 = new TreeSet<>(comparator);
 TreeSet<Integer> set2 = new TreeSet<>(Set.of(1, 2, 3));
 ````
+
+### List
+remove - mind the overloading of `remove()`
+```java
+//this remove the element at index 2, because here we call remove(int index)
+list.remove(2); //[5,3,1]
+//this removes element 1 as here we call remove(Object obj)
+list.remove(Integer.valueOf(1)); //[5, 3]
+```
+[Overloading of remove](../src/main/java/org/enricogiurin/ocp17/book/ch9/RemoveFromList.java)
 
 ### Comparator
 package: java.util

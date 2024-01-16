@@ -3,7 +3,9 @@ package org.enricogiurin.ocp17.book.ch4.string;
 public class TranslatingEscapes {
 
   public static void main(String[] args) {
-    new TranslatingEscapes().translateNL();
+    TranslatingEscapes instance = new TranslatingEscapes();
+    instance.translating();
+    instance.translateNL();
   }
 
   void translating() {

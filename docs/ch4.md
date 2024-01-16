@@ -171,6 +171,16 @@ $54 ==> PT210769H37S
 #### toString
 PT24H : starts with **PT**
 
+
+I can't use `Duration` with `LocalDate`!
+```java
+var date = LocalDate.of(2023, 1, 21);
+var days = Duration.ofDays(1);
+// Unsupported unit: Seconds
+//I can NOT use Duration with LocalDate
+//Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported unit: Seconds    
+System.out.println(date.plus(days));    
+```
 ### Period
 ```java
 //Period does not chain. Only the last method is considered!
@@ -178,6 +188,7 @@ Period period = Period.ofYears(1).ofMonths(2).ofDays(1);
 System.out.println(period);  //P1D
 ```
 The `Period` class does not have methods such as `getSeconds()`, `getMinutes()`, `getHours()`.
+
 #### toString
 P1D : starts with **P**
 
@@ -238,13 +249,21 @@ It prints:
 ```
 
 ### translateEscapes
+`\n` - new line
 ```java
-  void translateNL() {
-    String source = "Today is\\nSaturday";
-    System.out.println(source); //Today is\nSaturday
+String source = "Today is\\nSaturday";
+System.out.println(source); //Today is\nSaturday
 
-    //Today is
-    //Saturday
-    System.out.println(source.translateEscapes());
-  }
+//Today is
+//Saturday
+System.out.println(source.translateEscapes());
 ```
+`\t` - tab
+```java
+String source = "1\\t2";
+//  1\t2
+System.out.println(source);
+//  1 2
+System.out.println(source.translateEscapes());
+```
+[translateEscapes](../src/main/java/org/enricogiurin/ocp17/book/ch4/string/TranslatingEscapes.java)
