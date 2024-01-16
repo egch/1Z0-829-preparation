@@ -141,3 +141,16 @@ Object object = new String("A");
 //this does not compile!
 // if(object instanceof null){}
 ```
+## Primitive types (CGPT)
+| Primitive Type | Size (in bits) | Signed/Unsigned | Range                                 |
+|-----------------|-----------------|------------------|---------------------------------------|
+| `byte`          | 8               | Signed           | -128 to 127                           |
+| `short`         | 16              | Signed           | -32,768 to 32,767                     |
+| `int`           | 32              | Signed           | -2^31 to 2^31 - 1                     |
+| `long`          | 64              | Signed           | -2^63 to 2^63 - 1                     |
+| `float`         | 32              | Signed           | IEEE 754 single-precision floating-point |
+| `double`        | 64              | Signed           | IEEE 754 double-precision floating-point |
+| `char`          | 16              | Unsigned         | 0 to 65,535 (Unicode characters)      |
+| `boolean`       | Not precisely defined1 | N/A            | `true` or `false`                     |
+
+1. The size of a `boolean` type is not precisely defined in terms of bits, as it depends on the JVM implementation. However, it is typically represented as a single byte.
