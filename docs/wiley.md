@@ -84,4 +84,22 @@ so they must be initialized with a value when they are declared.  [DONE]
 
 - toAbsolutePath() does not throw a checked exception 
 
+- review Locale.setDefault(Locale.US);
+  Locale.setDefault(Category.FORMAT, Locale.GERMANY);
+  Locale.setDefault(Category.DISPLAY, Locale.UK);
+  System.out.print(NumberFormat.getCurrencyInstance()
+  .format(6.95));
+
+16: pennies.remove(2);
+17: pennies.remove(Integer.valueOf(1));
+
+- var duration = Duration.ofDays(1);
+  var result = montyPythonDay.minus(duration);
+
+
+- System.out.println("cheetah\\ncub".translateEscapes()); (number lines)
+
+C. There is both essential and incidental whitespace.
+D. The code does not compile.
+
 

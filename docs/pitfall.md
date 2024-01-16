@@ -31,6 +31,7 @@ across all threads and processes, while the synchronized classes do not.
 - check if there is more than one terminal operation
 - Names: Source / Intermediate operation / Terminal operation. ~~Not Origin~~ !
 - Mind `forEach(System.out::println)`; not ~~forEach(System.out.println);~~
+- check if the stream ends with an Optional
 
 ## Lambda
 - `var x = ()->"hello"` does not compile! - **you cannot assign a lambda to a var**
