@@ -200,7 +200,7 @@ public enum Gender {
 }
 ```
 ### Constructors
-enum constructors are implicitly private.
+enum constructors are implicitly private.!
 ```java
   public SeasonWithValues(String description) {  //does not compile!
     this.description = description;

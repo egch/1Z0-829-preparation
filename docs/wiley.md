@@ -88,6 +88,7 @@ so they must be initialized with a value when they are declared.  [DONE]
 - overloading of `List.remove()` [DONE]
 - Duration with LocalDate [DONE]
 - translateEscapes() [DONE]
+- review enum [DONE]
 
 
 
