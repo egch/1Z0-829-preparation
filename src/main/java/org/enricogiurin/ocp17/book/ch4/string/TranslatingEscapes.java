@@ -6,6 +6,8 @@ public class TranslatingEscapes {
     TranslatingEscapes instance = new TranslatingEscapes();
     instance.translating();
     instance.translateNL();
+    System.out.println();
+    instance.multiLines();
   }
 
   void translating() {
@@ -33,6 +35,20 @@ public class TranslatingEscapes {
     //enrico is the\
     //best
     System.out.println(source.translateEscapes());
+  }
+
+  void multiLines() {
+     System.out.println("cheetah\ncub");
+     //cheetah
+     //cub
+     System.out.println("cheetah\\ncub");
+     //cheetah\ncub
+     System.out.println("cheetah\ncub".translateEscapes());
+     //cheetah
+     //cub
+     System.out.println("cheetah\\ncub".translateEscapes());
+     //cheetah
+      //cub
   }
 
 }
