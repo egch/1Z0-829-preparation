@@ -28,31 +28,6 @@ public class UserInput {
   }
 
 
-  //using console.readLine() we do not need to declare any
-  //checked exception
-  void console() {
-    Console console = System.console();
-    if (console != null) {
-      String input = console.readLine("Type your name: ");
-      System.out.println("your name is: " + input);
-      char[] pwd = console.readPassword("Type your pwd: ");
-      //not really secure this code :-)
-      System.out.println("your pwd is: " + new String(pwd));
-    }
-  }
-
-  //with this we throw the IOException
-  void console_reader() throws IOException {
-    Console console = System.console();
-    if(console==null) {
-      throw new RuntimeException("console is null");
-    }
-    System.out.print("Type your name: ");
-    Reader reader = console.reader();
-    BufferedReader bufferedReader = new BufferedReader(reader);
-    String line = bufferedReader.readLine();
-    System.out.println("your name is %s".formatted(line));
-  }
 
 
 }

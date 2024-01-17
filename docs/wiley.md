@@ -90,7 +90,9 @@ so they must be initialized with a value when they are declared.  [DONE]
 - translateEscapes() [DONE]
 - review enum [DONE]
 
-- jdeps -jdkinternals
+- jdeps -jdkinternals [PARTIALLY DONE]
+- console methods [DONE]
+- Jdeps requires mandate Java.base [REVIEW]
 
 
 
