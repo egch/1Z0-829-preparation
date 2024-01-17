@@ -31,8 +31,18 @@ public class PrimitivePromoted {
     var z = x + y;
     //z is an int
     System.out.println(z);
+  }
 
+  void floatAndDouble() {
+    float f = 5.0F;
+    double d = 5.0;
+    //I can assign a float to a double
+    double f2D = f;
+    //I cannot assign a double to a float
+    //float d2f = d;  //does not compile
 
+    //but with explicit cast I can
+    float d2fCast = (float)d;
   }
 
   void multiPromotion_steps() {

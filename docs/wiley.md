@@ -94,5 +94,8 @@ so they must be initialized with a value when they are declared.  [DONE]
 - console methods [DONE]
 - Jdeps requires mandate Java.base [REVIEW]
 
+- check mutual assignment float and double [DONE]
+- UnaryOperator [DONE]
+
 
 

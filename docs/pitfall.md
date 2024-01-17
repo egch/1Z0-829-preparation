@@ -36,8 +36,11 @@ across all threads and processes, while the synchronized classes do not.
 - `var x = ()->"hello"` does not compile! - **you cannot assign a lambda to a var**
 - check the right symbol! it's -> NOT =>
 - check lambda does not throw a Checked exception
+- mind the semicolon when you assign a variable lambda.
+    Example: Predicate<String> predicate = s->true;
 ## FunctionalInterface
 - `IntUnaryOperator` is not with generics. So this does not compile: ~~IntUnaryOperator<String>~~
+
 
 ## Various
 - check if a field is final in the code
@@ -53,6 +56,7 @@ across all threads and processes, while the synchronized classes do not.
      1. Numbers
      2. Uppercase
      3. Lowercase
+
 
 ## Class Design
 - an instance variable final either is initialized in the constructor or in the code

@@ -31,4 +31,9 @@ public class UsageOfUnaryOperator {
     System.out.println(hello); //HELLO
   }
 
+  void unaryOperatorWithoutGenerics() {
+    //If I do not specify the generics the type is Object
+    UnaryOperator up = (Object obj) -> obj;
+  }
+
 }
