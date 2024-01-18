@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
 public class UsageOfDeque {
 
   public static void main(String[] args) {
-    new UsageOfDeque().emptyDeque();
+    new UsageOfDeque().popVsPoll();
   }
 
   void methodWithoutException() {
@@ -57,6 +57,14 @@ public class UsageOfDeque {
     stack.pop(); //[]
     peek = stack.peek();
     System.out.println(peek);  //null
+  }
+
+  void popVsPoll() {
+    Deque<String> stack = new LinkedList<>();
+    String result = stack.poll();  //this returns null
+    System.out.println(result); //null
+    //Exception in thread "main" java.util.NoSuchElementException
+    String pop = stack.pop();
   }
 
   void arrayDequeue() {

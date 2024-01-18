@@ -71,8 +71,10 @@ Mind that extends come before implements!
 class Jaguar extends Feline implements Run {...}
 ```
 
-## Override instance vs static methods
+### Override instance vs static methods
 Instance method cannot override static method 
+
+[Extends with static methods](../src/main/java/org/enricogiurin/ocp17/book/ch6/TrickyHidingStaticMethods.java)
 
 ### Override/Overload private methods - wrong
 There is no override/overload when the method in the parent class is marked private.

@@ -91,6 +91,11 @@ package: java.util
 ```java
 int compare(T o1, T o2);
 ```
+#### reversed
+```java
+Comparator<T> reversed()
+```
+Returns a comparator that imposes the reverse ordering of this comparator.
 
 ### Comparable
 package: java.lang
@@ -104,20 +109,29 @@ int compareTo(T o1);
 ### Deque
 ![Deque](images/Deque.png)
 
-[API Deque](../src/main/java/org/enricogiurin/ocp17/book/ch9/UsageOfDeque.java)
+[Example Deque](../src/main/java/org/enricogiurin/ocp17/book/ch9/UsageOfDeque.java)
 
 ```java
-    //The offer() method inserts an element at the end of the queue
-    Deque<String> q = new ArrayDeque<>();
-    q.offer("dog"); // [dog]
-    q.offer("cat"); // [dog, cat]
-    q.offer("bunny"); // [dog, cat, bunny]
-    System.out.print(q.peek() + " " + q.size()); // dog 3
+//The offer() method inserts an element at the end of the queue
+Deque<String> q = new ArrayDeque<>();
+q.offer("dog"); // [dog]
+q.offer("cat"); // [dog, cat]
+q.offer("bunny"); // [dog, cat, bunny]
+System.out.print(q.peek() + " " + q.size()); // dog 3
 ```
 
 ```java
 public interface Deque<E> extends Queue<E> {/**/}
 ```
+#### pop() vs poll()
+```java
+Deque<String> stack = new LinkedList<>();  //empty deque
+String result = stack.poll();  //this returns null
+System.out.println(result); //null
+//Exception in thread "main" java.util.NoSuchElementException
+String pop = stack.pop();
+```
+
 
 ### Map
 #### foreach

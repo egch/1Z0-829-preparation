@@ -97,5 +97,10 @@ so they must be initialized with a value when they are declared.  [DONE]
 - check mutual assignment float and double [DONE]
 - UnaryOperator [DONE]
 
+- stored procedure out parameter/execute: registerOutParameter [DONE]
+- parallel stream and ordered 
+- method static there is not polymorphism [DONE]
+- Comparator.comparing((String s) -˃ s.charAt(0)).reversed() NOT reverse [DONE]
+- Queue.poll() returns null if no element are present,/ removeFirst throws an exception [DONE]
 
 

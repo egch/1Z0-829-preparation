@@ -44,8 +44,8 @@ public class HidingStaticMethods {
   }
 
   public static void main(String[] args) {
-    Mammal.sleep();
-    Whale.sleep();
+    Mammal.sleep();  //The Mammal is sleeping
+    Whale.sleep();  //The Whale is sleeping
   }
 
 }

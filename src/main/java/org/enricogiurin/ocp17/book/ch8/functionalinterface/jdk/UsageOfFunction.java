@@ -27,7 +27,13 @@ public class UsageOfFunction {
     BiFunction<Integer, Integer, Integer> bf1 = (var x, var y) -> 5;
     BiFunction<Integer, Integer, Integer> bf2 = (Integer x, Integer y) -> 5;
     IntBinaryOperator intBinaryOperator = (int x, int y) -> 5;
+  }
 
+  void biFunctionWithDouble() {
+    //this does not compile
+    //while an int(primitive) can be assigned to a double, an int cannot be assigned to a Double (wrapper)
+    //BiFunction<Integer, Integer, Double> biFunction = (s, p)->s+p;  //does not compile
 
+    BiFunction<Integer, Double, Double> biFunction = (s, p) -> s + p;  //this compiles!
   }
 }
