@@ -8,6 +8,17 @@ void compare(Number number) {
    }
 }
 ```
+
+```java
+void firstIfFalse(Object object) {
+    if(!(object instanceof String s)){
+      //here then s is NOT a String
+      return;
+    }
+    //then here it is!. Mind the return first if
+    System.out.println("length of string: "+s.length());
+}
+```
 ### Pattern Matching - interface
 The compiler can't definitively state that t is not a List. 
 Some future program could create a subclass of `Throwable` that does implement `List`.
@@ -37,7 +48,21 @@ The value of a case statement must be one of these:
         case aConstant:  //ok - constant
         case aValue: //does not compile, not final
     }
+```
+WARNING: You always need the `case`, a part in the `default` case.
 
+Multi case
+```java
+  void workOrChillOut(DayOfWeek day) {
+    //with the new switch, I can have multiple cases in the same line
+    switch (day) {
+      case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY:
+        System.out.println("You have to work!");
+        break;
+      default:
+        System.out.println("Enjoy your weekend!");
+    }
+  }
 ```
 ### Switch supported types
  - int,byte, short, char

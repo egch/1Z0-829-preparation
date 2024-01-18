@@ -81,22 +81,35 @@ int[] array2 = new int[]{1, 4}; //here I specify the values
 // array creation with both dimension expression and initialization is illegal
 //int[] array3 = new int[2]{1,2}; //does not compile!
 ```
+
+#### Multi dimensional array
+```java
+    int[][] a3D[], a2D;
+    a3D = new int[2][2][2];  //3D array
+    a2D = new int[3][3];  //2D array
+```
+
+```java
+int[][] matrix = new int[][]{{1,2}, {3}};
+int[][] matrix2 = new int[2][1];
+int[][] matrix3 = {{1,2}, {3}};
+
+//int[][] matrix4 = new int[2][1]{{1,2}, {3}};  //does not compile
+```
 [Multi Dimensional Array](../src/main/java/org/enricogiurin/ocp17/book/ch4/array/MultiDimensionalArray.java)
 
 ### mismatch
-```jshelllanguage
-jshell> int[] arrayA = {1,2}
-arrayA ==> int[2] { 1, 2 }
-
-jshell> int[] arrayB = {1,3}
-arrayB ==> int[2] { 1, 3 }
-
-jshell> Arrays.mismatch(arrayA, arrayB)
-$35 ==> 1  //1 is the first position in which arrayA & arrayB differs
+```java
+    String[] s1 = {"Camel", "Peacock", "Llama"};
+    String[] s2 = {"Camel", "Llama", "Peacock"};
+    String[] s3 = {"Camel", "Llama", "Peacock"};
+    int position = Arrays.mismatch(s1, s2); //first element to differ is at position 1
+    System.out.println(position);     //1
+    position = Arrays.mismatch(s2, s3); //they are identical then return -1
+    System.out.println(position);     //-1
 ```
 ### compare
 ```java
-void compare() {
     int[] array1 = {1, 3, 5};
     int[] array2 = {1, 3, 5};
     int[] array3 = {1, 5, 5};
@@ -107,7 +120,6 @@ void compare() {
     //In this case, we get a negative number because 3 is smaller than 5
     result = Arrays.compare(array1, array3);
     System.out.println(result);  //-1
-}
 ```
 ### Arrays Sort String (natural order)
 1. Numbers
@@ -126,12 +138,9 @@ System.out.println(position);  //-3
 ```
 ## Math
 ### floor & ceil
-```jshelllanguage
-jshell> double floor = Math.floor(3.8)
-floor ==> 3.0  //double
-
-jshell> double ceil = Math.ceil(3.8)
-ceil ==> 4.0  //double
+```java
+double floor = Math.floor(3.8); // 3.0
+double ceil = Math.ceil(3.8); // 8.0
 ```
 
 ### round
@@ -145,19 +154,15 @@ long round = Math.round(5.2D); //5
 double pow = Math.pow(4.0, 2.0); //16.0
 ```
 ## Dates & Times
-```jshelllanguage
-jshell> java.time.LocalDateTime.now()
-$48 ==> 2023-05-14T19:56:29.738748
-
-jshell> java.time.ZonedDateTime.now()
-$49 ==> 2023-05-14T19:56:46.627004+02:00[Europe/Zurich]
+```java
+LocalDateTime.now(); //2023-05-14T19:56:29.738748
+ZonedDateTime.now(); //2023-05-14T19:56:46.627004+02:00[Europe/Zurich]
 ```
 ### ZonedDateTime
 ```shell
 2021–10–25T09:13:07.769–05:00[America/New_York]
 
 2023-12-16T14:30:00.000-05:00[America/New_York]
-
 ```
 ### GMT vs UTC
 - GMT - Greenwich Mean Time
@@ -203,9 +208,8 @@ YYYY-MM-DDTHH:mm:ss.SSSZ
 ```java
 //from ZonedDateTime
 Instant instantZRH = zdtZurich.toInstant();
-
 //with now()
-Instant now = Instant.now();
+Instant now = Instant.now();  //2024-01-18T11:02:16.628552400Z
 ```
 [Instant](../src/main/java/org/enricogiurin/ocp17/book/ch4/time/UsageOfInstant.java)
 

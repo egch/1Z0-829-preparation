@@ -1,16 +1,11 @@
 # Methods
 ## Autoboxing
 ### Failing cases
-```jshelllanguage
-jshell> long p = 8
-p ==> 8
-
-jshell> Long wrapper = 8
-|  Error:
-|  incompatible types: int cannot be converted to java.lang.Long
-|  Long wrapper = 8;
-|                 ^
-
+```java
+long p = 8;
+Long pw = 8L;
+// incompatible types: int cannot be converted to java.lang.Long
+Long pw2 = 8;  //does NOT compile
 ```
 ## final
 ```java
@@ -93,4 +88,4 @@ void print(Float f);
 print(2F); //this calls the method print(double d)
 
 ```
-[Overloading primitives](../src/main/java/org/enricogiurin/ocp17/book/ch5/MethodMatchingOverloading.java)
+[Overloading primitives](../src/main/java/org/enricogiurin/ocp17/book/ch5/overloading/MethodMatchingOverloading.java)

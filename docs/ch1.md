@@ -42,6 +42,11 @@ class WrongVar {
     void local() {
         var y = "ciao"; //does compile!
     }
+
+//does not compile: var can only be used as local variable
+   int varAsArgument(var x){
+        return 0;  //does NOT compile!
+    }
 }
 ```
 ### var not a reserved key
@@ -70,6 +75,9 @@ In this case will be used class from the package _fruits_ as:
 
 ## Text Blocks
 <img src="images/TextBlocks.png" alt="Text Blocks" width="40%">
+
+Incidental whitespace just happens to be there to make the code easier to read. 
+You can reformat your code and change the amount of incidental whitespace without any impact on your String value.
 
 
 [Text Blocks](../src/main/java/org/enricogiurin/ocp17/book/ch1/TextBlocks.java)

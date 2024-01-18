@@ -37,7 +37,6 @@ We cannot add an element to a list declared s upper bounded wildcards!
 
 ```java
 List<? super IOException> exceptions = new ArrayList<Exception>();
-
 exceptions.add(new IOException("error"));// yes we can add it
 exceptions.add(new FileNotFoundException("error"));// yes we can add it
 
@@ -46,13 +45,18 @@ exceptions.add(new FileNotFoundException("error"));// yes we can add it
 ```
 We can only add element whose type is **IOException** or one of its children.
 
+```java
+//List<? super IOException> ioExceptions = new ArrayList<FileNotFoundException>();  //does NOT compile
+List<? super IOException> ioExceptions = new ArrayList<Exception>();  //compiles
+```
+
 [Example wildcard](../src/main/java/org/enricogiurin/ocp17/book/ch9/generics/CollectionsOfGenericsWithWildcard.java)
 ## Collections
 ### Immutable Collections
 ```java
 List<String> list = List.of("a", "b");
-Set<String> set = Set.of("a", "b");
-List<String> listCopyOf = List.copyOf(list);
+Set<String> set = Set.of("a", "b");  //accepts a vararg
+List<String> listCopyOf = List.copyOf(list);  //accepts a Collection
 List<String> listCopyOfSet = List.copyOf(set);
 Set<String> setCopyOf = Set.copyOf(set);
 Set<String> setCopyOfList = Set.copyOf(list);

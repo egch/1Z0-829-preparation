@@ -77,6 +77,25 @@ but going back
 3. Smaller data types, namely, byte, short, and char, are first promoted to int any time they're used with a Java binary arithmetic operator with a variable (as opposed to a value), even if neither of the operands is int.
 4. After all promotion has occurred and the operands have the same data type, the resulting value will have the same data type as its promoted operands.
 
+### Cases
+```java
+short x = 5;
+short y = 6;
+//does not compile as short are promoted to int if there is an operator
+//short result = x + y;  //does NOT compile!
+int result = x + y; //this compiles
+```
+```java
+byte a=2, b=3;
+//byte result = a +b;  //does NOT compile
+int result = a+b;  //compiles
+```
+```java
+byte a=2, b=3;
+//compound operator
+b +=a;  //this compiles!
+System.out.println(b);  //5
+```
 ## LHS vs RHS
 in the statement:  
 ```java
@@ -104,26 +123,28 @@ x = d;
 ```
 
 ## Java Operator Precedence
-In increasing order, lowest to the highest
+By decreasing order, highest to the lowest.
 
-| Operator             | Description                              | Evaluation Order    |
-|----------------------|------------------------------------------|---------------------|
-| Postfix              | `expr++ expr--`                          | Left to Right       |
-| Unary                | `++expr --expr +expr -expr ~ !`          | Right to Left       |
-| Cast                 | `(type)`                                 | Right to Left       |
-| Multiplicative       | `* / %`                                  | Left to Right       |
-| Additive             | `+ -`                                    | Left to Right       |
-| Shift                | `<< >> >>>`                              | Left to Right       |
-| Relational           | `< > <= >= instanceof`                   | Left to Right       |
-| Equality             | `== !=`                                  | Left to Right       |
-| Bitwise AND          | `&`                                      | Left to Right       |
-| Bitwise XOR          | `^`                                      | Left to Right       |
-| Bitwise OR           | `|`                                      | Left to Right       |
-| Logical AND          | `&&`                                     | Left to Right       |
-| Logical OR           | `||`                                     | Left to Right       |
-| Conditional          | `? :`                                    | Right to Left       |
-| Assignment           | `= += -= *= /= %= &= ^= |= <<= >>= >>>=` | Right to Left       |
-| Comma                | `,`                                      | Left to Right       |
+| Operator                   | Symbols and examples                             | Evaluation       |
+|-----------------------------|---------------------------------------------------|-------------------|
+| Post-unary operators        | `expression++`, `expression--`                   | Left-to-right     |
+| Pre-unary operators         | `++expression`, `--expression`                   | Left-to-right     |
+| Other unary operators       | `-`, `!`, `~`, `+`, `(type)`                     | Right-to-left     |
+| Cast                        | `(Type)reference`                                | Right-to-left     |
+| Multiplication/division/modulus | `*`, `/`, `%`                                 | Left-to-right     |
+| Addition/subtraction         | `+`, `-`                                         | Left-to-right     |
+| Shift operators              | `<<`, `>>`, `>>>`                                | Left-to-right     |
+| Relational operators         | `<`, `>`, `<=`, `>=`, `instanceof`              | Left-to-right     |
+| Equal to/not equal to        | `==`, `!=`                                       | Left-to-right     |
+| Logical AND                 | `&`                                             | Left-to-right     |
+| Logical exclusive OR         | `^`                                             | Left-to-right     |
+| Logical inclusive OR         | `|`                                             | Left-to-right     |
+| Conditional AND             | `&&`                                            | Left-to-right     |
+| Conditional OR              | `||`                                            | Left-to-right     |
+| Ternary operators            | `boolean expression ? expression1 : expression2` | Right-to-left     |
+| Assignment operators         | `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `&=`, `^=`, `|=`, `<<=`, `>>=`, `>>>=` | Right-to-left |
+| Arrow operator               | `->`                                            | Right-to-left     |
+
 
 
 ## Instanceof

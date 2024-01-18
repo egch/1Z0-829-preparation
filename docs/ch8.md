@@ -21,6 +21,7 @@ var consumer = System.out::print; //does not compile
 ```java
 Predicate<String> pred3 = (final var s) -> s.isEmpty();
 Predicate<String> pred5 = (var s) -> s.isEmpty();
+//Predicate<String> pred2 = (final s) -> s.isEmpty();  //does NOT compile!
 ```
 
 I cannot mix var with type in the same lambda"

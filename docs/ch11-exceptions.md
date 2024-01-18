@@ -67,7 +67,7 @@ public class NumberFormatException extends IllegalArgumentException {/**/}
 ```
 
 ## try with resources
-Variables declared in the try block should be either final or effective final. 
+Variables declared in the try block should be either **final** or **effectively final**. 
 ```java
 var bf = Files.newBufferedWriter(path);
 try (bf) { // DOES NOT COMPILE

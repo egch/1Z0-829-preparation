@@ -80,8 +80,12 @@ public class CollectionsOfGenericsWithWildcard {
 
     Exception ex = new RuntimeException();
     //rteList.add(ex); //not even like this because it's declared as Exception (in spite is a RTE)
-
   }
+
+  void lowerBoundedWildcards3() {
+    //List<? super IOException> ioExceptions = new ArrayList<FileNotFoundException>();  //does not compile
+    List<? super IOException> ioExceptions = new ArrayList<Exception>();  //does  compile
+    }
 
   void wildcard() {
     //this means list of Object

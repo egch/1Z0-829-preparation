@@ -9,7 +9,7 @@ import java.time.temporal.ChronoUnit;
 public class UsageOfInstant {
 
   public static void main(String[] args) {
-    new UsageOfInstant().addToInstant();
+    new UsageOfInstant().toInstant();
   }
 
   //I can use toInstant only with ZonedDateTime (not LDT)

@@ -19,11 +19,21 @@ public class PatternMatching {
     if (!(object instanceof String s) || s.equals("enrico")) {
       System.out.println("bye bye");
     } else {
+      //here s is defined as the first of condition is wrong
       System.out.println(s);
     }
 
     //You CANNOT access the pattern variable `s` here
     //System.out.println(s);
+  }
+
+  void firstIfFalse(Object object) {
+    if(!(object instanceof String s)){
+      //here then s is NOT a String
+      return;
+    }
+    //then here it is!. Mind the return first if
+    System.out.println("length of string: "+s.length());
   }
 
   void notCompatible(Throwable t) {

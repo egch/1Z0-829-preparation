@@ -10,6 +10,14 @@ public class MultiDimensionalArray {
     a2D = new int[3][3];  //2D array
   }
 
+  void creation2D() {
+    int[][] matrix = new int[][]{{1,2}, {3}};
+    int[][] matrix2 = new int[2][1];
+
+    int[][] matrix3 = {{1,2}, {3}};
+   // int[][] matrix4 = new int[2][1]{{1,2}, {3}};  //does not compile
+  }
+
   void weird() {
     int[][] weird = new int[2][2];
     int[] weirder[] = new int[2][2];
