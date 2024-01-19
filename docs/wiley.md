@@ -104,13 +104,12 @@ so they must be initialized with a value when they are declared.  [DONE]
 - Queue.poll() returns null if no element are present,/ removeFirst throws an exception [DONE]
 
 - BooleanSupplier: `getAsBoolean()` NOT ~~get()~~   [DONE]
-- refresh collect 3 arg
-- jlink --output
-- jdeps !!!!
+- refresh collect 3 arg [DONE]
+- jlink --output  [DONE]
+- jdeps !!!!  [DONE]
 - .forEach(Files::isDirectory); is a consumer? [DONE]
-- Callable must define a call() 
-- java --add-exports 
-- modules provided by jdk!!!!
-- 
+- Callable must define a call() [DONE]
+- javac --add-exports [DONE]
+- modules provided by jdk!!!! [DONE]
 
 
