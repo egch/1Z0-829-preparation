@@ -109,5 +109,8 @@ so they must be initialized with a value when they are declared.  [DONE]
 - jdeps !!!!
 - .forEach(Files::isDirectory); is a consumer? [DONE]
 - Callable must define a call() 
+- java --add-exports 
+- modules provided by jdk!!!!
+- 
 
 
