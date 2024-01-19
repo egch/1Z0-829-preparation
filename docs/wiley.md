@@ -106,7 +106,7 @@ so they must be initialized with a value when they are declared.  [DONE]
 - BooleanSupplier: `getAsBoolean()` NOT ~~get()~~   [DONE]
 - refresh collect 3 arg
 - jlink --output
-- jdeps
+- jdeps !!!!
 - .forEach(Files::isDirectory); is a consumer? [DONE]
 - Callable must define a call() 
 
