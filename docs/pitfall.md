@@ -11,6 +11,8 @@
 - What I/O classes to use? Reader/Writer for text, Stream for primitives and String values
 - Check if the `System.out` or `System.err` is closed within the try-with-resource
 - `relativize() `needs both Path to be either absolute or relative
+- it's `System.console()` NOT ~~new Console()~~
+
 
 ## Localization
 - there ain't ~~DateFormatter~~ only `DateTimeFormatter`
@@ -31,6 +33,7 @@ across all threads and processes, while the synchronized classes do not.
 - Names: Source / Intermediate operation / Terminal operation. ~~Not Origin~~ !
 - Mind `forEach(System.out::println)`; not ~~forEach(System.out.println);~~
 - check if the stream ends with an Optional
+- `parallelStream()` is defined on Collection, ~~NOT on Stream~~
 
 ## Lambda
 - `var x = ()->"hello"` does not compile! - **you cannot assign a lambda to a var**
@@ -39,7 +42,7 @@ across all threads and processes, while the synchronized classes do not.
 - mind the semicolon when you assign a variable lambda.
     Example: Predicate<String> predicate = s->true;
 ## FunctionalInterface
-- `IntUnaryOperator` is not with generics. So this does not compile: ~~IntUnaryOperator<String>~~
+- `IntUnaryOperator` is not with generics. So this does not compile: ~~IntUnaryOperator<String>~~!!1
 
 
 ## Various
