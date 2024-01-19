@@ -1,9 +1,12 @@
 package org.enricogiurin.ocp17.book.ch8;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 @FunctionalInterface
@@ -93,6 +96,12 @@ public class MethodReference {
 
     boolean result = biPredicateMR.test("dog", "og");
     System.out.println(result);
+  }
+
+  void consumer(){
+    //weird...
+    Consumer<Path> consumer = Files::isDirectory;
+    Consumer<Path> c2 = (p)->Files.isDirectory(p);
   }
 
 }

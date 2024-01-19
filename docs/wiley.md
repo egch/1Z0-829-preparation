@@ -103,4 +103,7 @@ so they must be initialized with a value when they are declared.  [DONE]
 - Comparator.comparing((String s) -˃ s.charAt(0)).reversed() NOT reverse [DONE]
 - Queue.poll() returns null if no element are present,/ removeFirst throws an exception [DONE]
 
+- .forEach(Files::isDirectory); is a consumer? [DONE]
+- Callable must define a call() 
+
 
