@@ -9,7 +9,7 @@ import java.time.LocalTime;
 import java.time.Month;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
-import org.enricogiurin.ocp17.various.helper.Enthuware;
+import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class UseOfLocalDateTime {
 
@@ -58,7 +58,7 @@ public class UseOfLocalDateTime {
     System.out.println(ofEpochSecond); //2023-10-22T03:41:27
   }
 
-  @Enthuware
+  @JarMockTest
   void with(){
     LocalDateTime now = LocalDateTime.now();
     System.out.println(now);  //2024-01-06T07:04:54.162247

@@ -3,11 +3,12 @@ package org.enricogiurin.ocp17.book.ch9;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiFunction;
+import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class UsageOfMap {
 
   public static void main(String[] args) {
-    new UsageOfMap().insertNull();
+    new UsageOfMap().overwriteValue();
   }
 
   void createMap() {
@@ -28,6 +29,15 @@ public class UsageOfMap {
 
     contains = map.containsValue(2);
     System.out.println(contains);
+  }
+
+  @JarMockTest
+  void overwriteValue() {
+    Map<String, Integer> map = new HashMap<>();
+    Integer oldValue = map.put("a", 1);  //null
+    System.out.println(oldValue);
+    oldValue = map.put("a", 2);
+    System.out.println(oldValue);  //1
   }
 
   void merge() {

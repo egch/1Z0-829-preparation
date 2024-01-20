@@ -1,10 +1,12 @@
 package org.enricogiurin.ocp17.book.ch2;
 
+import org.enricogiurin.ocp17.various.helper.JarMockTest;
+
 //TODO - to complete
 public class CharAndInt {
 
   public static void main(String[] args) {
-    new CharAndInt().byteToChar();
+    new CharAndInt().byte2();
   }
   void conversion() {
     char c = 'a';
@@ -32,6 +34,15 @@ public class CharAndInt {
 
     char euro = '\u20ac';
     System.out.println(euro);
+  }
+
+  @JarMockTest
+  void byte2() {
+    //out of range
+    //byte b = 256;  //does not compile.
+
+    byte b = 'a';
+    System.out.println(b);  //97
   }
 
   void shortToChar() {

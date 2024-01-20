@@ -1,7 +1,7 @@
 package org.enricogiurin.ocp17.book.ch7.useofenum;
 
 import java.util.TreeSet;
-import org.enricogiurin.ocp17.various.helper.Enthuware;
+import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 enum CardinalPoints {
   NORTH, WEST, SOUTH, EAST;  //semicolon is optional for simple enum
@@ -27,7 +27,7 @@ public class SimpleEnum {
     }
   }
 
-  @Enthuware
+  @JarMockTest
   void comparable() {
     //all enum implements Comparable
     int compare = CardinalPoints.NORTH.compareTo(CardinalPoints.EAST);

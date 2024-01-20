@@ -4,6 +4,9 @@ public interface InterfaceWithPrivateMethods {
 
   //interface variables are implicitly : public, static, final
   int x = 5;
+  //variables in interfaces need to be initialized
+  //int y;  //does not compile
+
 
   void hello(String name);
 

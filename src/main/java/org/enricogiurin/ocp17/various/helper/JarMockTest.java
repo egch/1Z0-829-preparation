@@ -7,6 +7,6 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.METHOD})
-public @interface Enthuware {
+public @interface JarMockTest {
   String value() default "OCP 17 - 1Z0-829";
 }

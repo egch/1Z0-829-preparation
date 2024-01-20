@@ -1,6 +1,7 @@
 package org.enricogiurin.ocp17.book.ch4.array;
 
 import java.util.Date;
+import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class ArrayCreation {
 
@@ -76,6 +77,12 @@ public class ArrayCreation {
         System.out.println(matrix[i][j]);
       }
     }
+  }
+
+  @JarMockTest
+  void weird() {
+    //no matter the space between brackets
+    int weirdArray[] = {1, 2};
   }
 
 }

@@ -33,24 +33,13 @@ s ==> "John is 30 years old"
 ```
 
 ## String pool
-```jshelllanguage
-jshell> String s1 = "ab"
-s1 ==> "ab"
-
-jshell> String s2 = "a"+"b"
-s2 ==> "ab"
-
-jshell> s1==s2
-$18 ==> true
-
-jshell> String s3 = "a"
-s3 ==> "a"
-
-jshell> s3 +="b"
-$20 ==> "ab"
-
-jshell> s1==s3
-$21 ==> false
+```java
+    String s1 = "ab";
+    String s2 = "a"+"b";
+    System.out.println(s1==s2);  //true
+    String s3 = "a";
+    s3 +="b";
+    System.out.println(s1==s3);  //false
 ```
 ## StringBuilder
 ### setLength
@@ -58,6 +47,14 @@ $21 ==> false
     var sb = new StringBuilder("0123456789");
     sb.setLength(5);
     System.out.println(sb);  //01234
+```
+### append
+There ain't method such as: ~~append(index, string)~~
+```java
+var sb = new StringBuilder("hello");
+//append has only a single argument
+sb.append(" World");
+
 ```
 [StringBuilder Methods](../src/main/java/org/enricogiurin/ocp17/book/ch4/UsageOfStringBuilder.java)
 

@@ -4,7 +4,7 @@ import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
-import org.enricogiurin.ocp17.various.helper.Enthuware;
+import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class UsageOfDoubleSummaryStatistics {
 
@@ -39,7 +39,7 @@ public class UsageOfDoubleSummaryStatistics {
     System.out.println("max: " + doubleSummaryStatistics.getMax()); //-Infinity
   }
 
-  @Enthuware
+  @JarMockTest
   void summarizingDouble() {
     record Person(String name, int age) {
 

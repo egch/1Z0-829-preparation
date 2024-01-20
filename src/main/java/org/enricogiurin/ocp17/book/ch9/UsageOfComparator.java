@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import org.enricogiurin.ocp17.various.helper.Enthuware;
+import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class UsageOfComparator {
 
@@ -46,7 +46,7 @@ public class UsageOfComparator {
     return people;
   }
 
-  @Enthuware
+  @JarMockTest
   void reversed() {
     Comparator<String> reversedComparator = Comparator.reverseOrder();
     List<String> list = Arrays.asList("a", "hgh", "81a", "dhY", "Ya", "Y3");

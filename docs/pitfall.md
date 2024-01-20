@@ -51,7 +51,6 @@ across all threads and processes, while the synchronized classes do not.
 - `instanceOf` : a class can always be an instance of an Interface, so the instanceOf in that case is allowed. !!!!
 - mind the scope of variables in the `instanceof`
 - variable names: `_` can be allowed but not as a char single: `var _` does not compile
-- in the setX() check there is this.x=x
 - multilines: check if a variable hasn't been used previously
 - mind the curley brackets in the do/while 
 - Local variable type inference requires a value so that the type can be inferred. `var x;`  //does not compile
@@ -59,15 +58,19 @@ across all threads and processes, while the synchronized classes do not.
      1. Numbers
      2. Uppercase
      3. Lowercase
+- local variables need to be initialized before being used!!
+- Do NOT confuse local with instance variables when they have the same name!
 
 
 ## Class Design
 - an instance variable final either is initialized in the constructor or in the code
+- in the setX() check there is this.x=x
 ## check
 - `switch` expression: You CANNOT use `return`;
 - you need the `case` within a `switch`
 ## Collection
 - Deque<String> deque. offer() insert element at the end of the queue
+- Comparator: comparing(...).thenComparing()
 
 ## Interfaces
 - default method: `Plant.super.leaves()` NOT ~~super.Plant.leaves()~~
@@ -75,10 +78,11 @@ across all threads and processes, while the synchronized classes do not.
 - if there is an abstract method  makes sure the class is declared `abstract`.!!!!
 ### Nested Classes
 - A local class can access only **final** and **effectively final** local variables
-- anonymous class needs to have **semicolon** at the end.!!!!!
+- anonymous class needs to have **semicolon** at the end.!!!!!!!!!!!
+- MIND THE SEMICOLON!!! `;`
 ## Exception
-- Check if the variable for the exception, **e**, is not already defined
-- check that main throws the checked exception declared in the method
+- Check if the variable for the exception, **e**, is not already defined!!!
+- check that main throws the checked exception declared in the method, 
 especially with the AutoClosable resources
 - in the try-with-resources check round parenthesis is used, not curly.
 - try with resources: check in the variable is in scope

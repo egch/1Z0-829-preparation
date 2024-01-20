@@ -112,4 +112,9 @@ so they must be initialized with a value when they are declared.  [DONE]
 - javac --add-exports [DONE]
 - modules provided by jdk!!!! [DONE]
 
-
+- The addFirst() and addLast() are in the Queue interface, not Deque
+- A. Set.of(1f,2f,3f,4f).stream() not predictable
+- NumberFormat.getCurrencyInstance(Locale.UK)
+-  The first line contains trailing whitespace.
+- Which statements are true about requires mandated java.base? (Choose two.)
+- modules jmod: create, list, extract, describe

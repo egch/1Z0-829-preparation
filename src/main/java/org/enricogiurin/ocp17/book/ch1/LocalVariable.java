@@ -19,7 +19,13 @@ public class LocalVariable {
     int y;
     //does not compile: Variable 'y' might not have been initialized
     //int z=x+y;
+  }
 
+  void localNotUsed() {
+    ////x is not initialized, but it's fine as long it's not used
+    int x;
+    int y = 6;
+    System.out.println(y);
   }
 
   void localFinalVariables() {

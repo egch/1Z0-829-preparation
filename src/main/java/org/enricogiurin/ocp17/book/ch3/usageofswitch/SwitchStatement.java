@@ -1,6 +1,6 @@
 package org.enricogiurin.ocp17.book.ch3.usageofswitch;
 
-import org.enricogiurin.ocp17.various.helper.Enthuware;
+import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class SwitchStatement {
 
@@ -70,7 +70,7 @@ public class SwitchStatement {
     System.out.println(result);
   }
 
-  @Enthuware
+  @JarMockTest
   //it prints default
   //There is no case for THURSDAY and MONDAY, so they are just labels!!
   void switchMissingCase() {

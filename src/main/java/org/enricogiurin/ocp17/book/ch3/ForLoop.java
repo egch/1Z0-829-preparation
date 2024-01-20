@@ -1,6 +1,6 @@
 package org.enricogiurin.ocp17.book.ch3;
 
-import org.enricogiurin.ocp17.various.helper.Enthuware;
+import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class ForLoop {
 
@@ -62,7 +62,7 @@ public class ForLoop {
     }
   }
 
-  @Enthuware
+  @JarMockTest
   void loopNotCompiling() {
     int idx = 0;
     for (int j = 0; j < 10; j++) {

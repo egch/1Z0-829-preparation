@@ -1,6 +1,6 @@
 package org.enricogiurin.ocp17.book.ch1.textblocks;
 
-import org.enricogiurin.ocp17.various.helper.Enthuware;
+import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class TextBlockTricky {
 
@@ -40,7 +40,7 @@ public class TextBlockTricky {
     System.out.println(quotes2);
   }
 
-  @Enthuware
+  @JarMockTest
   void isValidTB() {
     var tb = """\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020
         """;

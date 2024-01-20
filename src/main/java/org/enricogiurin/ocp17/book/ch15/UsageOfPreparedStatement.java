@@ -38,6 +38,9 @@ public class UsageOfPreparedStatement {
     ){
       //you need to set the type
       preparedStatement.setNull(1, Types.VARCHAR);
+      //I can use also this
+      //preparedStatement.setString(1, null);
+
       preparedStatement.setString(2, "Monopoly");
       int update = preparedStatement.executeUpdate();
       System.out.println(update);

@@ -1,9 +1,11 @@
 package org.enricogiurin.ocp17.book.ch4;
 
+import org.enricogiurin.ocp17.various.helper.JarMockTest;
+
 public class UsageOfStringBuilder {
 
   public static void main(String[] args) {
-    new UsageOfStringBuilder().setLength();
+    new UsageOfStringBuilder().append();
   }
 
   void notEfficient() {
@@ -78,6 +80,14 @@ public class UsageOfStringBuilder {
     System.out.println(sb); //0123456789
     sb.setLength(5);
     System.out.println(sb);  //01234
+  }
+
+  @JarMockTest
+  void append() {
+    StringBuilder sb = new StringBuilder("hello");
+    //append has only a single argument
+    sb.append(" World");
+    System.out.println(sb);
   }
 
 

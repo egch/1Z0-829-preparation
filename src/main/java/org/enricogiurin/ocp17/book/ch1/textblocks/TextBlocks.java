@@ -1,6 +1,6 @@
 package org.enricogiurin.ocp17.book.ch1.textblocks;
 
-import org.enricogiurin.ocp17.various.helper.Enthuware;
+import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class TextBlocks {
 
@@ -81,7 +81,7 @@ public class TextBlocks {
     System.out.println("#"+block+"#");
   }
 
-  @Enthuware
+  @JarMockTest
     //backslash: \
   void backslash() {
     //the char backslash is ignored
