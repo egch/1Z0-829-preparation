@@ -6,7 +6,7 @@ public class StripString {
 
   public static void main(String[] args) {
     StripString instance = new StripString();
-    instance.strip2();
+    instance.stripIndentNL();
 
   }
   static final char space = '\u0020';
@@ -22,6 +22,15 @@ public class StripString {
     //before: # 12345 # - after: #12345#
     System.out.println("before: %s - after: %s".formatted(wrap(original), wrap(stripIndent)));
   }
+
+  void stripIndentNL() {
+    String s = "happy\n birthday";
+    //happy
+    // birthday
+    System.out.println(s.stripIndent());
+
+  }
+
 
   void stripLeading() {
     String stripLeading = original.stripLeading();

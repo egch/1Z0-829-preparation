@@ -16,7 +16,7 @@ public class SwitchType {
     int y = 4;
     switch (y) {
       //xis not a compile-time constant since any int value can be passed as a parameter.
-      // Marking it final does not change this, so it doesn’t compile.
+      // Marking it final does not change this, so it DOES NOT compile.
 /*      case x:
         System.out.println("x is: "+x);*/
       default:

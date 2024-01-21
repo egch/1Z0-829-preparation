@@ -39,7 +39,7 @@ Some future program could create a subclass of `Throwable` that does implement `
 The value of a case statement must be one of these:
 * a constant;
 * a literal value;
-* a final variable.
+* a final variable (not just effectively final)
 ```java
     int aValue = 5;
     final int aConstant = 6;

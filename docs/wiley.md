@@ -117,3 +117,6 @@ so they must be initialized with a value when they are declared.  [DONE]
 - NumberFormat.getCurrencyInstance(Locale.UK) [DONE]
 -  The first line contains trailing whitespace. [DONE]
 - modules jmod: create, list, extract, describe [DONE]
+
+
+- stripIndent()

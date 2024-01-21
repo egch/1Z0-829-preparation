@@ -8,7 +8,7 @@ import java.util.TreeSet;
 public class UsageOfSet {
 
   public static void main(String[] args) {
-    new UsageOfSet().treeSetDoesNotAllowNullValues();
+    new UsageOfSet().equalsOfSet();
   }
 
   void create() {
@@ -17,6 +17,20 @@ public class UsageOfSet {
     //mutable set
     Set<String> setC = new HashSet<>(setB);
     Set<String> tressSet = new TreeSet<>();
+  }
+
+  void equalsOfSet() {
+    //no matter the set implementation, equals() returns true when they have the same elements
+    Set<String> setA = new HashSet<>();
+    setA.add("one");
+    setA.add("two");
+    Set<String> setB = Set.copyOf(setA);
+    System.out.println(setA.equals(setB));  //true
+
+    Set<String> setC = new TreeSet<>();
+    setC.add("two");
+    setC.add("one");
+    System.out.println(setA.equals(setC));  //true
   }
 
   void treeSet() {

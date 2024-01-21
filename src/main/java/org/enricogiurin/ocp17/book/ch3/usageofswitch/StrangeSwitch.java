@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch3;
+package org.enricogiurin.ocp17.book.ch3.usageofswitch;
 
 public class StrangeSwitch {
 

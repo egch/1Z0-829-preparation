@@ -13,7 +13,7 @@ import org.enricogiurin.ocp17.various.helper.JarMockTest;
 public class CommonIntermediateOperations {
 
   public static void main(String[] args) {
-    new CommonIntermediateOperations().min();
+    new CommonIntermediateOperations().skipAndLimit();
   }
 
   void distinct() {
@@ -25,8 +25,8 @@ public class CommonIntermediateOperations {
 
   void skipAndLimit() {
     Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-        .skip(5L)
-        .limit(3L)
+        .skip(5L) //skip 1,2,3,4,5
+        .limit(3L)  //limit to 3 elements so exclude 9, 10
         .forEach(System.out::println);  // 6 7 8
   }
 

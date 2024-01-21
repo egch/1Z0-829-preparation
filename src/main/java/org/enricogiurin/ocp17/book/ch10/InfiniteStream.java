@@ -33,7 +33,10 @@ public class InfiniteStream {
 
   void iterateWithPredicate() {
     Random random = new Random();
-    Stream<Integer> stream = Stream.iterate(0, n -> n < 90, n -> random.nextInt(100));
+    //uses iterate with 3 args
+    Stream<Integer> stream = Stream.iterate(0,
+        n -> n < 90,
+        n -> random.nextInt(100));
     long count = stream
         .peek(System.out::println)
         .count();

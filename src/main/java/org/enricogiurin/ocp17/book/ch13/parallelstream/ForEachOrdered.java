@@ -9,7 +9,7 @@ public class ForEachOrdered {
   public static void main(String[] args) {
     ForEachOrdered instance = new ForEachOrdered();
     //instance.forEachOrdered();
-    instance.forEach();
+    instance.forEachOrderedComplex();
   }
 
 
@@ -36,6 +36,23 @@ public class ForEachOrdered {
         //  System.out.println("processing value: "+s);
           data.add(s);});
     System.out.println(data.size());
+  }
+
+  void forEachOrdered2() {
+    IntStream.of(2, 5, 7, 1)
+        .parallel()
+        //.peek(s-> System.out.print(s+" "))  //print in a random order
+        //always print in the stream insertion order
+        .forEachOrdered(s -> System.out.print(s + " ")); //2 5 7 1
+  }
+
+  void forEachOrderedComplex() {
+    IntStream.of(2, 5, 7, 1)
+        .parallel()
+        .boxed()
+        .map(n -> n + "#")
+        //always print in the stream insertion order
+        .forEachOrdered(s -> System.out.print(s + " ")); //2# 5# 7# 1#
   }
 
 }

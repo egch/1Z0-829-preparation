@@ -5,7 +5,7 @@ import java.util.Collection;
 public class UsageOfInstanceof {
 
   public static void main(String[] args) {
-    new UsageOfInstanceof().nullInstanceOf();
+    new UsageOfInstanceof().nullInstanceof();
   }
 
 
@@ -44,7 +44,7 @@ public class UsageOfInstanceof {
     }
   }
 
-  void nullInstanceOf() {
+  void nullInstanceof() {
     //this always returns false!
     if(null instanceof String){
       System.out.println("It's null");
@@ -79,7 +79,7 @@ public class UsageOfInstanceof {
     System.out.print("Swim!");
   }
 
-  void instanceOf_interface() {
+  void instanceof_interface() {
     Number number = Integer.valueOf(5);
     if (number instanceof Integer) {
       System.out.println("It's an Integer");
@@ -100,6 +100,12 @@ public class UsageOfInstanceof {
     if (number instanceof Collection) {
       System.out.println("unreal but it compiles");
     }
+  }
+
+  void instanceofWithVar() {
+    Object obj = 10;
+    var result = obj instanceof String;
+    boolean result2 = obj instanceof String;
   }
 
 }

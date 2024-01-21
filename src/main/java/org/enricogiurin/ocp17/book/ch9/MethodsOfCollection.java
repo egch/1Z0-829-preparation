@@ -1,6 +1,7 @@
 package org.enricogiurin.ocp17.book.ch9;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -8,7 +9,7 @@ import java.util.Set;
 public class MethodsOfCollection {
 
   public static void main(String[] args) {
-    new MethodsOfCollection().checkEquals();
+    new MethodsOfCollection().removeIfWithSet();
   }
 
   void replaceAll() {
@@ -73,6 +74,13 @@ public class MethodsOfCollection {
     boolean status = list.removeIf(s -> s.startsWith("a"));
     System.out.println(status);
     System.out.println("size is: " + list.size());  //3
+  }
+
+  void removeIfWithSet() {
+    Set<String> set = new HashSet<>();
+    set.add("hello");
+    set.removeIf(s -> s.startsWith("h"));
+    System.out.println(set.size());
   }
 
   void iterator() {
