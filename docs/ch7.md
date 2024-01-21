@@ -72,6 +72,7 @@ signature, it must override the method with its own implementation.
 [Inherit two default methods with the same signature](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/defaultmethods/InheritTwoDefaultMethods.java)
 
 ## Sealed
+A sealed class requires at least one subclass to extend.
 ### Same file
 The permits clause is optional if the subclass is nested or declared in the same file.
 

@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
 public class UsageOfDeque {
 
   public static void main(String[] args) {
-    new UsageOfDeque().popVsPoll();
+    new UsageOfDeque().addFirstLast();
   }
 
   void methodWithoutException() {
@@ -40,6 +40,15 @@ public class UsageOfDeque {
     deck.removeFirst(); //[]
     //Exception in thread "main" java.util.NoSuchElementException
     deck.removeLast();
+  }
+
+  void addFirstLast(){
+    Deque<String> deque = new ArrayDeque<>();
+    deque.addFirst("a");
+    deque.addFirst("b");
+    deque.addLast("c");
+    //b-c-b
+    System.out.println(deque.peekFirst()+" "+ deque.peekLast()+" "+deque.peek());
   }
 
   void stack() {

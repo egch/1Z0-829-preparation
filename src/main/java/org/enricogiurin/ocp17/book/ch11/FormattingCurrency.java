@@ -8,7 +8,7 @@ import java.util.Locale.Category;
 public class FormattingCurrency {
 
   public static void main(String[] args) {
-    new FormattingCurrency().categoryFormat();
+    new FormattingCurrency().defaultNoEffect();
   }
 
   void price() {
@@ -58,8 +58,17 @@ public class FormattingCurrency {
 
     System.out.print(NumberFormat.getCurrencyInstance()
         .format(amount));  //12,30 €
+  }
 
+  void defaultNoEffect() {
+    double amount = 12.3D;
+    Locale.setDefault(Locale.US);
+    Locale.setDefault(Category.FORMAT, Locale.ITALY);
+    Locale.setDefault(Category.DISPLAY, Locale.UK);
 
+    //since I pass the specific locale to the method, the default set has no effect
+    System.out.print(NumberFormat.getCurrencyInstance(Locale.US)
+        .format(amount));  //$12.30
   }
 
 }

@@ -18,6 +18,20 @@ The diamond operator `<>` cannot be used on the left side of the assignment.
 ```java
 HashSet<> set = new HashSet<Object>();  //does not compile!
 ```
+
+### Methods with generics
+#### Static Methods
+```java
+  public static <T extends Number> void calculate(T t){}
+```
+WRONG: static needs to be defined before generics declaration!
+```java
+  public  <T extends Number> static void calculate(T t){} //does NOT compile
+```
+#### Instance Methods
+```java
+ public <T> T getFirstElement(T[] array) {/*...*/}
+```
 ### Instantiate with generics
 [Example](../src/main/java/org/enricogiurin/ocp17/book/ch9/generics/InstantiateClassWithGenerics.java)
 ## Bounding Generic Types
