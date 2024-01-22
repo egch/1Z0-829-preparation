@@ -5,12 +5,14 @@ import static org.enricogiurin.ocp17.book.ch10.StreamUtils.fruitStream;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
+import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class UsageOfCollectors {
 
   public static void main(String[] args) {
-    new UsageOfCollectors().joining();
+    new UsageOfCollectors().counting();
   }
 
   void joining() {
@@ -31,6 +33,14 @@ public class UsageOfCollectors {
     //average length of the string in the stream
     Double average = fruitStream.collect(Collectors.averagingInt(value -> value.length()));
     System.out.println("average: " + average); //4.9
+  }
+
+  @JarMockTest
+  void counting() {
+    Long cnt = IntStream.rangeClosed(1, 10)
+        .boxed()
+        .collect(Collectors.counting());
+    System.out.println(cnt); //10
   }
 
 }

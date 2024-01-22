@@ -30,6 +30,7 @@ java -p mods -m zoo.animal.feeding/zoo.animal.feeding.Task
 $ java -p mods -d moduleName
 $ java --module-path mods --describe-module moduleName
 ```
+![describe-modules.png](images/describe-modules.png)
 
 ```shell
 requires java.base mandated

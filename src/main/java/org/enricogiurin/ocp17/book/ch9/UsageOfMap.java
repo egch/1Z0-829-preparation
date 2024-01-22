@@ -24,10 +24,13 @@ public class UsageOfMap {
     map.put("b", 2);
     map.put("c", 1);
 
+    //NOTE" it's not contains(), but contains key
     boolean contains = map.containsKey("a");
     System.out.println(contains);  //true
 
+    //NOTE" it's not contains(), but contains value
     contains = map.containsValue(2);
+
     System.out.println(contains);
   }
 

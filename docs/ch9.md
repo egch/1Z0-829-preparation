@@ -65,7 +65,15 @@ List<? super IOException> ioExceptions = new ArrayList<Exception>();  //compiles
 ```
 
 [Example wildcard](../src/main/java/org/enricogiurin/ocp17/book/ch9/generics/CollectionsOfGenericsWithWildcard.java)
+
+### Inheritance of methods with generics
+[Generic Methods](../src/main/java/org/enricogiurin/ocp17/book/ch9/generics/ComplexInheritanceWithGenerics.java)
 ## Collections
+### contains
+it's `Object`, not the type of the Collection!
+```java
+boolean contains(Object o)
+```
 ### Immutable Collections
 ```java
 List<String> list = List.of("a", "b");

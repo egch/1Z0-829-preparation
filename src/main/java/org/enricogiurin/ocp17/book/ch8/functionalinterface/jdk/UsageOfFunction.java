@@ -7,7 +7,7 @@ import java.util.function.IntBinaryOperator;
 public class UsageOfFunction {
 
   public static void main(String[] args) {
-    new UsageOfFunction().compose();
+    new UsageOfFunction().andThen();
   }
 
   void compose() {
@@ -35,5 +35,22 @@ public class UsageOfFunction {
     //BiFunction<Integer, Integer, Double> biFunction = (s, p)->s+p;  //does not compile
 
     BiFunction<Integer, Double, Double> biFunction = (s, p) -> s + p;  //this compiles!
+  }
+
+  //CGPT
+  void andThen() {
+    Function<String, String> toUpperCase = String::toUpperCase;
+
+    // Define the second function: Add a prefix
+    Function<String, String> addPrefix = s -> "Mr. " + s;
+
+    // Compose the functions using andThen
+    Function<String, String> composedFunction = addPrefix.andThen(toUpperCase);
+
+    // Apply the composed function
+    String result = composedFunction.apply("hello");
+
+    // Output the result
+    System.out.println(result);  // Output: MR. HELLO
   }
 }

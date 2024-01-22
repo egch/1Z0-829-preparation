@@ -36,6 +36,7 @@ Some future program could create a subclass of `Throwable` that does implement `
 ```
 [Pattern Matching](../src/main/java/org/enricogiurin/ocp17/book/ch3/PatternMatching.java)
 ## Switch
+### Switch Statement
 The value of a case statement must be one of these:
 * a constant;
 * a literal value;
@@ -51,7 +52,7 @@ The value of a case statement must be one of these:
 ```
 WARNING: You always need the `case`, a part in the `default` case.
 
-Multi case
+Multi case. I use comma (`,`)to separate values.
 ```java
   void workOrChillOut(DayOfWeek day) {
     //with the new switch, I can have multiple cases in the same line

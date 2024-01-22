@@ -13,4 +13,13 @@ public class NameOfVariables {
     //var _ = 3;
   }
 
+  void currencyNames() {
+    //I can use any currencies as variable names
+    int $ = 5;
+    int € = 66;
+    int €$_ = 55;
+    //all currencies all the world
+    int £€$ = 55;
+  }
+
 }

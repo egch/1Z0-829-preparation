@@ -24,7 +24,15 @@ $ java --class-path target/classes org.enricogiurin.ocp17.ch1.HelloWorld
 ## Variables
 - Local variables **need** to be initialized before to be used;
 - Instance variables **do not need** to be initialized before to be used.
+
+
 ### Variable Names
+```java
+    int $ = 5;
+    int € = 66;
+    int €$_ = 55;
+    int £€$ = 55;
+```
 [Possible names for variables](../src/main/java/org/enricogiurin/ocp17/book/ch1/NameOfVariables.java)
 
 ### Variables scope
