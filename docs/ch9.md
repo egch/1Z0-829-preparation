@@ -13,7 +13,7 @@ public class Money<T> {
 ```java
 List<String> list = new ArrayList<>();
 ```
-The diamond operator `<>` cannot be used on the left side of the assignment.
+The diamond operator `<>` cannot be used on the right side of the assignment.
 
 ```java
 HashSet<> set = new HashSet<Object>();  //does not compile!
@@ -57,7 +57,7 @@ exceptions.add(new FileNotFoundException("error"));// yes we can add it
 //we cannot add an Exception as it could be a list of IOException and Exception is not an IOException
 //exceptions.add(new Exception("error"));
 ```
-We can only add element whose type is **IOException** or one of its children.
+On the right side the element should be a type whose super-class is defined as super at left side.
 
 ```java
 //List<? super IOException> ioExceptions = new ArrayList<FileNotFoundException>();  //does NOT compile

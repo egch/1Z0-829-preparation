@@ -67,7 +67,7 @@ Then it does not compile!
 ### parseLong
 ```java
 var result = Long.parseLong("17")
-//result is a primitive lonn
+//result is a primitive long
 //System.out.println(result.toString()); //does not compile
 ```
 ### valueOf
