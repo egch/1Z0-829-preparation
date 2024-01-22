@@ -9,7 +9,7 @@ LocalDateTime now = LocalDateTime.now();
 String time = now.format(dateTimeFormatter);
 System.out.println(time);  //22-09-2023 - 08:44:55
 ```
-[format java time](../org/enricogiurin/ocp17/book/ch11/FormatJavaTime.java)
+[format java time](../src/main/java/org/enricogiurin/ocp17/book/ch11/javatime/FormatJavaTime.java)
 ### ofLoc
 //TBC
 

@@ -42,13 +42,13 @@ across all threads and processes, while the synchronized classes do not.
 - mind the semicolon when you assign a variable lambda.
     Example: Predicate<String> predicate = s->true;
 ## FunctionalInterface
-- `IntUnaryOperator` is not with generics. So this does not compile: ~~IntUnaryOperator<String>~~!!1
+- `IntUnaryOperator` is not with generics. So this does not compile: `IntUnaryOperator<String>`
 
 
 ## Various
 - check if a field is final in the code
 - `enum`: check if the constructor is private, or protected!
-- `instanceOf` : a class can always be an instance of an Interface, so the instanceOf in that case is allowed. !!!!
+- `instanceof` : a class can always be an instance of an Interface, so the instanceOf in that case is allowed. !!!!
 - mind the scope of variables in the `instanceof`
 - variable names: `_` can be allowed but not as a char single: `var _` does not compile
 - multilines: check if a variable hasn't been used previously
@@ -66,11 +66,11 @@ across all threads and processes, while the synchronized classes do not.
 - an instance variable final either is initialized in the constructor or in the code
 - in the setX() check there is this.x=x
 ## check
-- `switch` expression: You CANNOT use `return`;
+- `switch` expression: You CANNOT use `return` but you can use `yield`.
 - you need the `case` within a `switch`
 ## Collection
-- Deque<String> deque. offer() insert element at the end of the queue
-- Comparator: comparing(...).thenComparing()
+- `Deque.offer()` insert element at the end of the queue
+- Comparator: `comparing(...).thenComparing()`
 
 ## Interfaces
 - default method: `Plant.super.leaves()` NOT ~~super.Plant.leaves()~~

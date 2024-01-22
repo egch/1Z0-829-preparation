@@ -8,6 +8,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 public class UsageOfScheduledExecutorService {
+  public static void main(String[] args)
+      throws ExecutionException, InterruptedException, TimeoutException {
+    new UsageOfScheduledExecutorService().scheduleCallable();
+  }
 
   private Runnable runnable = () -> {
     try {
@@ -17,11 +21,6 @@ public class UsageOfScheduledExecutorService {
       throw new RuntimeException(e);
     }
   };
-
-  public static void main(String[] args)
-      throws ExecutionException, InterruptedException, TimeoutException {
-    new UsageOfScheduledExecutorService().scheduleAtFixedRate();
-  }
 
   //done
   //hello
@@ -55,9 +54,10 @@ public class UsageOfScheduledExecutorService {
     //scheduleWithFixedDelay accepts only Runnable, not Callable
     try {
       //It takes into account the duration of the task's execution
-      scheduledExecutorService.scheduleWithFixedDelay(
+      ScheduledFuture<?> scheduledFuture = scheduledExecutorService.scheduleWithFixedDelay(
           runnable,
           2, 1, TimeUnit.SECONDS);
+
       Thread.sleep(10_000);
       //after some time we shout it down
     } finally {
