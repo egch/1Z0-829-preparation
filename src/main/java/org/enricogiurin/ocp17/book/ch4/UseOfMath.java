@@ -3,7 +3,7 @@ package org.enricogiurin.ocp17.book.ch4;
 public class UseOfMath {
 
   public static void main(String[] args) {
-    new UseOfMath().random();
+    new UseOfMath().round();
   }
 
   void minAndMax() {
@@ -15,16 +15,15 @@ public class UseOfMath {
   }
 
   void round() {
-    //Note that it returns a Long
-    long round = Math.round(5.2D);
-    //5
-    System.out.println(round);
-    round = Math.round(5.5D);
-    //6
-    System.out.println(round);
+    //Note that it returns a Long for a double
+    long roundADouble = Math.round(5.2D);
+    System.out.println(roundADouble);     //5
+    roundADouble = Math.round(5.5D);
+    System.out.println(roundADouble);  //6
 
-    round = Math.round(5.1F);
-    System.out.println(round);
+    //now using float
+    int roundAFloat = Math.round(5.5F);
+    System.out.println(roundAFloat);  //6
   }
 
   void ceilAndFloor() {

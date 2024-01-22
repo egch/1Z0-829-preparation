@@ -141,9 +141,12 @@ double ceil = Math.ceil(3.8); // 8.0
 ```
 
 ### round
-Note that return type of `round()` is `long`
+return type:
+- `round(double)` is `long`
+- `round(float)` is `int`
 ```java
 long round = Math.round(5.2D); //5
+int round2 round = Math.round(5.2F); //5
 ```
 
 ### pow

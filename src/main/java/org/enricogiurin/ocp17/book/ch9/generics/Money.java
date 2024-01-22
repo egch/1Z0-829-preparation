@@ -12,6 +12,11 @@ public class Money<T> {
     this.amount = amount;
   }
 
+  //here no need to define the full signature for generics methods
+  public T getCurrency() {
+    return currency;
+  }
+
   public static void main(String[] args) {
     //Money<Dollar> dollar = new Money<>()
   }

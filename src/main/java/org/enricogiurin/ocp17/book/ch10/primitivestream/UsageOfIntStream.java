@@ -1,5 +1,6 @@
 package org.enricogiurin.ocp17.book.ch10.primitivestream;
 
+import java.util.IntSummaryStatistics;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
@@ -8,7 +9,7 @@ import java.util.stream.Stream;
 public class UsageOfIntStream {
 
   public static void main(String[] args) {
-    new UsageOfIntStream().sum();
+    new UsageOfIntStream().summaryStatistics();
   }
 
   void average() {
@@ -78,6 +79,15 @@ public class UsageOfIntStream {
     IntStream.concat(odds, evens)
         .limit(5)
         .forEach(System.out::println);  //1,3,5,7,9
+  }
+  void summaryStatistics() {
+    IntSummaryStatistics intSummaryStatistics = IntStream.range(1, 100)
+        .filter(n -> n % 2 == 0)
+        .summaryStatistics();
+    double average = intSummaryStatistics.getAverage();
+    long sum = intSummaryStatistics.getSum();
+    //average: 50.000000 - sum: 2450
+    System.out.println("average: %f - sum: %d".formatted(average, sum));
   }
 
 
