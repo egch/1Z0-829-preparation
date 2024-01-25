@@ -1,11 +1,15 @@
 package org.enricogiurin.ocp17.book.ch5;
 
-public class Vararg {
+public class Varargs {
 
-  public static void main(String[] args) {
+  /**
+   * We can have also the main using varargs
+   * @param args
+   */
+  public static void main(String... args) {
     // new Vararg().sumElement(1,2,3);
     // new Vararg().sumElement(new int[]{});
-    new Vararg().call();
+    new Varargs().call();
   }
 
 
