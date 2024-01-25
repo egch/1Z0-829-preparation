@@ -30,7 +30,6 @@ public class LocalVariables {
 
   void varLocalVariables() {
     final var x = 5;
-
   }
 
 

@@ -5,22 +5,33 @@ public class Vararg {
   public static void main(String[] args) {
     // new Vararg().sumElement(1,2,3);
     // new Vararg().sumElement(new int[]{});
-    new Vararg().sumElement(new int[]{4, 5});
+    new Vararg().call();
   }
 
+
+  void call(){
+    sumElement(0);  //result is: 0
+    sumElement(1,2);  //result is: 3
+    sumElement(1,2,3); //result is: 6
+    sumElement(new int[]{1,2}); //result is: 3
+    sumElement(null); //result is: 0
+  }
   void sumElement(int... elements) {
+    if(elements==null){
+      System.out.println("result is: %d".formatted(0));
+      return;
+    }
     int result = 0;
     for (int element : elements) {
       result += element;
     }
-    System.out.println("result is: " + result);
+    System.out.println("result is: %d".formatted(result));
   }
 
   //Vararg parameter must be the last in the list
   //there should be only one vararg parameter
-  void multipleVararg(int... elements
-      /*, String... list*/  //does not compile
-  ) {
+  void multipleVararg(int... elements/*, String... list*/) { //does not compile
+
   }
 
   void usingVarargAsVariable(String... names) {
