@@ -1,9 +1,20 @@
 package org.enricogiurin.ocp17.book.ch7.interfaces;
 
+public class InterfaceWithStaticMethods {
+
+  public static void main(String[] args) {
+    //I can access to static methods from everywhere, no need to implement the interface
+    Certifications.ocp17();
+  }
+
+}
+
 interface Certifications {
 
   //public by default
-  public static void ocp17() {}
+  public static void ocp17() {
+    System.out.println("coming soon");
+  }
 
   private static void az204() {}
 
@@ -16,16 +27,6 @@ interface Certifications {
     az204();
   }
 
-
-}
-
-public class InterfaceWithStaticMethods {
-
-  public static void main(String[] args) {
-    //I can access to static methods from everywhere, no need to implement the interface
-    Certifications.ocp17();
-  }
-
 }
 
 class MyCertifications implements Certifications {
@@ -36,5 +37,8 @@ class MyCertifications implements Certifications {
 
     //in this way it compiles
     Certifications.ocp17();
+
+    //az204 has private access, can only be accessed within the interface
+    //Certifications.az204();  //does not compile!
   }
 }
