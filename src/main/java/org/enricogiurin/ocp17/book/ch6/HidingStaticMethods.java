@@ -17,9 +17,30 @@ public class HidingStaticMethods {
     }
 
     public static final void message() {}
+
+    private static void privateStaticMethod(){}
+
+    public static void publicStaticMethod(){}
   }
 
   class Whale extends Mammal {
+
+/*
+    as you can see this method it totally unrelated to the static private name defined in the parent
+    class with the same name.
+    parent: static & void
+    child: instance & return int.
+*/
+    private  int privateStaticMethod(){return 0;}
+
+    //publicStaticMethod()' in Whale clashes with 'publicStaticMethod() in Mammal
+    // attempting to assign weaker access privileges ('protected'); was 'public'
+    //protected static void publicStaticMethod(){}  //DOES NOT COMPILE!
+
+    //'publicStaticMethod() in Whale' clashes with publicStaticMethod() in Mammal;
+    // overridden method does not throw 'java.lang.Exception'
+    //public static void publicStaticMethod() throws Exception{}  //DOES NOT COMPILE!
+
 
     //I cannot hide a static final method
     //public static final void message() {}  //does not compile
