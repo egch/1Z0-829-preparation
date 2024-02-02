@@ -71,6 +71,15 @@ signature, it must override the method with its own implementation.
 
 [Inherit two default methods with the same signature](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/defaultmethods/InheritTwoDefaultMethods.java)
 
+#### Methods accessible by default method
+A default method can invoke any other type of method within the interface:
+- public static methods
+- private static methods
+- public instance methods
+- private static methods
+- other default methods
+[](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/defaultmethods/DefaultMethodCallingOtherMethods.java)
+
 ## Sealed
 A sealed class requires at least one subclass to extend.
 ### Same file
