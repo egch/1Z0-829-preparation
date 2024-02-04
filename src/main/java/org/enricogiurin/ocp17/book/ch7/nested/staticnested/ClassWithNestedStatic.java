@@ -8,8 +8,9 @@ public class ClassWithNestedStatic {
 
     public int stampede() {
       //on-static field 'count' cannot be referenced from a static context
-      // return count;
+      //it cannot access the instance member count.
 
+      // return count;  //DOES NOT COMPILE!
       return 0;
     }
   }

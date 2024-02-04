@@ -81,7 +81,8 @@ A default method can invoke any other type of method within the interface:
 [](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/defaultmethods/DefaultMethodCallingOtherMethods.java)
 
 ## Sealed
-A sealed class requires at least one subclass to extend.
+A sealed class requires at least one subclass to extend.   
+a sealed class needs to be declared (and compiled) in the same package as its direct subclasses.
 ### Same file
 The permits clause is optional if the subclass is nested or declared in the same file.
 
@@ -107,7 +108,9 @@ non-sealed class EuropeanMale extends HumanBeing {}
 final class AsianMale extends HumanBeing {}
 ```
 A subclass (Male) of a sealed class (HumanBeing) must be marked either `final` or `sealed` or `non-sealed`.
-
+### Modules
+_Named Module_: which allow sealed classes and their direct subclasses in different packages, 
+provided they are in the same named module.
 ### Sealed interfaces
 Permits list can apply to:
 * a class that implements the interface
@@ -210,9 +213,9 @@ public enum Gender {
 }
 ```
 ### Constructors
-enum constructors are implicitly private.!
+enum constructors are implicitly private!
 ```java
-  public SeasonWithValues(String description) {  //does not compile!
+  public SeasonWithValues(String description) {  //DOES NOT COMPILE!
     this.description = description;
   }
 ```
@@ -251,6 +254,28 @@ all the enum implements `Comparable`.
 ```
 
 ## Nested Classes
+### Inner Class
+Reference: `Outer.this.field`.
+```java
+class University {
+  int id;
+  class Department {
+    int id;
+    class Professor {
+      int id;
+      void printID() {
+        System.out.println("University id: " + University.this.id);
+        //System.out.println("University id: "+this.id); //equivalent
+        System.out.println("Department id: " + University.Department.this.id);
+        // System.out.println("Department id: "+Department.this.id); //equivalent
+        System.out.println("professor id: " + University.Department.Professor.this.id);
+        //System.out.println("professor id: "+Professor.this.id);//equivalent
+      }
+    }
+  }
+}
+```
+[University](../src/main/java/org/enricogiurin/ocp17/book/ch7/nested/inner/University.java)
 ### Nested Local Class
 A local class can access only final and effectively final local variables.
 ```java

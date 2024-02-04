@@ -1,7 +1,7 @@
 package org.enricogiurin.ocp17.book.ch7.useofenum;
 
 
-//ote that if an enum contains an abstract method,
+//Note that if an enum contains an abstract method,
 // then every enum value must include an override of this abstract method
 enum RGB {
   RED {
