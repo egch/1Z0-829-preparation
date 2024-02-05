@@ -18,7 +18,7 @@ public class UsageOfVarInLambda {
     //Comparator<String> c2NotValid = (var s1, String s2) -> 0;
 
     //I cannot use variable with type and without
-   // Comparator<String> c3  = (String s, t) -> 0;
+    // Comparator<String> c3  = (String s, t) -> 0;
   }
 
   void predicate() {

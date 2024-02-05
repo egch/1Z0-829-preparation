@@ -7,11 +7,13 @@ public class UsageOfToIntBiFunction {
   public static void main(String[] args) {
     new UsageOfToIntBiFunction().fi();
   }
+
   void fi() {
     ToIntBiFunction<String, String> maxLength = (s1, s2) -> Math.max(s1.length(), s2.length());
     int max = maxLength.applyAsInt("hello", "hi");
     System.out.println(max); //5
   }
+
   void anonymous() {
     ToIntBiFunction<String, String> minLenght = new ToIntBiFunction<>() {
       @Override

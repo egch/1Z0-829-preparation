@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 public class UsageOfPredicate {
 
   public static void main(String[] args) {
-    new UsageOfPredicate().or();
+    new UsageOfPredicate().negate();
   }
 
   void predicate() {
@@ -34,5 +34,17 @@ public class UsageOfPredicate {
         .boxed()
         .filter(global)
         .forEach(System.out::print);  //6 8 10 11 12 13
+  }
+
+  void negate() {
+    Predicate<String> isEmpty = String::isEmpty;
+    Predicate<String> isNotEmpty = isEmpty.negate();
+    boolean result = isNotEmpty.test("");  //false
+    System.out.println(result);//false
+
+    result = isEmpty.test("");
+    System.out.println(result);  //true
+
+
   }
 }

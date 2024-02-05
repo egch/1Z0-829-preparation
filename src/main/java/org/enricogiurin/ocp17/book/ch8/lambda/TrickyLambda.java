@@ -30,8 +30,6 @@ public class TrickyLambda {
     //but this does not compile
     //Consumer<Path> c2 = p -> true;
 
-
-
   }
 
 }

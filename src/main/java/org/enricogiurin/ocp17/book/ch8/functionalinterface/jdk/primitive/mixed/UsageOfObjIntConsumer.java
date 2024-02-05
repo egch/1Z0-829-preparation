@@ -7,8 +7,9 @@ public class UsageOfObjIntConsumer {
   public static void main(String[] args) {
     new UsageOfObjIntConsumer().anonymous();
   }
+
   void use() {
-    ObjIntConsumer<String> objIntConsumer = (String s, int t)-> System.out.println(s.formatted(t));
+    ObjIntConsumer<String> objIntConsumer = (String s, int t) -> System.out.println(s.formatted(t));
     //There are 20 people in the room
     objIntConsumer.accept("There are %d people in the room", 20);
   }

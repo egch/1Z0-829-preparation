@@ -24,13 +24,13 @@ public class SupplierOfPrimitive {
   }
 
   void longSupplier() {
-    LongSupplier longSupplier = ()->10L;
+    LongSupplier longSupplier = () -> 10L;
     long asLong = longSupplier.getAsLong();
     System.out.println(asLong);
   }
 
   void intSupplier() {
-    IntSupplier intSupplier = ()->new Random().nextInt(100);
+    IntSupplier intSupplier = () -> new Random().nextInt(100);
     int asInt = intSupplier.getAsInt();
     System.out.println(asInt);
   }

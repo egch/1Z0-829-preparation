@@ -12,7 +12,6 @@ public class FunctionalInterfacesForPrimitives {
   }
 
 
-
   void doublePredicate() {
     DoublePredicate dp = d -> d % 2 == 0;
     System.out.println(dp.test(5.2D)); //false

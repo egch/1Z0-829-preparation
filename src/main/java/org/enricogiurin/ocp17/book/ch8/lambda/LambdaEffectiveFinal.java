@@ -10,21 +10,18 @@ import java.util.function.Supplier;
 public class LambdaEffectiveFinal {
 
   private int instanceVariable = 0;
+  private Consumer<String> consumer = (s -> System.out.println(s.length()));
 
   public static void main(String[] args) {
     new LambdaEffectiveFinal().sum(10);
   }
 
-  private Consumer<String> consumer = (s -> System.out.println(s.length()));
-
-
-
   void sum(int parameter) {
     int localVar = 4;
     Supplier<Integer> supplier = () ->
-      {
-        return parameter + this.instanceVariable + localVar;
-      };
+    {
+      return parameter + this.instanceVariable + localVar;
+    };
 
     //I cannot change a local variable used within lambda!
     //Variable used in lambda expression should be final or effectively final

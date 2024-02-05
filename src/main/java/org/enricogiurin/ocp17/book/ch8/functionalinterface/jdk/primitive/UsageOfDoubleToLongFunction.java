@@ -12,11 +12,12 @@ public class UsageOfDoubleToLongFunction {
   public static void main(String[] args) {
     new UsageOfDoubleToLongFunction().methodReference();
   }
+
   void anonymous() {
     DoubleToLongFunction doubleToLongFunction = new DoubleToLongFunction() {
       @Override
       public long applyAsLong(double value) {
-        return (long)value;
+        return (long) value;
       }
     };
     long value = doubleToLongFunction.applyAsLong(5.5D);
@@ -39,7 +40,7 @@ public class UsageOfDoubleToLongFunction {
   }
 
   void methodReference() {
-    DoubleToLongFunction mr =  Math::round;
+    DoubleToLongFunction mr = Math::round;
     long l = mr.applyAsLong(5.2);
     System.out.println(l); //5
   }

@@ -30,7 +30,7 @@ public class LambdaWithBlock {
       //key needs to be final or effective final
       return Arrays.binarySearch(array, key);
     };
-    //arrays needs to be sorted!
+    //array needs to be sorted!
     Integer[] array = new Integer[]{3, 4, 5, 7, 10};
     Integer position = binarySearch.apply(array);
     System.out.println(position);

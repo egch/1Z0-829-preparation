@@ -41,6 +41,7 @@ across all threads and processes, while the synchronized classes do not.
 - check lambda does not throw a Checked exception
 - mind the semicolon when you assign a variable lambda.
     Example: Predicate<String> predicate = s->true;
+- when using curly brackets, check if there is return!
 ## FunctionalInterface
 - `IntUnaryOperator` is not with generics. So this does not compile: `IntUnaryOperator<String>`
 

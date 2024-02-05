@@ -91,17 +91,17 @@ public class MethodReference {
   }
 
   void contains() {
-    BiPredicate<String, String> biPredicate = (s,t)->s.contains(t);
+    BiPredicate<String, String> biPredicate = (s, t) -> s.contains(t);
     BiPredicate<String, String> biPredicateMR = String::contains;
 
     boolean result = biPredicateMR.test("dog", "og");
     System.out.println(result);
   }
 
-  void consumer(){
+  void consumer() {
     //weird...
     Consumer<Path> consumer = Files::isDirectory;
-    Consumer<Path> c2 = (p)->Files.isDirectory(p);
+    Consumer<Path> c2 = (p) -> Files.isDirectory(p);
   }
 
 }

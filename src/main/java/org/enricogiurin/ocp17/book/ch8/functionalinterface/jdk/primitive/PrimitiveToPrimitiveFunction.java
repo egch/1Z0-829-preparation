@@ -8,14 +8,15 @@ public class PrimitiveToPrimitiveFunction {
   public static void main(String[] args) {
     new PrimitiveToPrimitiveFunction().intToLongFunction();
   }
+
   void intToDoubleFunction() {
-    IntToDoubleFunction intToDoubleFunction = (int n) -> (double)n/10;
+    IntToDoubleFunction intToDoubleFunction = (int n) -> (double) n / 10;
     double v = intToDoubleFunction.applyAsDouble(4);
     System.out.println(v);
   }
 
-  void intToLongFunction(){
-    IntToLongFunction intToLongFunction = (int n)->Long.MAX_VALUE;
+  void intToLongFunction() {
+    IntToLongFunction intToLongFunction = (int n) -> Long.MAX_VALUE;
     long result = intToLongFunction.applyAsLong(5);
     System.out.println(result);
   }

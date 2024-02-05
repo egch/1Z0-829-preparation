@@ -9,7 +9,8 @@ public class UsageOfObjLongConsumer {
   }
 
   void usage() {
-    ObjLongConsumer<String> objLongConsumer = (String s, long l) -> System.out.println(s+": "+l);
+    ObjLongConsumer<String> objLongConsumer = (String s, long l) -> System.out.println(
+        s + ": " + l);
     objLongConsumer.accept("Number", 10L);  //Number: 10
   }
 

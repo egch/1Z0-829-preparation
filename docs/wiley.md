@@ -120,3 +120,5 @@ so they must be initialized with a value when they are declared.  [DONE]
 
 
 - stripIndent()
+####
+- lambda
