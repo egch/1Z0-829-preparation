@@ -1,6 +1,7 @@
 package org.enricogiurin.ocp17.book.ch9;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.UnaryOperator;
@@ -44,11 +45,25 @@ public class MethodsOfList {
     //we this we keep our generics
     String[] arrayOfString = list.toArray(new String[0]);
     String[] arrayOfString2 = list.toArray(new String[10]);
+    //[size] array: 3 - arrayOfString: 3 - arrayOfString2: 10
+    System.out.println(
+        "[size] array: %d - arrayOfString: %d - arrayOfString2: %d".formatted(array.length,
+            arrayOfString.length, arrayOfString2.length));
 
-    //the size is the original size of the list
-    System.out.println("size is " + arrayOfString.length);  //size is 3
-    //here we have 10 as passed in the argument
-    System.out.println("size is " + arrayOfString2.length);  //size is 10
+  }
+
+  void sort() {
+    List<String> list = Arrays.asList("a", "b", "c", "3", "M");
+    list.sort(String::compareTo);
+    //number, uppercase, lowercase
+    System.out.println(list); //[3, M, a, b, c]
+  }
+
+  void set() {
+    List<String> list = List.of("a", "b", "c");
+    List<String> arrayList = new ArrayList<>(list);
+    arrayList.set(1, "d");
+    System.out.println(arrayList);  //[a, d, c]
   }
 
 

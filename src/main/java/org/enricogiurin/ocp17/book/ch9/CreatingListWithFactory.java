@@ -7,7 +7,7 @@ import java.util.List;
 public class CreatingListWithFactory {
 
   public static void main(String[] args) {
-    new CreatingListWithFactory().sortAnImmutableList();
+    new CreatingListWithFactory().create();
   }
 
   void create() {
@@ -16,10 +16,11 @@ public class CreatingListWithFactory {
     List<String> arrayList = Arrays.asList(array);
     //this list is immutable!!
     List<String> listOf = List.of(array);
-    //changing the array
+    //we change the first element of the array
     array[0] = "k";
-    System.out.println(arrayList.get(0));  //"K"
-    System.out.println(listOf.get(0));  //"a"
+    //arrayList is affected!!!!
+    System.out.println(arrayList);  // [k, b, c]
+    System.out.println(listOf);    // [a, b, c]
   }
 
   void sortAnImmutableList() {
@@ -35,8 +36,9 @@ public class CreatingListWithFactory {
 
   void copyOf() {
     //sourceList is immutable
-    List<Integer> sourceList = List.of(1, 2, 3);
-    List<Integer> cloneList = List.copyOf(sourceList);
+    List<Integer> sourceList = List.of(1, 2, 3);  //accepts vararg
+    //cloneList is immutable
+    List<Integer> cloneList = List.copyOf(sourceList); //accepts collection
     //cloneList is immutable
     cloneList.add(2);  //exception at runtime
   }
