@@ -58,6 +58,20 @@ int compareTo(T o1);
 
 ## Queue
 ![Methods of Queue.png](images/Queue.png)
+### Main methods of Queue
+The following **throw an exception** if something go wrong:
+```java
+public boolean add(E e);
+public E element(); //equivalent to peek()
+public E remove();
+```
+
+The following **do not throw an exception** if something go wrong:
+```java
+public boolean offer(E e);
+public E peek();
+public E poll();
+```
 
 ## Deque
 ![Deque](images/Deque.png)
