@@ -74,7 +74,28 @@ public E poll();
 ```
 
 ## Deque
+
 ![Deque](images/Deque.png)
+### Main methods of Deque
+The following **throw an exception** if something go wrong:
+```java
+public void addFirst(E e);
+public void addLast(E e);
+public E getFirst();  //element not removed
+public E getLast();  //element not removed
+public E removeFirst();
+public E removeLast();
+```
+The following **do not throw an exception** if something go wrong:
+```java
+public boolean offerFirst(E e);
+public boolean offerLast(E e);
+public E peekFirst();
+public E peekLast();
+public E pollFirst();
+public E pollLast();
+```
+
 
 [Example Deque](../src/main/java/org/enricogiurin/ocp17/book/ch9/UsageOfDeque.java)
 
@@ -99,6 +120,10 @@ System.out.println(result); //null
 String pop = stack.pop();
 ```
 
+### Stack
+![Stack](images/Deque-Stack.png)
+
+
 
 ## Map
 ### foreach
@@ -110,7 +135,7 @@ String pop = stack.pop();
     map.forEach(biConsumer);
 ```
 
-![deque-stack.png](images/Deque-Stack.png)
+
 
  - LinkedList implements Deque
  - ArrayDeque implements Deque

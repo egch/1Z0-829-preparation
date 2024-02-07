@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch9;
+package org.enricogiurin.ocp17.book.ch9.map;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,11 +11,6 @@ public class MethodsOfMap {
     new MethodsOfMap().forEach();
   }
 
-  void createMap() {
-
-    Map<Integer, String> map2 = Map.ofEntries(
-        Map.entry(1, "value1"), Map.entry(2, "value2"));
-  }
 
   void inspectMap() {
     Map<Integer, String> map = buildMap();

@@ -1,4 +1,4 @@
-package org.enricogiurin.ocp17.book.ch9;
+package org.enricogiurin.ocp17.book.ch9.map;
 
 import java.util.HashMap;
 import java.util.Map;
