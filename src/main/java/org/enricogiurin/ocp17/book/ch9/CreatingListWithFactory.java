@@ -7,7 +7,7 @@ import java.util.List;
 public class CreatingListWithFactory {
 
   public static void main(String[] args) {
-    new CreatingListWithFactory().create();
+    new CreatingListWithFactory().of();
   }
 
   void create() {
@@ -21,6 +21,12 @@ public class CreatingListWithFactory {
     //arrayList is affected!!!!
     System.out.println(arrayList);  // [k, b, c]
     System.out.println(listOf);    // [a, b, c]
+  }
+
+  void of() {
+    var v = List.of("mouse", "parrot");
+    v.removeIf(String::isEmpty);
+    v.removeIf(s -> s.length() == 4);
   }
 
   void sortAnImmutableList() {

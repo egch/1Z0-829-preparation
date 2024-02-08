@@ -122,3 +122,13 @@ so they must be initialized with a value when they are declared.  [DONE]
 - stripIndent()
 ####
 - lambda
+####
+review this: ˂NullPointerException˃printException(new NullPointerException ("D")
+- immutable collections v.removeIf(String::isEmpty); also if no line is removed, they throw java.lang.UnsupportedOperationException
+- refresh: Comparator.reverseOrder()/ Comparator.naturalOrder()
+- refresh public static <T> T identity(T t)  : where to put <T>
+- -Comparator.thenComparing
+- review generics needed or not for this: var thirdCopy = new ArrayList˂˃(copyOfCopy);
+- overwrite record constructor [DONE]
+- keySet()  not keys()!!!)
+- map merge with null values

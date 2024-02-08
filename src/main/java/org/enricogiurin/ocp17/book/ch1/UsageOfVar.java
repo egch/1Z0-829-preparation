@@ -1,5 +1,7 @@
 package org.enricogiurin.ocp17.book.ch1;
 
+import java.util.LinkedList;
+
 public class UsageOfVar {
 
   public static void main(String[] args) {
@@ -19,6 +21,10 @@ public class UsageOfVar {
     //x as now the type int
     //x = "hello"; //does not compile!
 
+  }
+
+  void example() {
+    var q = new LinkedList<>();
   }
 
   void wrongVar() {
