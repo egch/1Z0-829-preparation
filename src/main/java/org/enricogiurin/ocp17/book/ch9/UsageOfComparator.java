@@ -10,7 +10,7 @@ import org.enricogiurin.ocp17.various.helper.JarMockTest;
 public class UsageOfComparator {
 
   public static void main(String[] args) {
-    new UsageOfComparator().reversed();
+    new UsageOfComparator().thenComparing();
   }
 
   void thenComparing() {

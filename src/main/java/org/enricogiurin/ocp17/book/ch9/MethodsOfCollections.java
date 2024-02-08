@@ -1,14 +1,15 @@
 package org.enricogiurin.ocp17.book.ch9;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class MethodsOfCollections {
 
   public static void main(String[] args) {
-    new MethodsOfCollections().binarySearchWithComparator();
-
+    new MethodsOfCollections().sort_comparator();
   }
 
   void binarySearch() {
@@ -21,6 +22,31 @@ public class MethodsOfCollections {
     System.out.println(index);
   }
 
+  void sort_notComparable() {
+    List<Wrapper> list = List.of(new Wrapper("a"), new Wrapper("b"));
+    ArrayList<Wrapper> wrapperArrayList = new ArrayList<>(list);
+    //Wrapper does not implement Comparable
+    // Collections.sort(wrapperArrayList);  //DOES NOT COMPILE
+  }
+
+  void sort() {
+    List<WrapperComparable> list = List.of(new WrapperComparable("b"), new WrapperComparable("a"));
+    ArrayList<WrapperComparable> wrapperArrayList = new ArrayList<>(list);
+    Collections.sort(wrapperArrayList);
+    //[Wrapper{name='a'}, Wrapper{name='b'}]
+    System.out.println(wrapperArrayList);
+  }
+
+  void sort_comparator() {
+    List<Wrapper> list = List.of(new Wrapper("a"), new Wrapper("b"), new Wrapper("3"));
+    ArrayList<Wrapper> wrapperArrayList = new ArrayList<>(list);
+    Comparator<Wrapper> comparator = Comparator.comparing(c -> c.name);
+    Collections.sort(wrapperArrayList, comparator);
+    //[Wrapper{name='3'}, Wrapper{name='a'}, Wrapper{name='b'}]
+    System.out.println(wrapperArrayList);
+
+  }
+
   void binarySearchWithComparator() {
     //list needs to be sorted ...according to the comparator to be used
     List<Integer> list = Arrays.asList(20, 10, 5, 4, 3, 1);
@@ -30,6 +56,34 @@ public class MethodsOfCollections {
 
   List<Integer> buildList() {
     return Arrays.asList(0, 2, 3, 5, 7, 11, 20);
+  }
+
+  class Wrapper {
+
+    String name;
+
+    public Wrapper(String name) {
+      this.name = name;
+    }
+
+    @Override
+    public String toString() {
+      return "Wrapper{" +
+          "name='" + name + '\'' +
+          '}';
+    }
+  }
+
+  class WrapperComparable extends Wrapper implements Comparable<Wrapper> {
+
+    public WrapperComparable(String name) {
+      super(name);
+    }
+
+    @Override
+    public int compareTo(Wrapper wrapper) {
+      return this.name.compareTo(wrapper.name);
+    }
   }
 }
 

@@ -8,7 +8,7 @@ import org.enricogiurin.ocp17.various.helper.JarMockTest;
 public class UsageOfMap {
 
   public static void main(String[] args) {
-    new UsageOfMap().overwriteValue();
+    new UsageOfMap().merge2();
   }
 
   void createMap() {
@@ -52,6 +52,13 @@ public class UsageOfMap {
 
     scores.merge("New", 20, maxFunction);
     System.out.println(scores.get("New"));  //20
+  }
+
+  void merge2() {
+    Map<String, Integer> scores = getScores();
+    BiFunction<Integer, Integer, Integer> merger = (v1, v2) -> v1 + v2;
+    Integer mergedValue = scores.merge("John", 24, merger);
+    System.out.println(mergedValue); //54 (24+30)
   }
 
   void mergeNull() {
