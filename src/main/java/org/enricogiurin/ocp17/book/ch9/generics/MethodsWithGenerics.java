@@ -2,6 +2,7 @@ package org.enricogiurin.ocp17.book.ch9.generics;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 
@@ -45,6 +46,8 @@ public class MethodsWithGenerics {
   void callAddElementToCollection() {
     ArrayList<String> list = new ArrayList<>();
     String enrico = addElementToCollection(list, "Enrico");
+    //optional syntax for generics
+    this.<List<String>, String>addElementToCollection(null, "a");
     System.out.println("size: " + list.size());
 
     var integers = new ArrayList<Integer>();

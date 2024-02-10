@@ -5,7 +5,6 @@ public class GenericsWIthWildOperator {
   void wildOperatorRight() {
     //Wildcard type '?' cannot be instantiated directly
     //List<String> list = new ArrayList<?>();  //does not compile
-
   }
 
 }

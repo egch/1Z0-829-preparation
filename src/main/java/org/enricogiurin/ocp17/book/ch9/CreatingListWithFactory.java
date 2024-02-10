@@ -23,10 +23,12 @@ public class CreatingListWithFactory {
     System.out.println(listOf);    // [a, b, c]
   }
 
+  //when using removeIf on an immutable collection this trigger java.lang.UnsupportedOperationException
+  //even so no element is removed
   void of() {
     var v = List.of("mouse", "parrot");
+    //Exception in thread "main" java.lang.UnsupportedOperationException
     v.removeIf(String::isEmpty);
-    v.removeIf(s -> s.length() == 4);
   }
 
   void sortAnImmutableList() {

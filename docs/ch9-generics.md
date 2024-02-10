@@ -27,10 +27,26 @@ WRONG: static needs to be defined before generics declaration!
 ```java
   public  <T extends Number> static void calculate(T t){} //does NOT compile
 ```
+
+```java
+private static <U extends Exception> void printMessage(U u) {
+    System.out.println(u.getMessage());
+}
+
+public static void invokePrintMessage() {
+    printMessage(new FileNotFoundException("not found"));
+    //optional syntax for invoking a generic method
+    StaticMethodGenerics.<NullPointerException>printMessage(new NullPointerException
+    ("D"));
+}
+```
+[Static Methods Generics](../src/main/java/org/enricogiurin/ocp17/book/ch9/generics/StaticMethodGenerics.java)
 ### Instance Methods
 ```java
  public <T> T getFirstElement(T[] array) {/*...*/}
 ```
+
+[GenericsInClassAndMethods](../src/main/java/org/enricogiurin/ocp17/book/ch9/generics/GenericsInClassAndMethods.java)
 ## Instantiate with generics
 [Example](../src/main/java/org/enricogiurin/ocp17/book/ch9/generics/InstantiateClassWithGenerics.java)
 ## Bounding Generic Types

@@ -96,6 +96,15 @@ public class CollectionsOfGenericsWithWildcard {
     //list2.add(new Object()); does not compile
   }
 
+  void var() {
+    List<Integer> list = List.of(2, 5);
+    List<Integer> mutableList = new ArrayList<>(list);
+    //type inference: var is a List<String> from the right assignment
+    var varList = new ArrayList<>(list);
+    Integer first = varList.get(0);
+    System.out.println(first);
+  }
+
   void wrongCollectionWithGenerics() {
     //does not compile
     //List<String> strings = new ArrayList<?>();

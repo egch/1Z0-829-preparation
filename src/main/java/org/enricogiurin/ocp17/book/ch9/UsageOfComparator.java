@@ -10,7 +10,7 @@ import org.enricogiurin.ocp17.various.helper.JarMockTest;
 public class UsageOfComparator {
 
   public static void main(String[] args) {
-    new UsageOfComparator().thenComparing();
+    new UsageOfComparator().naturalOrderVsReverseOrder();
   }
 
   void thenComparing() {
@@ -57,6 +57,17 @@ public class UsageOfComparator {
     list.sort(Comparator.naturalOrder());
     result = String.join(" ", list);
     System.out.println(result);  //81a Y3 Ya a dhY hgh
+  }
+
+  void naturalOrderVsReverseOrder() {
+    List<Integer> list = List.of(1, 5, 9, 3, 4, 6);
+    var mutableList = new ArrayList<>(list);
+    Comparator<Integer> naturalOrder = Comparator.naturalOrder();
+    Comparator<Integer> reverseOrder = Comparator.reverseOrder();
+    Collections.sort(mutableList, naturalOrder); //[1, 3, 4, 5, 6, 9]
+    System.out.println(mutableList);
+    Collections.sort(mutableList, reverseOrder); //[9, 6, 5, 4, 3, 1]
+    System.out.println(mutableList);
   }
 
   record Person(int age, int weight) {

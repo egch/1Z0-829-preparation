@@ -30,9 +30,7 @@ public class StaticMethodGenerics {
 
   public static void invokePrintMessage() {
     printMessage(new FileNotFoundException("not found"));
-    StaticMethodGenerics.<NullPointerException>printMessage(new NullPointerException
-        ("D"));
-
+    StaticMethodGenerics.<NullPointerException>printMessage(new NullPointerException("D"));
   }
 
   private static <U extends Exception> void printMessage(U u) {
