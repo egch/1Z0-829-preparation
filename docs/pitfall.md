@@ -27,7 +27,7 @@ across all threads and processes, while the synchronized classes do not.
 ## Stream
 -  `IntSummaryStatistics`, not ~~IntegerSummaryStatistics~~. 
 - Do not confuse `IntStream` with `Stream<Integer>`
-- `Stream.concat(s1, s2)` works only with 2 streams, not more parameters.
+- `Stream.concat(s1, s2)` works only with 2 streams, not more parameters. !!!!!
 - `Optional.orElseThrow()`
 - check if there is more than one terminal operation
 - Names: Source / Intermediate operation / Terminal operation. ~~Not Origin~~ !

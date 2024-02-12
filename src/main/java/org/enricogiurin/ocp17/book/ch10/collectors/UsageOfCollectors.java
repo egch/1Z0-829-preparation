@@ -12,7 +12,7 @@ import org.enricogiurin.ocp17.various.helper.JarMockTest;
 public class UsageOfCollectors {
 
   public static void main(String[] args) {
-    new UsageOfCollectors().counting();
+    new UsageOfCollectors().averagingIntWithRecord();
   }
 
   void joining() {
@@ -33,6 +33,24 @@ public class UsageOfCollectors {
     //average length of the string in the stream
     Double average = fruitStream.collect(Collectors.averagingInt(value -> value.length()));
     System.out.println("average: " + average); //4.9
+  }
+
+  void averagingIntWithRecord() {
+    record Person(String name, int age) {
+
+    }
+    List<Person> persons = List.of(
+        new Person("Alice", 25),
+        new Person("Bob", 30),
+        new Person("Charlie", 22),
+        new Person("David", 28),
+        new Person("Eve", 35)
+    );
+    double averageAge = persons.stream()
+        .collect(Collectors.averagingInt(Person::age));
+
+    //Average Age: 28.0
+    System.out.println("Average Age: " + averageAge);
   }
 
   @JarMockTest

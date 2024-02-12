@@ -7,7 +7,7 @@ import java.util.List;
 public class CreatingListWithFactory {
 
   public static void main(String[] args) {
-    new CreatingListWithFactory().of();
+    new CreatingListWithFactory().emptyListAsListOf();
   }
 
   void create() {
@@ -23,12 +23,18 @@ public class CreatingListWithFactory {
     System.out.println(listOf);    // [a, b, c]
   }
 
-  //when using removeIf on an immutable collection this trigger java.lang.UnsupportedOperationException
+  //when using removeIf on an immutable collection, this trigger java.lang.UnsupportedOperationException
   //even so no element is removed
   void of() {
     var v = List.of("mouse", "parrot");
     //Exception in thread "main" java.lang.UnsupportedOperationException
     v.removeIf(String::isEmpty);
+  }
+
+  void emptyListAsListOf() {
+    //you can also create an immutable empty list by calling List.of()
+    List<String> emptyList = List.<String>of();  //no arg passed
+    System.out.println(emptyList.isEmpty());  //true
   }
 
   void sortAnImmutableList() {

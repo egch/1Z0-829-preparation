@@ -132,3 +132,6 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - overwrite record constructor [DONE]
 - keySet()  not keys()!!!) [DONE]
 - map merge with null values  [DONE]
+
+####
+ - List.of() -> empty list [DONE]
