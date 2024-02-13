@@ -24,6 +24,12 @@ public class CatchMethodWithThrows {
     throwingThrowable();
   }
 
+  //no need to handle
+  void catchThrowingError() {
+    throwingError();
+  }
+
+
   void throwsThrowingException() throws Exception {
     throwingException();
   }
@@ -40,6 +46,9 @@ public class CatchMethodWithThrows {
   }
 
   private void throwingThrowable() throws Throwable {
+  }
+
+  private void throwingError() throws Error {
   }
 
 

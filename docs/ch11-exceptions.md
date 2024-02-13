@@ -61,7 +61,7 @@ A method can declare an exception even if it's not thrown within the method itse
 | StackOverflowError | Thrown when method calls itself too many times (called infinite recursion because method typically calls itself without end)              |
 | NoClassDefFoundError | Thrown when class that code uses is available at com- pile time but not runtime              |
 
-### Some Exceptions
+### Some Runtime Exception
 ```java
 public class NumberFormatException extends IllegalArgumentException {/**/}
 ```
