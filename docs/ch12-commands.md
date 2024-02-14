@@ -16,7 +16,12 @@ If you must use an internal API that has been made inaccessible by default, then
 ```shell
 $javac -p out --add-exports moduleA/com.example.util=moduleB -d out/moduleB **/.java
 ```
-## Running module - java
+
+## Packaging modules
+```shell
+$ jar -cvf mods/zoo.visitor.jar -C consumerModule . 
+```
+## Running module
 Extended Form
 ```shell
 java --module-path mods --module zoo.animal.feeding/zoo.animal.feeding.Task
@@ -32,12 +37,16 @@ $ java --module-path mods --describe-module moduleName
 ```
 ![describe-modules.png](images/describe-modules.png)
 
+#### Example
 ```shell
+$ java -p mods --describe-module zoo.tours.api
+```
+```shell
+zoo.tours.agency file:///xxx/mods/zoo.tours.agency.jar
+requires zoo.tours.api
 requires java.base mandated
-requires zoo.animal.care
-requires zoo.animal.feeding
-requires zoo.animal.talks
-contains zoo.staff
+provides zoo.tours.api.Tour with zoo.tours.agency.TourImpl
+contains zoo.tours.agency
 ```
 ### list
 ```shell
@@ -46,27 +55,23 @@ $ java --list-modules
 
 ### show-module-resolution
 ```shell
-java -p mods -m zoo.animal.feeding/zoo.animal.feeding.Task --show-module-resolution
+$ java --show-module-resolution -p mods -m zoo.visitor/zoo.visitor.Tourist
 ```
 When this option is present, the JVM will output information about how it resolved module dependencies.
 
-## Running module - jar
-```shell
-$ jar -cvf mods/zoo.animal.feeding.jar -C feeding/ .
-```
 
-### describe-module
+
+## describe-module - jar
 ```shell
 $ jar --file mods/zoo.staff.jar --describe-module
 #equivalent
 $ jar --file mods/zoo.staff.jar -d
  ```
 
-
 ## jdeps
 The jdeps command lists information about dependencies within a module.
 ```shell
-$ jdeps –s zoo.animal.puppy.jar 
+$ jdeps –s zoo.dino.jar 
 ```
 * `-s` / `-summary` - Summarizes output
 * `--jdk-internals` / `-jdkinternals` - The jdeps -jdkinternals option includes analysis of dependencies on JDK internal APIs
