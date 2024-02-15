@@ -137,3 +137,9 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
  - List.of() -> empty list [DONE]
 ###
  - NumberFormatException inherits from IllegalArgumentException [DONE]
+###
+- modules: --add-requires option  / --add-exports
+- refresh jdeps commands
+- show-module-resolution
+- java -d / jar -d
+- jmod
