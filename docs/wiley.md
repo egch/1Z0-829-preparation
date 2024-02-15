@@ -138,8 +138,8 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 ###
  - NumberFormatException inherits from IllegalArgumentException [DONE]
 ###
-- modules: --add-requires option  / --add-exports
-- refresh jdeps commands
-- show-module-resolution
+- modules: --add-exports [DONE]
+- refresh jdeps commands [DONE]
+- show-module-resolution [DONE]
 - java -d / jar -d
 - jmod
