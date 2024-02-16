@@ -11,7 +11,25 @@ public class UsageOfExecutorService {
 
   public static void main(String[] args)
       throws ExecutionException, InterruptedException, TimeoutException {
-    new UsageOfExecutorService().submitWithCallable();
+    new UsageOfExecutorService().execute();
+  }
+
+  void execute() {
+    Runnable runnable = () -> {
+      try {
+        Thread.sleep(200);
+        System.out.println("Task completed!");
+      } catch (InterruptedException e) {
+        throw new RuntimeException(e);
+      }
+    };
+    //execute() only accepts Runnable (NOT Callable)
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+    try {
+      executorService.execute(runnable);
+    } finally {
+      executorService.shutdown();
+    }
   }
 
   void submitWithRunnable() throws ExecutionException, InterruptedException {
@@ -36,6 +54,7 @@ public class UsageOfExecutorService {
     } finally {
       executorService.shutdown();
     }
+    //keep in mind that get() is blocking
     String result = future.get(1, TimeUnit.SECONDS);
     System.out.println(result);
   }

@@ -52,9 +52,8 @@ public class CallingGetOnFuture {
     }
     Generator generator = new Generator();
     List<Future<Double>> futures = new ArrayList<>();
-    ExecutorService executorService=null;
+    ExecutorService executorService = Executors.newFixedThreadPool(5);
     try {
-      executorService = Executors.newFixedThreadPool(5);
       for (int j = 0; j < 100; j++) {
         Future<Double> doubleFuture = executorService.submit(() -> generator.random());
         futures.add(doubleFuture);
@@ -62,8 +61,8 @@ public class CallingGetOnFuture {
     }finally {
       executorService.shutdown();
     }
-    boolean completed = executorService.awaitTermination(10, TimeUnit.SECONDS);
-    if(completed){
+    boolean awaitTermination = executorService.awaitTermination(10, TimeUnit.SECONDS);
+    if (awaitTermination && executorService.isTerminated()) {
       futures.forEach(f-> {
         try {
           Double aDouble = f.get();

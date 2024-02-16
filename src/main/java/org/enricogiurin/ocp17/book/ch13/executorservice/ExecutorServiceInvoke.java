@@ -12,11 +12,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ExecutorServiceInvoke {
 
-  private AtomicInteger cnt = new AtomicInteger(0);
+  private final AtomicInteger cnt = new AtomicInteger(0);
 
   public static void main(String[] args)
       throws ExecutionException, InterruptedException, TimeoutException {
-    new ExecutorServiceInvoke().invokeAny();
+    new ExecutorServiceInvoke().invokeAll();
   }
 
   private List<Callable<String>> buildActions() {
