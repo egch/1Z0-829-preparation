@@ -26,9 +26,11 @@ public class UsageOfScheduledExecutorService {
   //hello
   void schedule() {
     ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+    ScheduledFuture<?> scheduledFuture = null;
 
     try {
-      scheduledExecutorService.schedule(runnable, 2L, TimeUnit.SECONDS);
+      scheduledFuture = scheduledExecutorService.schedule(runnable, 2L,
+          TimeUnit.SECONDS);
     } finally {
       scheduledExecutorService.shutdown();
     }
