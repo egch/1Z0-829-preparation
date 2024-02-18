@@ -143,3 +143,5 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - show-module-resolution [DONE]
 - java -d / jar -d
 - jmod
+###
+- fairness ReentrantLock [DONE]
