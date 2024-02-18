@@ -1,10 +1,8 @@
 package org.enricogiurin.ocp17.book.ch14;
 
 import java.io.BufferedReader;
-import java.io.Console;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.Reader;
 
 
 /**
