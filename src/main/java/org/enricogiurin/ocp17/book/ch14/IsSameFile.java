@@ -8,14 +8,14 @@ import java.nio.file.Path;
 public class IsSameFile {
 
   public static void main(String[] args) throws IOException {
-    new IsSameFile().simpleIsSameFile();
+    new IsSameFile().mismatch();
 
   }
 
   void isSameFile() throws IOException {
     //from /tmp folder I ran this: $ ln -s /tmp/a/b link
 
-    //if I do not run the ln command I got this:
+    //if I do not run the ln command, I got this:
     //Exception in thread "main" java.nio.file.NoSuchFileException: /tmp/a/b
     Path realF = Path.of("/tmp/a/b");
     Path symbolicLink = Path.of("/tmp/link");

@@ -21,7 +21,8 @@ public class FilesCopyStream {
     //copy files
     try (InputStream resourceAsStream = getClass().getResourceAsStream("/files/sentences.txt");
         BufferedInputStream bufferedInputStream = new BufferedInputStream(resourceAsStream)) {
-      Files.copy(bufferedInputStream, out, StandardCopyOption.REPLACE_EXISTING);
+      long bytesRead = Files.copy(bufferedInputStream, out, StandardCopyOption.REPLACE_EXISTING);
+      System.out.println("bytes read: %s".formatted(bytesRead));  //43
     }
   }
 
