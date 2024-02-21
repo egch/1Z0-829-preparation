@@ -38,17 +38,17 @@ public class TranslatingEscapes {
   }
 
   void multiLines() {
-     System.out.println("cheetah\ncub");
-     //cheetah
-     //cub
-     System.out.println("cheetah\\ncub");
-     //cheetah\ncub
-     System.out.println("cheetah\ncub".translateEscapes());
-     //cheetah
-     //cub
-     System.out.println("cheetah\\ncub".translateEscapes());
-     //cheetah
-      //cub
+    System.out.println("cheetah\ncub");
+    //cheetah
+    //cub
+    System.out.println("cheetah\\ncub");
+    //cheetah\ncub
+    System.out.println("cheetah\ncub".translateEscapes());
+    //cheetah
+    //cub
+    System.out.println("cheetah\\ncub".translateEscapes());
+    //cheetah
+    //cub
   }
 
 }

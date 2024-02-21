@@ -80,6 +80,7 @@ public class UsageOfIntStream {
         .limit(5)
         .forEach(System.out::println);  //1,3,5,7,9
   }
+
   void summaryStatistics() {
     IntSummaryStatistics intSummaryStatistics = IntStream.range(1, 100)
         .filter(n -> n % 2 == 0)

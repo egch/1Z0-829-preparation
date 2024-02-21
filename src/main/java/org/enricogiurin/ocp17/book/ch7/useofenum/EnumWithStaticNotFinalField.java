@@ -7,9 +7,9 @@ public class EnumWithStaticNotFinalField {
 
   enum Api {
     UPDATE("update the data"), READ("read the data");
-    private String description;
-    private static String version = "2.0";
     private static final String firstVersion = "1.0";
+    private static String version = "2.0";
+    private String description;
 
     Api(String description) {
       this.description = description;

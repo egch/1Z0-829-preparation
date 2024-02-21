@@ -85,7 +85,7 @@ public class CollectionsOfGenericsWithWildcard {
   void lowerBoundedWildcards3() {
     //List<? super IOException> ioExceptions = new ArrayList<FileNotFoundException>();  //does not compile
     List<? super IOException> ioExceptions = new ArrayList<Exception>();  //does  compile
-    }
+  }
 
   void wildcard() {
     //this means list of Object

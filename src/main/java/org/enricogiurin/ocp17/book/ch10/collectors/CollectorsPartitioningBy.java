@@ -13,6 +13,7 @@ public class CollectorsPartitioningBy {
   public static void main(String[] args) {
     new CollectorsPartitioningBy().partitioningByCounting();
   }
+
   void partitioningBy() {
     Stream<String> fruitStream = fruitStream();
     Map<Boolean, List<String>> map = fruitStream.collect(

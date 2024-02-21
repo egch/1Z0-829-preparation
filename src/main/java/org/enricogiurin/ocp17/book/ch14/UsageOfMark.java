@@ -56,7 +56,7 @@ public class UsageOfMark {
     }
   }
 
-   void jumpAround() throws IOException {
+  void jumpAround() throws IOException {
     final String name = "0123456789";
     InputStream is = new ByteArrayInputStream(name.getBytes());
     try (is) {
@@ -66,7 +66,7 @@ public class UsageOfMark {
       is.mark(4);  //mark to (3)
       is.skip(1);  //-> 4
       is.reset();  //goes back to (3)
-      System.out.print((char)is.read());  //3
+      System.out.print((char) is.read());  //3
     }
   }
 
@@ -97,7 +97,7 @@ public class UsageOfMark {
   }
 
   void readBytes() throws IOException {
-    final var luck = new byte[] { 1, 2, 3, 4, 5, 6, 7 };
+    final var luck = new byte[]{1, 2, 3, 4, 5, 6, 7};
     byte[] buffer = new byte[2];
     try (InputStream is = new ByteArrayInputStream(luck)) {
       is.read(buffer);

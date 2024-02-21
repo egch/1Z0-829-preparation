@@ -1,6 +1,7 @@
 package org.enricogiurin.ocp17.book.ch6.abstractclass;
 
 public abstract class AnAbstractClass {
+
   abstract void hello();
   //Illegal combination of modifiers: 'abstract' and 'private'
   //private abstract void notAllowed();
@@ -12,6 +13,6 @@ public abstract class AnAbstractClass {
   //abstract static void notAllowed();
 
   //Modifier 'abstract' not allowed here
- // abstract AnAbstractClass(){}
+  // abstract AnAbstractClass(){}
 
 }

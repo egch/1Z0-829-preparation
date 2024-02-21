@@ -15,8 +15,8 @@ public class UnaryOperators {
     System.out.println(bwXAsAsAString); //11111111111111111111111111111000
   }
 
-  void bitwiseToDifferentTypes(){
-    var b  = false;
+  void bitwiseToDifferentTypes() {
+    var b = false;
     //does not compile!
     //var a = ~b;
     var aDouble = 3.2D;
@@ -29,7 +29,7 @@ public class UnaryOperators {
 
     var aLong = 2L;
     //but I can apply to a long
-    aLong =~aLong;
+    aLong = ~aLong;
   }
 
   void prePostIncrement() {

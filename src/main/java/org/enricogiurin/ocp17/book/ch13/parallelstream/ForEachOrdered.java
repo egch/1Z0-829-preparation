@@ -20,8 +20,9 @@ public class ForEachOrdered {
     IntStream.range(0, 100)
         .parallel()
         .forEachOrdered(s -> {
-          System.out.println("processing value: "+s);
-          data.add(s);}
+              System.out.println("processing value: " + s);
+              data.add(s);
+            }
         );
     System.out.println(data.size());
   }
@@ -33,8 +34,9 @@ public class ForEachOrdered {
     IntStream.range(0, 100)
         .parallel()
         .forEach(s -> {
-        //  System.out.println("processing value: "+s);
-          data.add(s);});
+          //  System.out.println("processing value: "+s);
+          data.add(s);
+        });
     System.out.println(data.size());
   }
 

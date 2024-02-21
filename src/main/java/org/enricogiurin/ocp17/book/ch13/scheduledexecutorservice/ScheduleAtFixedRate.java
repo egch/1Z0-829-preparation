@@ -6,30 +6,29 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
-
 /**
- * Javadoc:
- * If any execution of this task takes longer than its period, then subsequent executions may start late, but will not concurrently execute.
- * @see ScheduledExecutorService#scheduleAtFixedRate(Runnable, long, long, TimeUnit)
+ * Javadoc: If any execution of this task takes longer than its period, then subsequent executions
+ * may start late, but will not concurrently execute.
  *
+ * @see ScheduledExecutorService#scheduleAtFixedRate(Runnable, long, long, TimeUnit)
  */
 public class ScheduleAtFixedRate {
+
   private final AtomicInteger counter = new AtomicInteger(0);
-
-  public static void main(String[] args) {
-    new ScheduleAtFixedRate().scheduleAtFixRate();
-  }
-
   Runnable runnable = () -> {
     long threadId = counter.getAndIncrement();
     System.out.println("Started thread %d".formatted(threadId));
     try {
       Thread.sleep(2_000);
       System.out.println("completed thread %d".formatted(threadId));
-    }catch (Exception e){
+    } catch (Exception e) {
       e.printStackTrace();
     }
   };
+
+  public static void main(String[] args) {
+    new ScheduleAtFixedRate().scheduleAtFixRate();
+  }
 
   //the threads do not overlap!
   //[javadoc]: If any execution of this task takes longer than its period, then subsequent executions may start late, but will not concurrently execute.
@@ -51,7 +50,7 @@ public class ScheduleAtFixedRate {
       } catch (InterruptedException e) {
         throw new RuntimeException(e);
       }
-    }finally {
+    } finally {
       scheduledExecutorService.shutdown();
     }
   }

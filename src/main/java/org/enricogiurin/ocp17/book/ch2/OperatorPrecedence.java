@@ -31,6 +31,7 @@ public class OperatorPrecedence {
     System.out.println("value: " + x);
     return x;
   }
+
   void calculateResult() {
     int a = 7;
     int b = 2;
@@ -44,7 +45,7 @@ public class OperatorPrecedence {
 
   void postIncrementTricky() {
     int a = 5, b = 7;
-    int result = a++/b - a;
+    int result = a++ / b - a;
     // 5/7 -> 0
     // 5++ -> 6
     // 0 - 6 = -6
@@ -54,7 +55,7 @@ public class OperatorPrecedence {
   void ternary() {
     int a = 9;
     int b = 3;
-    var result = ++a>= 10 ? b-- <= 2
+    var result = ++a >= 10 ? b-- <= 2
         ? "A" : "B" : "C";
     /*
     1. ++a>=10 -> 10>=10 -> then we can exclude the last block "C"

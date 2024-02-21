@@ -7,22 +7,24 @@ public class FinalLocalVariables {
   public static void main(String[] args) {
     new FinalLocalVariables().finalObject();
   }
+
   void finalVariables() {
     final int x = 5;
     //x = 6; // DOES NOT COMPILE!
   }
+
   void finalInitializationWIthIf() {
     final int age;
-    if(LocalDate.now().getDayOfMonth()%2==0){
+    if (LocalDate.now().getDayOfMonth() % 2 == 0) {
       age = 40;
-    } else{
+    } else {
       age = 30;
     }
   }
 
-  void finalInitializationWIthIfOnlyCase(){
+  void finalInitializationWIthIfOnlyCase() {
     final int x;
-    if(Math.random()>0.5){
+    if (Math.random() > 0.5) {
       x = 6;
     }
     //Variable 'x' might not have been initialized

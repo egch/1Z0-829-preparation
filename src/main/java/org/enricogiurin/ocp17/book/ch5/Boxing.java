@@ -25,10 +25,11 @@ public class Boxing {
   }
 
   void boxingArgument() {
-    class NestedLocal{
-      void print(Object obj){
-        if(obj instanceof Integer num){
-          System.out.println(num+2);
+    class NestedLocal {
+
+      void print(Object obj) {
+        if (obj instanceof Integer num) {
+          System.out.println(num + 2);
         }
       }
     }//end of nested local

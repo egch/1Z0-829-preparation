@@ -8,6 +8,7 @@ public class UsageOfIntSummaryStatistics {
   public static void main(String[] args) {
     new UsageOfIntSummaryStatistics().use();
   }
+
   void use() {
     IntSummaryStatistics intSummaryStatistics = IntStream.range(1, 100)
         .summaryStatistics();

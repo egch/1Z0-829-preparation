@@ -59,7 +59,7 @@ public class SwitchExpressionWithYield {
       //you can't mix switch expression and switch statement syntax.
       //case 13: {yield true;}
       default -> false;
-      };
+    };
   }
 
 }

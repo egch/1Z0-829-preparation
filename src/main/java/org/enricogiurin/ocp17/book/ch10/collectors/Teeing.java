@@ -43,6 +43,7 @@ public class Teeing {
   //here I want to have a report with the count and the sum of all the values
   void teeing2() {
     record DataReport(long count, long sum) {
+
     }
     record DataWrapper(int value) {
 
@@ -62,6 +63,7 @@ public class Teeing {
   }
 
   record Data(int sum, int product) {
+
   }
 }
 

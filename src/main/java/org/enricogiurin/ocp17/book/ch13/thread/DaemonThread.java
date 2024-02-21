@@ -2,10 +2,6 @@ package org.enricogiurin.ocp17.book.ch13.thread;
 
 public class DaemonThread {
 
-  public static void main(String[] args) {
-    new DaemonThread().daemonThread();
-  }
-
   Runnable endLessThread = () -> {
     while (2 < 5) {
       System.out.println("thread is alive...");
@@ -18,7 +14,9 @@ public class DaemonThread {
     }
   };
 
-
+  public static void main(String[] args) {
+    new DaemonThread().daemonThread();
+  }
 
   /**
    * The started thread will run forever as it's not a daemon thread.

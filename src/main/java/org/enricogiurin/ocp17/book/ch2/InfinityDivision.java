@@ -8,11 +8,12 @@ public class InfinityDivision {
   public static void main(String[] args) {
     new InfinityDivision().checkIsInfinite();
   }
-  void aIntDivisionByZero(){
-    int a=2, b=0;
+
+  void aIntDivisionByZero() {
+    int a = 2, b = 0;
     try {
-      int c = a/b;
-    }catch (Exception e){
+      int c = a / b;
+    } catch (Exception e) {
       //  / by zero
       System.out.println(e.getMessage());
     }
@@ -21,11 +22,11 @@ public class InfinityDivision {
   void aFloatDivisionByZero() {
     Float f1 = 1.0F;
     Float f2 = 0.0F;
-    Float result=null;
+    Float result = null;
     try {
       result = f1 / f2;
 
-    }catch (Exception e){
+    } catch (Exception e) {
       //it does not go here!!!
       System.out.println(e.getMessage());
     }
@@ -36,11 +37,11 @@ public class InfinityDivision {
   void aDoubleDivisionByZero() {
     Double f1 = 1.0;
     Double f2 = 0.0;
-    Double result=null;
+    Double result = null;
     try {
       result = f1 / f2;
 
-    }catch (Exception e){
+    } catch (Exception e) {
       //it does not go here!!!
       System.out.println(e.getMessage());
     }

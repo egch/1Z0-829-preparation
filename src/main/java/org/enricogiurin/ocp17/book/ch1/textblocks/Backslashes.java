@@ -8,15 +8,15 @@ public class Backslashes {
 
   void removeBackslashes() {
     var quotes = """
-    \"The Quotes that Could\"
-    \"\"\"
-    """;
+        \"The Quotes that Could\"
+        \"\"\"
+        """;
     System.out.println(quotes);
 
     var quotesSimplified = """
-    "The Quotes that Could"
-    \"""
-    """;
+        "The Quotes that Could"
+        \"""
+        """;
     //it prints the same
     System.out.println(quotesSimplified);
   }

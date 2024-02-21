@@ -12,17 +12,18 @@ public class VarargsCombination {
     checkSize(1, new int[]{});  //0
     checkSize(1, 2);  //1
     checkSize(1, 1, 2); //2
-    checkSize(1, new int[]{1,4});  //2
+    checkSize(1, new int[]{1, 4});  //2
   }
 
   /**
-   * varargs can only be defined as the last argument in the list and it can
-   * be only present once at most.
+   * varargs can only be defined as the last argument in the list and it can be only present once at
+   * most.
+   *
    * @param a
    * @param array
    */
-  void checkSize(int a, int... array){
-    if(array==null){
+  void checkSize(int a, int... array) {
+    if (array == null) {
       System.out.println("array is null");
       return;
 

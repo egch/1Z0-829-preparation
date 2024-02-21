@@ -5,16 +5,19 @@ public class LocalAbstractNestedClass {
   public static void main(String[] args) {
     new LocalAbstractNestedClass().message();
   }
+
   void message() {
     //abstract local nested class
-    abstract  class Format {
+    abstract class Format {
+
       String indent(String message) {
         return message.indent(1);
       }
+
       abstract String desc();
 
     }//end of Format
-    Format instanceFormat = new Format(){
+    Format instanceFormat = new Format() {
 
       @Override
       String desc() {

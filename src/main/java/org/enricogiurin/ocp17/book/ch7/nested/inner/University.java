@@ -17,6 +17,14 @@ public class University {
     this.id = UUID.randomUUID().toString();
   }
 
+  public static void main(String[] args) {
+    University university = new University();
+    university.createProfessor();
+    System.out.println();
+    university.createProfessorMultiLines();
+    university.createProfessorInOneLine();
+  }
+
   void createProfessor() {
     Professor professor = new University().new Department().new Professor("Dr. Ross");
     professor.printID();
@@ -29,27 +37,22 @@ public class University {
     professor.printID();
   }
 
-  void createProfessorInOneLine(){
+  void createProfessorInOneLine() {
     //using a single line
     Professor johnDoe = new University().new Department().new Professor("John Doe");
     System.out.println(johnDoe.name);
   }
 
-  public static void main(String[] args) {
-    University university = new University();
-    university.createProfessor();
-    System.out.println();
-    university.createProfessorMultiLines();
-    university.createProfessorInOneLine();
-  }
-
   class Department {
+
     private String id;
+
     Department() {
       this.id = UUID.randomUUID().toString();
     }
 
     class Professor {
+
       private String name;
       private String id;
 

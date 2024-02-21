@@ -43,7 +43,7 @@ public class UsageOfSubPath {
   void normalize() {
     Path source = Path.of("stars/./rocks/../m1.meteor");
     for (int j = 0; j < source.getNameCount(); j++) {
-      System.out.println("sub-path: "+source.subpath(j, j+1));
+      System.out.println("sub-path: " + source.subpath(j, j + 1));
     }
     //sub-path: stars
     //sub-path: .

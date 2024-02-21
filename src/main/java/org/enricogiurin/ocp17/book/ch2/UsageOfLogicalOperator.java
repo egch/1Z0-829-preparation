@@ -10,10 +10,10 @@ public class UsageOfLogicalOperator {
   //XOR -> ^ (caret)
   void exclusiveOr() {
     boolean[] values = {false, true};
-    for(boolean opA:values){
-      for (boolean opB:values) {
+    for (boolean opA : values) {
+      for (boolean opB : values) {
         boolean exclusiveOr = opA ^ opB;
-        System.out.println(opA+" ^ "+opB+" is: "+exclusiveOr);
+        System.out.println(opA + " ^ " + opB + " is: " + exclusiveOr);
       }
     }
     //false ^ false is: false

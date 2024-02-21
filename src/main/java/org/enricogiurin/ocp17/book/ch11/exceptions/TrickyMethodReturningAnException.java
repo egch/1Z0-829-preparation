@@ -8,13 +8,13 @@ public class TrickyMethodReturningAnException {
   }
 
   /**
-   * This method compiles.
-   * It throws the exception, and it does not return any, legal.
+   * This method compiles. It throws the exception, and it does not return any, legal.
+   *
    * @param e
    * @return
    */
-   RuntimeException check(RuntimeException e){
-     throw e;
-   }
+  RuntimeException check(RuntimeException e) {
+    throw e;
+  }
 
 }

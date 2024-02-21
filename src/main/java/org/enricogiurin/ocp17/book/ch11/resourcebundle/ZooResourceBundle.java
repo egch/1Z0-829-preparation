@@ -20,9 +20,10 @@ public class ZooResourceBundle {
   }
 
   /**
-   * "f a key is found in Italian, the program no longer searches for keys in the default path (german)
+   * "f a key is found in Italian, the program no longer searches for keys in the default path
+   * (german)
    */
-  void specificKeys(){
+  void specificKeys() {
     Locale it = Locale.ITALIAN;
     Locale de = Locale.GERMAN;
     Locale.setDefault(de);
@@ -34,10 +35,10 @@ public class ZooResourceBundle {
   }
 
   /**
-   * here we test the inverse condition: Default Italian, chosen German.
-   * You can see that here once that we find a path with german, it no longer goes to the default path (italian)
+   * here we test the inverse condition: Default Italian, chosen German. You can see that here once
+   * that we find a path with german, it no longer goes to the default path (italian)
    */
-  void specificKeysWithDefaultItalian(){
+  void specificKeysWithDefaultItalian() {
     Locale it = Locale.ITALIAN;
     Locale de = Locale.GERMAN;
     Locale.setDefault(it);

@@ -16,8 +16,9 @@ public class WhileNestedLoopWithLabels {
     Outer:
     for (var e1 : javaVersions) {
       Inner:
-      for (String e2 : names)
+      for (String e2 : names) {
         System.out.println(e1 + "_" + e2);
+      }
       //note there ain't parenthesis
       break; //this breaks affects the Outer loop, not the Inner
 

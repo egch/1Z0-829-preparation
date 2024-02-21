@@ -19,14 +19,14 @@ public class ObtainingSynchronizedCollections {
     //Exception in thread "main" java.util.ConcurrentModificationException
     addDuringIteration(synchList);  //failing here!
     //we do not reach here!
-    System.out.println("list size: "+synchList.size());
+    System.out.println("list size: " + synchList.size());
   }
 
   void synchronizedWithCopyOnWriteArrayList() {
     List<Integer> list = new ArrayList<>(List.of(1, 2, 3));
     List<Integer> synchList = new CopyOnWriteArrayList<>(list);
     addDuringIteration(synchList);
-    System.out.println("list size: "+synchList.size()); //list size: 6
+    System.out.println("list size: " + synchList.size()); //list size: 6
   }
 
   void addDuringIteration(List<Integer> list) {

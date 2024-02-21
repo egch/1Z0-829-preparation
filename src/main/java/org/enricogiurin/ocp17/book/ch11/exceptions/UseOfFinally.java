@@ -62,16 +62,16 @@ public class UseOfFinally {
   void handleSuppressedFinallyWin() {
     try {
       finallyWin();
-    }catch (Exception e) {
+    } catch (Exception e) {
       e.printStackTrace();
 
       //no suppressed
-      if(e.getSuppressed().length==0)  {
+      if (e.getSuppressed().length == 0) {
         System.out.println("no suppressed");
         return;
       }
-      for(Throwable th:e.getSuppressed()) {
-        System.out.println("suppressed: "+th.getMessage());
+      for (Throwable th : e.getSuppressed()) {
+        System.out.println("suppressed: " + th.getMessage());
       }
     }
 

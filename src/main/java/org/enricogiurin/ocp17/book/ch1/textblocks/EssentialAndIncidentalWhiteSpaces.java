@@ -7,26 +7,27 @@ public class EssentialAndIncidentalWhiteSpaces {
   public static void main(String[] args) {
     new EssentialAndIncidentalWhiteSpaces().triple();
   }
+
   void usage() {
     var tb = """
-               \s""";
+        \s""";
     System.out.println(wrap(tb));
   }
 
-  void title(){
+  void title() {
     var tb = """
         "1Z0-829 
          preparation""";
     System.out.println(wrap(tb));
   }
 
-  void triple(){
+  void triple() {
     var tb = """
         \"Here we go\"""";
     System.out.println(tb);
 
     var tb2 = """
-       "Here we go\"""";
+        "Here we go\"""";
     System.out.println(tb2);
   }
 

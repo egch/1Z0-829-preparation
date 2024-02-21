@@ -7,8 +7,8 @@ import java.io.PrintWriter;
 import java.io.Reader;
 
 /**
- * Usage:
- * $ java -cp target/ocp17-preparation-1.0-SNAPSHOT.jar org.enricogiurin.ocp17.book.ch14.UsageOfConsole
+ * Usage: $ java -cp target/ocp17-preparation-1.0-SNAPSHOT.jar
+ * org.enricogiurin.ocp17.book.ch14.UsageOfConsole
  */
 public class UsageOfConsole {
 

@@ -8,7 +8,8 @@ public class UsageOfLocalTime {
   public static void main(String[] args) {
     new UsageOfLocalTime().of();
   }
-  void in10min(){
+
+  void in10min() {
     LocalTime in10 = LocalTime.now().plus(Duration.ofMinutes(10));
     System.out.println(in10);
   }

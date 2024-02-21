@@ -12,7 +12,7 @@ public class NullPointerExceptionGVars {
   //age is printed in the stacktrace
   void leftAssignment() {
     String age = null;
-    if(age.length()>2){
+    if (age.length() > 2) {
       System.out.println("not a child");
     }
   }
@@ -20,7 +20,7 @@ public class NullPointerExceptionGVars {
   //Exception in thread "main" java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because "null" is null
   //here age is not printed
   void exceptionRightSide() {
-    int age = (Integer)null;
+    int age = (Integer) null;
   }
 
 }

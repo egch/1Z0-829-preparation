@@ -1,13 +1,11 @@
 package org.enricogiurin.ocp17.book.ch6.inheritance;
 
 public class Casting {
-  class Pet {}
-  class Dog extends Pet {}
 
   void cast() {
     //these are inner classes, but I am in an instance method,
     //means an instance of the class Casting is existing
-    Pet p1 =  new Pet();
+    Pet p1 = new Pet();
     Dog d1 = new Dog();
     Pet p2 = new Dog();
     //p1 is a pet then won't be cast to Dog
@@ -20,6 +18,13 @@ public class Casting {
     Dog h3 = (Dog) p2;
 
 
+  }
+
+  class Pet {
+
+  }
+
+  class Dog extends Pet {
 
   }
 

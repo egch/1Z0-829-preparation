@@ -5,9 +5,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class SingleThreadExecutor {
-  public static void main(String[] args) throws InterruptedException {
-    new SingleThreadExecutor().shutdownNow();
-  }
 
   Runnable printInventory = () -> System.out.println("Printing zoo inventory");
   Runnable printRecords = () -> {
@@ -16,7 +13,9 @@ public class SingleThreadExecutor {
     }
   };
 
-
+  public static void main(String[] args) throws InterruptedException {
+    new SingleThreadExecutor().shutdownNow();
+  }
 
   void executor() {
     //a single thread

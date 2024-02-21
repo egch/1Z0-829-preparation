@@ -30,7 +30,6 @@ class Concrete implements InterfaceWithPrivateMethods {
   }
 
 
-
   @Override
   public void hello(String name) {
 

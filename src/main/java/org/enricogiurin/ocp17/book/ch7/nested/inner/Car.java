@@ -2,24 +2,6 @@ package org.enricogiurin.ocp17.book.ch7.nested.inner;
 
 public class Car {
 
-  //nested inner class
-  public class Engine {
-
-    //intentionally, it has the same name as the outer class
-    private final String name;
-
-    //Remember that private constructors can be used by any methods within the outer class.
-    private Engine(String name) {
-      this.name = name;
-    }
-
-    public void start() {
-      //this.name refers to name of the inner class (Engine)
-      //Car.this.name refers to the name of the Outer class: Car
-      System.out.println("Engine " + this.name + " started for car: " + Car.this.name);
-    }
-  } //end of nested inner class
-
   private final String name;
 
   public Car(String name) {
@@ -45,6 +27,24 @@ public class Car {
     //alternative way
     Engine e2 = this.new Engine("turbo v9");
   }
+
+  //nested inner class
+  public class Engine {
+
+    //intentionally, it has the same name as the outer class
+    private final String name;
+
+    //Remember that private constructors can be used by any methods within the outer class.
+    private Engine(String name) {
+      this.name = name;
+    }
+
+    public void start() {
+      //this.name refers to name of the inner class (Engine)
+      //Car.this.name refers to the name of the Outer class: Car
+      System.out.println("Engine " + this.name + " started for car: " + Car.this.name);
+    }
+  } //end of nested inner class
 
   //inner class can be private/protected/package/public
 

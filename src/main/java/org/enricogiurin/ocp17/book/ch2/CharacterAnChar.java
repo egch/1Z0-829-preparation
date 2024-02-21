@@ -19,21 +19,22 @@ public class CharacterAnChar {
     //
   }
 
-  void intChar(){
+  void intChar() {
     Character c = 5;
     char d = 4;
     System.out.println(d);
 
-    char diff = 'z'-26;
-    int diffInt = 'z'-26;
+    char diff = 'z' - 26;
+    int diffInt = 'z' - 26;
     System.out.println(diff);  //`
     System.out.println(diffInt); //96
-    int delta = 'z'-'a';
+    int delta = 'z' - 'a';
     System.out.println(delta);  //25
   }
 
   /**
-   * Character is not a numeric type and therefore doesn’t supply a byteValue() or intValue method method.
+   * Character is not a numeric type and therefore doesn’t supply a byteValue() or intValue method
+   * method.
    */
   void methodsOfCharacter() {
     Character a = Character.valueOf('a');

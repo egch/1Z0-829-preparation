@@ -1,8 +1,9 @@
 package org.enricogiurin.ocp17.book.ch1;
 
 public class MultipleVariables {
+
   void usage() {
-    long x=5, y=6L;
+    long x = 5, y = 6L;
     //only one type
     //long x=5, double f = 5.0D;  //does not compile
 
@@ -16,7 +17,7 @@ public class MultipleVariables {
   }
 
   void withFinal() {
-    final int x = 0, y=6;
+    final int x = 0, y = 6;
     //x = 4;  cannot change x is final
     //y = 7;  //but also y is final
 

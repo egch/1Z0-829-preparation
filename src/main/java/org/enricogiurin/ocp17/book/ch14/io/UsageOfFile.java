@@ -39,12 +39,12 @@ public class UsageOfFile {
 
   void createDeleteFile() throws IOException {
     File file = new File("/tmp/aaa.txt");
-    if(!file.exists()){
+    if (!file.exists()) {
       boolean newFile = file.createNewFile();
-      if(newFile){
+      if (newFile) {
         System.out.println("file %s has been successfully created".formatted(file.getName()));
       }
-    }else{
+    } else {
       file.deleteOnExit();
       System.out.println("file %s has been successfully deleted".formatted(file.getName()));
     }

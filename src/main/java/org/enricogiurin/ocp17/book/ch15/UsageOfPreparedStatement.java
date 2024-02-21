@@ -33,9 +33,10 @@ public class UsageOfPreparedStatement {
   }
 
   void updateSetNull() throws SQLException {
-    try(Connection conn = DriverManager.getConnection(SetupDataBase.JDBC_URL);
-        PreparedStatement preparedStatement = conn.prepareStatement("update games set description = ? where name = ?")
-    ){
+    try (Connection conn = DriverManager.getConnection(SetupDataBase.JDBC_URL);
+        PreparedStatement preparedStatement = conn.prepareStatement(
+            "update games set description = ? where name = ?")
+    ) {
       //you need to set the type
       preparedStatement.setNull(1, Types.VARCHAR);
       //I can use also this

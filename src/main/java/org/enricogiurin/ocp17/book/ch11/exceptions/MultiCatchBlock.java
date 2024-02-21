@@ -34,13 +34,13 @@ public class MultiCatchBlock {
   //I need to declare both the CE
   void rethrowMultiCatch() throws SQLException, IOException {
     try {
-      if(1>3){
+      if (1 > 3) {
         throw new SQLException();
-      }else{
+      } else {
         throw new IOException();
       }
       //I do not need to have throws for the RTE!
-    }catch (RuntimeException | SQLException | IOException e){
+    } catch (RuntimeException | SQLException | IOException e) {
       //If I rethrow a checked exception from multi catch then
       //I need to declare both in the throws clause
       throw e;

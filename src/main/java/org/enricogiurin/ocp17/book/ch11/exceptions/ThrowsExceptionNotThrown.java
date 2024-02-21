@@ -4,8 +4,8 @@ package org.enricogiurin.ocp17.book.ch11.exceptions;
 import java.io.IOException;
 
 /**
- * I can declare throws for any Exception in the method signature
- * no matter if the method throws it or not
+ * I can declare throws for any Exception in the method signature no matter if the method throws it
+ * or not
  */
 
 public class ThrowsExceptionNotThrown {
@@ -31,6 +31,7 @@ public class ThrowsExceptionNotThrown {
   }
 
 
-  void throwingNothing() {}
+  void throwingNothing() {
+  }
 
 }

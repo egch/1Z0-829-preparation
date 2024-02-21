@@ -55,7 +55,6 @@ public class MethodsOfPath {
   }
 
 
-
   void pathElements() {
     Path pom = Path.of("pom.xml").toAbsolutePath();
     System.out.println("path: " + pom);

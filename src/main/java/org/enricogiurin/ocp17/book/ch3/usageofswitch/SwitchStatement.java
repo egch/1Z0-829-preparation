@@ -40,8 +40,9 @@ public class SwitchStatement {
     //0
     //default
     //5
-    switch (x){
-      case 0: System.out.println(0);
+    switch (x) {
+      case 0:
+        System.out.println(0);
       default:
         System.out.println("default");
       case 5:
@@ -71,14 +72,14 @@ public class SwitchStatement {
   }
 
   @JarMockTest
-  //it prints default
-  //There is no case for THURSDAY and MONDAY, so they are just labels!!
+    //it prints default
+    //There is no case for THURSDAY and MONDAY, so they are just labels!!
   void switchMissingCase() {
     var day = DayOfWeek.MONDAY;
-    switch (day){
+    switch (day) {
       case TUESDAY:
-      THURSDAY:
-      MONDAY:
+        THURSDAY:
+        MONDAY:
         System.out.println("MONDAY");  //it won't be printed!
       default:
         System.out.println("default");  //it prints default

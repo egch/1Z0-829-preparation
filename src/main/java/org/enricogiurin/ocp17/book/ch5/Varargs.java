@@ -4,6 +4,7 @@ public class Varargs {
 
   /**
    * We can have also the main using varargs
+   *
    * @param args
    */
   public static void main(String... args) {
@@ -13,15 +14,16 @@ public class Varargs {
   }
 
 
-  void call(){
+  void call() {
     sumElement(0);  //result is: 0
-    sumElement(1,2);  //result is: 3
-    sumElement(1,2,3); //result is: 6
-    sumElement(new int[]{1,2}); //result is: 3
+    sumElement(1, 2);  //result is: 3
+    sumElement(1, 2, 3); //result is: 6
+    sumElement(new int[]{1, 2}); //result is: 3
     sumElement(null); //result is: 0
   }
+
   void sumElement(int... elements) {
-    if(elements==null){
+    if (elements == null) {
       System.out.println("result is: %d".formatted(0));
       return;
     }

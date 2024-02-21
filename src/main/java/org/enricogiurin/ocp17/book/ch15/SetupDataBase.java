@@ -9,8 +9,8 @@ import java.sql.SQLException;
 
 /**
  * //copied from here:
- * https://www.selikoff.net/2022/01/22/ocp-17-book-bonus-creating-a-hsql-database-in-java-17/
- * Run this main to clean up db before any other execution
+ * https://www.selikoff.net/2022/01/22/ocp-17-book-bonus-creating-a-hsql-database-in-java-17/ Run
+ * this main to clean up db before any other execution
  */
 public class SetupDataBase {
 
@@ -90,7 +90,8 @@ public class SetupDataBase {
     run(conn, "INSERT INTO counts(id, num) VALUES (1, 4)");
     run(conn, "INSERT INTO counts(id, num) VALUES (2, 5)");
 
-    run(conn, "INSERT INTO games(id, name, description) VALUES (1, 'Monopoly', 'Property trading board game')");
+    run(conn,
+        "INSERT INTO games(id, name, description) VALUES (1, 'Monopoly', 'Property trading board game')");
   }
 
   private static void createStoredProcedures(Connection conn) throws SQLException {

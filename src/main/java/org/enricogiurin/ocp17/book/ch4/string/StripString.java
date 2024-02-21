@@ -4,13 +4,15 @@ import static org.enricogiurin.ocp17.various.helper.TextHelper.wrap;
 
 public class StripString {
 
+  static final char space = '\u0020';
+  static final String original = space + "12345" + space;
+
   public static void main(String[] args) {
     StripString instance = new StripString();
     instance.stripIndentNL();
 
   }
-  static final char space = '\u0020';
-  static final String original = space+"12345"+space;
+
   void strip() {
     String strip = original.strip();
     //before: # 12345 # - after: #12345#
@@ -57,7 +59,6 @@ public class StripString {
     System.out.println(wrap(strip));
 
   }
-
 
 
 }

@@ -8,10 +8,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 public class UsageOfScheduledExecutorService {
-  public static void main(String[] args)
-      throws ExecutionException, InterruptedException, TimeoutException {
-    new UsageOfScheduledExecutorService().scheduleCallable();
-  }
 
   private Runnable runnable = () -> {
     try {
@@ -21,6 +17,11 @@ public class UsageOfScheduledExecutorService {
       throw new RuntimeException(e);
     }
   };
+
+  public static void main(String[] args)
+      throws ExecutionException, InterruptedException, TimeoutException {
+    new UsageOfScheduledExecutorService().scheduleCallable();
+  }
 
   //done
   //hello

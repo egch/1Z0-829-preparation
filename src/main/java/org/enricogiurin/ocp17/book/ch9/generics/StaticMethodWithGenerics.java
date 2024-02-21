@@ -4,10 +4,11 @@ public class StaticMethodWithGenerics {
 
   /**
    * Note that T declaration needs to be after static
+   *
    * @param t
    * @param <T>
    */
-  public static <T extends Number> void calculate(T t){
+  public static <T extends Number> void calculate(T t) {
     System.out.println(t);
   }
 

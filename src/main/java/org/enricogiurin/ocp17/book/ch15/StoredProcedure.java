@@ -69,7 +69,7 @@ public class StoredProcedure {
       cs.setInt("num", 23);
       cs.registerOutParameter("num", Types.INTEGER);
       boolean isResultSet = cs.execute();
-      if(!isResultSet){
+      if (!isResultSet) {
         System.out.println(cs.getInt("num"));
       }
     }

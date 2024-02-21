@@ -22,12 +22,14 @@ public class ClassWhichImplementAnInterfaceWithGenerics {
 }
 
 class Tennis implements Sport<Integer> {
+
   @Override
   public void play(Integer integer) {
   }
 }
 
 class Football<T> implements Sport<T> {
+
   @Override
   public void play(T t) {
   }

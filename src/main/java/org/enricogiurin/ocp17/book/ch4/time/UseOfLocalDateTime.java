@@ -1,7 +1,6 @@
 package org.enricogiurin.ocp17.book.ch4.time;
 
 
-
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -59,7 +58,7 @@ public class UseOfLocalDateTime {
   }
 
   @JarMockTest
-  void with(){
+  void with() {
     LocalDateTime now = LocalDateTime.now();
     System.out.println(now);  //2024-01-06T07:04:54.162247
     LocalDateTime ldt = now.with(DayOfWeek.MONDAY);

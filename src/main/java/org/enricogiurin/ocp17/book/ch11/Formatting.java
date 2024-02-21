@@ -30,7 +30,6 @@ public class Formatting {
   }
 
 
-
   void parse() throws ParseException {
     String value = "80.5";
     NumberFormat us = NumberFormat.getInstance(Locale.US);
@@ -46,7 +45,6 @@ public class Formatting {
     System.out.println(italy.parse(valueIT));
 
   }
-
 
 
   void percentage() {

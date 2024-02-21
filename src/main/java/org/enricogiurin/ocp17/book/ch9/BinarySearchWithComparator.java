@@ -10,7 +10,7 @@ public class BinarySearchWithComparator {
   }
 
   void callSortAndSearch() {
-    Comparator<String> cReverse = (x, y)-> -y.compareTo(x);
+    Comparator<String> cReverse = (x, y) -> -y.compareTo(x);
     sortAndSearch(cReverse, "seed", "flower");
   }
 

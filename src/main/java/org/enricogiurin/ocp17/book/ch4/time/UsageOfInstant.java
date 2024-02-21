@@ -39,7 +39,8 @@ public class UsageOfInstant {
     }
     Instant now = Instant.now();
     Duration duration = Duration.between(before, now);
-    System.out.println("time elapsed: %d ns ".formatted(duration.getNano()));  //time elapsed: 3000 ns
+    System.out.println(
+        "time elapsed: %d ns ".formatted(duration.getNano()));  //time elapsed: 3000 ns
   }
 
   void addToInstant() {

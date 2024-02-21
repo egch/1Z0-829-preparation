@@ -10,18 +10,13 @@ public class ResourceBundleColors {
   }
 
   /**
-   * The only valid properties files are:
-   * - Colors_en.properties
-   * - Colors_en_US.properties
-   * - Colors_es.properties
-   *
-   * 1. Looking for Colors_fr_CH.properties: No Match
-   * 2. Looking for Colors_fr.properties: No Match
-   * 3. Moving to default Locale -> it_CH:
-   * 4. Looking for Colors_it_CH.properties: No Match
-   * 5. Looking for Colors_it.properties: No Match
-   * 6. Looking for Colors.properties: No Match
-   * 7. MissingResourceException
+   * The only valid properties files are: - Colors_en.properties - Colors_en_US.properties -
+   * Colors_es.properties
+   * <p>
+   * 1. Looking for Colors_fr_CH.properties: No Match 2. Looking for Colors_fr.properties: No Match
+   * 3. Moving to default Locale -> it_CH: 4. Looking for Colors_it_CH.properties: No Match 5.
+   * Looking for Colors_it.properties: No Match 6. Looking for Colors.properties: No Match 7.
+   * MissingResourceException
    */
 
   void loadMissingResourceException() {

@@ -46,14 +46,14 @@ public class UsageOfInstanceof {
 
   void nullInstanceof() {
     //this always returns false!
-    if(null instanceof String){
+    if (null instanceof String) {
       System.out.println("It's null");
-    }else {
+    } else {
       System.out.println("It's not");
     }
     Object object = new String("A");
     //this does not compile!
-   // if(object instanceof null){}
+    // if(object instanceof null){}
 
   }
 

@@ -83,8 +83,8 @@ public class UsageOfVar {
     //var x=5, y=6;
 
     //but this is fine!
-    var x= 5;
-    var y=6;
+    var x = 5;
+    var y = 6;
   }
 }
 

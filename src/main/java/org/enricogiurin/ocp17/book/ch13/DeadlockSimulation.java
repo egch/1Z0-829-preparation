@@ -27,7 +27,6 @@ public class DeadlockSimulation {
   }
 
 
-
   record Person(String name) {
 
     void eatAndDrink(Food food, Drink drink) {
@@ -51,9 +50,13 @@ public class DeadlockSimulation {
     }
   }
 
-  class Food {}
+  class Food {
 
-  class Drink {}
+  }
+
+  class Drink {
+
+  }
 }
 
 

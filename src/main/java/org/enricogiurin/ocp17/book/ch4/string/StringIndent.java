@@ -64,8 +64,8 @@ public class StringIndent {
 
   void stripIndent2() {
     var text = " a\n"
-             + "       b\n"
-             + " c";
+        + "       b\n"
+        + " c";
 
     /*
 < a
@@ -84,8 +84,6 @@ c>
      */
     System.out.println(wrap(strippedText));
   }
-
-
 
 
   void indentBL() {

@@ -42,7 +42,7 @@ public class PrimitivePromoted {
     //float d2f = d;  //does not compile
 
     //but with explicit cast I can
-    float d2fCast = (float)d;
+    float d2fCast = (float) d;
   }
 
   void multiPromotion_steps() {

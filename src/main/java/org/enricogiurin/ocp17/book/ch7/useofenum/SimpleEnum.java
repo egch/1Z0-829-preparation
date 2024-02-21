@@ -27,20 +27,20 @@ public class SimpleEnum {
     }
   }
 
-  void valuesIsAnArray(){
+  void valuesIsAnArray() {
     CardinalPoints[] values = CardinalPoints.values();
     for (int j = 0; j < values.length; j++) {
       System.out.println(values[j]);
     }
   }
 
-  void valueOf(){
+  void valueOf() {
     CardinalPoints north = CardinalPoints.valueOf("NORTH");
-    System.out.println(north==CardinalPoints.NORTH);  //true
+    System.out.println(north == CardinalPoints.NORTH);  //true
 
     try {
       CardinalPoints.valueOf("north");
-    }catch (IllegalArgumentException e){
+    } catch (IllegalArgumentException e) {
       //java.lang.IllegalArgumentException: No enum constant org.enricogiurin.ocp17.book.ch7.useofenum.CardinalPoints.north
       e.printStackTrace();
     }
@@ -80,7 +80,7 @@ public class SimpleEnum {
   void switchEnumExpression() {
     var north = CardinalPoints.NORTH;
     char result;
-    result = switch (north){
+    result = switch (north) {
       case NORTH -> 'n';
       case SOUTH -> 's';
       case EAST -> 'e';

@@ -28,12 +28,12 @@ public class PatternMatching {
   }
 
   void firstIfFalse(Object object) {
-    if(!(object instanceof String s)){
+    if (!(object instanceof String s)) {
       //here then s is NOT a String
       return;
     }
     //then here it is!. Mind the return first if
-    System.out.println("length of string: "+s.length());
+    System.out.println("length of string: " + s.length());
   }
 
   void notCompatible(Throwable t) {
@@ -59,7 +59,7 @@ public class PatternMatching {
     }
 */
     //but this is allowed
-    if(x instanceof Integer){
+    if (x instanceof Integer) {
       System.out.println("it's an int!");
     }
   }

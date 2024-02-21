@@ -8,6 +8,7 @@ public class UsageOfFindFirst {
   public static void main(String[] args) {
     new UsageOfFindFirst().parallel();
   }
+
   //it always prints 1
   void serial() {
     IntStream.range(1, 100)

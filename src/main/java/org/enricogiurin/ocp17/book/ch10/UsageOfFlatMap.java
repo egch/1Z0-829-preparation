@@ -69,6 +69,7 @@ public class UsageOfFlatMap {
 
 
   record Book(String title, List<String> authors) {
+
   }
 }
 

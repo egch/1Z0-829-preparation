@@ -42,11 +42,14 @@ public class CallingGetOnFuture {
   void generateRandom() throws InterruptedException {
     Random random = new Random();
     class Generator {
+
       double random() {
         double randomValue = random.nextDouble();
         try {
-          Thread.sleep(random.nextInt(100));;
-        }catch (InterruptedException e){}
+          Thread.sleep(random.nextInt(100));
+          ;
+        } catch (InterruptedException e) {
+        }
         return randomValue;
       }
     }
@@ -58,16 +61,17 @@ public class CallingGetOnFuture {
         Future<Double> doubleFuture = executorService.submit(() -> generator.random());
         futures.add(doubleFuture);
       }
-    }finally {
+    } finally {
       executorService.shutdown();
     }
     boolean awaitTermination = executorService.awaitTermination(10, TimeUnit.SECONDS);
     if (awaitTermination && executorService.isTerminated()) {
-      futures.forEach(f-> {
+      futures.forEach(f -> {
         try {
           Double aDouble = f.get();
           System.out.println(aDouble);
-        }catch (InterruptedException|ExecutionException e){}
+        } catch (InterruptedException | ExecutionException e) {
+        }
       });
     }
   }

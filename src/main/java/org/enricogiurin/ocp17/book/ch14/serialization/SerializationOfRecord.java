@@ -54,6 +54,7 @@ public class SerializationOfRecord {
 
   //NOTE! record needs to implement Serializable to be serialized
   record Person(String firstName, String lastName) implements Serializable {
+
     @Serial
     private static final long serialVersionUID = 2L;
   }

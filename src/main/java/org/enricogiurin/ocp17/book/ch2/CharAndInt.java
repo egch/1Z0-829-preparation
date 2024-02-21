@@ -8,6 +8,7 @@ public class CharAndInt {
   public static void main(String[] args) {
     new CharAndInt().byte2();
   }
+
   void conversion() {
     char c = 'a';
     int cAsAnInt = c;
@@ -17,7 +18,7 @@ public class CharAndInt {
   void unicode() {
     char c = '\u0061';
     char d = 'a';
-    System.out.println(c==d); //true
+    System.out.println(c == d); //true
     System.out.println('\u0061');
   }
 

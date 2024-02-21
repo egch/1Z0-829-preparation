@@ -14,10 +14,8 @@ public class ParseJavaTime {
   }
 
   /**
-   *   This method throws an exception
-   *   The string sent to the parse() method contains a time component,
-   *   but ISO_LOCAL_DATE is used as the formatter.
-   *
+   * This method throws an exception The string sent to the parse() method contains a time
+   * component, but ISO_LOCAL_DATE is used as the formatter.
    */
   void wrongParse() {
     //Exception in thread "main" java.time.format.DateTimeParseException: Text '2022-01-21T12:00:00' could not be parsed, unparsed text found at index 10

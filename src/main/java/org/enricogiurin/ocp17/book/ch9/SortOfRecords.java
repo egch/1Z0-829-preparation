@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class SortOfRecords {
+
   public static void main(String[] args) {
     SortOfRecords instance = new SortOfRecords();
     instance.sort();

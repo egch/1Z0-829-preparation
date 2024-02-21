@@ -1,14 +1,17 @@
 package org.enricogiurin.ocp17.book.ch7.interfaces.defaultmethods;
 
 public class CovariantReturnTypePrimitive {
+
   interface Walk {
-    default int getSpeed(){
+
+    default int getSpeed() {
       return 5;
     }
   }
 
   interface Run {
-    default long getSpeed(){
+
+    default long getSpeed() {
       return 10L;
     }
   }

@@ -63,7 +63,7 @@ public class UsageOfSpliterator {
     //here applied on the stream
     Spliterator<String> spliterator = fruitStream.spliterator();
     //Apple Banana Orange Grape Kiwi
-    spliterator.forEachRemaining(s -> System.out.print(s+" "));
+    spliterator.forEachRemaining(s -> System.out.print(s + " "));
   }
 
   void infiniteStream() {
@@ -76,20 +76,23 @@ public class UsageOfSpliterator {
   }
 
   void shareToys() {
-        record Toy(String name){ }
+    record Toy(String name) {
 
-        var toys = Stream.of(
-               new Toy("Toy A"),
-               new Toy("Toy B"),
-               new Toy("Toy C"),
-               new Toy("Toy D"));
+    }
 
-        var spliterator = toys.spliterator();
-        var batch = spliterator.trySplit();  //batch contains the first two: Toy A, Toy B
+    var toys = Stream.of(
+        new Toy("Toy A"),
+        new Toy("Toy B"),
+        new Toy("Toy C"),
+        new Toy("Toy D"));
 
-        var more = batch.tryAdvance(x -> {}); //we remove Toy A from batch but it still contains Toy B
-        System.out.println(more);  //true - as it still contains Toy B
-        spliterator.tryAdvance(System.out::println); //here we print the first of the 2nd group: Toy C
+    var spliterator = toys.spliterator();
+    var batch = spliterator.trySplit();  //batch contains the first two: Toy A, Toy B
+
+    var more = batch.tryAdvance(x -> {
+    }); //we remove Toy A from batch but it still contains Toy B
+    System.out.println(more);  //true - as it still contains Toy B
+    spliterator.tryAdvance(System.out::println); //here we print the first of the 2nd group: Toy C
   }
 
   void repeatedCallsToSpliterator() {

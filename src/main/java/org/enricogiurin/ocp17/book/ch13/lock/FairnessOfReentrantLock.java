@@ -10,6 +10,7 @@ public class FairnessOfReentrantLock {
   public static void main(String[] args) {
     new FairnessOfReentrantLock().execute();
   }
+
   void fair() {
     ReentrantLock lock1 = new ReentrantLock();
     System.out.println(lock1.isFair());
@@ -26,7 +27,7 @@ public class FairnessOfReentrantLock {
     try {
       for (int j = 0; j < 10; j++) {
         final int index = j;
-        executorService.submit(()->task(index, lock));
+        executorService.submit(() -> task(index, lock));
         try {
           Thread.sleep(10);
         } catch (InterruptedException e) {
@@ -42,10 +43,10 @@ public class FairnessOfReentrantLock {
     lock.lock();
     try {
       Thread.sleep(1_000);
-      System.out.println("completed task n: "+index);
+      System.out.println("completed task n: " + index);
     } catch (InterruptedException e) {
       throw new RuntimeException(e);
-    }finally {
+    } finally {
       lock.unlock();
     }
   }

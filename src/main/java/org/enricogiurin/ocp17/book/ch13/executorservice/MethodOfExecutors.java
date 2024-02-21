@@ -71,7 +71,7 @@ public class MethodOfExecutors {
     if (executorService.isTerminated()) {
       System.out.println("all tasks completed");
     }
-    for(Future<String> future:collector){
+    for (Future<String> future : collector) {
       String result = future.get(1, TimeUnit.SECONDS);
       System.out.println(result);
     }

@@ -75,10 +75,10 @@ public class TextBlocks {
 
   void whiteSpace() {
     var block = """
-    green
-      yellow
-    """;
-    System.out.println("#"+block+"#");
+        green
+          yellow
+        """;
+    System.out.println("#" + block + "#");
   }
 
   @JarMockTest

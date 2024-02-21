@@ -42,15 +42,14 @@ public class UsageOfDeque {
     deck.removeLast();
   }
 
-  void addFirstLast(){
+  void addFirstLast() {
     Deque<String> deque = new ArrayDeque<>();
     deque.addFirst("a");
     deque.addFirst("b");
     deque.addLast("c");
     //b-c-b
-    System.out.println(deque.peekFirst()+" "+ deque.peekLast()+" "+deque.peek());
+    System.out.println(deque.peekFirst() + " " + deque.peekLast() + " " + deque.peek());
   }
-
 
 
   void arrayDequeue() {

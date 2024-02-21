@@ -27,11 +27,12 @@ public class UsageOfStatement {
 //get a CallableStatement (store procedure)
     CallableStatement callableStatement = connection.prepareCall(sql);
   }
+
   void statement() throws SQLException {
     String updateSQL = """
         update games set description = 'sad game' where name='Monopoly'""";
-    try(Connection conn = DriverManager.getConnection(SetupDataBase.JDBC_URL);
-        Statement statement = conn.createStatement()){
+    try (Connection conn = DriverManager.getConnection(SetupDataBase.JDBC_URL);
+        Statement statement = conn.createStatement()) {
       //there is no set parameter in the statement
       //statement.setInt()
       boolean isResultSet = statement.execute(updateSQL);
@@ -49,8 +50,8 @@ public class UsageOfStatement {
   void statementException() throws SQLException {
     String updateSQL = """
         update games set description = 'sad game' where name=? """;
-    try(Connection conn = DriverManager.getConnection(SetupDataBase.JDBC_URL);
-        Statement statement = conn.createStatement()){
+    try (Connection conn = DriverManager.getConnection(SetupDataBase.JDBC_URL);
+        Statement statement = conn.createStatement()) {
       //there is no set parameter in the statement
       //statement.setInt()
       //Exception in thread "main" java.sql.SQLSyntaxErrorException: parameter marker not allowed

@@ -70,7 +70,7 @@ public class ArrayCreation {
 
   void nullArray() {
     int[] array = null;
-    int[][] matrix = {{1,2}, null};
+    int[][] matrix = {{1, 2}, null};
     for (int i = 0; i < matrix.length; i++) {
       for (int j = 0; j < matrix[i].length; j++) {
         //Exception in thread "main" java.lang.NullPointerException: Cannot read the array length because "matrix[i]" is null

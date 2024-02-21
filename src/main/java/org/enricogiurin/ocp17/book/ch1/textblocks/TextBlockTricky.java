@@ -29,14 +29,14 @@ public class TextBlockTricky {
 
   void backslash() {
     var quotes = """
-   \"The Quotes that Could\" 
-   \"\"\"
-   """;
+        \"The Quotes that Could\" 
+        \"\"\"
+        """;
     System.out.println(quotes);
 
     var quotes2 = """
-   \"The Quotes that Could\"
-   """;
+        \"The Quotes that Could\"
+        """;
     System.out.println(quotes2);
   }
 

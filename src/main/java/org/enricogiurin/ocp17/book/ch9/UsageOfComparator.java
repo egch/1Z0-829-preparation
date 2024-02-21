@@ -71,6 +71,7 @@ public class UsageOfComparator {
   }
 
   record Person(int age, int weight) {
+
   }
 }
 

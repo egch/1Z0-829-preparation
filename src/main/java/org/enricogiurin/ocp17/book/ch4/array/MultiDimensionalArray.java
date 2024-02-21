@@ -11,11 +11,11 @@ public class MultiDimensionalArray {
   }
 
   void creation2D() {
-    int[][] matrix = new int[][]{{1,2}, {3}};
+    int[][] matrix = new int[][]{{1, 2}, {3}};
     int[][] matrix2 = new int[2][1];
 
-    int[][] matrix3 = {{1,2}, {3}};
-   // int[][] matrix4 = new int[2][1]{{1,2}, {3}};  //does not compile
+    int[][] matrix3 = {{1, 2}, {3}};
+    // int[][] matrix4 = new int[2][1]{{1,2}, {3}};  //does not compile
   }
 
   void weird() {

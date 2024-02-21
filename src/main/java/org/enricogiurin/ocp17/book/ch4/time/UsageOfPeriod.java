@@ -54,7 +54,7 @@ public class UsageOfPeriod {
    */
 
   @Wiley
-  void of(){
+  void of() {
     Period birthday = Period.of(2023, Month.NOVEMBER.getValue(), 10);
     System.out.println(birthday);
   }
@@ -79,7 +79,6 @@ public class UsageOfPeriod {
       e.printStackTrace();
     }
   }
-
 
 
 }

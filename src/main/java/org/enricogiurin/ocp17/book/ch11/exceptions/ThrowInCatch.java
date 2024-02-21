@@ -6,7 +6,6 @@ public class ThrowInCatch {
     new ThrowInCatch().handleCatch();
   }
 
-
   //it prints WXZ followed by the stacktrace
 
   void handleCatch() {
