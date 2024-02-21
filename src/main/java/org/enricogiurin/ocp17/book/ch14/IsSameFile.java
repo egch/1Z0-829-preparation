@@ -27,7 +27,7 @@ public class IsSameFile {
   void simpleIsSameFile() throws IOException {
     Path p1 = Path.of("src/a");
     Path p2 = Path.of("src/a");
-    //in this case it does not check if the two Path really exist because they are the same
+    //in this case, it does not check if the two Path really exist because they are the same
     boolean result = Files.isSameFile(p1, p2);
     System.out.println(result);
 
