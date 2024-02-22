@@ -9,14 +9,21 @@ import java.util.stream.Stream;
 public class CopyWithFiles {
 
   public static void main(String[] args) throws IOException {
-    new CopyWithFiles().readLazy();
+    new CopyWithFiles().readAllBytes();
   }
 
-  void copyByPath() throws IOException {
+  void readStringAndWriteString() throws IOException {
     Path pom = Path.of("pom.xml");
     Path dest = Path.of("/tmp/pom-copied.xml");
     String contents = Files.readString(pom);
     Files.writeString(dest, contents);
+  }
+
+  void readAllBytes() throws IOException {
+    Path pom = Path.of("pom.xml");
+
+    byte[] bytes = Files.readAllBytes(pom);
+    System.out.println("read %d bytes".formatted(bytes.length));
   }
 
   void copyByLines() throws IOException {
@@ -31,6 +38,7 @@ public class CopyWithFiles {
   void readLazy() throws IOException {
     Path pom = Path.of("pom.xml");
     Path dest = Path.of("/tmp/" + System.currentTimeMillis() + "_pom.xml");
+    //here we have a stream
     try (Stream<String> stream = Files.lines(pom)) {
       stream
           .peek(System.out::println)
