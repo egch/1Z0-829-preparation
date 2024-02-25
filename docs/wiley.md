@@ -148,5 +148,5 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 ###
 - review Files copy buffer (question 7) [DONE]
 - review 10 [DONE]
-- review write / read buffer
-- refresh: is.read(new byte[2]);
+- review write / read buffer  [DONE]
+- refresh: is.read(new byte[2]); [DONE]

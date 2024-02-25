@@ -2,6 +2,7 @@ package org.enricogiurin.ocp17.book.ch14;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,7 +12,7 @@ import java.io.OutputStream;
 public class WriteBuffer {
 
   public static void main(String[] args) throws IOException {
-    new WriteBuffer().copyFile_correctWay();
+    new WriteBuffer().copyFileWithNoBuffer();
   }
 
   void copyStream(InputStream inputStream, OutputStream outputStream) throws IOException {
@@ -61,6 +62,20 @@ public class WriteBuffer {
 
     //read bytes: 10
     //read bytes: 3
+  }
+
+  void copyFileWithNoBuffer() throws IOException {
+    String source = "/tmp/source.txt";
+    String target = "/tmp/target2.txt";
+    try (var is = new FileInputStream(source);
+        OutputStream os = new FileOutputStream(target)) {
+      int byteRead;
+      // a single byte is read and written on each iteration of the loop
+      while ((byteRead = is.read()) > 0) {
+        System.out.println("read %s".formatted((char)byteRead));
+        os.write(byteRead);
+      }
+    }
   }
 
 }
