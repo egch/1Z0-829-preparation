@@ -145,3 +145,8 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - jmod
 ###
 - fairness ReentrantLock [DONE]
+###
+- review Files copy buffer (question 7) [DONE]
+- review 10 [DONE]
+- review write / read buffer
+- refresh: is.read(new byte[2]);

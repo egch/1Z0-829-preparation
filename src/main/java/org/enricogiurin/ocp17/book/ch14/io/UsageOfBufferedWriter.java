@@ -22,4 +22,16 @@ public class UsageOfBufferedWriter {
     }
   }
 
+  void wrongBufferedWriter() throws IOException {
+
+    String target = "hello.txt";
+
+    try (
+        //FileOutputStream does not extend Writer!
+        //var w = new BufferedWriter(new FileOutputStream(target));  //DOES NOT COMPILE!
+        var w = new BufferedWriter(new FileWriter(target));
+        var s = System.out) {
+    }
+  }
+
 }

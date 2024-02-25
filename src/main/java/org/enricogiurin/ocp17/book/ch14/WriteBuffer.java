@@ -21,6 +21,8 @@ public class WriteBuffer {
     }
   }
 
+  // run this before:
+  // $ echo 0123456789 > /tmp/source.txt
   void copyFile() throws IOException {
     File file1 = new File("/tmp/source.txt");
     File file2 = new File("/tmp/target.txt");
@@ -34,8 +36,9 @@ public class WriteBuffer {
     }
   }
   //source.txt: 0123456789
-  //target.txt :012345678912
-  //3456789
+  //target.txt :
+  // 0123456789
+  // 123456789
 
   //In second iteration the buffer contains 0123456789 but only the first three are replaced,
   // resulting in 012\n3456789

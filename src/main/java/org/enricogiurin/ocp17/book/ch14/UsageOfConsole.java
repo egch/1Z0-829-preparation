@@ -5,6 +5,7 @@ import java.io.Console;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Reader;
+import java.io.Writer;
 
 /**
  * Usage: $ java -cp target/ocp17-preparation-1.0-SNAPSHOT.jar
@@ -33,6 +34,24 @@ public class UsageOfConsole {
     }
   }
 
+  //we need this throws IOE
+  void console2() throws IOException {
+    String line;
+    var c = System.console();
+    Writer w = c.writer();
+    //writer.close() throws IOE
+    //Writer is abstract but implements Closeable which throws IOE
+    try (w) {
+      if ((line = c.readLine("Enter your username: ")) != null)
+      //this throws IOE
+      {
+        w.append(line);
+      }
+      ////this throws IOE
+      w.flush();
+    }
+  }
+
   //with this we throw the IOException
   void console_reader() throws IOException {
     Console console = System.console();
@@ -41,6 +60,9 @@ public class UsageOfConsole {
     }
     System.out.print("Type your name: ");
     try (Reader reader = console.reader();
+        //does not exist!
+        //reader.readLine() ;  //does NOT compile
+
         BufferedReader bufferedReader = new BufferedReader(reader);
         PrintWriter writer = console.writer()) {
       String line = bufferedReader.readLine();

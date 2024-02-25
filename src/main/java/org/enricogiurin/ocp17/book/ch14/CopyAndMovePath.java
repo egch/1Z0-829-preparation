@@ -77,6 +77,7 @@ public class CopyAndMovePath {
     Files.delete(pippo);
   }
 
+  //mind the IOException!
   void deleteIfExist() throws IOException {
     Path pippo = Path.of("/tmp/pippo.txt");
     boolean deleted = Files.deleteIfExists(pippo);
