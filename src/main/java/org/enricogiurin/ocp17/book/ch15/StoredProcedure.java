@@ -23,7 +23,6 @@ public class StoredProcedure {
 
   /**
    * Neither IN nor OUT parameters
-   *
    * @throws SQLException
    */
   void read_e_names() throws SQLException {
@@ -43,7 +42,6 @@ public class StoredProcedure {
 
   /**
    * Passing IN parameter
-   *
    * @throws SQLException
    */
   void read_names_by_letter() throws SQLException {

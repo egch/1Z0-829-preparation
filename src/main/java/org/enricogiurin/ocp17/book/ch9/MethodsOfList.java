@@ -5,11 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.UnaryOperator;
+import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class MethodsOfList {
 
   public static void main(String[] args) {
-    new MethodsOfList().convertListToArray();
+      new MethodsOfList().subList();
   }
 
   void contains() {
@@ -51,7 +52,6 @@ public class MethodsOfList {
             arrayOfString.length, arrayOfString2.length));
 
   }
-
   void sort() {
     List<String> list = Arrays.asList("a", "b", "c", "3", "M");
     list.sort(String::compareTo);
@@ -66,6 +66,36 @@ public class MethodsOfList {
     System.out.println(arrayList);  //[a, d, c]
   }
 
+  @JarMockTest
+  void add(){
+    List<String> s1 = new ArrayList<>();
+    s1.add("a");
+    s1.add("b");
+    //insert 'c' between 'a' and 'b'
+    s1.add(1, "c");
+    System.out.println(s1);  //[a, c, b]
+  }
+
+  void subList() {
+    List<String> list = Arrays.asList("a", "b", "c", "d");
+    //0, 1, (2nd excluded)
+    List<String> subList02 = list.subList(0, 2);
+    System.out.println(subList02);
+
+    //0 but 0 excluded -> empty
+    List<String> emptyList = list.subList(0, 0);
+    System.out.println(emptyList);
+
+    try {
+      // end is lower than start
+      List<String> invalid = list.subList(1, 0);
+    } catch (Exception e) {
+      //Exception in thread "main" java.lang.IllegalArgumentException: fromIndex(1) > toIndex(0)
+      e.printStackTrace();
+    }
+
+
+  }
 
   //internal data class
   class Data {

@@ -10,7 +10,7 @@ import org.enricogiurin.ocp17.book.ch15.SetupDataBase;
 public class CommitAndRollback {
 
   public static void main(String[] args) throws SQLException {
-    new CommitAndRollback().addAndSubtract();
+    new CommitAndRollback().rollback_setAutoCommitTrue();
   }
 
   void rollbackOnAutocommit() throws SQLException {
@@ -69,6 +69,20 @@ public class CommitAndRollback {
       int updated = preparedStatement.executeUpdate();
       System.out.println("updated " + updated + " records");
       return updated;
+    }
+  }
+
+  void rollback_setAutoCommitTrue() throws SQLException {
+    String sql = "INSERT INTO games(id, name) VALUES(10, 'Jenga');";
+    try (Connection connection = DriverManager.getConnection(SetupDataBase.JDBC_URL)) {
+      connection.setAutoCommit(true);
+      try (PreparedStatement ps = connection.prepareStatement(sql,
+          ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)) {
+        ps.executeUpdate();
+      }
+      //calling rollback when auto commit set to true has no effect
+      //but no exception is thrown
+      connection.rollback();
     }
   }
 
