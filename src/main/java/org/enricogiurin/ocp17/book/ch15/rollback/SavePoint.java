@@ -14,7 +14,7 @@ public class SavePoint {
   public static void main(String[] args) throws SQLException {
     SavePoint instance = new SavePoint();
     instance.countRecords();
-    instance.nestedSavePoint();
+    instance.savePoint();
     instance.countRecords();
   }
 

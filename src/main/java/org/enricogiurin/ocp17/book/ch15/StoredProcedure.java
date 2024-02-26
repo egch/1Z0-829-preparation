@@ -9,25 +9,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
 
+/**
+ * All the related stored procedures are defined here:
+ *
+ * @see SetupDataBase
+ */
+
 public class StoredProcedure {
 
   public static void main(String[] args) throws SQLException {
     new StoredProcedure().double_number();
   }
 
-  //out parameters
-  void magic_number() throws SQLException {
-    var sql = "{ ?= call magic_number(?) }";
-    try (Connection conn = DriverManager.getConnection(JDBC_URL);
-        var cs = conn.prepareCall(sql)) {
-      cs.registerOutParameter(1, Types.INTEGER);
-      cs.execute();
-      //num is defined in the body of the procedure. Check SetupDataBase
-      System.out.println(cs.getInt("num"));
-    }
-  }
-
-  //neither IN nor OUT parameters
+  /**
+   * Neither IN nor OUT parameters
+   *
+   * @throws SQLException
+   */
   void read_e_names() throws SQLException {
     var sql = "{call read_e_names()}";
     try (Connection connection = DriverManager.getConnection(JDBC_URL);
@@ -43,7 +41,11 @@ public class StoredProcedure {
     }
   }
 
-  //passing IN parameter
+  /**
+   * Passing IN parameter
+   *
+   * @throws SQLException
+   */
   void read_names_by_letter() throws SQLException {
     var sql = "{call read_names_by_letter(?) }";
     try (Connection connection = DriverManager.getConnection(JDBC_URL);
@@ -59,7 +61,28 @@ public class StoredProcedure {
     }
   }
 
-  //INOUT parameter
+  /**
+   * Returning OUT parameters
+   * @throws SQLException
+   */
+  void magic_number() throws SQLException {
+    //Mind the ?=
+    var sql = "{ ?= call magic_number(?) }";
+    try (Connection conn = DriverManager.getConnection(JDBC_URL);
+        var cs = conn.prepareCall(sql)) {
+      //NOTE: we register the out parameter
+      cs.registerOutParameter(1, Types.INTEGER);
+      cs.execute();
+      //NOTE: Here I do not use the ResultSet!
+      //num is defined in the body of the procedure.
+      System.out.println(cs.getInt("num"));
+    }
+  }
+
+  /**
+   * INOUT parameter
+   * @throws SQLException
+   */
   void double_number() throws SQLException {
     var sql = "{call double_number(?) }";  //CREATE PROCEDURE double_number(INOUT num INT) READS SQL DATA
     try (Connection connection = DriverManager.getConnection(JDBC_URL);
@@ -68,6 +91,7 @@ public class StoredProcedure {
       //so num is both IN parameter and OUT parameter
       cs.setInt("num", 23);
       cs.registerOutParameter("num", Types.INTEGER);
+      //equivalent: cs.registerOutParameter(1, Types.INTEGER);
       boolean isResultSet = cs.execute();
       if (!isResultSet) {
         System.out.println(cs.getInt("num"));
