@@ -117,3 +117,7 @@ Remember that a backslash (**\\**) means to skip the line break.
         """;
     System.out.println(s);  //Hello World
 ```
+
+### Escape sequences
+There are two special escape sequences for Text Blocks. 
+These allow fine-grained control of the processing of line breaks and whitespaces: `\` (followed by a line break) and `\s`.

@@ -30,6 +30,7 @@ public class UseOfLock {
   }
 
   long timeWaited(Lock lock, int index) throws InterruptedException {
+    //mind the usage of amount, TimeUnit
     if (lock.tryLock(1, TimeUnit.MINUTES)) {
       System.out.println("lock acquired for index: " + index);
     } else {

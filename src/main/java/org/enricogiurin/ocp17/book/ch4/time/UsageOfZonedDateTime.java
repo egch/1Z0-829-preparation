@@ -4,13 +4,14 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.Set;
 
 public class UsageOfZonedDateTime {
 
   public static void main(String[] args) {
-    new UsageOfZonedDateTime().zoneDateTime();
+    new UsageOfZonedDateTime().offset();
   }
 
   void zoneDateTime() {
@@ -50,7 +51,14 @@ public class UsageOfZonedDateTime {
     LocalDateTime localDateTime = LocalDateTime.now();
     ZonedDateTime zdtLDT = ZonedDateTime.of(localDateTime, zoneZurich);
     System.out.println(zdtLDT);  //2023-10-22T08:26:16.798939+02:00[Europe/Zurich]
+  }
 
+  void offset() {
+    ZonedDateTime now = ZonedDateTime.now();
+    ZoneOffset offset = now.getOffset();
+    String id = offset.getId();
+    System.out.println("id: %s".formatted(id)); //id: +01:00
+    System.out.println(offset); //+01:00
   }
 
   void invalidZoneId() {

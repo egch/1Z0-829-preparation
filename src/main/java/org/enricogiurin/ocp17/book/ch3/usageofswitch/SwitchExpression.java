@@ -1,6 +1,8 @@
 package org.enricogiurin.ocp17.book.ch3.usageofswitch;
 
-
+/**
+ * Mind the usage of case!
+ */
 public class SwitchExpression {
 
   public static void main(String[] args) {

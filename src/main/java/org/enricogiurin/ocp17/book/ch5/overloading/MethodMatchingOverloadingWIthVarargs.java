@@ -4,12 +4,17 @@ package org.enricogiurin.ocp17.book.ch5.overloading;
  * Java picks the most specific method signature it can find in an overloading situation. Since
  * promotion is considered first, longs is output. If that method were removed, Java would next go
  * to autoboxing, printing Integers.
+ * Criteria:
+ * 1) promotion
+ * 2) autoboxing
+ * 3) vararg
  * <p>
  * If both message(long long) and message(Integer Integer) are removed then it calls the method
  * message(varargs)
  */
 public class MethodMatchingOverloadingWIthVarargs {
 
+  //the perfect match would be: message(int a, int b)
   void callMethod() {
     message(1, 2);
   }

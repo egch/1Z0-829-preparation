@@ -68,7 +68,7 @@ across all threads and processes, while the synchronized classes do not.
 - in the setX() check there is this.x=x
 ## check
 - `switch` expression: You CANNOT use `return` but you can use `yield`.
-- you need the `case` within a `switch`
+- you need the `case` within a `switch` !!!
 ## Collection
 - `Deque.offer()` insert element at the end of the queue
 - Comparator: `comparing(...).thenComparing()`

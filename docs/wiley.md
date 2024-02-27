@@ -151,5 +151,10 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - review write / read buffer  [DONE]
 - refresh: is.read(new byte[2]); [DONE]
 ###
-- review flatMap
-- The com.4apple and com.apple-four modules are invalid because identifier or identifier segments may not start with a digit nor contain a dash. 
+- review flatMap [DONE]
+- The com.4apple and com.apple-four modules are invalid because identifier or identifier segments may not start with a digit nor contain a dash. [DONE]
+- escape character definition and text blocks [DONE]
+- trylock method [DONE]
+- case in the switch!!! [DONE]
+- overloading: promotion, unboxing, vararag!! [DONE]
+- offset [DONE]
