@@ -158,3 +158,8 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - case in the switch!!! [DONE]
 - overloading: promotion, unboxing, vararag!! [DONE]
 - offset [DONE]
+###
+ - Instant I can only add days or smaller
+ - jlink --add-module
+ - IntStream.sum() returns an int
+ - concurrent reduction
