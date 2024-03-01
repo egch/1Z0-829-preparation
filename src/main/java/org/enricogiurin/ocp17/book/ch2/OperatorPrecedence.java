@@ -15,6 +15,7 @@ public class OperatorPrecedence {
   }
 
   void logicalOperator() {
+    //it prints nothing, as it is false
     if (2 + 3 < 5 && 2 > 1) {
       System.out.println("condition is true");
     }
@@ -22,6 +23,7 @@ public class OperatorPrecedence {
 
 
   void complex() {
+    //condition true
     if (2 + 3 <= 5 && 4 + 5 >= 9 || 2 < 3) {
       System.out.println("condition is true");
     }

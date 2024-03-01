@@ -6,7 +6,7 @@ import org.enricogiurin.ocp17.various.helper.JarMockTest;
 public class CharAndInt {
 
   public static void main(String[] args) {
-    new CharAndInt().byte2();
+    new CharAndInt().charToUnicode();
   }
 
   void conversion() {
@@ -16,10 +16,13 @@ public class CharAndInt {
   }
 
   void unicode() {
+    //note: \u0061 means in hex, 6*16+1 = 97 (in decimal)
     char c = '\u0061';
     char d = 'a';
     System.out.println(c == d); //true
     System.out.println('\u0061');
+    int charAsInt = c;
+    System.out.println("char as int: "+charAsInt);  //97
   }
 
   void byteToChar() {
@@ -52,6 +55,12 @@ public class CharAndInt {
     int cAsAnInt = c;
     // short s = c;  //does not compile
     short s2 = (short) c; // Requires explicit cast due to potential loss of information
+  }
+
+  void charToUnicode() {
+    char c = 'a';
+    String unicode = String.format("\\u%04x", (int)c);
+    System.out.println(unicode); // \u0061
   }
 
 }

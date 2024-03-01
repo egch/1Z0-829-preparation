@@ -1,9 +1,9 @@
 package org.enricogiurin.ocp17.book.ch2;
 
-public class IntAndLong {
+public class IntegerMAX_VALUEAndLong {
 
   public static void main(String[] args) {
-    new IntAndLong().sum();
+    new IntegerMAX_VALUEAndLong().sum();
   }
 
   void sum() {

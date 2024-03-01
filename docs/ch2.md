@@ -17,11 +17,21 @@ Convert the result of the binary operation to the type of the left-hand variable
 Example
 ```java
 long aLong = 2;
-//aLong = 2 - 1.0;  //THIS FAILS! -incompatible types: possible lossy conversion from double to long
-
+// -incompatible types: possible lossy conversion from double to long
+//aLong = 2 - 1.0;  //DOES NOT COMPILE!
+    
 //compound operator applies casting automatically
-aLong -=1.0;  //THIS works
+aLong -=1.0;  //THIS works (compound operator)
+```
 
+```java
+int anInt =5;
+long aLong = 6;
+//int result = anInt + aLong; //DOES NOT COMPILE
+int result = anInt;
+//minor warning: Implicit cast from 'long' to 'int' in compound assignment can be lossy
+result +=aLong;
+System.out.println(result);  //11
 ```
 ### Compound operators — tricky
 ```jshelllanguage
@@ -141,7 +151,7 @@ By decreasing order, highest to the lowest.
 | Logical inclusive OR            | `\|`                                            | Left-to-right    |
 | Conditional AND                 | `&&`                                            | Left-to-right    |
 | Conditional OR                  | `\|\|`                                          | Left-to-right    |
-| Ternary operators               | `boolean expression ? expression1 : expression2` | Right-to-left    |
+| Ternary operators               | `boolean expression ? expression1 : expression2` | Right-to-left   |
 | Assignment operators            | `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `&=`, `^=`,  | Right-to-left    |
 | Arrow operator                  | `->`                                            | Right-to-left    |
 
@@ -163,15 +173,33 @@ Object object = new String("A");
 // if(object instanceof null){}
 ```
 ## Primitive types (CGPT)
-| Primitive Type | Size (in bits) | Signed/Unsigned | Range                                 |
-|-----------------|-----------------|------------------|---------------------------------------|
-| `byte`          | 8               | Signed           | -128 to 127                           |
-| `short`         | 16              | Signed           | -32,768 to 32,767                     |
-| `int`           | 32              | Signed           | -2^31 to 2^31 - 1                     |
-| `long`          | 64              | Signed           | -2^63 to 2^63 - 1                     |
-| `float`         | 32              | Signed           | IEEE 754 single-precision floating-point |
-| `double`        | 64              | Signed           | IEEE 754 double-precision floating-point |
-| `char`          | 16              | Unsigned         | 0 to 65,535 (Unicode characters)      |
-| `boolean`       | Not precisely defined1 | N/A            | `true` or `false`                     |
+| Primitive Type | Size (in bits)         | Signed/Unsigned | Range                                       |
+|-----------------|------------------------|------------------|-------------------------------------------|
+| `byte`          | 8                      | Signed           | -128 to 127                               |
+| `short`         | 16                     | Signed           | -32,768 to 32,767                         |
+| `int`           | 32                     | Signed           | -2^31 to 2^31 - 1                         |
+| `long`          | 64                     | Signed           | -2^63 to 2^63 - 1                         |
+| `float`         | 32                     | Signed           | IEEE 754 single-precision floating-point  |
+| `double`        | 64                     | Signed           | IEEE 754 double-precision floating-point  |
+| `char`          | 16                     | Unsigned         | 0 to 65,535 (Unicode characters)          |
+| `boolean`       | Not precisely defined  | N/A            | `true` or `false`                           |
 
 1. The size of a `boolean` type is not precisely defined in terms of bits, as it depends on the JVM implementation. However, it is typically represented as a single byte.
+### unicode 
+**Heads-up**: `'\u0061'` is represented in hex: 6*16+1 = 97 (in decimal)
+```java
+    char c = '\u0061';
+    char d = 'a';
+    System.out.println(c == d); //true
+    System.out.println('\u0061');
+    int charAsInt = c;
+    System.out.println("char as int: "+charAsInt);  //97
+```
+
+#### char to unicode
+```java
+char c = 'a';
+String unicode = String.format("\\u%04x", (int)c);
+System.out.println(unicode); // \u0061
+```
+![unicode](images/unicode.png)
