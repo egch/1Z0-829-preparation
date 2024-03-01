@@ -16,6 +16,14 @@ public class UsageOfVar {
     System.out.println(s);
   }
 
+  void laterAssignment() {
+    //Cannot infer type: 'var' on variable without initializer
+    //var x;  //DOES NOT COMPILE
+    //a var needs to be initialized!
+    var x = 5;
+
+  }
+
   void reAssigment() {
     var x = 5;
     //x as now the type int

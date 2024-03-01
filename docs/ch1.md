@@ -63,6 +63,12 @@ class WrongVar {
     var var = "var";
   }
 ```
+
+### var initialization
+```java
+var x;  //does not compile!
+x = 5;
+```
 This compiles as **var** is not a reserved key in java
 
 ### Garbage Collection
