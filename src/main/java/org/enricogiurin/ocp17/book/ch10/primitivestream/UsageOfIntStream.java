@@ -29,13 +29,12 @@ public class UsageOfIntStream {
       //it's getAsDouble() not get()!
       System.out.println(optionalDouble.getAsDouble());
     }
-
   }
 
   void sum() {
     //9 included
     IntStream rangeClosed = IntStream.rangeClosed(0, 9);
-    //note that IntStream.sum(0 returns an int, not a long
+    //note that IntStream.sum(0 returns an int, not a long!
     int sum = rangeClosed.sum();
     System.out.println("sum: " + sum); //45
 

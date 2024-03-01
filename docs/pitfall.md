@@ -2,7 +2,6 @@
 ## Watch out
 - **case** is a reserved keyword in java
 - mind the **IOException** when you use try with resources
-- JDBC: PreparedStatement will use the existing parameter set if you don’t replace it.
 - Mind the type used in lambda, there ain't auto boxing. 
 
 ## I/O
@@ -34,6 +33,8 @@ across all threads and processes, while the synchronized classes do not.
 - Mind `forEach(System.out::println)`; not ~~forEach(System.out.println);~~
 - check if the stream ends with an Optional
 - `parallelStream()` is defined on Collection, ~~NOT on Stream~~
+### IntStream
+- IntStream.sum() returns an int (not a long)
 
 ## Lambda
 - `var x = ()->"hello"` does not compile! - **you cannot assign a lambda to a var**
@@ -92,9 +93,11 @@ especially with the AutoClosable resources
 - ResultSet rs: `rs.next()` NOT ~~rs.hasNext()~~
 - `ResultSet.getInt(1)` NOT ~~ResultSet.getInteger(1)~~
 - watch out the overlap of `conn.savepoint()` and `conn.rollback()`
+- PreparedStatement will use the existing/previous parameter set if you don’t replace it.
 
 ## Serialization
 - always check the class implements `Serializable`
 ## java.time
 - only `ZonedDateTime` has the `toInstant()` method!!
 - You cannot add Duration to LocalDate
+- Instant: you can only add days or smaller, otherwise you have exception 

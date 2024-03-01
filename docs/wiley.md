@@ -159,7 +159,7 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - overloading: promotion, unboxing, vararag!! [DONE]
 - offset [DONE]
 ###
- - Instant I can only add days or smaller
- - jlink --add-module
- - IntStream.sum() returns an int
- - concurrent reduction
+ - Instant I can only add days or smaller [DONE]
+ - jlink --add-module [DONE]
+ - IntStream.sum() returns an int [DONE]
+ - concurrent reduction [DONE]
