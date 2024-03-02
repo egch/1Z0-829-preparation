@@ -102,6 +102,9 @@ String tb = """
 ```
 the code within the `"""` and `"""` is just text.   
 text blocks require a break between beginning and the end.
+
+Imagine a vertical line drawn on the leftmost non-whitespace character in your text block. 
+Everything to the left of it is **incidental whitespace**, and everything to the right is **essential whitespace**.
 ### Example
 ```java
 String s = """aaa"""; //does not compile

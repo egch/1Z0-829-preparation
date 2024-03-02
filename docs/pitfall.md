@@ -94,6 +94,7 @@ especially with the AutoClosable resources
 - `ResultSet.getInt(1)` NOT ~~ResultSet.getInteger(1)~~
 - watch out the overlap of `conn.savepoint()` and `conn.rollback()`
 - PreparedStatement will use the existing/previous parameter set if you don’t replace it.
+- watch out! c`onn.prepareCall(sql)` returns a `CallableStatement` !
 
 ## Serialization
 - always check the class implements `Serializable`

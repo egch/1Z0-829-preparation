@@ -58,6 +58,15 @@ public class UsageOfFlatMap {
     System.out.print(sum); //7.0
   }
 
+  void wrongFlatMap() {
+    List.of(1, 2, 3)
+        .stream()
+        //  .flatMap(n-->n)  //wrong it has to be a stream //DOES NOT COMPILE
+        .flatMap(n -> List.of(n).stream())  //this produces a stream
+        .toList();
+
+  }
+
   void mergeCollections() {
     List<String> list = List.of("a", "ab", "abc");
     Set<String> set = Set.of("1", "23", "345");

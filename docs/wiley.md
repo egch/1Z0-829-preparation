@@ -163,3 +163,14 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
  - jlink --add-module [DONE]
  - IntStream.sum() returns an int [DONE]
  - concurrent reduction [DONE]
+### Test 3 (review, not sure)
+ - Generics with Callable [DONE]
+ - javac classpath [DONE]
+ - prepareCall - return a callableStatement [DONE]
+ - syntax teeing [DONE]
+ - syntax serviceloader [DONE]
+ - text blocks   !!!!!!  [DONE ...PARTIALLY]
+ - operator precedence [DONE]
+
+- ServiceLoader.load [DONE]
+- flatMap() !!! [DONE]

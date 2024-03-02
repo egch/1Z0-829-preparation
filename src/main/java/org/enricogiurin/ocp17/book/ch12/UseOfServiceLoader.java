@@ -16,13 +16,22 @@ public class UseOfServiceLoader {
   }
 
   void stream() {
+    //load ia a static method
     ServiceLoader<Dog> serviceLoader = ServiceLoader.load(Dog.class);
     //here I have a list of Provider
+    //stream() is an instance method, so you need to have an instance of ServiceLoader at first
     List<Provider<Dog>> list = serviceLoader.stream()
         .toList();
 
     List<Dog> dogs = serviceLoader.stream()
         .map(dogProvider -> dogProvider.get())
+        .toList();
+  }
+
+  void stream2() {
+    List<Dog> list = ServiceLoader.load(Dog.class)
+        .stream()
+        .map(Provider::get)
         .toList();
   }
 

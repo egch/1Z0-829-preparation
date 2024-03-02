@@ -4,7 +4,7 @@ public class OperatorPrecedence {
 
   public static void main(String[] args) {
     OperatorPrecedence op = new OperatorPrecedence();
-    op.ternary();
+    op.logicalAndVsDivide();
   }
 
   void relational() {
@@ -52,6 +52,12 @@ public class OperatorPrecedence {
     // 5++ -> 6
     // 0 - 6 = -6
     System.out.println(result); //-6
+  }
+
+  void logicalAndVsDivide() {
+    if (4 / 2 == 2 && 2 == 2) {
+      System.out.println("done");
+    }
   }
 
   void ternary() {

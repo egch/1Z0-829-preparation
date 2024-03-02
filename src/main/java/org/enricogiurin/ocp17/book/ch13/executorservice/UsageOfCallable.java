@@ -7,6 +7,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.stream.Stream;
 
 public class UsageOfCallable {
 
@@ -46,6 +47,21 @@ public class UsageOfCallable {
       throw new RuntimeException(e);
     }
     System.out.println(result);
+  }
+
+  void typeInferenceWIthCallable() {
+    var executorService = Executors.newSingleThreadExecutor();
+    Callable rawCallable = () -> Stream.of(4, 5, 6);
+
+    //but also
+    Callable<Stream<Integer>> callableWithGenerics = () -> Stream.of(4, 5, 6);
+
+    //why does this compile? :-(
+    Future<Stream<String>> futureOfInvalidType = executorService.submit(rawCallable);
+    //but this does not compile as it expect Future<Stream<Integer>>
+    //Future<Stream<String>> futureOfValidType = executorService.submit(callableWithGenerics);   //DOES NOT COMPILE!
+    Future<Stream<Integer>> futureOfValidType = executorService.submit(callableWithGenerics);
+
   }
 
   void simpleCallable() {

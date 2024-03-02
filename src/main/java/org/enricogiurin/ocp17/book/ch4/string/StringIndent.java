@@ -5,7 +5,7 @@ import static org.enricogiurin.ocp17.various.helper.TextHelper.wrap;
 public class StringIndent {
 
   public static void main(String[] args) {
-    new StringIndent().stripIndent2();
+    new StringIndent().indent2();
   }
 
 
@@ -104,20 +104,26 @@ c>
     //System.out.println(indentMinus1.length());
   }
 
-  /*
-#1234
-567#
-# 1234
- 567
-#
-#1234
-567
-#
-#1234
-567
-#
+  void indent2() {
+    var tb1 = """
+        barn owl\n\n
+        wise
+        """;
+//    System.out.println(tb1);
+//    System.out.println(tb1.indent(0));
+    System.out.println(tb1.equals(tb1.indent(0)));  //true
 
-*/
+    var tb2 = """
+          barn owl\n\n
+        wise""";
+//    System.out.println(tb2);
+//    System.out.println(tb2.indent(0));
+    System.out.println(tb2.equals(tb2.indent(0)));  //false
+
+    System.out.println(wrap(tb2));
+    System.out.println(wrap(tb2.indent(0)));  //a new line is added to the end
+
+  }
 
 
 }

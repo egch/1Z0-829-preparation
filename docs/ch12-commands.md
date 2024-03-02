@@ -11,6 +11,15 @@ Abbreviated Form
 ```shell
 javac -p mods -d feeding feeding/zoo/animal/feeding/*.java feeding/module-info.java
 ```
+
+### with classpath
+```shell
+--class-path <path>, -classpath <path>, -cp <path>
+```
+WARN: All of these are equivalent!
+1. **--class-path**
+2. **-classpath**
+3. **-cp**
 ### add-exports
 If you must use an internal API that has been made inaccessible by default, then you can break encapsulation using the `--add-exports` command-line option.
 ```shell

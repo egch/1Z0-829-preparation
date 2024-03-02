@@ -13,23 +13,23 @@ public class RawGenerics {
     //Raw use of parameterized class 'SimpleGenerics'
     SimpleGenerics rawGenerics = new SimpleGenerics<>("hello");
     //here I have the type of Object as the left side is declared not with generics
-    Object eLement2 = rawGenerics.getELement();
+    Object element2 = rawGenerics.getELement();
     //Raw use of parameterized class 'SimpleGenerics'
     SimpleGenerics objectGenerics = new SimpleGenerics("hello");
     //here I have the type of Object as the left side is declared not with generics
-    Object eLement1 = objectGenerics.getELement();
+    Object element1 = objectGenerics.getELement();
 
     //Raw use of parameterized class 'SimpleGenerics'
     SimpleGenerics exceptionSimpleGenerics = new SimpleGenerics<Exception>(new RuntimeException());
     //here I have the type of Object as the left side is declared not with generics
-    Object eLement = exceptionSimpleGenerics.getELement();
+    Object element = exceptionSimpleGenerics.getELement();
   }
 
   void createWithVar() {
     // uses local variable type inference,
     var sg = new SimpleGenerics<String>("hello");
     //here I have the proper type String
-    String eLement = sg.getELement();
+    String element = sg.getELement();
   }
 
 }
