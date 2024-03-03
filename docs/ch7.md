@@ -166,7 +166,7 @@ A compact constructor must have the same access modifiers as the record itself.
 //does not compile
 public record Name(String name) {
   Name {
-    ...
+    name="John";
   }
 }
 ```

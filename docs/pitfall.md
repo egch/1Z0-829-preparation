@@ -73,6 +73,7 @@ across all threads and processes, while the synchronized classes do not.
 ## Collection
 - `Deque.offer()` insert element at the end of the queue
 - Comparator: `comparing(...).thenComparing()`
+- pop()/poll() when Deque is empty: `pop() throws java.util.NoSuchElementException` but `poll()` returns null
 
 ## Interfaces
 - default method: `Plant.super.leaves()` NOT ~~super.Plant.leaves()~~

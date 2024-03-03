@@ -174,3 +174,9 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 
 - ServiceLoader.load [DONE]
 - flatMap() !!! [DONE]
+### Test 2
+- groupingBy syntax [DONE]
+- review this List˂? super RuntimeException˃ p  [DONE]
+- review jdeps jdk internals [DONE]
+- pop vs poll [DONE]
+- a compact constructor must have the same public access as the record itself. [DONE]

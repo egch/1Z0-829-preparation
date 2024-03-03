@@ -112,6 +112,9 @@ System.out.print(q.peek() + " " + q.size()); // dog 3
 public interface Deque<E> extends Queue<E> {/**/}
 ```
 #### pop() vs poll()
+When Deque is empty:
+- `pop() throws java.util.NoSuchElementException`
+- `poll()` returns null
 ```java
 Deque<String> stack = new LinkedList<>();  //empty deque
 String result = stack.poll();  //this returns null
@@ -119,7 +122,7 @@ System.out.println(result); //null
 //Exception in thread "main" java.util.NoSuchElementException
 String pop = stack.pop();
 ```
-
+[DequeAsAStack](../src/main/java/org/enricogiurin/ocp17/book/ch9/DequeAsAStack.java)
 ### Stack
 ![Stack](images/Deque-Stack.png)
 

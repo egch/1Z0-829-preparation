@@ -82,6 +82,16 @@ public class CollectionsOfGenericsWithWildcard {
     //rteList.add(ex); //not even like this because it's declared as Exception (in spite is a RTE)
   }
 
+  void lowerBounded2() {
+    List<? super RuntimeException> rteList = new ArrayList<Exception>();
+    List<? super RuntimeException> rteList2 = new ArrayList<Throwable>();
+    List<? super RuntimeException> rteList3 = new ArrayList<RuntimeException>();
+    //Required type:
+    //List
+    //IllegalArgumentException is a child of RTE not one of its super classes!
+    //List<? super RuntimeException> rteList4 = new ArrayList<IllegalArgumentException>();  //DOES NOT COMPILE
+  }
+
   void lowerBoundedWildcards3() {
     //List<? super IOException> ioExceptions = new ArrayList<FileNotFoundException>();  //does not compile
     List<? super IOException> ioExceptions = new ArrayList<Exception>();  //does  compile
