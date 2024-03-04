@@ -181,6 +181,6 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - pop vs poll [DONE]
 - a compact constructor must have the same public access as the record itself. [DONE]
 ###
-- can an interface been sealed/non-sealed
+- can an interface been sealed/non-sealed [DONE]
 - write/read filereader
 - type stream() count long or int
