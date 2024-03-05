@@ -182,3 +182,21 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - a compact constructor must have the same public access as the record itself. [DONE]
 ###
 - can an interface been sealed/non-sealed [DONE]
+###
+ - q1: removeIf
+ - q4: default/case same line
+ - q9: constructor of the first not serializable class
+ - q15: ToDoubleFunction 
+ - q24 symbol ^
+ - q26: valid main: public static void main(String _x[]) {}
+ - q31 savepoint in autocommit true / rollback: A savepoint can only be used when autocommit mode is turned off
+ - q34 : Which commands take a --module-path option? (Choose all that apply.)
+ - q36: 
+ - int numberReindeer = 9;
+   System.out.println( (Object) numberReindeer);
+-q42: collect(Collectors.teeing(Collectors.toList(),
+   20:       Collectors.toSet(), (y, z) -˃ z))
+   21:    .spliterator()
+
+-  continue with do/while
+
