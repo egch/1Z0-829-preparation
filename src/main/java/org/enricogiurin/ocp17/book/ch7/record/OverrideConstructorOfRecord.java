@@ -10,8 +10,11 @@ public class OverrideConstructorOfRecord {
       this.name = name;
     }
 
+    //overloaded constructor
     public Dog() {
       this("Jimmy");
+      //I can access to this.name but I cannot re-assign the value as it is final
+      System.out.println(this.name);
     }
   }
 
