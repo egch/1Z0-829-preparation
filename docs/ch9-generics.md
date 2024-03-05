@@ -63,7 +63,6 @@ List<? extends Number> listOfInteger = new ArrayList<>();
 We cannot add an element to a list declared s upper bounded wildcards!
 
 ### Lower-Bounded wildcards
-
 ```java
 List<? super IOException> exceptions = new ArrayList<Exception>();
 exceptions.add(new IOException("error"));// yes we can add it
@@ -72,7 +71,7 @@ exceptions.add(new FileNotFoundException("error"));// yes we can add it
 //we cannot add an Exception as it could be a list of IOException and Exception is not an IOException
 //exceptions.add(new Exception("error"));
 ```
-On the right side the element should be a type whose super-class is defined as super at left side.
+On the right side, the element should be a type whose super-class is defined as super at left side.
 
 ```java
 //List<? super IOException> ioExceptions = new ArrayList<FileNotFoundException>();  //does NOT compile
@@ -80,6 +79,24 @@ List<? super IOException> ioExceptions = new ArrayList<Exception>();  //compiles
 ```
 
 [Example wildcard](../src/main/java/org/enricogiurin/ocp17/book/ch9/generics/CollectionsOfGenericsWithWildcard.java)
+
+### Bounded with Classes (not collections)
+```java
+  class Cage<T extends Pet> {}
+  class Pet {}
+  class Dog extends Pet{}
+    
+    
+  //Cage<Pet> cagePets = new Cage<Dog>();  //DOES NOT Compile
+
+    //upper-bounded cases
+  Cage<? extends Pet> upperBounded = new Cage<Pet>();
+  Cage<? extends Pet> upperBounded2 = new Cage<Dog>();
+  
+  //lower-bounded
+  Cage<? super Pet> lowerBounded2 = new Cage<Pet>(); 
+```
+[Classes With Lower and Upper Bounded](../src/main/java/org/enricogiurin/ocp17/book/ch9/generics/ClassesWithWildcards.java)
 
 ## Inheritance of methods with generics
 [Generic Methods](../src/main/java/org/enricogiurin/ocp17/book/ch9/generics/ComplexInheritanceWithGenerics.java)
