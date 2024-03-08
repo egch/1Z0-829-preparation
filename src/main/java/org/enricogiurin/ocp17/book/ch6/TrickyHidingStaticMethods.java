@@ -16,12 +16,17 @@ public class TrickyHidingStaticMethods {
 
   class Parent {
 
+    static final void hi() {}
+
     public static void message() {
       System.out.println("I am the parent");
     }
   }
 
   class Child extends Parent {
+
+    //I cannot hide a final static method
+    //static  void hi() {}  //DOES NOT COMPILE
 
     public static void message() {
       System.out.println("I am the child");
