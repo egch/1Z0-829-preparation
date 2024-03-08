@@ -182,10 +182,23 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - a compact constructor must have the same public access as the record itself. [DONE]
 ###
 - can an interface been sealed/non-sealed [DONE]
+
 ###
- - q1: removeIf
- - q4: default/case same line
- - q9: constructor of the first not serializable class
+- Closing a PreparedStatement automatically closes the ResultSet as well [DONE]
+- StringBuilder.insert(2, "sh") [DONE]
+- volatile thread safe [DONE..PARTIALLY]
+- List˂String˃ cats = new ArrayList˂˃(); cats.sort((c1, c2) -˃ -c2.compareTo(c1)); [DONE]
+- map.merge [DONE]
+- List<?> [DONE]
+
+- A var cannot be used in a multiple variable assignment expression: var _lion = false, _jaguar = true; [DONE]
+- service provider module? : It contains exactly one implementation of the interface. [DONE]
+- store procedure INOUT: System.out.println(cs.getInt(1)); [DONE]
+- Braces {} are optional for while and do/while statements, as shown on line 6, but parentheses, (), are not. [DONE]
+###
+ - q1: removeIf [DONE]
+ - q4: default/case same line [DONE]
+ - q9: constructor of the first not serializable class [DONE]
  - q15: ToDoubleFunction 
  - q24 symbol ^
  - q26: valid main: public static void main(String _x[]) {}
@@ -199,4 +212,3 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
    21:    .spliterator()
 
 -  continue with do/while
-

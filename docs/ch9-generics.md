@@ -76,6 +76,17 @@ On the right side, the element should be a type whose super-class is defined as 
 ```java
 //List<? super IOException> ioExceptions = new ArrayList<FileNotFoundException>();  //does NOT compile
 List<? super IOException> ioExceptions = new ArrayList<Exception>();  //compiles
+
+```
+
+#### wildcards mutable and immutable collections
+- wildcardList is immutable
+- listExtends is immutable
+- listSuper is mutable
+```java
+    List<?> wildcardList = new ArrayList<String>();  
+    List<? extends IOException> listExtends = new ArrayList<FileNotFoundException>();
+    List<? super IOException> listSuper = new ArrayList<Object>();
 ```
 
 [Example wildcard](../src/main/java/org/enricogiurin/ocp17/book/ch9/generics/CollectionsOfGenericsWithWildcard.java)
