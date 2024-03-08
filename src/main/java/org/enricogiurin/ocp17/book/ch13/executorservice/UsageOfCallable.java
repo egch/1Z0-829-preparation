@@ -61,7 +61,11 @@ public class UsageOfCallable {
     //but this does not compile as it expect Future<Stream<Integer>>
     //Future<Stream<String>> futureOfValidType = executorService.submit(callableWithGenerics);   //DOES NOT COMPILE!
     Future<Stream<Integer>> futureOfValidType = executorService.submit(callableWithGenerics);
+  }
 
+  void validCallable() {
+    //in spite does not return a value it's still a valid Callable
+    Callable<String> c =  () -> {throw new RuntimeException();};
   }
 
   void simpleCallable() {

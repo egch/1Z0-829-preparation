@@ -3,7 +3,7 @@ package org.enricogiurin.ocp17.book.ch3.usageofswitch;
 public class StrangeSwitch {
 
   public static void main(String[] args) {
-    new StrangeSwitch().afterDefault();
+    new StrangeSwitch().caseDefaultOnTheSameLine();
   }
 
   void strange() {
@@ -45,6 +45,17 @@ public class StrangeSwitch {
       case 4:
         System.out.print(0);   //100000
     }
+  }
 
+  void caseDefaultOnTheSameLine() {
+    int x = 7;
+    switch (x) {
+      case 2, 3:
+        System.out.println("2,3");
+      case 7:
+      default:
+      case 8, 9:
+        System.out.println("default");
+    }
   }
 }

@@ -2,6 +2,7 @@ package org.enricogiurin.ocp17.book.ch9.map;
 
 import static org.enricogiurin.ocp17.book.ch9.map.MapUtilities.getScores;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.function.BiFunction;
@@ -9,7 +10,7 @@ import java.util.function.BiFunction;
 public class MapMerge {
 
   public static void main(String[] args) {
-    new MapMerge().mergeWhenValueIsNull();
+    new MapMerge().mergeNull2();
   }
 
   void merge() {
@@ -40,6 +41,22 @@ public class MapMerge {
     Integer unknown = scores.get("Unknown");
     System.out.println(unknown);  //30
   }
+
+  void mergeNull2() {
+    Map<Integer, Integer> map = new HashMap<>();
+    BiFunction<Integer, Integer, Integer> mergeFunction = (v1, v2) -> null;
+
+    map.put(1, 5);
+    map.put(2, 6);
+    map.put(3, null);
+    map.merge(1, 10, mergeFunction);
+    //If the specified key is not already associated with a value or is associated with null, associates it with the given non-null value
+    //here the value of 3 is null, so it's going take the default value 10
+    map.merge(3, 10, mergeFunction);
+
+    System.out.println(map);  //   {2=6, 3=10}
+  }
+
 
   void mergeWhenValueIsNull() {
     Map<String, Integer> scores = getScores();

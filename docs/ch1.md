@@ -70,7 +70,11 @@ var x;  //does not compile!
 x = 5;
 ```
 This compiles as **var** is not a reserved key in java
-
+### var compound declaration
+```java
+var x=5, y=6; //DOES NOT COMPILE
+```
+[Usage of var](../src/main/java/org/enricogiurin/ocp17/book/ch1/UsageOfVar.java)
 ### Garbage Collection
 ```java
  System.gc();

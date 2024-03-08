@@ -90,10 +90,9 @@ public class StoredProcedure {
       cs.setInt("num", 23);
       cs.registerOutParameter("num", Types.INTEGER);
       //equivalent: cs.registerOutParameter(1, Types.INTEGER);
-      boolean isResultSet = cs.execute();
-      if (!isResultSet) {
-        System.out.println(cs.getInt("num"));
-      }
+      cs.execute();
+      //I do not need to use isResultSet
+      System.out.println(cs.getInt("num"));
     }
   }
 

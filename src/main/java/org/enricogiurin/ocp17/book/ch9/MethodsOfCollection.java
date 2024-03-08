@@ -9,7 +9,7 @@ import java.util.Set;
 public class MethodsOfCollection {
 
   public static void main(String[] args) {
-    new MethodsOfCollection().removeIfWithSet();
+    new MethodsOfCollection().removeIf();
   }
 
   void replaceAll() {

@@ -1,9 +1,18 @@
 # Collections
-## contains
+## Methods
+### Contains
 it's `Object`, not the type of the Collection!
 ```java
 boolean contains(Object o)
 ```
+### removeIf
+```java
+List<String> list = new ArrayList<>(List.of("ab", "bb", "cb"));
+boolean status = list.removeIf(s -> s.startsWith("a"));
+System.out.println(status); // true
+System.out.println(list); //["bb', "cb"]
+```
+
 ## Immutable Collections
 ```java
 List<String> list = List.of("a", "b");
@@ -74,6 +83,8 @@ public E poll();
 ```
 
 ## Deque
+- LinkedList implements Deque
+- ArrayDeque implements Deque
 
 ![Deque](images/Deque.png)
 ### Main methods of Deque
@@ -138,10 +149,16 @@ String pop = stack.pop();
     map.forEach(biConsumer);
 ```
 
+### merge
+```java
+Map<Integer, Integer> map = new HashMap<>();
+map.put(1, null);
+///If the specified key is not already associated with a value or is associated with null, associates it with the given non-null value
+map.merge(1, 4, (v1, v2)->v1+v2);  //[1,4]
+```
+[MapMerge](../src/main/java/org/enricogiurin/ocp17/book/ch9/map/MapMerge.java)
 
 
- - LinkedList implements Deque
- - ArrayDeque implements Deque
 ## Collections and null values
 - `ArrayList`: allows null
 - `LinkedList`: allows null

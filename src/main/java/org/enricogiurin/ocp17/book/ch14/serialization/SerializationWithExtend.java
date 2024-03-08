@@ -23,10 +23,10 @@ public class SerializationWithExtend {
     System.out.println("age: " + eagle.getAge());
     serialize(eagle);
     System.out.println("Eagle serialized");
+    //no-arg constructor of the first non-serializable parent class
     Eagle deserializeEagle = deserialize();
     //name: Matt
     System.out.println("name: " + deserializeEagle.getName());
-
     //age is not transient
     System.out.println("age: " + deserializeEagle.getAge());
 
@@ -46,41 +46,41 @@ public class SerializationWithExtend {
     }
   }
 
-  /*
-   * inner classes
-   */
 
-  //Bird itself is not serializable
-  class Bird {
+}
 
-    protected transient String name;
-    protected int age;
+//Bird itself is not serializable
+class Bird {
 
-    public Bird() {
-      this.name = "Matt";
-      this.age = 30;
-    }
+  protected transient String name;
+  protected int age;
 
-    public String getName() {
-      return name;
-    }
-
-    public int getAge() {
-      return age;
-    }
+  //during the serialization this constructor is called
+  public Bird() {
+    System.out.println("""
+        no-arg constructor\s\
+        of the first non-serializable parent class""");
+    this.name = "Matt";
+    this.age = 30;
   }
 
-  class Eagle extends Bird implements Serializable {
+  public String getName() {
+    return name;
+  }
 
-    {
-      this.name = "Olivia";
-    }
+  public int getAge() {
+    return age;
+  }
+}
 
-    public Eagle() {
-      this.name = "Bridget";
-    }
+class Eagle extends Bird implements Serializable {
 
+  {
+    this.name = "Olivia";
+  }
 
+  public Eagle() {
+    this.name = "Bridget";
   }
 }
 

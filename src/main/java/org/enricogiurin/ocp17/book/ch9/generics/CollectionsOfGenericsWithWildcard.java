@@ -115,6 +115,20 @@ public class CollectionsOfGenericsWithWildcard {
     System.out.println(first);
   }
 
+  void addElementToAListWithWildCard() {
+    List<?> wildcardList = new ArrayList<String>();
+    List<? extends IOException> listExtends = new ArrayList<FileNotFoundException>();
+    List<? super IOException> listSuper = new ArrayList<Object>();
+    //I cannot add a element to a list defined as List<?>
+    //It means that the list can hold elements of an unknown type.
+    // wildcardList.add("aa");  //does not compile!
+
+    //this is also immutable
+    //listExtends.add(new FileNotFoundException())  //does not compile
+
+    listSuper.add(new FileNotFoundException()); //this compiles
+  }
+
   void wrongCollectionWithGenerics() {
     //does not compile
     //List<String> strings = new ArrayList<?>();
