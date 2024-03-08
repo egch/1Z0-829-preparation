@@ -196,13 +196,13 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - store procedure INOUT: System.out.println(cs.getInt(1)); [DONE]
 - Braces {} are optional for while and do/while statements, as shown on line 6, but parentheses, (), are not. [DONE]
 ###
- - q1: removeIf [DONE]
+ - removeIf [DONE]
  - q4: default/case same line [DONE]
- - q9: constructor of the first not serializable class [DONE]
- - q15: ToDoubleFunction 
- - q24 symbol ^
- - q26: valid main: public static void main(String _x[]) {}
- - q31 savepoint in autocommit true / rollback: A savepoint can only be used when autocommit mode is turned off
+ - constructor of the first not serializable class [DONE]
+ - ToDoubleFunction [DONE]
+ - symbol ^  [DONE]
+ - valid main: public static void main(String _x[]) {}  [DONE]
+ - savepoint in autocommit true / rollback: A savepoint can only be used when autocommit mode is turned off [DONE]
  - q34 : Which commands take a --module-path option? (Choose all that apply.)
  - q36: 
  - int numberReindeer = 9;

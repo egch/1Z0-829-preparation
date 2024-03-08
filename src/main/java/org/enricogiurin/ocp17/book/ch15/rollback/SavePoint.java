@@ -13,9 +13,14 @@ public class SavePoint {
 
   public static void main(String[] args) throws SQLException {
     SavePoint instance = new SavePoint();
-    instance.countRecords();
-    instance.savePoint();
-    instance.countRecords();
+    instance.savePointWithAutoCommitTrue();
+
+  }
+
+  void checkBeforeAndAfter() throws SQLException {
+    countRecords();
+    savePoint();
+    countRecords();
   }
 
   void savePoint() throws SQLException {
@@ -66,6 +71,23 @@ public class SavePoint {
 
       conn.rollback(sp1);  //order matters
     }
+  }
+
+  void savePointWithAutoCommitTrue() throws SQLException {
+    var sql = "INSERT INTO people VALUES(5, 'A', 'B')";
+
+    try (Connection conn = DriverManager.getConnection(JDBC_URL);
+        var ps = conn.prepareStatement(sql,
+            ResultSet.TYPE_SCROLL_SENSITIVE,
+            ResultSet.CONCUR_UPDATABLE)) {
+
+      //redundant but just to highlight
+      conn.setAutoCommit(true);
+      //java.sql.SQLException: savepoint exception: invalid specification
+      // I can call setSavepoint only if the  auto-commit connection is set to false
+      Savepoint sp1 = conn.setSavepoint();
+    }
+
   }
 
   void countRecords() throws SQLException {

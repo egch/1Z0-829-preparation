@@ -27,4 +27,8 @@ class Triangle {
   public Triangle() {
     this(1);
   }
+
+
+  //constructors cannot be final
+ // public final Triangle() {}  //DOES NOT COMPILE
 }

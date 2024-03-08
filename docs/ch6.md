@@ -86,6 +86,14 @@ There is no override/overload when the method in the parent class is marked priv
     }
 ```
 
+### Constructors
+Constructors cannot be declared final
+```java
+public class Man {
+  public final Man() {} //DOES NOT COMPILE!
+}
+```
+
 ## Overriding a method
 ### Covariant return types
 

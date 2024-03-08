@@ -21,6 +21,12 @@ public class ArrayCreation {
     int a5[] = new int[]{};
   }
 
+  void veryWeird() {
+    String array  [] = new String[10];
+    //this is not valid
+   // [] String array   = new String[10]; //does not compile
+  }
+
   void tricky() {
     int[] a1;
     //Array initializer is not allowed here
