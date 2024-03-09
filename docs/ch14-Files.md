@@ -52,18 +52,22 @@ Unlike the `createDirectory()` method, an exception is not thrown if the directo
 It is _createDirectories()_ and **NOT** _mkdir()_.  
 [createDirectories](../src/main/java/org/enricogiurin/ocp17/book/ch14/filesmethods/CreateDirectories.java)
 ## Read lines
+[read lines](../src/main/java/org/enricogiurin/ocp17/book/ch14/filesmethods/ReadLines.java)
+### readAllLines
 Mind the `IOException` !
-`readAllLines`
+
 ```java
 //this returns a list, everything is in memory
 List<String> listOfLines = Files.readAllLines(path);
 ```
-`lines`
+### lines
+Mind the `IOException` !
+
 ```java
 //this returns a Stream (not in memory)
 Stream<String> stream = Files.lines(pom)
 ```
-[read lines](../src/main/java/org/enricogiurin/ocp17/book/ch14/filesmethods/ReadLines.java)
+
 ## isSameFile
 [IsSameFile](../src/main/java/org/enricogiurin/ocp17/book/ch14/filesmethods/IsSameFile.java)
 ```java
