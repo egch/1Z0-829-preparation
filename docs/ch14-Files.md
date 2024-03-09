@@ -1,6 +1,6 @@
 # I/O - Files Methods
 
-
+## delete files
 ### deleteIfExists()
 It throws a checked exception. Mind the `IOException`!
 ```java
@@ -30,8 +30,20 @@ public static Stream<Path> find(Path start,
  BiPredicate<Path,BasicFileAttributes> matcher,
  FileVisitOption... options)
 ```
+### walk
+This method returns a Stream that is a recursive listing of all paths in the directory and its subdirectories.
+It traverses the directory tree recursively, including all levels of subdirectories.
+```java
+public static Stream<Path> walk(Path start,
+   FileVisitOption… options) throws IOException
+ 
+public static Stream<Path> walk(Path start, int maxDepth,
+   FileVisitOption… options) throws IOException
+```
 
-### createDirectories
+[walk](../src/main/java/org/enricogiurin/ocp17/book/ch14/filesmethods/WalkDirectory.java)
+
+## createDirectories
 ```java
 var dir = Path.of("/flip");
 dir = Files.createDirectories(dir);
@@ -39,7 +51,7 @@ dir = Files.createDirectories(dir);
 Unlike the `createDirectory()` method, an exception is not thrown if the directory could not be created because it already exists.  
 It is _createDirectories()_ and **NOT** _mkdir()_.  
 [createDirectories](../src/main/java/org/enricogiurin/ocp17/book/ch14/filesmethods/CreateDirectories.java)
-### Read lines
+## Read lines
 Mind the `IOException` !
 `readAllLines`
 ```java
@@ -52,7 +64,7 @@ List<String> listOfLines = Files.readAllLines(path);
 Stream<String> stream = Files.lines(pom)
 ```
 [read lines](../src/main/java/org/enricogiurin/ocp17/book/ch14/filesmethods/ReadLines.java)
-### isSameFile
+## isSameFile
 [IsSameFile](../src/main/java/org/enricogiurin/ocp17/book/ch14/filesmethods/IsSameFile.java)
 ```java
 boolean result = Files.isSameFile(p1, p2);
@@ -63,7 +75,7 @@ If check is done and one of these two do not exist, after check:
 Exception in thread "main" java.nio.file.NoSuchFileException: src/a
 ```
 
-#### Mismatch
+### Mismatch
 Finds and returns the position of the first mismatched byte in the content of two files, or -1L if there is no mismatch.
 ```java
 public static long mismatch(Path path,
@@ -74,19 +86,8 @@ Path hello = Path.of("/tmp/hello.txt");
 long mismatch = Files.mismatch(hello, hello);  //-1
 ```
 
-### walk
-This method returns a Stream that is a recursive listing of all paths in the directory and its subdirectories. 
-It traverses the directory tree recursively, including all levels of subdirectories.
-```java
-public static Stream<Path> walk(Path start,
-   FileVisitOption… options) throws IOException
- 
-public static Stream<Path> walk(Path start, int maxDepth,
-   FileVisitOption… options) throws IOException
-```
 
-[walk](../src/main/java/org/enricogiurin/ocp17/book/ch14/filesmethods/WalkDirectory.java)
-### File Attributes
+## File Attributes
 - BasicFileAttributes
 - BasicFileAttributeView  
 [File Attributes](../src/main/java/org/enricogiurin/ocp17/book/ch14/ReadAttributes.java)
