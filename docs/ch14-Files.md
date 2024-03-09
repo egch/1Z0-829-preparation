@@ -1,23 +1,36 @@
 # I/O - Files Methods
 
+
 ### deleteIfExists()
 It throws a checked exception. Mind the `IOException`!
 ```java
 public static boolean deleteIfExists(Path path)
                               throws IOException
 ```
+[delete](../src/main/java/org/enricogiurin/ocp17/book/ch14/filesmethods/Delete.java)
 ### delete()
 It throws a checked exception. Mind the `IOException`!
 ```java
 Files.delete(path);
 ```
+[delete](../src/main/java/org/enricogiurin/ocp17/book/ch14/filesmethods/Delete.java)
+## Browsing files
+[browsing](../src/main/java/org/enricogiurin/ocp17/book/ch14/filesmethods/BrowsingPaths.java)
 ### list
 It provides a simple and flat listing of the files and directories within the specified directory.  
 It throws a checked exception. Mind the `IOException`!
 ```java
 try (Stream<Path> stream = Files.list(tmp)) {...}
 ```
-[list](../src/,main/java/org/enricogiurin/ocp17/book/ch14/BrowsingPaths.java)
+
+### find
+```java
+public static Stream<Path> find(Path start,
+ int maxDepth,
+ BiPredicate<Path,BasicFileAttributes> matcher,
+ FileVisitOption... options)
+```
+
 ### createDirectories
 ```java
 var dir = Path.of("/flip");
@@ -25,9 +38,9 @@ dir = Files.createDirectories(dir);
 ```
 Unlike the `createDirectory()` method, an exception is not thrown if the directory could not be created because it already exists.  
 It is _createDirectories()_ and **NOT** _mkdir()_.  
-[createDirectories](../src/main/java/org/enricogiurin/ocp17/book/ch14/CreateDirectories.java)
+[createDirectories](../src/main/java/org/enricogiurin/ocp17/book/ch14/filesmethods/CreateDirectories.java)
 ### Read lines
-
+Mind the `IOException` !
 `readAllLines`
 ```java
 //this returns a list, everything is in memory
