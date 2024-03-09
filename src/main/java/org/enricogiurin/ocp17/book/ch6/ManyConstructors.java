@@ -13,6 +13,9 @@ public class ManyConstructors {
 
   public ManyConstructors(int age) {
     this(age, "Enrico");
+    //I cannot combine this() with super() because they both need to be the first statement in the body
+    //Call to 'super()' must be first statement in constructor body
+    //super();  //DOES NOT COMPILE!
   }
 
   public ManyConstructors() {

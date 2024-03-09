@@ -65,7 +65,6 @@ array ==> int[3] { 1, 2, 3 }
 
 jshell> int[] array = {1,2,3}  //anonymous array
 array ==> int[3] { 1, 2, 3 }
-
 ```
 ### Arrays declaration/creation
 ```java
@@ -81,9 +80,9 @@ int[] array2 = new int[]{1, 4}; //here I specify the values
 
 #### Multi dimensional array
 ```java
-    int[][] a3D[], a2D;
-    a3D = new int[2][2][2];  //3D array
-    a2D = new int[3][3];  //2D array
+int[][] a3D[], a2D;
+a3D = new int[2][2][2];  //3D array
+a2D = new int[3][3];  //2D array
 ```
 
 ```java
@@ -97,26 +96,26 @@ int[][] matrix3 = {{1,2}, {3}};
 
 ### mismatch
 ```java
-    String[] s1 = {"Camel", "Peacock", "Llama"};
-    String[] s2 = {"Camel", "Llama", "Peacock"};
-    String[] s3 = {"Camel", "Llama", "Peacock"};
-    int position = Arrays.mismatch(s1, s2); //first element to differ is at position 1
-    System.out.println(position);     //1
-    position = Arrays.mismatch(s2, s3); //they are identical then return -1
-    System.out.println(position);     //-1
+String[] s1 = {"Camel", "Peacock", "Llama"};
+String[] s2 = {"Camel", "Llama", "Peacock"};
+String[] s3 = {"Camel", "Llama", "Peacock"};
+int position = Arrays.mismatch(s1, s2); //first element to differ is at position 1
+System.out.println(position);     //1
+position = Arrays.mismatch(s2, s3); //they are identical then return -1
+System.out.println(position);     //-1
 ```
 ### compare
 ```java
-    int[] array1 = {1, 3, 5};
-    int[] array2 = {1, 3, 5};
-    int[] array3 = {1, 5, 5};
-    int result = Arrays.compare(array1, array2);
-    System.out.println(result);  //0  (the 2 arrays are identical)
+int[] array1 = {1, 3, 5};
+int[] array2 = {1, 3, 5};
+int[] array3 = {1, 5, 5};
+int result = Arrays.compare(array1, array2);
+System.out.println(result);  //0  (the 2 arrays are identical)
 
-    //the first element which they differ is the 2nd position (3 vs 5)
-    //In this case, we get a negative number because 3 is smaller than 5
-    result = Arrays.compare(array1, array3);
-    System.out.println(result);  //-1
+//the first element which they differ is the 2nd position (3 vs 5)
+//In this case, we get a negative number because 3 is smaller than 5
+result = Arrays.compare(array1, array3);
+System.out.println(result);  //-1
 ```
 ### Arrays Sort String (natural order)
 1. Numbers
@@ -216,12 +215,12 @@ Instant now = Instant.now();  //2024-01-18T11:02:16.628552400Z
 #### plus
 While an Instant represents a specific moment in time using GMT, Java only allows adding or removing units of DAYS or smaller.
 ```java
-    Instant now = Instant.now();
-    Instant then = now.plus(1, ChronoUnit.DAYS); //    //2024-01-08T07:47:52.101744Z
+Instant now = Instant.now();
+Instant then = now.plus(1, ChronoUnit.DAYS); //    //2024-01-08T07:47:52.101744Z
 
-    //adding a year - throws an exception
-    //Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported unit: Years
-    Instant inOneYear = now.plus(1, ChronoUnit.YEARS);
+//adding a year - throws an exception
+//Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported unit: Years
+Instant inOneYear = now.plus(1, ChronoUnit.YEARS);
 ```
 
 ## Converting String to number
@@ -241,9 +240,9 @@ First, a line break is added to the end of the string if not already there.
 Second, any line breaks are converted to the `\n` format.
 
 ```java
-    var name = "1234 \n567";
-    var indent1 = name.indent(1);
-    System.out.println("#%s#".formatted(indent1));
+var name = "1234 \n567";
+var indent1 = name.indent(1);
+System.out.println("#%s#".formatted(indent1));
 ```
 It prints:
 ```shell

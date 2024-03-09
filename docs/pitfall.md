@@ -1,6 +1,6 @@
 # Pitfalls and Tips
 ## Watch out
-- **case** is a reserved keyword in java
+- **case** is a reserved keyword in Java
 - mind the **IOException** when you use try with resources
 - Mind the type used in lambda, there ain't auto boxing. 
 
@@ -50,7 +50,7 @@ across all threads and processes, while the synchronized classes do not.
 ## Various
 - check if a field is final in the code
 - `enum`: check if the constructor is private, or protected!
-- `instanceof` : a class can always be an instance of an Interface, so the instanceOf in that case is allowed. !!!!
+- `instanceof` : a class can always be an instance of an Interface, so the instanceof in that case is allowed. !!!!
 - mind the scope of variables in the `instanceof`
 - variable names: `_` can be allowed but not as a char single: `var _` does not compile
 - multilines: check if a variable hasn't been used previously

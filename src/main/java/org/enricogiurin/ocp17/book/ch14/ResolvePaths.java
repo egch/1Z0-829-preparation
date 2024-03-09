@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 public class ResolvePaths {
 
   public static void main(String[] args) throws IOException {
-    new ResolvePaths().toRealPathNotExisting();
+    new ResolvePaths().resolve();
   }
 
   void resolve() {
@@ -42,22 +42,6 @@ public class ResolvePaths {
 
   }
 
-  void toRealPath() throws IOException {
-    Path pom = Path.of("pom.xml");
-    Path pom2 = Path.of("../1Z0-829-preparation/pom.xml");
-    ///Users/enrico/github/ocp17/1Z0-829-preparation/pom.xml
-    System.out.println(pom.toRealPath());
-    ///Users/enrico/github/ocp17/1Z0-829-preparation/pom.xml
-    System.out.println(pom2.toRealPath());
-  }
-
-  void toRealPathNotExisting() throws IOException {
-    Path notAFile = Path.of("cicciopasticcio.txt");
-    //Exception in thread "main" java.nio.file.NoSuchFileException: cicciopasticcio.txt
-    Path realPath = notAFile.toRealPath();
-
-    System.out.println(realPath);
-  }
 
   //we assume the link exist and also the corresponding target folder /tmp/a/b
   //when executed the second time it throws an exception

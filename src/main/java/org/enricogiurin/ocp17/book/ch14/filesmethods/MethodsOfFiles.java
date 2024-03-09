@@ -1,14 +1,13 @@
-package org.enricogiurin.ocp17.book.ch14;
+package org.enricogiurin.ocp17.book.ch14.filesmethods;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.stream.Stream;
 
 public class MethodsOfFiles {
 
   public static void main(String[] args) throws IOException {
-    new MethodsOfFiles().list();
+    new MethodsOfFiles().check();
   }
 
   void check() {
@@ -33,18 +32,6 @@ public class MethodsOfFiles {
     //-rw-r--r--  1 enrico  wheel  0 Aug  4 22:43 .hiddenFile
     Path readableFile = Path.of("/tmp/.hiddenFile");
     System.out.println(Files.isHidden(readableFile));  //true
-  }
-
-  void list() throws IOException {
-    Path currentDir = Path.of(".");
-    Stream<Path> stream = Files.list(currentDir);
-    stream
-        .filter(path -> Files.isRegularFile(path))
-        .forEach(System.out::println);
-    //./LICENSE
-    //./pom.xml
-    //./README.md
-    //./.gitignore
   }
 
 

@@ -129,7 +129,7 @@ int x = 5;
 //allowed
 double d = x;
 //not allowed
-x = d;
+x = d; //DOES NOT COMPILE!
 ```
 
 ## Casting

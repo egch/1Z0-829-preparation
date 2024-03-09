@@ -49,7 +49,7 @@ list.remove(Integer.valueOf(1)); //[5, 3]
 ### Creating a List with Factory
 [List Factory](../src/main/java/org/enricogiurin/ocp17/book/ch9/CreatingListWithFactory.java)
 ## Comparator
-package: java.util
+package: `java.util`
 ```java
 int compare(T o1, T o2);
 ```
@@ -60,13 +60,15 @@ Comparator<T> reversed()
 Returns a comparator that imposes the reverse ordering of this comparator.
 
 ## Comparable
-package: java.lang
+package: `java.lang`
 ```java
 int compareTo(T o1);
 ```
 
 ## Queue
 ![Methods of Queue.png](images/Queue.png)
+
+![queue.png](images/queue-comparison.png)
 ### Main methods of Queue
 The following **throw an exception** if something go wrong:
 ```java
@@ -106,8 +108,6 @@ public E peekLast();
 public E pollFirst();
 public E pollLast();
 ```
-
-
 [Example Deque](../src/main/java/org/enricogiurin/ocp17/book/ch9/UsageOfDeque.java)
 
 ```java
@@ -122,6 +122,11 @@ System.out.print(q.peek() + " " + q.size()); // dog 3
 ```java
 public interface Deque<E> extends Queue<E> {/**/}
 ```
+
+[DequeAsAStack](../src/main/java/org/enricogiurin/ocp17/book/ch9/DequeAsAStack.java)
+### Stack
+![Stack](images/Deque-Stack.png)
+
 #### pop() vs poll()
 When Deque is empty:
 - `pop() throws java.util.NoSuchElementException`
@@ -133,9 +138,6 @@ System.out.println(result); //null
 //Exception in thread "main" java.util.NoSuchElementException
 String pop = stack.pop();
 ```
-[DequeAsAStack](../src/main/java/org/enricogiurin/ocp17/book/ch9/DequeAsAStack.java)
-### Stack
-![Stack](images/Deque-Stack.png)
 
 
 

@@ -36,13 +36,13 @@ Comparator<String> c = (var s1, String s2) -> 0;  //does not compile!
 //does not compile
 Function<Integer, Boolean> function = (int i) -> {return false;}
 ```
-The type is Integer in the Function and int in the lambda.
+The type is `Integer` in the Function and `int` in the lambda.
 
 ### Lambda and variables effective final
 Lambdas require **local variables** and **method parameters** to be effectively final to use them.
 Instance and static variables can be used regardless of whether they are effectively final.
 
-[LambdaEffectiveFinal](../src/main/java/org/enricogiurin/ocp17/book/ch8/LambdaEffectiveFinal.java)
+[LambdaEffectiveFinal](../src/main/java/org/enricogiurin/ocp17/book/ch8/lambda/LambdaEffectiveFinal.java)
 #### Rules
 When using lambda expressions that access instance variables, local variables, or parameters:
 * local variables **must be** effective final

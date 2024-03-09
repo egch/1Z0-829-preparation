@@ -12,8 +12,10 @@ public class MethodMatchingOverloading {
   void matchPrimitive() {
     //there is no exact match, choose(float f), Java attempts to promote the primitive type
     // to double before trying to wrap it as a Float,
-    choose(2F);
-    choose((byte) 2 + 1);
+    choose(2F);  //double
+    choose((byte) (2 + 1));  //short
+    //byte+int = int
+    choose((byte) 2 + 1);  //int
   }
 
   private void choose(int choice) {
