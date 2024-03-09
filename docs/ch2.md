@@ -132,6 +132,32 @@ double d = x;
 x = d;
 ```
 
+## Casting
+All the primitive types can be cast to Object.
+```java
+    byte b = 4;
+    short s = 5;
+    int i = 56;
+    long l = 100L;
+    float f = 4.5F;
+    double d = 5.98D;
+    char c = 'a';
+    boolean bo = false;
+
+    //all of these can be cast to Object
+    Object oB = (Object)b;
+    Object oS = (Object)s;
+    Object oI = (Object)i;
+    Object oL = (Object)l;
+    Object oF = (Object)f;
+    Object oD = (Object)d;
+    Object oC = (Object)c;
+    Object oBo = (Object)bo;
+    //inconvertible types; cannot cast 'int' to 'java.lang.Float'
+    //Float aFloat = (Float)i;  DOES NOT COMPILE
+```
+[Casting](../src/main/java/org/enricogiurin/ocp17/book/ch2/Casting.java)
+
 ## Java Operator Precedence
 By decreasing order, highest to the lowest.
 

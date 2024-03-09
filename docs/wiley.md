@@ -203,12 +203,7 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
  - symbol ^  [DONE]
  - valid main: public static void main(String _x[]) {}  [DONE]
  - savepoint in autocommit true / rollback: A savepoint can only be used when autocommit mode is turned off [DONE]
- - q34 : Which commands take a --module-path option? (Choose all that apply.)
- - q36: 
- - int numberReindeer = 9;
-   System.out.println( (Object) numberReindeer);
--q42: collect(Collectors.teeing(Collectors.toList(),
-   20:       Collectors.toSet(), (y, z) -˃ z))
-   21:    .spliterator()
+ - Which commands take a --module-path option? (Choose all that apply.) [DONE]
+ - casting int to Object [DONE]
+ - teeing [DONE]
 
--  continue with do/while
