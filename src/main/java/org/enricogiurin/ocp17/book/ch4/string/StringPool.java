@@ -1,7 +1,5 @@
 package org.enricogiurin.ocp17.book.ch4.string;
 
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
-
 public class StringPool {
 
   public static void main(String[] args) {
@@ -21,7 +19,6 @@ public class StringPool {
     System.out.println(s1 == s3.intern());
   }
 
-  @JarMockTest
   void forCycle() {
     String country = "Italy";
     String result = "";

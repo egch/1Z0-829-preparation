@@ -2,9 +2,7 @@ package org.enricogiurin.ocp17.book.ch9.generics;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
-@JarMockTest
 public class ComplexInheritanceWithGenerics {
 
 

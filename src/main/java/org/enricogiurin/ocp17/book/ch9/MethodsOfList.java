@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.UnaryOperator;
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class MethodsOfList {
 
@@ -66,7 +65,6 @@ public class MethodsOfList {
     System.out.println(arrayList);  //[a, d, c]
   }
 
-  @JarMockTest
   void add(){
     List<String> s1 = new ArrayList<>();
     s1.add("a");

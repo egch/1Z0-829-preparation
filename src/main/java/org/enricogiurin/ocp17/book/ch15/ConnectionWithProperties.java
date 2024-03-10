@@ -6,9 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
-@JarMockTest
 public class ConnectionWithProperties {
 
   public static void main(String[] args) throws SQLException {

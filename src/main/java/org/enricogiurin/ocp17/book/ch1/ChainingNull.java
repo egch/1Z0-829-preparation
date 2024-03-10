@@ -1,8 +1,5 @@
 package org.enricogiurin.ocp17.book.ch1;
 
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
-
-@JarMockTest
 public class ChainingNull {
 
   void chainingBooleanAndNull() {

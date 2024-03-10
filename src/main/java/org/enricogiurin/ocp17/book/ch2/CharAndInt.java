@@ -1,7 +1,5 @@
 package org.enricogiurin.ocp17.book.ch2;
 
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
-
 //TODO - to complete
 public class CharAndInt {
 
@@ -40,7 +38,6 @@ public class CharAndInt {
     System.out.println(euro);
   }
 
-  @JarMockTest
   void byte2() {
     //out of range
     //byte b = 256;  //does not compile.

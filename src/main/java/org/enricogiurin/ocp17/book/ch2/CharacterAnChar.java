@@ -1,8 +1,5 @@
 package org.enricogiurin.ocp17.book.ch2;
 
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
-
-@JarMockTest
 public class CharacterAnChar {
 
   public static void main(String[] args) {

@@ -1,7 +1,5 @@
 package org.enricogiurin.ocp17.book.ch1.textblocks;
 
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
-
 public class TextBlockTricky {
 
   public static void main(String[] args) {
@@ -40,7 +38,6 @@ public class TextBlockTricky {
     System.out.println(quotes2);
   }
 
-  @JarMockTest
   void isValidTB() {
     var tb = """\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020
         """;

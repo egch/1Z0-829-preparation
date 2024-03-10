@@ -1,14 +1,11 @@
 package org.enricogiurin.ocp17.book.ch3.usageofswitch;
 
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
-
 public class SwitchWIthBlockOfCode {
 
   public static void main(String[] args) {
     new SwitchWIthBlockOfCode().switchDefault();
   }
 
-  @JarMockTest
   void switchDefault() {
     var k = 9;
     int result = 5;

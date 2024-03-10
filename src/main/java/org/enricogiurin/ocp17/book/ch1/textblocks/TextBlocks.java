@@ -1,7 +1,5 @@
 package org.enricogiurin.ocp17.book.ch1.textblocks;
 
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
-
 public class TextBlocks {
 
   public static void main(String[] args) {
@@ -81,8 +79,7 @@ public class TextBlocks {
     System.out.println("#" + block + "#");
   }
 
-  @JarMockTest
-    //backslash: \
+  //backslash: \
   void backslash() {
     //the char backslash is ignored
     var digits = """

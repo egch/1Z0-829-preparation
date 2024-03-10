@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class UsageOfCollectors {
 
@@ -53,7 +52,6 @@ public class UsageOfCollectors {
     System.out.println("Average Age: " + averageAge);
   }
 
-  @JarMockTest
   void counting() {
     Long cnt = IntStream.rangeClosed(1, 10)
         .boxed()

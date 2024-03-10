@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class CommonIntermediateOperations {
 
@@ -119,7 +118,6 @@ public class CommonIntermediateOperations {
         .toList();
   }
 
-  @JarMockTest
   void max() {
     List<String> list = List.of("a", "ab", "abc", "kk");
     Optional<String> optMax = list.stream()

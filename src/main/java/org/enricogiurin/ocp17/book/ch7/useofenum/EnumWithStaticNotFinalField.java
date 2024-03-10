@@ -1,8 +1,5 @@
 package org.enricogiurin.ocp17.book.ch7.useofenum;
 
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
-
-@JarMockTest
 public class EnumWithStaticNotFinalField {
 
   enum Api {

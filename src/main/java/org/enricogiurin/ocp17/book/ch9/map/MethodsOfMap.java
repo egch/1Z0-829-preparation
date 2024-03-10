@@ -10,7 +10,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class MethodsOfMap {
 
@@ -41,7 +40,6 @@ public class MethodsOfMap {
     System.out.println(contains);
   }
 
-  @JarMockTest
   void overwriteValue() {
     Map<String, Integer> map = new HashMap<>();
     Integer oldValue = map.put("a", 1);  //null

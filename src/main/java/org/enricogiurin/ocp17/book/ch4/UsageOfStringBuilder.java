@@ -1,7 +1,5 @@
 package org.enricogiurin.ocp17.book.ch4;
 
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
-
 public class UsageOfStringBuilder {
 
   public static void main(String[] args) {
@@ -80,7 +78,6 @@ public class UsageOfStringBuilder {
     System.out.println(sb);  //01234
   }
 
-  @JarMockTest
   void append() {
     StringBuilder sb = new StringBuilder("hello");
     //append has only a single argument

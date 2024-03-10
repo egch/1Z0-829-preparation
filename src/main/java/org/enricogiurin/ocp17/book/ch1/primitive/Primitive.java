@@ -1,7 +1,5 @@
 package org.enricogiurin.ocp17.book.ch1.primitive;
 
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
-
 public class Primitive {
 
   public static void main(String[] args) {
@@ -39,7 +37,6 @@ public class Primitive {
     System.out.println(d); //5.0
   }
 
-  @JarMockTest
   void compareIntWithFloat() {
     int x = 5;
     float f = 5.0F;

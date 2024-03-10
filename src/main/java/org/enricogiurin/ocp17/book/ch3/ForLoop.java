@@ -1,7 +1,5 @@
 package org.enricogiurin.ocp17.book.ch3;
 
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
-
 public class ForLoop {
 
   public static void main(String[] args) {
@@ -62,7 +60,6 @@ public class ForLoop {
     }
   }
 
-  @JarMockTest
   void loopNotCompiling() {
     int idx = 0;
     for (int j = 0; j < 10; j++) {

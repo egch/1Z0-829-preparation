@@ -206,4 +206,12 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
  - Which commands take a --module-path option? (Choose all that apply.) [DONE]
  - casting int to Object [DONE]
  - teeing [DONE]
+###
+- anonymous classes are implicitly final [DONE]
+- q16 
+- q22
+- there ain't method append() on String [DONE]
+- using break in switch expression
+- q25: re-assign an exception in the multi-catch [DONE]
+- equals/re-assign [DONE]
 

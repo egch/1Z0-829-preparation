@@ -2,7 +2,6 @@ package org.enricogiurin.ocp17.book.ch14;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import org.enricogiurin.ocp17.various.helper.JarMockTest;
 
 public class UsageOfSubPath {
 
@@ -89,8 +88,7 @@ public class UsageOfSubPath {
 
   }
 
-  @JarMockTest
-    //This code does not work on Mac!
+  //This code does not work on Mac!
   void getName() {
     Path ocp = Paths.get("C:\\Data\\ocp17\\code");
     int nameCount = ocp.getNameCount();
