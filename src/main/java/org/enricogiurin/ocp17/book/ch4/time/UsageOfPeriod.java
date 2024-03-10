@@ -11,7 +11,7 @@ import org.enricogiurin.ocp17.various.helper.Wiley;
 public class UsageOfPeriod {
 
   public static void main(String[] args) {
-    new UsageOfPeriod().periodDoesNotChain();
+    new UsageOfPeriod().ofVsPlus();
   }
 
   void period() {
@@ -24,10 +24,27 @@ public class UsageOfPeriod {
   }
 
   void periodDoesNotChain() {
-
     //Period does not chain. Only the last method is considered!
     Period period = Period.ofYears(1).ofMonths(2).ofDays(1);
     System.out.println(period);  //P1D
+  }
+
+  void addPeriodToLocalDate() {
+    LocalDate today = LocalDate.now();
+    System.out.println(today);  //2024-03-10
+    //period of one year, one month, one day
+    Period period = Period.of(1, 1, 1);
+    LocalDate future = today.plus(period);
+    System.out.println(future); //2025-04-11
+  }
+  void ofVsPlus() {
+    //this is a static method
+    Period oneDay = Period.ofDays(1);
+    //this is an instance method, so this I can chain
+    Period p2 = oneDay.plusDays(2);
+    //example of chaining
+    p2 = oneDay.plusYears(2).plusMonths(3).plusDays(5);
+    System.out.println(p2);  //P2Y3M6D
   }
 
   void methodsOfPeriod() {

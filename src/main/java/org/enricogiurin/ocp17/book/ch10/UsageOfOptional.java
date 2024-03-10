@@ -91,6 +91,14 @@ public class UsageOfOptional {
     op.map(n -> "" + n)
         .filter(s -> s.length() > 1)
         .ifPresent(System.out::println);
+  }
 
+  /**
+   * ifPresent() accepts a Consumer<T> as parameter.
+   */
+  void ifPresent() {
+    Optional<String> optional = Optional.of("hello");
+    //if
+    optional.ifPresent(s-> System.out.println());
   }
 }

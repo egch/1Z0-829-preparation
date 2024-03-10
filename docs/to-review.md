@@ -208,10 +208,18 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
  - teeing [DONE]
 ###
 - anonymous classes are implicitly final [DONE]
-- q16 
-- q22
 - there ain't method append() on String [DONE]
-- using break in switch expression
 - q25: re-assign an exception in the multi-catch [DONE]
 - equals/re-assign [DONE]
+###
+- consumer .andThen() [DONE]
+- Instant is immutable: ins.plus [DONE]
+- TreeMap keys [DONE]
+- Period.of() does not chain [DONE]
+- sorted() with Comparable [DONE]
+- synchronized on class [DONE]
+- service provide can provide: It is a compile-time error if more than one provides directive in a module declaration specifies the same service. [DONE]
+- DoubleBinaryOperator [DONE]
+- 
+
 

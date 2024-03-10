@@ -1,4 +1,5 @@
 # Core APIs
+[Dates & Times](ch4-time.md)
 ## String Methods
 ### String concatenation
 1. If both operands are numeric, `+` means numeric addition. 
@@ -151,76 +152,6 @@ int round2 round = Math.round(5.2F); //5
 ### pow
 ```java
 double pow = Math.pow(4.0, 2.0); //16.0
-```
-## Dates & Times
-```java
-LocalDateTime.now(); //2023-05-14T19:56:29.738748
-ZonedDateTime.now(); //2023-05-14T19:56:46.627004+02:00[Europe/Zurich]
-```
-### ZonedDateTime
-```shell
-2021–10–25T09:13:07.769–05:00[America/New_York]
-
-2023-12-16T14:30:00.000-05:00[America/New_York]
-```
-### GMT vs UTC
-- GMT - Greenwich Mean Time
-- UTC - Coordinated Universal Time
-
-### Duration
-```jshelllanguage
-jshell> java.time.Duration.ofSeconds(758768437)
-$54 ==> PT210769H37S
-```
-#### toString
-PT24H : starts with **PT**
-
-
-I can't use `Duration` with `LocalDate`!
-```java
-var date = LocalDate.of(2023, 1, 21);
-var days = Duration.ofDays(1);
-// Unsupported unit: Seconds
-//I can NOT use Duration with LocalDate
-//Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported unit: Seconds    
-System.out.println(date.plus(days));    
-```
-### Period
-```java
-//Period does not chain. Only the last method is considered!
-Period period = Period.ofYears(1).ofMonths(2).ofDays(1);
-System.out.println(period);  //P1D
-```
-The `Period` class does not have methods such as `getSeconds()`, `getMinutes()`, `getHours()`.
-
-#### toString
-P1D : starts with **P**
-
-
-### Instant
-The Instant class represents a specific moment in time in the GMT time zone.
-#### Format
-```java
-YYYY-MM-DDTHH:mm:ss.SSSZ
-```
-#### Creation
-```java
-//from ZonedDateTime
-Instant instantZRH = zdtZurich.toInstant();
-//with now()
-Instant now = Instant.now();  //2024-01-18T11:02:16.628552400Z
-```
-[Instant](../src/main/java/org/enricogiurin/ocp17/book/ch4/time/UsageOfInstant.java)
-
-#### plus
-While an Instant represents a specific moment in time using GMT, Java only allows adding or removing units of DAYS or smaller.
-```java
-Instant now = Instant.now();
-Instant then = now.plus(1, ChronoUnit.DAYS); //    //2024-01-08T07:47:52.101744Z
-
-//adding a year - throws an exception
-//Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported unit: Years
-Instant inOneYear = now.plus(1, ChronoUnit.YEARS);
 ```
 
 ## Converting String to number

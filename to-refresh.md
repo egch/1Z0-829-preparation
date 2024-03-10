@@ -1,5 +1,0 @@
-- binary representation
-- Serializable only parent class
-- overloading with int/double but methods float/vararg float
-- reduce
-- threads states

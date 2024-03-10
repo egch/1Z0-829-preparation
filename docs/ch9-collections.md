@@ -160,6 +160,17 @@ map.merge(1, 4, (v1, v2)->v1+v2);  //[1,4]
 ```
 [MapMerge](../src/main/java/org/enricogiurin/ocp17/book/ch9/map/MapMerge.java)
 
+### TreeMap
+Keys added to `TreeMap` need to implement `Comparable`, as less as a `Comparator` is provided.  
+
+[Usage Of TreeMap](../src/main/java/org/enricogiurin/ocp17/book/ch9/map/UsageOfTreeMap.java)
+```java
+Map map = new TreeMap<>();
+map.put(1, "2");
+//java.lang.ClassCastException: class java.lang.Integer cannot be cast to class java.lang.String
+map.put("hello", "2");
+System.out.println(map);
+```
 
 ## Collections and null values
 - `ArrayList`: allows null

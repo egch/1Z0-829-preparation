@@ -21,12 +21,10 @@ public class UsageOfConsumer {
   }
 
   void andThen() {
-    Consumer<String> c1 = s -> System.out.println(s);
+    Consumer<String> c1 = s -> System.out.print(s+" ");
     Consumer<String> c2 = s -> System.out.println(s.length());
     Consumer<String> all = c1.andThen(c2);
-    //123
-    //3
-    all.accept("123");
+    all.accept("hello"); //hello 5
   }
 
 }

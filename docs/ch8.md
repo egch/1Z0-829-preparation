@@ -68,6 +68,17 @@ Supplier<List<Integer>> supplier = ArrayList::new;
 ```
 
 ## Functional Interfaces
+### Consumer
+[Consumer](../src/main/java/org/enricogiurin/ocp17/book/ch8/functionalinterface/jdk/UsageOfConsumer.java)
+#### andThen
+```java
+Consumer<String> c1 = s -> System.out.print(s+" ");
+Consumer<String> c2 = s -> System.out.println(s.length());
+Consumer<String> all = c1.andThen(c2);
+all.accept("hello"); //hello 5
+```
+
+
 ### Object Methods
 If a functional interface includes an abstract method with
 the same signature as a public method found in `Object`, those methods do not count toward the single

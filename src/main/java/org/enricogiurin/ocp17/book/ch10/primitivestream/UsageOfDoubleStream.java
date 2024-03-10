@@ -1,6 +1,7 @@
 package org.enricogiurin.ocp17.book.ch10.primitivestream;
 
 import java.util.OptionalDouble;
+import java.util.function.DoubleBinaryOperator;
 import java.util.stream.DoubleStream;
 
 public class UsageOfDoubleStream {
@@ -60,8 +61,13 @@ public class UsageOfDoubleStream {
         .limit(5L)
         .count();
     System.out.println("count is: " + count);
+  }
 
-
+  void reduce() {
+    DoubleBinaryOperator dbo = (d1, d2) -> d1 + d2;
+    double sum = DoubleStream.of(1D, 2.4D, 4, 78D)
+        .reduce(0.0D, dbo);
+    System.out.println(sum);
   }
 
 }

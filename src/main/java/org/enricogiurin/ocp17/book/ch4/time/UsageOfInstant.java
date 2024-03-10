@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class UsageOfInstant {
 
   public static void main(String[] args) {
-    new UsageOfInstant().addToInstant();
+    new UsageOfInstant().parseInstant();
   }
 
   //I can use toInstant only with ZonedDateTime (not LDT)
@@ -63,6 +63,12 @@ public class UsageOfInstant {
     }catch (Exception e){
       e.printStackTrace();
     }
+  }
+  void parseInstant() {
+    Instant instant = Instant.parse("2024-03-01T14:02:30.123Z");
+    //this has no effect since Instant is immutable
+    instant.plus(1, ChronoUnit.HOURS);
+    System.out.println(instant); //2024-03-01T14:02:30Z
   }
 
 

@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 public class CommonIntermediateOperations {
 
   public static void main(String[] args) {
-    new CommonIntermediateOperations().skipAndLimit();
+    new CommonIntermediateOperations().distinct();
   }
 
   void distinct() {
@@ -64,51 +64,6 @@ public class CommonIntermediateOperations {
     //Stream.concat(odds, evens)  //does not compile
   }
 
-  void sorted() {
-    Integer[] array = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-
-    // Convert the array to a List
-    List<Integer> list = new ArrayList<>(Arrays.asList(array));
-
-    // Shuffle the list
-    Collections.shuffle(list);
-
-    list.stream()
-        .sorted()
-        .forEach(System.out::println);
-  }
-
-  void sortedWithComparator() {
-    Integer[] array = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-
-    // Convert the array to a List
-    List<Integer> list = new ArrayList<>(Arrays.asList(array));
-
-    // Shuffle the list
-    Collections.shuffle(list);
-
-    list.stream()
-        .sorted((n1, n2) -> n2 - n1)
-        .forEach(System.out::println); //9 ...0
-  }
-
-
-  void sortedComparatorReverseOrder() {
-    Comparator<String> stringComparator = Comparator.reverseOrder();
-    var s = Stream.of("a",
-        "t1",
-        "t2");
-    s.filter(n -> n.startsWith("t"))
-        // .sorted(Comparator::reverseOrder)  //does not compile like this
-        .sorted(stringComparator)
-        .findFirst()
-        .ifPresent(System.out::println); //t2
-  }
-
-  void aboutSortedComparatorReverseOrder() {
-    Runnable reverseOrder = Comparator::reverseOrder;
-    Comparator<String> comparator = Comparator.reverseOrder();
-  }
 
   void peak() {
     Stream.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
