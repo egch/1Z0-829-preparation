@@ -74,6 +74,7 @@ Example:
 ```
 
 ### Creation
+Only ZonedDateTime has the toInstant() method.
 ```java
 //from ZonedDateTime
 Instant instantZRH = zdtZurich.toInstant();
