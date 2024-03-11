@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class UsageOfSpliterator {
 
   public static void main(String[] args) {
-    new UsageOfSpliterator().repeatedCallsToSpliterator();
+    new UsageOfSpliterator().forEachRemaining2();
   }
 
   void use() {
@@ -32,6 +32,19 @@ public class UsageOfSpliterator {
     }  //Hello World
     System.out.println();
     spliterator.forEachRemaining(System.out::println);  //Java Programming
+  }
+
+  void forEachRemaining2() {
+    List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7, 8);
+    Spliterator<Integer> si1 = list.spliterator();
+    si1.forEachRemaining(s -> System.out.print(s + " "));  //1 2 3 4 5 6 7 8
+
+    System.out.println();
+    //do it again
+    si1 = list.spliterator();
+    Spliterator<Integer> si2 = si1.trySplit();
+    si1.forEachRemaining(s -> System.out.print(s + " "));  //5 6 7 8
+
 
   }
 

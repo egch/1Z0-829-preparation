@@ -5,6 +5,7 @@ import static org.enricogiurin.ocp17.book.ch15.SetupDataBase.JDBC_URL;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.JDBCType;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
@@ -18,7 +19,7 @@ import java.sql.Types;
 public class StoredProcedure {
 
   public static void main(String[] args) throws SQLException {
-    new StoredProcedure().double_number();
+    new StoredProcedure().double_numberWithSetObject();
   }
 
   /**
@@ -93,6 +94,21 @@ public class StoredProcedure {
       cs.execute();
       //I do not need to use isResultSet
       System.out.println(cs.getInt("num"));
+    }
+  }
+
+  void double_numberWithSetObject() throws SQLException {
+    var sql = "{call double_number(?) }";  //CREATE PROCEDURE double_number(INOUT num INT) READS SQL DATA
+    try (Connection connection = DriverManager.getConnection(JDBC_URL);
+        CallableStatement cs = connection.prepareCall(sql)) {
+      //remember: CREATE PROCEDURE double_number(INOUT num INT) READS SQL DATA
+      //so num is both IN parameter and OUT parameter
+      cs.setObject(1, 23, JDBCType.BIGINT);
+      cs.registerOutParameter("num", JDBCType.BIGINT);
+      //equivalent: cs.registerOutParameter(1, Types.INTEGER);
+      cs.execute();
+      //I do not need to use isResultSet
+      System.out.println(cs.getInt("num")); //46
     }
   }
 

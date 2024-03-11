@@ -21,15 +21,6 @@ interface Certifications {
 
 }
 
-public class InterfaceWithStaticMethods {
-
-  public static void main(String[] args) {
-    //I can access to static methods from everywhere, no need to implement the interface
-    Certifications.ocp17();
-  }
-
-}
-
 class MyCertifications implements Certifications {
 
   void pomodoro() {
@@ -43,3 +34,17 @@ class MyCertifications implements Certifications {
     //Certifications.az204();  //does not compile!
   }
 }
+
+public class InterfaceWithStaticMethods {
+
+  public static void main(String[] args) {
+    //I can access to static methods from everywhere
+    Certifications.ocp17();
+    MyCertifications myCertifications = new MyCertifications();
+    //Static method may be invoked on containing interface class only
+    //I cannot invoke a static method of the interface from an instance of the class which implements the interface!
+    //myCertifications.ocp17();  //DOES NOT COMPILE!
+  }
+
+}
+

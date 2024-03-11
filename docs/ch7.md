@@ -42,6 +42,24 @@ public void go() {
 [Full Example](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/defaultmethods/InheritTwoDefaultMethods.java)
 #### Case abstract class
 [Abstract class default methods](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/defaultmethods/AbstractClassDefaultMethods.java)
+
+#### default conflict abstract method
+```java
+interface House {
+  default void work(){}  //default method
+}
+
+interface Office {
+  void work(); //abstract method
+}
+
+class HomeOffice implements Office, House {
+  //I am forced to implement work()!
+  @Override
+  public void work() {}
+}
+```
+[default vs abstract conflict](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/defaultmethods/DefaultVsAbstractConflict.java)
 ### private methods
 A private interface method **cannot** be called in a method outside the interface declaration.
 
@@ -80,7 +98,25 @@ A default method can invoke any other type of method within the interface:
 - other default methods
 
 [DefaultMethodCallingOtherMethods](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/defaultmethods/DefaultMethodCallingOtherMethods.java)
+### static methods
 
+```java
+interface Certifications {
+  //public by default
+  public static void ocp17() {}
+}
+
+class MyCertifications implements Certifications {
+  public static void main(String[] args) {
+    Certifications.ocp17();  //valid
+    MyCertifications myCertifications = new MyCertifications();
+    //I cannot invoke a static method of the interface from an instance of the class which implements the interface!
+    myCertifications.ocp17();  //DOES NOT COMPILE!
+  }
+}
+```
+
+[interface with static methods](../src/main/java/org/enricogiurin/ocp17/book/ch7/interfaces/InterfaceWithStaticMethods.java)
 ## Sealed
 A sealed class requires at least one subclass to extend.   
 

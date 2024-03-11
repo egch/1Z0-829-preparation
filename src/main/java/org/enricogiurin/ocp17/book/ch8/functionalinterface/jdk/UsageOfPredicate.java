@@ -44,7 +44,13 @@ public class UsageOfPredicate {
 
     result = isEmpty.test("");
     System.out.println(result);  //true
+  }
 
+  void rawPredicate() {
+    //if Generics is not provided the type is Object
+    Predicate predicate = (Object obj) -> true;
 
+    //ncompatible parameter types in lambda expression: expected Object but found Integer
+    //Predicate p2 = (Integer n)->true;  //DOES NOT COMPILE!
   }
 }
