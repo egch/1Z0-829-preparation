@@ -8,6 +8,25 @@ public class Money<T> {
     }
 }
 ````
+## Class and Methods with generics
+```java
+class Ball<X>{
+  //this does not compile because X cannot be referenced from a static context
+ // public static <T> void catchBall(T t, X x) {}  DOES NOT COMPILE
+
+  //this is how we can fix it, basically we re-define X
+  public static <T, X> void catchBall(T t, X x) {}
+
+  //or make the method instance, not static:
+  public <T> void catchBall2(T t, X x) {}
+
+  //here we redefine X so the type on Ball is hidden. 
+  public <X extends Number> void inflateBall(X t, X x) {}
+
+}
+```
+[Class and methods with generics](../src/main/java/org/enricogiurin/ocp17/book/ch9/generics/ClassAndMethodsWithGenerics.java)
+
 ## Diamond Operator
 ```java
 List<String> list = new ArrayList<>();

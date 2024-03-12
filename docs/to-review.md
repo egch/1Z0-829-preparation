@@ -220,6 +220,12 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - synchronized on class [DONE]
 - service provide can provide: It is a compile-time error if more than one provides directive in a module declaration specifies the same service. [DONE]
 - DoubleBinaryOperator [DONE]
-- 
+###
+- class and methods with generics [DONE]
+-  stream().stream() ?? [DONE]
+- ChronoUnit between() [DONE]
+- public record Orchestra(int... instruments) [DONE]
+- indent [DONE]
+
 
 

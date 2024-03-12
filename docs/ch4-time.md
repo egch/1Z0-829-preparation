@@ -98,3 +98,12 @@ Instant then = now.plus(1, ChronoUnit.DAYS); //    //2024-01-08T07:47:52.101744Z
 //Exception in thread "main" java.time.temporal.UnsupportedTemporalTypeException: Unsupported unit: Years
 Instant inOneYear = now.plus(1, ChronoUnit.YEARS);
 ```
+
+## ChronoUnit
+### between
+```java
+ZonedDateTime zdt1 = ZonedDateTime.of(date, time, zone);
+ZonedDateTime zdt2 = zdt1.plus(1, ChronoUnit.HOURS);
+long between = ChronoUnit.HOURS.between(zdt1, zdt2);
+```
+[ChronoUnit](../src/main/java/org/enricogiurin/ocp17/book/ch4/time/UsageOfChronoUnit.java)

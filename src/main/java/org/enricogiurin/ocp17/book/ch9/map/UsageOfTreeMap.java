@@ -6,7 +6,7 @@ import java.util.TreeMap;
 public class UsageOfTreeMap {
 
   public static void main(String[] args) {
-    new UsageOfTreeMap().keysAsRecord();
+    new UsageOfTreeMap().nonGenerics();
   }
 
   /**

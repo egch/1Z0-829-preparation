@@ -24,6 +24,7 @@ try (Stream<Path> stream = Files.list(tmp)) {...}
 ```
 
 ### find
+Mind the `maxDepth` parameter!
 ```java
 public static Stream<Path> find(Path start,
  int maxDepth,

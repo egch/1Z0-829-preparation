@@ -33,6 +33,9 @@ across all threads and processes, while the synchronized classes do not.
 - Mind `forEach(System.out::println)`; not ~~forEach(System.out.println);~~
 - check if the stream ends with an Optional
 - `parallelStream()` is defined on Collection, ~~NOT on Stream~~
+- Collectors.groupingBy() - requires a Function !
+- Collectors.partitioningBy() - requires a Predicate !
+- 
 ### IntStream
 - IntStream.sum() returns an int (not a long)
 

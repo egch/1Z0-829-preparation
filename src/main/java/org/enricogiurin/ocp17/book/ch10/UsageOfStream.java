@@ -9,6 +9,13 @@ public class UsageOfStream {
     new UsageOfStream().reAssignStream();
   }
 
+  void streamStream() {
+    //I can not call stream() on a Stream
+    Stream.of(1, 2)
+        //    .stream();  //does not compile
+        .count();
+  }
+
   void infiniteRandom() {
     //infinite loop of random number
     Stream<Double> doubleStream = Stream.generate(Math::random);

@@ -108,5 +108,6 @@ public class UsageOfInstanceof {
     boolean result2 = obj instanceof String;
   }
 
+
 }
 

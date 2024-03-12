@@ -35,6 +35,20 @@ Some future program could create a subclass of `Throwable` that does implement `
   }
 ```
 [Pattern Matching](../src/main/java/org/enricogiurin/ocp17/book/ch3/PatternMatching.java)
+
+### Pattern Matching - subtype
+Pattern variable type must be a **strict subtype** of the Type under test.
+```java
+Number number = 5;
+//this is a simple instanceof, not pattern matching
+if(number instanceof Number){}  //this is OK 
+
+//Pattern type 'Number' is the same as expression type
+//pattern variable type must be a strict subtype of Number
+//if(number instanceof Number n2){} //DOES NOT COMPILE!
+//this is ok as Long is a strict subtype Of Number
+if(number instanceof Long nL) {}  //OK
+```
 ## Switch
 ### Switch Statement
 The value of a case statement must be one of these:

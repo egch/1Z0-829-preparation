@@ -3,7 +3,7 @@ package org.enricogiurin.ocp17.book.ch13.thread;
 public class BasicThread {
 
   public static void main(String[] args) {
-    new BasicThread().rightStartOfThread();
+    new BasicThread().threadWithRunnable();
   }
 
   void wrongStartOfThread() {
@@ -17,6 +17,14 @@ public class BasicThread {
     Thread t = new Thread(() -> System.out.println("hello"));
     t.start();
     System.out.println("completed");
+  }
+
+  void threadWithRunnable() {
+    Runnable r1 = () -> System.out.println();
+    Runnable r2 = System.out::println;
+
+    //it prints nothing
+    new Thread(r2).start();
   }
 
 }
