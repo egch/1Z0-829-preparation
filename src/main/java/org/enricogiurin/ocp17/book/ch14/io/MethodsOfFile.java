@@ -26,7 +26,7 @@ public class MethodsOfFile {
     System.out.println(deleted); //true
 
     File notExisting = new File("notExistingFile");
-    //if the file does not exist, it does not throw an exception
+    //if the file does not exist, it does not throw an exception!!!
     boolean isDeleted = notExisting.delete();
     System.out.println(isDeleted); //false
 

@@ -36,6 +36,7 @@ public class WalkDirectory {
     }
   }
 
+  //DFS
   void walkAndPrintRealPath() throws IOException {
     Path path = Path.of(".");
     final AtomicLong cnt = new AtomicLong(0);
@@ -50,7 +51,7 @@ public class WalkDirectory {
         }
       });
     }
-    //6367 files to date
+    //2406 files to date
     System.out.println("counted %s files".formatted(cnt.get()));
   }
 

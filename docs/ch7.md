@@ -174,6 +174,14 @@ A subclass (Male) of a sealed class (HumanBeing) must be marked either `final` o
 _Named Module_: which allow sealed classes and their direct subclasses in different packages, 
 provided they are in the same named module.
 
+### sealed nested
+```java
+  sealed class Pet {
+    public final class Dog extends Pet {}
+  }
+```
+[sealed nested](../src/main/java/org/enricogiurin/ocp17/book/ch7/sealed/SealedNested.java)
+
 ## Final
 ```java
 final class AFinal {

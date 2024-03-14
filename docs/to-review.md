@@ -237,5 +237,9 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - overloading float double  [DONE]
 - PrintWriter [DONE]
 - computeIfAbsent [DONE]
-
-
+###
+- referring nested static class [DONE]
+- q16 nested class sealed [DONE]
+- Files walk [DONE]
+- verify question 39 runnable ()->5 [DONE]
+- new File("/home").delete() will throw an exception if /home does not exist. [DONE]

@@ -10,6 +10,10 @@ import java.util.stream.Stream;
 
 public class BrowsingPaths {
 
+  public static void main(String[] args) throws IOException {
+    new BrowsingPaths().findFileWithinADirectory();
+  }
+
   void list() throws IOException {
     Path currentDir = Path.of(".");
     Stream<Path> stream = Files.list(currentDir);
@@ -25,7 +29,7 @@ public class BrowsingPaths {
   //File found: /Users/enrico/github/ocp17/1Z0-829-preparation/./src/main/java/org/enricogiurin/ocp17/ch10/UseOfOptional.java
   void findFileWithinADirectory() throws IOException {
     Path dir = Path.of(".");
-    Path pathToSearch = Path.of("UseOfOptional.java");
+    Path pathToSearch = Path.of("UsageOfOptional.java");
     BiPredicate<Path, BasicFileAttributes> matcher = (path, attr) -> attr.isRegularFile() &&
         path.getFileName().toString().equals(pathToSearch.getFileName().toString());
 

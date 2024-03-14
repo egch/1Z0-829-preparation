@@ -4,15 +4,15 @@
 - mind the **IOException** when you use try with resources
 - Mind the type used in lambda, there ain't auto boxing. 
 
-## I/O
+## I/O -NIO
 - mind the checked exception within lambda, example: `toRealPath()`
 - mark, check if the stream supports mark: `inputStream.markSupported()`
 - What I/O classes to use? Reader/Writer for text, Stream for primitives and String values
 - Check if the `System.out` or `System.err` is closed within the try-with-resource
 - `relativize() `needs both Path to be either absolute or relative
 - it's `System.console()` NOT ~~new Console()~~
-
-
+## I/O - IO
+- `file.delete()` returns a boolean and does not throw an exception if the file does not exist
 ## Localization
 - there ain't ~~DateFormatter~~ only `DateTimeFormatter`
 

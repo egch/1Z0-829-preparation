@@ -27,4 +27,14 @@ public class BasicThread {
     new Thread(r2).start();
   }
 
+  void invalidRunnable() {
+    //Bad return type in lambda expression: int cannot be converted to void
+    //Runnable r1 = ()->5;  //DOES NOT COMPILE!
+
+    //this is valid even if no-sense
+    Runnable r2 = () -> {
+      int x = 5;
+    };
+  }
+
 }
