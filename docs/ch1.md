@@ -98,7 +98,7 @@ Incidental whitespace just happens to be there to make the code easier to read.
 You can reformat your code and change the amount of incidental whitespace without any impact on your String value.
 
 
-[Text Blocks](../src/main/java/org/enricogiurin/ocp17/book/ch1/TextBlocks.java)
+[Text Blocks](../src/main/java/org/enricogiurin/ocp17/book/ch1/textblocks/TextBlocks.java)
 ```java
 String tb = """
     Hello

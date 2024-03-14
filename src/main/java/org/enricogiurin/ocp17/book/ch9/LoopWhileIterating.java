@@ -10,7 +10,7 @@ public class LoopWhileIterating {
   List<Integer> original = List.of(1, 2, 3, 4, 5);
 
   public static void main(String[] args) {
-    new LoopWhileIterating().linkedBlockingQueue();
+    new LoopWhileIterating().copyOnWriteArrayListArray();
   }
 
   /**
@@ -34,6 +34,19 @@ public class LoopWhileIterating {
     }
     //final size is: 10
     System.out.println("final size is: %d".formatted(list.size()));
+  }
+
+  void copyOnWriteArrayListArray() {
+    Integer[] array = {1, 2, 3, 4};
+    CopyOnWriteArrayList<Integer> list = new CopyOnWriteArrayList<>(array);
+    for (int n : array) {
+      list.add(n);
+    }
+    for (int n : array) {
+      System.out.print(n);
+    }
+    System.out.println();
+    System.out.println(list);
   }
 
   //this goes in loop

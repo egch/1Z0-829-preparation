@@ -43,5 +43,8 @@ public class StaticMethodGenerics {
     return element;
   }
 
+  //Cannot resolve symbol 'T'
+  // private static void noGenerics(T t){}  //does not compile!
+
 
 }

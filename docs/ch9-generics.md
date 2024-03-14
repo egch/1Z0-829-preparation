@@ -31,7 +31,7 @@ class Ball<X>{
 ```java
 List<String> list = new ArrayList<>();
 ```
-The diamond operator `<>` cannot be used on the right side of the assignment.
+The diamond operator `<>` cannot be used on the left side of the assignment.
 
 ```java
 HashSet<> set = new HashSet<Object>();  //does not compile!

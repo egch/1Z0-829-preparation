@@ -1,5 +1,7 @@
 package org.enricogiurin.ocp17.book.ch2;
 
+import java.util.List;
+
 public class Casting {
 
   public static void main(String[] args) {
@@ -80,6 +82,13 @@ public class Casting {
     Object oBo = (Object) bo;
     //inconvertible types; cannot cast 'int' to 'java.lang.Float'
     //Float aFloat = (Float)i;  DOES NOT COMPILE
+    Number nb = (Number) b;
+    //weird but allowable
+    if (oB instanceof List) {
+    }
+    //with instanceof I cannot use primitive
+    //if(b instanceof Object){}  //does not compile
+
   }
 
   void dangerousCast() {

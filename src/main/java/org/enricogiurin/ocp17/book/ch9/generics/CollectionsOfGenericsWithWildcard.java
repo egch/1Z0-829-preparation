@@ -52,6 +52,7 @@ public class CollectionsOfGenericsWithWildcard {
   }
 
   void lowerBoundedWildcards() {
+    //Exception is a super class of IOException
     List<? super IOException> exceptions = new ArrayList<Exception>();
     //exceptions can be a list of:
     //- IOException or any class having IOException as super

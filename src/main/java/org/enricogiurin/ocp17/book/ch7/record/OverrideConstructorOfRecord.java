@@ -4,6 +4,7 @@ public class OverrideConstructorOfRecord {
 
   public record Dog(String name) {
 
+
     //I can override the "default" constructor of a record
     //custom constructor
     public Dog(String name) {

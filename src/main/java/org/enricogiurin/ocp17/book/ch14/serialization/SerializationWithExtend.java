@@ -18,17 +18,19 @@ public class SerializationWithExtend {
   // In this case, the Bird constructor is called,
   void serializeAndDeserialize() throws IOException, ClassNotFoundException {
     Eagle eagle = new Eagle();
+    eagle.age = 40;
     //name: Bridget
-    System.out.println("name: " + eagle.getName());
-    System.out.println("age: " + eagle.getAge());
+    System.out.println("name: " + eagle.getName());  //Bridget
+    System.out.println("age: " + eagle.getAge());  //40
+
     serialize(eagle);
     System.out.println("Eagle serialized");
     //no-arg constructor of the first non-serializable parent class
     Eagle deserializeEagle = deserialize();
     //name: Matt
-    System.out.println("name: " + deserializeEagle.getName());
+    System.out.println("name: " + deserializeEagle.getName()); //Matt
     //age is not transient
-    System.out.println("age: " + deserializeEagle.getAge());
+    System.out.println("age: " + deserializeEagle.getAge());  //30
 
   }
 
@@ -55,7 +57,7 @@ class Bird {
   protected transient String name;
   protected int age;
 
-  //during the serialization this constructor is called
+  //during the serialization, this constructor is called
   public Bird() {
     System.out.println("""
         no-arg constructor\s\
