@@ -27,6 +27,12 @@ public class PatternMatching {
     //this is ok as Long is a strict subtype Of Number
     if (number instanceof Long nL) {
     }
+
+    Object object = new String();
+    //same case with Object
+    //if(object instanceof Object obj){}  //does not compile!
+    if (object instanceof Object) {
+    }
   }
 
   void accessingOutOfScope(Object object) {

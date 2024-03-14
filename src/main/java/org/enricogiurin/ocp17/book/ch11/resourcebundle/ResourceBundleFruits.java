@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
 public class ResourceBundleFruits {
 
   public static void main(String[] args) {
-    new ResourceBundleFruits().fruits();
+    new ResourceBundleFruits().getStringArray();
   }
 
 
@@ -45,5 +45,22 @@ public class ResourceBundleFruits {
     System.out.println(value);
     value = bundle.getString("mango"); //(it-ch)
     System.out.println(value);
+  }
+
+  //it fails to load, I cannot understand how to store an array of value
+  //in the properties file
+  //https://stackoverflow.com/questions/226050/how-do-i-specify-values-in-a-properties-file-so-they-can-be-retrieved-using-reso
+  void getStringArray() {
+
+    Locale.setDefault(new Locale("it", "CH"));
+
+    ResourceBundle bundle = ResourceBundle.getBundle("ch11.Fruits");
+    Object mango = bundle.getObject("mango");
+    System.out.println(mango);
+
+    String[] papayas = bundle.getStringArray("papayas");
+    for (String g : papayas) {
+      System.out.println(g);
+    }
   }
 }

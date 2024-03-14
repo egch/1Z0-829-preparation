@@ -54,14 +54,22 @@ A method can declare an exception even if it's not thrown within the method itse
 [throws Exceptions](../src/main/java/org/enricogiurin/ocp17/book/ch11/exceptions/ThrowsExceptionNotThrown.java)
 
 
-### Error Classes
+## Error Classes
 | Error              | Description              | 
 |:-------------------|:-------------------------|
 | ExceptionInInitializerError              | Thrown when static initializer throws exception and doesn’t handle it |
 | StackOverflowError | Thrown when method calls itself too many times (called infinite recursion because method typically calls itself without end)              |
 | NoClassDefFoundError | Thrown when class that code uses is available at com- pile time but not runtime              |
 
-### Some Runtime Exception
+### ExceptionInInitializerError
+```java
+static int[] array = new int[0];
+static {
+array[0]= 20;
+}
+```
+[ExceptionInInitializerError](../src/main/java/org/enricogiurin/ocp17/book/ch11/errors/CaseWithExceptionInInitializerError.java)
+## Some Runtime Exception
 ```java
 public class NumberFormatException extends IllegalArgumentException {/**/}
 ```

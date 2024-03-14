@@ -218,6 +218,7 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - Period.of() does not chain [DONE]
 - sorted() with Comparable [DONE]
 - synchronized on class [DONE]
+- 
 - service provide can provide: It is a compile-time error if more than one provides directive in a module declaration specifies the same service. [DONE]
 - DoubleBinaryOperator [DONE]
 ###
@@ -226,6 +227,15 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - ChronoUnit between() [DONE]
 - public record Orchestra(int... instruments) [DONE]
 - indent [DONE]
-
+### 
+- switch primitive to wrapper, ex ++ [DONE]
+- resource bundle with no properties [DONE]
+- wrapper/primitive Function [DONE]
+- rb.getStringArray() [DONE]
+- ExceptionInInitializerError [DONE]
+- Files.copy - symbolic link [DONE]
+- overloading float double  [DONE]
+- PrintWriter [DONE]
+- computeIfAbsent [DONE]
 
 

@@ -9,7 +9,7 @@ import java.util.List;
 public class MethodsOfCollections {
 
   public static void main(String[] args) {
-    new MethodsOfCollections().sort_comparator();
+    new MethodsOfCollections().sortWithNullComparator();
   }
 
   void binarySearch() {
@@ -44,7 +44,14 @@ public class MethodsOfCollections {
     Collections.sort(wrapperArrayList, comparator);
     //[Wrapper{name='3'}, Wrapper{name='a'}, Wrapper{name='b'}]
     System.out.println(wrapperArrayList);
+  }
 
+  void sortWithNullComparator() {
+    List<String> list = Arrays.asList("a", "c", "d", "b");
+    Collections.sort(list, null);
+    list.forEach(System.out::print);  //abcd
+
+    //it's equivalent to Collections.sort(list)
   }
 
   void binarySearchWithComparator() {

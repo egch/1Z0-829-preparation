@@ -108,7 +108,12 @@ Locale.setDefault(new Locale("en", "US"));
 var b = ResourceBundle.getBundle("Dog", fr);
 ```
 Java will use **Dog_en.properties** as the matching resource bundle. Since there is no match for French, the default locale is used.
-
+### Methods
+```java
+String value = bundle.getString("grapes");
+Object mango = bundle.getObject("mango");
+String[] papayas = bundle.getStringArray("papayas");
+```
 ### MessageFormat
 ```java
 var helloByName=Hello, {0} and {1};

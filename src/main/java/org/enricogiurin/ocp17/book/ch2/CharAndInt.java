@@ -4,7 +4,7 @@ package org.enricogiurin.ocp17.book.ch2;
 public class CharAndInt {
 
   public static void main(String[] args) {
-    new CharAndInt().charToUnicode();
+    new CharAndInt().bitwiseChar();
   }
 
   void conversion() {
@@ -58,6 +58,13 @@ public class CharAndInt {
     char c = 'a';
     String unicode = String.format("\\u%04x", (int)c);
     System.out.println(unicode); // \u0061
+  }
+
+  void bitwiseChar() {
+    char result = 'c' | 'd';  //bitwise or
+    System.out.println(result);  //g
+    result = 'c' & 'd';  //bitwise and
+    System.out.println(result);  // `
   }
 
 }
