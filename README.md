@@ -22,6 +22,7 @@ Exam Number: 1Z0-829
 15. [JDBC](docs/ch15.md)
 
 ### Extra
+- [Credentials](docs/exam.md)
 -  [Pitfalls & Tips](docs/pitfall.md)
 
 
