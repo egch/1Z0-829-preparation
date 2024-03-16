@@ -243,3 +243,6 @@ review this: ˂NullPointerException˃printException(new NullPointerException ("D
 - Files walk [DONE]
 - verify question 39 runnable ()->5 [DONE]
 - new File("/home").delete() will throw an exception if /home does not exist. [DONE]
+###
+- Stream.dropWhile
+- List list = List.of("e1", "e2", "e3") /binarysearch/reverse
