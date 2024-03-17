@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 public class UsageOfStream {
 
   public static void main(String[] args) {
-    new UsageOfStream().reAssignStream();
+    new UsageOfStream().dropWhile();
   }
 
   void streamStream() {
@@ -52,6 +52,18 @@ public class UsageOfStream {
     System.out.println(s1.count());
     //Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
     System.out.println(s2.count());
+  }
+
+  void dropWhile() {
+    Stream<Integer> numbers = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+    // Drop numbers until condition (number < 5) is false
+    Stream<Integer> droppedStream = numbers.dropWhile(number -> number < 5);
+
+    // Print remaining numbers
+    droppedStream.forEach(System.out::println); // Output: 5, 6, 7, 8, 9, 10
+
+
   }
 
 

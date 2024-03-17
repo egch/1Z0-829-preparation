@@ -1,11 +1,14 @@
 package org.enricogiurin.ocp17.book.ch4.array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class ArraysSort {
 
   public static void main(String[] args) {
-    new ArraysSort().sortAndSearch();
+    new ArraysSort().sortRow();
   }
 
   void sortAndSearch() {
@@ -31,6 +34,17 @@ public class ArraysSort {
     //insertionPoint ideally would be 2 (after "PIG")
     //-> result = -2 -1 = -3
     System.out.println(position);  //-3
+  }
+
+  void sortRow() {
+    List immutable = List.of("e3", "e2", "e1");
+    List list = new ArrayList<>(immutable);
+
+    int index = Collections.binarySearch(list, "e3");
+    System.out.println(index);
+    Collections.sort(list);
+    index = Collections.binarySearch(list, "e3");
+    System.out.println(index);
   }
 
 

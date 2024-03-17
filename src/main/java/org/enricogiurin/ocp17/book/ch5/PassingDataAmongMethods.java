@@ -7,7 +7,7 @@ public class PassingDataAmongMethods {
 
   public static void main(String[] args) {
     PassingDataAmongMethods instance = new PassingDataAmongMethods();
-    instance.callHandlingAnArray();
+    instance.callSetAnArrayToNull();
   }
 
   void callSum() {
@@ -33,6 +33,14 @@ public class PassingDataAmongMethods {
     System.out.println(myArray[0]);
   }
 
+  void callSetAnArrayToNull(){
+    int[] array = {1,2};
+    System.out.println(array[0]);
+    setAnArrayToNull(array);
+    System.out.println(array[0]);
+
+  }
+
   /*
    ***** internal methods *****
    */
@@ -51,6 +59,11 @@ public class PassingDataAmongMethods {
     map.put("John", "Zürich");
     //this has no effect -> but the content of map is changed before
     map = null;
+  }
+
+  void setAnArrayToNull(int[] array) {
+    array[0]=7;
+    array=null;
   }
 
 
