@@ -230,7 +230,7 @@ public record Person(String firstName, String lastName) {
 
   //this is an overloaded constructor 
   public Person() {  
-    //he first line must be a call to another constructor,
+    //The first line must be a call to another constructor,
     this("Enrico", "Giurin");
   }
 }
