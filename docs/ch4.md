@@ -137,7 +137,7 @@ System.out.println(position);  //-3
 ### floor & ceil
 ```java
 double floor = Math.floor(3.8); // 3.0
-double ceil = Math.ceil(3.8); // 8.0
+double ceil = Math.ceil(3.8); // 4.0
 ```
 
 ### round
