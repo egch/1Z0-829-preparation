@@ -9,17 +9,17 @@ And no _HelloWorld.class_ being created!
 ## packages
 From project root folder
 ```shell
-$ javac  -d target/classes  ./src/main/java/org/enricogiurin/ocp17/ch1/*.java
+$ javac  -d target/classes  ./src/main/java/org/enricogiurin/ocp17/book/ch1/*.java
 
-$ java -cp target/classes org.enricogiurin.ocp17.ch1.HelloWorld
+$ java -cp target/classes org.enricogiurin.ocp17.book.ch1.HelloWorld
 ```
 We have to specify all the single packages if present.
 
 ### Alternative cp
 ```shell
-$ java -cp target/classes org.enricogiurin.ocp17.ch1.HelloWorld
-$ java -classpath target/classes org.enricogiurin.ocp17.ch1.HelloWorld
-$ java --class-path target/classes org.enricogiurin.ocp17.ch1.HelloWorld
+$ java -cp target/classes org.enricogiurin.ocp17.book.ch1.HelloWorld
+$ java -classpath target/classes org.enricogiurin.ocp17.book.ch1.HelloWorld
+$ java --class-path target/classes org.enricogiurin.ocp17.book.ch1.HelloWorld
 ```
 ## Variables
 - Local variables **need** to be initialized before to be used;
@@ -63,13 +63,13 @@ class WrongVar {
     var var = "var";
   }
 ```
+This compiles as **var** is not a reserved key in java
 
 ### var initialization
 ```java
 var x;  //does not compile!
 x = 5;
 ```
-This compiles as **var** is not a reserved key in java
 ### var compound declaration
 ```java
 var x=5, y=6; //DOES NOT COMPILE
